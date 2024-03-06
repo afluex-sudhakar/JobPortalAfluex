@@ -1,0 +1,125 @@
+﻿@model Data.DTOs.EmployerListDTO
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="loader"></div>
+<div id="app">
+    <div class="main-wrapper main-wrapper-1">
+        <!-- Main Content -->
+        <div class="main-content">
+            <section class="section">
+                <ul class="breadcrumb breadcrumb-style ">
+                    <li class="breadcrumb-item">
+                        <h4 class="page-title m-b-0">Admin</h4>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="/Admin/Index">
+                            <i data-feather="home"></i>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">Employer List</li>
+                </ul>
+                <div class="section-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Employer List</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped" id="table-1">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">
+                                                        S.No.
+                                                    </th>
+                                                    <th>Employer Name</th>
+                                                    <th>Contact No.</th>
+                                                    <th>Email</th>
+                                                    <th>Address</th>
+                                                    <th>Detail</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (Model != null)
+                                                {
+                                                    if (Model.Employees != null)
+                                                    {
+                                                        int i = 1;
+                                                        foreach (var Item in Model.Employees)
+                                                        {
+                                                            var data = Item.UserDetails.FirstOrDefault();
+                                                            if (data != null)
+                                                            {
+                                                                <tr>
+                                                                    <td>
+                                                                        @i
+                                                                    </td>
+                                                                    <td>@data.FirstName @data.LastName</td>
+                                                                    <td>@data.Mobile</td>
+
+
+                                                                    <td>@data.Email</td>
+                                                                    <td>
+                                                                        @data.Address
+                                                                    </td>
+                                                                    <td><a href="/Admin/EmployerDetail?Id=@Item.Id" class="btn btn-danger">Detail</a></td>
+                                                                    
+                                                                    <td>
+                                                                        @if (Item.IsVerified == false)
+                                                                        {
+                                                                            <a href="/Admin/ApproveEmployer?Id=@Item.Id" class="btn btn-primary">Approve</a>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <button class="btn btn-primary" disabled>Approved</button>
+                                                                        }
+                                                                    </td>
+                                                                </tr>
+                                                            }
+                                                            i++;
+                                                        }
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+@section css {
+        
+    }
+
+    @section script {
+        <script type="text/javascript">
+            $("#table-1").dataTable({
+                dom: "Bfrtip",
+                buttons: ["csv", "excel", "pdf", "print"],
+      columnDefs: [{ sortable: false, targets: [2, 3] }],
+  });</script>
+@if (TempData["msg"] == "Approved Successfully")
+{
+    <script type="text/javascript">
+            window.onload = function () {
+                iziToast.success({
+                    title: "Success!",
+                    message: '@TempData["msg"]',
+                    position: "topRight",
+                });
+            };
+
+    </script>
+}
+    }

@@ -1,0 +1,215 @@
+﻿@model Data.DTOs.UserDTO
+@{
+    ViewBag.Title = "UserRegistration";
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Afluex Multiservice llp</title>
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="~/assets/css/app.min.css">
+    <link rel="stylesheet" href="~/assets/bundles/dropzonejs/dropzone.css">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" href="~/assets/css/components.css">
+    <!-- Custom style CSS -->
+    <link rel="stylesheet" href="~/assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/app.min.css">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" href="~/assets/css/components.css">
+    <!-- Custom style CSS -->
+    <link rel="stylesheet" href="~/assets/css/custom.css">
+    <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+</head>
+
+<body >
+    <div class="loader"></div>
+
+    <div id="app">
+        <section class="section">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12 col-sm-10 offset-sm-1 col-md-10 offset-md-1 col-lg-10 offset-lg-1 col-xl-10 offset-xl-1">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h4>Registration Form</h4>
+                            </div>
+                            <div class="card-body">
+                                <form id="wizard_with_validation" method="POST">
+                                    <h3>Personal Information</h3>
+                                    <fieldset>
+
+                                        <div class="row">
+                                            <div class="form-group col-6">
+                                                <label for="FirstName">First Name</label>
+                                                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @required = "true" })
+                                            </div>
+                                            <div class="form-group col-6">
+                                                <label for="last_name">Last Name</label>
+                                                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-4">
+                                                <label for="Email">Email</label>
+                                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @type = "email", @required = "true" })
+                                                <div class="invalid-feedback">
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-4">
+                                                <label for="FatherName">Father Name</label>
+                                                @Html.TextBoxFor(m => m.FatherName, new { @class = "form-control", @required = "true" })
+                                            </div>
+                                            <div class="form-group col-4">
+                                                <label for="MotherName">Mother Name</label>
+                                                @Html.TextBoxFor(m => m.MotherName, new { @class = "form-control", @required = "true" })
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-4">
+                                                <label class="d-block">Gender</label>
+                                                <div class="form-check">
+                                                    @Html.RadioButtonFor(m => m.Gender, "Male", new { @class = "form-check-input", @id = "exampleRadios1" })
+                                                    <label class="form-check-label" for="exampleRadios1">
+                                                        Male
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    @Html.RadioButtonFor(m => m.Gender, "Female", new { @class = "form-check-input", @id = "exampleRadios2" })
+                                                    <label class="form-check-label" for="exampleRadios2">
+                                                        Female
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-4">
+                                                <label>DOB</label>
+                                                @Html.TextBoxFor(m => m.DOB, new { @class = "form-control", @type = "date" })
+                                            </div>
+                                            <div class="form-group col-4">
+                                                <label>Age</label>
+                                                @Html.TextBoxFor(m => m.Age, new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-4">
+                                                <label>Pin Code</label>
+                                                @Html.TextBoxFor(m => m.PinCode, new { @class = "form-control" })
+                                            </div>
+                                            <div class="form-group col-4">
+                                                <label>City</label>
+                                                @Html.DropDownListFor(m => m.CityId, new SelectList(ViewBag.City, "Id", "Name"), new { @class = "form-control" })
+                                            </div>
+                                            <div class="form-group col-4">
+                                                <label>State</label>
+                                                @Html.DropDownListFor(m => m.State, new SelectList(ViewBag.State, "Id", "Name"), new { @class = "form-control" })
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Address">Address</label>
+                                            @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                                        </div>
+                                    </fieldset>
+                                    <h3>Educational Details</h3>
+                                    <fieldset>
+                                        @*<div class="card-body">*@
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label>Course</label>
+                                                    @Html.DropDownListFor(m => m.CourseId, new SelectList(ViewBag.Course, "Id", "Name"), "-Select-", new { @class = "form-control" })
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Year From !
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label>Year From</label>
+                                                    @Html.TextBoxFor(m => m.YearFrom, new { @class = "form-control" })
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Year From !
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label>Year To</label>
+                                                    @Html.TextBoxFor(m => m.YearTo, new { @class = "form-control" })
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Year From !
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label>Marks Obtained</label>
+                                                    @Html.TextBoxFor(m => m.MarksObt, new { @class = "form-control" })
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Marks Obtained !
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label>Total Marks</label>
+                                                    @Html.TextBoxFor(m => m.TotalMarks, new { @class = "form-control" })
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Total Marks !
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                                @*</div>*@
+                                    </fieldset>
+                                    <h3>Documents - Finish</h3>
+                                    <fieldset>
+                                        <div class="card-body">
+                                            <div class="form-group col-6">
+                                                <input type="file" class="form-control" id="Image" multiple="" name="postedFile" onchange="readURL(this)" />
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="dropzone" id="mydropzone">
+                                                <div class="fallback">
+                                                    <input name="file" type="file" multiple />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                            <div class="mb-4 text-muted text-center">
+                                Already Registered? <a href="/hi/Login">Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- General JS Scripts -->
+    <script src="~/assets/js/app.min.js"></script>
+    <!-- JS Libraies -->
+    <script src="~/assets/bundles/dropzonejs/min/dropzone.min.js"></script>
+    <!-- Page Specific JS File -->
+    <script src="~/assets/js/page/multiple-upload.js"></script>
+    <!-- Template JS File -->
+    <script src="~/assets/js/scripts.js"></script>
+    <!-- Custom JS File -->
+    <script src="~/assets/js/custom.js"></script>
+    <script src="~/assets/bundles/jquery-validation/dist/jquery.validate.min.js"></script>
+    <!-- JS Libraies -->
+    <script src="~/assets/bundles/jquery-steps/jquery.steps.min.js"></script>
+    <!-- Page Specific JS File -->
+    <script src="~/assets/js/page/form-wizard.js"></script>
+    <script src="~/assets/js/scripts.js"></script>
+    <!-- Custom JS File -->
+    <script src="~/assets/js/custom.js"></script>
+</body>
+
+</html>

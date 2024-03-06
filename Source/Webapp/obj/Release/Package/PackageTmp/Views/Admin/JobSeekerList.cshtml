@@ -1,0 +1,145 @@
+﻿@model Data.DTOs.UserListDTO
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="loader"></div>
+<div id="app">
+    <div class="main-wrapper main-wrapper-1">
+        <!-- Main Content -->
+        <div class="main-content">
+            <section class="section">
+                <ul class="breadcrumb breadcrumb-style ">
+                    <li class="breadcrumb-item">
+                        <h4 class="page-title m-b-0">Reports</h4>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="/Admin/Index">
+                            <i data-feather="home"></i>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">Job Seeker List</li>
+                </ul>
+                <div class="section-body">
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-12">
+                            @using (Html.BeginForm("JobSeekerList", "Admin", FormMethod.Post))
+                            {
+                                <div class="card">
+                                    <form class="needs-validation" novalidate="">
+                                        <div class="card-header">
+                                            <h4>Job Seeker List</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>From Date</label>
+                                                        @Html.TextBoxFor(m => m.FromDate, new { @class = "form-control", @required = "true", @type = "date" })
+                                                        <div class="invalid-feedback">
+                                                            Please Enter Date!
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label>To Date</label>
+                                                        @Html.TextBoxFor(m => m.ToDate, new { @class = "form-control", @required = "true", @type = "date" })
+                                                        <div class="invalid-feedback">
+                                                            Please Enter Date!
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        @Html.AntiForgeryToken()
+                                                        <button class="btn btn-primary mr-1" type="submit">Search</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Job Seeker List</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped" id="table-1">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">
+                                                        S.No.
+                                                    </th>
+                                                    <th>Job Seeker Name</th>
+                                                    <th>Father Name</th>
+                                                    <th>Mother Name</th>
+                                                    <th>Mobile</th>
+                                                    <th>Email</th>
+                                                    <th>Address</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (Model != null)
+                                                {
+                                                    if (Model.Users != null)
+                                                    {
+                                                        int i = 1;
+                                                        foreach (var Item in Model.Users)
+                                                        {
+                                                            var data = Item.UserDetails.FirstOrDefault();
+                                                            if (data != null)
+                                                            {
+                                                                <tr>
+                                                                    <td>
+                                                                        @i
+                                                                    </td>
+                                                                    <td>@data.FirstName @data.LastName</td>
+                                                                    <td class="align-middle">
+                                                                        @data.FatherName
+                                                                    </td>
+                                                                    <td>@data.MotherName</td>
+                                                                    <td>
+                                                                        @data.Mobile
+                                                                    </td>
+                                                                    <td>@data.Email</td>
+                                                                    <td>
+                                                                        @data.Address
+                                                                    </td>
+                                                                    <td><a href="/Admin/JobSeekerProfile?Id=@Item.Id" class="btn btn-primary">Detail</a></td>
+                                                                </tr>
+                                                                i++;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+@section script {
+    <script type="text/javascript">
+        $("#table-1").dataTable({
+            dom: "Bfrtip",
+            buttons: ["csv", "excel", "pdf", "print"],
+            columnDefs: [{ sortable: false, targets: [2, 3] }],
+        });</script>
+}

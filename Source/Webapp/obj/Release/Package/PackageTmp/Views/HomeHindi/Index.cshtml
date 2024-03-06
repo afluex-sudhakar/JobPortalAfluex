@@ -1,0 +1,490 @@
+﻿@model Data.DTOs.JobDTOWeb
+@using CaptchaMvc.HtmlHelpers
+@{
+    Layout = "~/Views/Shared/_WebsiteLayoutHI.cshtml";
+}
+<div class="loader"></div>
+<div class="inner-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12">
+                <div class="sidebar-section">
+                    <div class="get-personalised-jobs text-center">
+                        <h5>व्यक्तिगत नौकरियां प्राप्त करें !!</h5>
+                        <p>अपने मानदंडों से मेल खाने वाली नौकरियों पर एक ईमेल प्राप्त करें</p>
+                        <div class="clearfix"></div>
+                        <button id="resume" type="button" class="btn btn-primary bg-custom register-btn btn-lg mt-3">रिज्यूम अपलोड करें</button>
+                    </div>
+                    <div class="clearfix"></div>
+                    @*<div class="jobs-by-top-skills">
+                    <h5 class="text-center">लोकप्रिय नौकरियां</h5>
+                    <ul class="list-unstyled jobsskills">
+                        @if (Model != null)
+                        {
+                            if (Model.lstCategory != null)
+                            {
+                                int i = 1;
+                                foreach (var item in Model.lstCategory)
+                                {
+                                    <li><i class="fa fa-hand-o-right" aria-hidden="true"></i> <a href="/hi/AdvanceSearch?CategoryId=@item.Id" class="text-decoration-none text-black">@item.NameH की नौकरियां</a></li>
+
+                                    i++;
+                                }
+                            }
+                        }
+                    </ul>
+
+                </div>*@
+                    <div class="search-jobs-on-the-go" style="margin-top:20px">
+                        <h5 class="text-center">सक्रिय नौकरियों की खोज करें !!</h5>
+                        <p>अफ्लुएक्स एप्लिकेशन Free में डाउनलोड करें और अपनी प्राथमिकताओं के आधार पर विभिन्न प्रकार की नौकरियों की खोज करें</p>
+
+                        <form class="">
+                            <div class="input-group phnsubmit">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                </div>
+                                <input type="text" class="form-control" required placeholder="मोबाइल नंबर दर्ज करें" aria-label="Username" aria-describedby="basic-addon1" id="txtMobile">
+                                <div class="g-recaptcha" data-sitekey="6Leai1AaAAAAAOXi_D_kfA5BOnLVgz7Rv41DYTMD"></div>
+                            </div>
+                            <div class="text-center">
+                                <button type="button" class="btn btn-primary bg-custom download-link-btn btn-lg" onclick="SendLink();">मुझे डाउनलोड लिंक भेजें</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="android-app mt-4">
+                        <img src="~/images/download-app-blue.png" class="img-fluid" alt="download-app">
+                        <p>हमारे निशुल्क एंड्रॉइड ऐप के साथ अपनी नौकरी खोज को गति दें</p>
+                        <div class="text-center">
+                            <a href="https://play.google.com/store/apps/details?id=com.carriermitra" class="btn btn-primary bg-custom download-link-btn btn-lg" target="_blank">अभी डाउनलोड करें</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-12">
+                <input type="hidden" value="@Session["Id"]" id="hdfSession" />
+                <div class="search-section">
+                    @using (Html.BeginForm("Index", "hi", FormMethod.Post, new { @id = "frm", @enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <div class="sarch_box">
+                                    <span class="search_icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                    @Html.TextBoxFor(m => m.SearchTerm, new { @class = "search-field", @placeholder = "कीवर्ड द्वारा जॉब खोजें", @id = "txtskill", @name= "SearchTerm" })
+                                    <span class="location_icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                                    @Html.TextBoxFor(m => m.City, new { @class = "location_search_field", @placeholder = "स्थान", @id = "autocomplete", @name = "City" })
+
+                                    <div class="search_holder pull-right">
+                                        <input type="button" class="le_button text-decoration-none text-white" value="नौकरी खोजें" id="btnsearch" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+                <div class="skills-section">
+                    <div class="skills-inner">
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-link active" id="nav-skills-tab" data-toggle="tab" href="#nav-skills" role="tab" aria-controls="nav-skills" aria-selected="true">कौशल</a>
+                                <a class="nav-link" id="nav-location-tab" data-toggle="tab" href="#nav-location" role="tab" aria-controls="nav-location" aria-selected="false">स्थान</a>
+                                <a class="nav-link" id="nav-govtjobs-tab" data-toggle="tab" href="#nav-category" role="tab" aria-controls="nav-govtjobs" aria-selected="false">नौकरी श्रेणी</a>
+                                <a class="nav-link" id="nav-functions-tab" data-toggle="tab" href="#nav-employers" role="tab" aria-controls="nav-functions" aria-selected="false">नियोक्ता</a>
+                                <a class="nav-link" id="nav-functions-tab" data-toggle="tab" href="#nav-departments" role="tab" aria-controls="nav-functions" aria-selected="false">उद्योग के प्रकार</a>
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-skills" role="tabpanel" aria-labelledby="nav-skills-tab">
+                                <div class="skills-content">
+                                    <div class="row">
+                                        @if (Model != null)
+                                        {
+                                            if (Model.lstSkill != null)
+                                            {
+                                                int i = 1;
+                                                foreach (var item in Model.lstSkill)
+                                                {
+                                                    <div class="col-md-4 col-lg-4 col-sm-12">
+                                                        <div class="skills_inner_cont">
+                                                            <ul class="list-unstyled">
+                                                                <li><a href="/hi/AdvanceSearch?SkillId=@item.Id" class="text-decoration-none text-black">@item.Name की नौकरियां</a></li>
+                                                            </ul>
+                                                        </div>                                                        
+                                                    </div>
+                                                    i++;
+                                                }
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-location" role="tabpanel" aria-labelledby="nav-location-tab">
+                                <div class="skills-content">
+                                    <div class="row">
+                                        @if (Model != null)
+                                        {
+                                            if (Model.lstLocation != null)
+                                            {
+                                                int i = 1;
+                                                foreach (var item in Model.lstLocation)
+                                                {
+                                                    <div class="col-md-4 col-lg-4 col-sm-12">
+                                                        <div class="skills_inner_cont">
+                                                            <ul class="list-unstyled">
+                                                                <li><a href="/hi/AdvanceSearch?LocationId=@item.Id" class="text-decoration-none text-black">@item.NameH में नौकरियां</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    i++;
+                                                }
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            @*<div class="tab-pane fade" id="nav-location" role="tabpanel" aria-labelledby="nav-location-tab">
+                                <div class="skills-content">
+                                    <div class="row">
+                                        @if (Model != null)
+                                        {
+                                            if (Model.lstCity != null)
+                                            {
+                                                int i = 1;
+                                                foreach (var item in Model.lstCity)
+                                                {
+                                                    <div class="col-md-4 col-lg-4 col-sm-12">
+                                                        <div class="skills_inner_cont">
+                                                            <ul class="list-unstyled">
+                                                                <li><a href="/hi/AdvanceSearch?CityId=@item.Id" class="text-decoration-none text-black">@item.NameH में नौकरियां</a></li>
+                                                            </ul>
+                                                        </div>                                                        
+                                                    </div>
+                                                    i++;
+                                                }
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>*@
+                            <div class="tab-pane fade" id="nav-category" role="tabpanel" aria-labelledby="nav-govtjobs-tab">
+                                <div class="skills-content">
+                                    <div class="row">
+                                        @if (Model != null)
+                                        {
+                                            if (Model.lstCategory != null)
+                                            {
+                                                int i = 1;
+                                                foreach (var item in Model.lstCategory)
+                                                {
+                                                    <div class="col-md-4 col-lg-4 col-sm-12">
+                                                        <div class="skills_inner_cont">
+                                                            <ul class="list-unstyled">
+                                                                <li><a href="/hi/AdvanceSearch?CategoryId=@item.Id" class="text-decoration-none text-black">@item.NameH की नौकरियां</a></li>
+                                                            </ul>
+                                                        </div>                                                        
+                                                    </div>
+                                                    i++;
+                                                }
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-employers" role="tabpanel" aria-labelledby="nav-industry-tab">
+                                <div class="skills-content">
+                                    <div class="row">
+                                        @if (Model != null)
+                                        {
+                                            if (Model.lstEmployer != null)
+                                            {
+                                                int i = 1;
+                                                foreach (var item in Model.lstEmployer)
+                                                {
+                                                    var data = item.UserDetails.FirstOrDefault();
+                                                    if (data != null)
+                                                    {
+                                                        <div class="col-md-4 col-lg-4 col-sm-12">
+                                                            <div class="skills_inner_cont">
+                                                                <ul class="list-unstyled">
+                                                                    @if (!string.IsNullOrEmpty(@data.CompanyName))
+                                                                    {
+                                                                        <li><a href="/en/AdvanceSearch?EmployerId=@item.Id" class="text-decoration-none text-black">@data.CompanyName</a></li>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <li><a href="/en/AdvanceSearch?EmployerId=@item.Id" class="text-decoration-none text-black">@data.FirstName @data.LastName</a></li>
+                                                                    }
+                                                                </ul>
+                                                            </div>
+                                                           
+                                                        </div>
+                                                        i++;
+                                                    }
+
+                                                }
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-departments" role="tabpanel" aria-labelledby="nav-industry-tab">
+                                <div class="skills-content">
+                                    <div class="row">
+                                        @if (Model != null)
+                                        {
+                                            if (Model.lstDepartment != null)
+                                            {
+                                                int i = 1;
+                                                foreach (var item in Model.lstDepartment)
+                                                {
+                                                        <div class="col-md-4 col-lg-4 col-sm-12">
+                                                            <div class="skills_inner_cont">
+                                                                <ul class="list-unstyled">
+                                                                    <li><a href="/hi/AdvanceSearch?DepartmentId=@item.Id" class="text-decoration-none text-black">@item.NameH की नौकरियां</a></li>
+                                                                </ul>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        i++;
+                                                }
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="list-of-companies">
+                    @*<div class="row">
+                        <div class="col-md-12 col-lg-12 col-sm-12">
+                            <div class="list-of-companies">
+                                <button type="button" class="btn btn-primary bg-custom download-link-btn btn-lg" id="btnRead">Read More</button>
+                                <span class="text-white"><strong>List Of Companies That Are Hiring Amid Coronavirus Outbreak</strong></span>
+                                <img src="~/images/list-location-icon.png" class="img-fluid pull-right" alt="list-location-icon">
+                            </div>
+                        </div>
+                    </div>*@
+                </div>
+                <div class="browse-jobs-by-skills">
+                    <div class="browse-jobs-by-skills-inner">
+                        <h5>नवीनतम नौकरियां</h5>
+                        <div class="divider1"></div>
+                        <div class="browse-jobs-by-skills-content">
+                            <div class="row">
+                                        @if (Model != null)
+                                        {
+                                            if (Model.JobResponse.ListJob != null)
+                                            {
+                                                int i = 1;
+                                                foreach (var item in Model.JobResponse.ListJob)
+                                                {
+                                                    <div class="col-md-4 col-lg-4 col-sm-12">
+                                                        <div class="recentjobs_index">
+                                                            <ul class="list-unstyled">
+                                                                <li><a href="/hi/JobDetails?Id=@item.Id" class="text-decoration-none text-black">@item.Title</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        </div>
+                                                    i++;
+                                                }
+                                            }
+                                        }
+
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="candidate-services">
+                    <div class="candidate-services-inner">
+                        <h5>शीर्ष नियोक्ता</h5>
+                        <div class="divider1"></div>
+                        <div class="candidate-services-content">
+                            <div class="row">
+                                @if (Model != null)
+                                {
+                                    if (Model.lstEmployer != null)
+                                    {
+                                        int i = 1;
+                                        foreach (var item in Model.lstEmployer)
+                                        {
+                                            var data = item.UserDetails.FirstOrDefault();
+                                            if (data != null)
+                                            {
+                                                <div class="col-md-4 col-lg-4 col-sm-12">
+                                                    <div class="topemployers_index">
+                                                        <ul class="list-unstyled">
+                                                            @if (!string.IsNullOrEmpty(@data.CompanyName))
+                                                            {
+                                                                <li><a href="/en/AdvanceSearch?EmployerId=@item.Id" class="text-decoration-none text-black">@data.CompanyName</a></li>
+                                                            }
+                                                            else
+                                                            {
+                                                                <li><a href="/en/AdvanceSearch?EmployerId=@item.Id" class="text-decoration-none text-black">@data.FirstName @data.LastName</a></li>
+                                                            }
+                                                        </ul>
+                                                        </div>
+                                                    </div>
+                                                i++;
+                                            }
+                                        }
+                                    }
+                                }
+                                @*<div class="col-md-4 col-lg-4 col-sm-12">
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="text-decoration-none text-black">Work From Home Jobs in Bangalore</a></li>
+                                            <li><a href="#" class="text-decoration-none text-black">Work From Home Jobs in Mumbai</a></li>
+                                            <li><a href="#" class="text-decoration-none text-black">Work From Home Jobs in Chennai</a></li>
+                                            <li><a href="#" class="text-decoration-none text-black">Work From Home Jobs in Hyderabad</a></li>
+                                            <li><a href="#" class="text-decoration-none text-black">Work From Home Jobs in Hyderabad</a></li>
+                                            <li><a href="#" class="text-decoration-none text-black">Work From Home Jobs in Hyderabad</a></li>
+                                            <li><a href="#" class="text-decoration-none text-black">Work From Home Jobs in Lucknow</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4 col-sm-12">
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="text-decoration-none text-black">Work From Home Jobs in Bangalore</a></li>
+                                            <li><a href="#" class="text-decoration-none text-black">Work From Home Jobs in Mumbai</a></li>
+                                            <li><a href="#" class="text-decoration-none text-black">Work From Home Jobs in Chennai</a></li>
+                                            <li><a href="#" class="text-decoration-none text-black">Work From Home Jobs in Hyderabad</a></li>
+                                            <li><a href="#" class="text-decoration-none text-black">Work From Home Jobs in Hyderabad</a></li>
+                                            <li><a href="#" class="text-decoration-none text-black">Work From Home Jobs in Hyderabad</a></li>
+                                            <li><a href="#" class="text-decoration-none text-black">Work From Home Jobs in Lucknow</a></li>
+                                        </ul>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="subscribe-to-our-newsletter-section">
+                    <div class="subscribe-to-our-newsletter-inner">
+                        <div class="subscribe-to-our-newsletter-content text-center">
+                            <h1>हमारे न्यूज़लैटर के सदस्य बनें!</h1>
+                            <div class="mail-icon text-center">
+                                <img src="~/images/mail-icon-blue.png" class="img-fluid" alt="mail">
+                            </div>
+                            <input type="text" placeholder="" id="txtEmail" textmode="email">
+                            <button type="submit" class="btn btn-primary Subscribe-btn mb-2 btn-lg" id="btnsubmit">सब्सक्राइब करें</button>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+@section css {
+
+}
+@section script {
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/scripts/jquery-1.10.2.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+   <script type="text/javascript"
+        src='https://www.google.com/recaptcha/api.js'></script>
+
+     <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnRead").click(function () {
+                location.href = "/hi/CompanyList";
+            });
+            $("#btnregister").click(function () {
+                location.href = "/hi/SignUp";
+            })
+            $("#btnsearch").click(function () {
+                debugger
+                var city = $("#autocomplete").val();
+                var key = $("#txtskill").val();
+                if (city != "" && key !="")
+                {
+                    var url = "/hi/AdvanceSearch?City=" + encodeURIComponent(city) + "&SearchTerm=" + encodeURIComponent(key);
+                }
+                else if (city != ""){
+                    var url = "/hi/AdvanceSearch?City=" + encodeURIComponent(city);
+                }
+                else if (key != "")
+                {
+                    var url = "/hi/AdvanceSearch?SearchTerm=" + encodeURIComponent(key);
+                }
+                else
+                {
+                    url = "/hi/AdvanceSearch";
+                }
+                window.location.href = url;
+            });
+            $("#resume").click(function () {
+                debugger;
+                var UserId = $("#hdfSession").val();
+                if (UserId == "") {
+                    window.location.href = "/hi/Login";
+                }
+                else {
+                    window.location.href = "/User/UserProfile";
+                }
+            });
+            $("#btnsubmit").click(function () {
+                debugger;
+                if ($("#txtEmail").val() != '')
+                {
+                    $.ajax({
+                        url: "/hi/SubscribeNewsLetter",
+                        type: "POST",
+                        dataType: 'JSON',
+                        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                        data: { Email: $("#txtEmail").val() },
+                        success: function (data) {
+                            debugger
+                            if (data == true) {
+                                alert('हमारे न्यूज़ लेटर को सब्सक्राइब करने के लिए धन्यवाद !');
+                                $("#txtEmail").val("");
+                            }
+                            else {
+                                alert('ईमेल आईडी पहले से मौजूद है। कृपया अन्य मेल आईडी से सब्सक्राइब करें।');
+                                $("#txtEmail").val("");
+                            }
+                        }
+                    })
+                }
+                else {
+                    alert('कृपया ईमेल आईडी दर्ज करें।');
+                }
+            })
+        })
+    </script>
+    <script>
+        function SendLink() {
+            if ($("#txtMobile").val() == '') {
+                return;
+            }
+            var captcharesponse = grecaptcha.getResponse();
+            var dataa = {
+                Mobile: $("#txtMobile").val(),
+                captcharesponse: captcharesponse
+            };
+            //console.log(captcharesponse)
+            $.ajax({
+                url: "/hi/SendLinkToUser",
+                type: "POST",
+                dataType: 'JSON',
+                contentType: 'application/json;',
+                data: JSON.stringify(dataa),
+                success: function (data) {
+                    debugger
+                    alert(data);
+                    $("#txtMobile").val("");
+                    grecaptcha.reset();
+                }
+            })
+        }
+    </script>
+    <script src="~/js/autocomplete.js"></script>
+}

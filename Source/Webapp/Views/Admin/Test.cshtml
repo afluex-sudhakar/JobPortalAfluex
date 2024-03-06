@@ -1,0 +1,81 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="~/scripts/jquery-1.10.2.js"></script>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Test</title>
+</head>
+<body>
+    <div>
+        <div class="row">
+            <div class="col-md-12">
+                
+                <input type="text"  class="form-control" name="enc" value="" />
+                <input type="text" class="form-control" name="encd" value="" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="button" name="encbtn" value="ENC" />
+            </div>
+        </div>
+        <div>
+            <hr />
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <input type="text" class="form-control" name="dec" value="" />
+                <input type="text" class="form-control" name="decd" value="" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="button" name="decbtn" value="DEC" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        $('input[name="encbtn"]').on('click', function (e) {
+            e.preventDefault();
+            debugger
+            var text = JSON.stringify($('input[name="enc"]').val());
+            $.ajax({
+                type: "GET",
+                url: "/Admin/Enc?txt=" + text,
+                data: "",
+                contentType:"application/json",
+                success: function (resp) {
+                    console.log(text)
+                    $('input[name="encd"]').val(resp)
+                },
+                //dataType: "json"
+            });
+
+        })
+
+        $('input[name="decbtn"]').on('click', function () {
+            $.ajax({
+                type: "GET",
+                url: "/Admin/Dec?txt=" + $('input[name="dec"]').val(),
+                data: "",
+                success: function (resp) {
+                    $('input[name="decd"]').val(resp)
+                },
+                dataType: "json"
+            });
+        })
+    })
+</script>

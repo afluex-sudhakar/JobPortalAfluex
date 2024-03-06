@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a6d40bc7496c4ec183d6e4927d5729c5" Name="Diagram1" ZoomLevel="86" >
+        <EntityTypeShape EntityType="CareerDB.User" Width="1.875" PointX="3" PointY="0.5" />
+        <EntityTypeShape EntityType="CareerDB.Role" Width="1.75" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="CareerDB.UserDetail" Width="1.625" PointX="5.75" PointY="0.5" />
+        <EntityTypeShape EntityType="CareerDB.UserLog" Width="1.75" PointX="0.5" PointY="3.875" />
+        <AssociationConnector Association="CareerDB.RoleUser" />
+        <AssociationConnector Association="CareerDB.UserUserDetail" />
+        <EntityTypeShape EntityType="CareerDB.Course" Width="1.5" PointX="3" PointY="7.75" />
+        <EntityTypeShape EntityType="CareerDB.City" Width="1.5" PointX="4.875" PointY="7.75" />
+        <EntityTypeShape EntityType="CareerDB.EducationDetail" Width="1.75" PointX="8.125" PointY="0.5" />
+        <AssociationConnector Association="CareerDB.UserEducationDetail" />
+        <AssociationConnector Association="CareerDB.CourseEducationDetail" />
+        <AssociationConnector Association="CareerDB.CityUserDetail" />
+        <AssociationConnector Association="CareerDB.UserUserLog" />
+        <EntityTypeShape EntityType="CareerDB.UserDocument" Width="1.75" PointX="10.625" PointY="0.5" />
+        <EntityTypeShape EntityType="CareerDB.DocumentType" Width="1.5" PointX="13.25" PointY="0.5" />
+        <AssociationConnector Association="CareerDB.DocumentTypeUserDocument" />
+        <AssociationConnector Association="CareerDB.UserUserDocument" />
+        <EntityTypeShape EntityType="CareerDB.Skill" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="CareerDB.Category" Width="1.5" PointX="10.5" PointY="7.75" />
+        <EntityTypeShape EntityType="CareerDB.Job" Width="1.75" PointX="0.5" PointY="11.375" />
+        <EntityTypeShape EntityType="CareerDB.JobSkill" Width="1.5" PointX="2.875" PointY="11.5" />
+        <AssociationConnector Association="CareerDB.JobJobSkill" />
+        <AssociationConnector Association="CareerDB.SkillJobSkill" />
+        <EntityTypeShape EntityType="CareerDB.JobQualification" Width="1.875" PointX="5.375" PointY="11.5" />
+        <AssociationConnector Association="CareerDB.JobJobQualification" />
+        <AssociationConnector Association="CareerDB.CourseJobQualification" />
+        <AssociationConnector Association="CareerDB.CategoryJob" />
+        <EntityTypeShape EntityType="CareerDB.JobLocation" Width="1.5" PointX="8.125" PointY="11.5" />
+        <AssociationConnector Association="CareerDB.JobJobLocation" />
+        <AssociationConnector Association="CareerDB.CityJobLocation" />
+        <EntityTypeShape EntityType="CareerDB.JobRole" Width="1.75" PointX="0.5" PointY="7.75" />
+        <AssociationConnector Association="CareerDB.JobRoleJob" />
+        <EntityTypeShape EntityType="CareerDB.JobType" Width="1.5" PointX="12.875" PointY="7.75" />
+        <AssociationConnector Association="CareerDB.JobTypeJob" />
+        <EntityTypeShape EntityType="CareerDB.UserExperience" Width="1.75" PointX="12.75" PointY="3.125" IsExpanded="true" />
+        <AssociationConnector Association="CareerDB.UserUserExperience" />
+        <EntityTypeShape EntityType="CareerDB.Resume" Width="1.5" PointX="10.5" PointY="4.125" />
+        <AssociationConnector Association="CareerDB.UserResume" />
+        <AssociationConnector Association="CareerDB.JobRoleUserExperience" />
+        <EntityTypeShape EntityType="CareerDB.EnrollmentProgram" Width="2" PointX="0.5" PointY="19.125" />
+        <EntityTypeShape EntityType="CareerDB.UserEnrollmentProgram" Width="2" PointX="3.5" PointY="19.125" IsExpanded="true" />
+        <AssociationConnector Association="CareerDB.EnrollmentProgramUserEnrollmentProgram" />
+        <AssociationConnector Association="CareerDB.UserUserEnrollmentProgram" />
+        <AssociationConnector Association="CareerDB.UserEnrollmentProgram1" />
+        <EntityTypeShape EntityType="CareerDB.TrainingMaterial" Width="2" PointX="0.625" PointY="25" />
+        <AssociationConnector Association="CareerDB.EnrollmentProgramTrainingMaterial" />
+        <AssociationConnector Association="CareerDB.TrainingMaterialUser" />
+        <EntityTypeShape EntityType="CareerDB.UserTrainingMaterial" Width="2.125" PointX="3.75" PointY="25" />
+        <AssociationConnector Association="CareerDB.TrainingMaterialUserTrainingMaterial" />
+        <AssociationConnector Association="CareerDB.UserTrainingMaterialUser" />
+        <EntityTypeShape EntityType="CareerDB.UserDevice" Width="2" PointX="0.5" PointY="30.75" />
+        <AssociationConnector Association="CareerDB.UserDeviceUser" />
+        <EntityTypeShape EntityType="CareerDB.Notification" Width="1.75" PointX="3.625" PointY="30.5" />
+        <EntityTypeShape EntityType="CareerDB.UserNotification" Width="2.125" PointX="6.5" PointY="30.5" />
+        <AssociationConnector Association="CareerDB.NotificationUserNotification" />
+        <AssociationConnector Association="CareerDB.UserDeviceUserNotification" />
+        <AssociationConnector Association="CareerDB.UserUserNotification" />
+        <EntityTypeShape EntityType="CareerDB.State" Width="1.5" PointX="6.75" PointY="7.75" />
+        <AssociationConnector Association="CareerDB.StateCity" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,173 @@
+﻿@model Data.DTOs.EmployerListDTO
+    
+@{
+    Layout = "~/Views/Shared/_WebsiteLayoutHI.cshtml";
+}
+
+<div class="loader"></div>
+<section class="breadcrumb_section bg-img-c" style="background-image: url('../images/breadcrumb-bg1.jpg');">
+    <div class="container">
+        <div class="breadcrumb-text">
+            <h1 class="page-title">Company List</h1>
+            <ul class="pull-right">
+                <li><a href="/hi/Index">Home</a></li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
+                <li>Company List</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="company_list_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="company_list_details">
+                    <div class="company_list_tile">
+                        <h2 class="font-weight-bold">Jobs by Emloyers</h2>
+                    </div>
+                    @if (Model != null)
+                    {
+                        if (Model.Employees != null && Model.Employees.Count>0)
+                        {
+                            int i = 1;
+                            foreach (var Item in Model.Employees)
+                            {
+                                var data = Item.UserDetails.FirstOrDefault();
+                                if (data !=null)
+                                { 
+                                    <ul class="list-unstyled mt-4">
+                                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><a href="/hi/AdvanceSearch?Id=@Item.Id"> @data.FirstName</a></li>
+                                    </ul>
+                                }
+                        i++;
+                            }
+                        }
+                    }
+                    @*<ul class="list-unstyled mt-4">
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Banking Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Biotechnology Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Teaching Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Finance Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Marketing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Nursing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Animation Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Accounting Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Accounts Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Graphic Design Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> HVAC Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Administration Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Journalism Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Sales Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Writing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Manufacturing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Photography Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Advertising Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Income Tax Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Interior Design Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Architecture Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Education Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Supply Chain Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Corporate Finance Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Banking Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Biotechnology Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Teaching Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Finance Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Marketing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Nursing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Animation Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Accounting Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Accounts Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Graphic Design Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> HVAC Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Administration Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Journalism Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Sales Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Writing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Manufacturing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Photography Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Advertising Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Income Tax Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Interior Design Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Architecture Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Education Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Supply Chain Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Corporate Finance Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Banking Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Biotechnology Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Teaching Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Finance Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Marketing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Nursing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Animation Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Accounting Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Accounts Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Graphic Design Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> HVAC Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Administration Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Journalism Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Sales Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Writing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Manufacturing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Photography Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Advertising Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Income Tax Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Interior Design Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Architecture Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Education Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Supply Chain Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Corporate Finance Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Banking Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Biotechnology Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Teaching Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Finance Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Marketing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Nursing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Animation Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Accounting Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Accounts Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Graphic Design Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> HVAC Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Administration Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Journalism Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Sales Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Writing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Manufacturing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Photography Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Advertising Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Income Tax Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Interior Design Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Architecture Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Education Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Supply Chain Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Corporate Finance Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Banking Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Biotechnology Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Teaching Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Finance Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Marketing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Nursing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Animation Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Accounting Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Accounts Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Graphic Design Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> HVAC Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Administration Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Journalism Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Sales Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Writing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Manufacturing Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Photography Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Advertising Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Income Tax Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Interior Design Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Architecture Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Education Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Supply Chain Jobs </a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="#"> Corporate Finance Jobs </a></li>
+                    </ul>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,108 @@
+﻿@model Data.DTOs.UserDTO
+@{
+    ViewBag.Title = "UserRegistrationList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("UserRegistrationList", "Employee", FormMethod.Post))
+{
+    if (TempData["msg"] != null)
+    {
+        <div>
+            @TempData["msg"]
+        </div>
+    }
+    @Html.HiddenFor(m => m.Id)
+    <div class="loader"></div>
+    <div id="app">
+        <div class="main-wrapper main-wrapper-1">
+            <!-- Main Content -->
+            <div class="main-content">
+                <section class="section">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <h4 class="page-title m-b-0">User</h4>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="index.html">
+                                <i data-feather="home"></i>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">User Registration List</li>
+                    </ul>
+                    <div class="section-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>User Registration List</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped" id="table-1">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center">
+                                                            S.No.
+                                                        </th>
+                                                        <th>Name</th>
+                                                        <th>Father Name</th>
+                                                        <th>Mother Name</th>
+                                                        <th>Gender</th>
+                                                        <th>DOB</th>
+                                                        <th>Address</th>
+                                                        <th>Mobile</th>
+                                                        <th>Registration Date</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @if (Model != null)
+                                                    {
+                                                        if (Model.lst != null && Model.lstUserDetail != null)
+                                                        {
+                                                            int i = 1;
+                                                            foreach (var Item in Model.lst)
+                                                            {
+                                                                foreach (var item in Model.lstUserDetail)
+                                                                {
+                                                                    <tr>
+                                                                        <td>
+                                                                            @i
+                                                                        </td>
+                                                                        <td>@Item.UserName</td>
+                                                                        <td class="align-middle">
+                                                                            @item.FatherName
+                                                                        </td>
+                                                                        <td>
+                                                                            @item.MotherName
+                                                                        </td>
+                                                                        <td>@item.Gender</td>
+                                                                        <td>@item.DOB</td>
+                                                                        <td>
+                                                                            @item.Address
+                                                                        </td>
+                                                                        <td>@item.Mobile</td>
+                                                                        <td>@Item.CreatedAt</td>
+                                                                        <td><a href="/Admin/JobSeekerProfile?Id=@Item.Id" class="btn btn-primary">Detail</a></td>
+                                                                    </tr>
+                                                                }
+                                                                i++;
+                                                            }
+                                                        }
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+}
+

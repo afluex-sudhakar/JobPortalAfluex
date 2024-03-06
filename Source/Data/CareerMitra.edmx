@@ -1,0 +1,3603 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CareerMitra.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CareerMitraStoreContainer">
+    <EntitySet Name="Users" EntityType="CareerMitra.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="CareerMitra.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserDetails" EntityType="CareerMitra.Store.UserDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserLogs" EntityType="CareerMitra.Store.UserLogs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Courses" EntityType="CareerMitra.Store.Courses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cities" EntityType="CareerMitra.Store.Cities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EducationDetails" EntityType="CareerMitra.Store.EducationDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserDocuments" EntityType="CareerMitra.Store.UserDocuments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Skills" EntityType="CareerMitra.Store.Skills" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Categories" EntityType="CareerMitra.Store.Categories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Jobs" EntityType="CareerMitra.Store.Jobs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JobSkills" EntityType="CareerMitra.Store.JobSkills" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JobQualifications" EntityType="CareerMitra.Store.JobQualifications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JobLocations" EntityType="CareerMitra.Store.JobLocations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JobRoles" EntityType="CareerMitra.Store.JobRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JobTypes" EntityType="CareerMitra.Store.JobTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserExperiences" EntityType="CareerMitra.Store.UserExperiences" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Resumes" EntityType="CareerMitra.Store.Resumes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EnrollmentPrograms" EntityType="CareerMitra.Store.EnrollmentPrograms" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserEnrollmentPrograms" EntityType="CareerMitra.Store.UserEnrollmentPrograms" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TrainingMaterials" EntityType="CareerMitra.Store.TrainingMaterials" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserTrainingMaterials" EntityType="CareerMitra.Store.UserTrainingMaterials" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserDevices" EntityType="CareerMitra.Store.UserDevices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Notifications" EntityType="CareerMitra.Store.Notifications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserNotifications" EntityType="CareerMitra.Store.UserNotifications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserJobs" EntityType="CareerMitra.Store.UserJobs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserSkills" EntityType="CareerMitra.Store.UserSkills" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NewsLetters" EntityType="CareerMitra.Store.NewsLetters" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StaticContents" EntityType="CareerMitra.Store.StaticContents" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserEducations" EntityType="CareerMitra.Store.UserEducations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="States" EntityType="CareerMitra.Store.States" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PincodeMasters" EntityType="CareerMitra.Store.PincodeMasters" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Departments" EntityType="CareerMitra.Store.Departments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DepartmentCategories" EntityType="CareerMitra.Store.DepartmentCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Chats" EntityType="CareerMitra.Store.Chats" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChatMessages" EntityType="CareerMitra.Store.ChatMessages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Feedbacks" EntityType="CareerMitra.Store.Feedbacks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailMasters" EntityType="CareerMitra.Store.EmailMasters" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SMSMasters" EntityType="CareerMitra.Store.SMSMasters" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="RoleUser" Association="CareerMitra.Store.RoleUser">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="UserUserDetail" Association="CareerMitra.Store.UserUserDetail">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserDetail" EntitySet="UserDetails" />
+    </AssociationSet>
+    <AssociationSet Name="UserEducationDetail" Association="CareerMitra.Store.UserEducationDetail">
+      <End Role="User" EntitySet="Users" />
+      <End Role="EducationDetail" EntitySet="EducationDetails" />
+    </AssociationSet>
+    <AssociationSet Name="UserUserLog" Association="CareerMitra.Store.UserUserLog">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserLog" EntitySet="UserLogs" />
+    </AssociationSet>
+    <AssociationSet Name="UserUserDocument" Association="CareerMitra.Store.UserUserDocument">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserDocument" EntitySet="UserDocuments" />
+    </AssociationSet>
+    <AssociationSet Name="UserUserExperience" Association="CareerMitra.Store.UserUserExperience">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserExperience" EntitySet="UserExperiences" />
+    </AssociationSet>
+    <AssociationSet Name="UserResume" Association="CareerMitra.Store.UserResume">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Resume" EntitySet="Resumes" />
+    </AssociationSet>
+    <AssociationSet Name="UserUserEnrollmentProgram" Association="CareerMitra.Store.UserUserEnrollmentProgram">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserEnrollmentProgram" EntitySet="UserEnrollmentPrograms" />
+    </AssociationSet>
+    <AssociationSet Name="UserEnrollmentProgram1" Association="CareerMitra.Store.UserEnrollmentProgram1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="EnrollmentProgram" EntitySet="EnrollmentPrograms" />
+    </AssociationSet>
+    <AssociationSet Name="UserUserNotification" Association="CareerMitra.Store.UserUserNotification">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserNotification" EntitySet="UserNotifications" />
+    </AssociationSet>
+    <AssociationSet Name="CourseEducationDetail" Association="CareerMitra.Store.CourseEducationDetail">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="EducationDetail" EntitySet="EducationDetails" />
+    </AssociationSet>
+    <AssociationSet Name="CourseJobQualification" Association="CareerMitra.Store.CourseJobQualification">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="JobQualification" EntitySet="JobQualifications" />
+    </AssociationSet>
+    <AssociationSet Name="CityUserDetail" Association="CareerMitra.Store.CityUserDetail">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="UserDetail" EntitySet="UserDetails" />
+    </AssociationSet>
+    <AssociationSet Name="CityJobLocation" Association="CareerMitra.Store.CityJobLocation">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="JobLocation" EntitySet="JobLocations" />
+    </AssociationSet>
+    <AssociationSet Name="SkillJobSkill" Association="CareerMitra.Store.SkillJobSkill">
+      <End Role="Skill" EntitySet="Skills" />
+      <End Role="JobSkill" EntitySet="JobSkills" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryJob" Association="CareerMitra.Store.CategoryJob">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Job" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="JobJobSkill" Association="CareerMitra.Store.JobJobSkill">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="JobSkill" EntitySet="JobSkills" />
+    </AssociationSet>
+    <AssociationSet Name="JobJobQualification" Association="CareerMitra.Store.JobJobQualification">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="JobQualification" EntitySet="JobQualifications" />
+    </AssociationSet>
+    <AssociationSet Name="JobRoleJob" Association="CareerMitra.Store.JobRoleJob">
+      <End Role="JobRole" EntitySet="JobRoles" />
+      <End Role="Job" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="JobRoleUserExperience" Association="CareerMitra.Store.JobRoleUserExperience">
+      <End Role="JobRole" EntitySet="JobRoles" />
+      <End Role="UserExperience" EntitySet="UserExperiences" />
+    </AssociationSet>
+    <AssociationSet Name="JobTypeJob" Association="CareerMitra.Store.JobTypeJob">
+      <End Role="JobType" EntitySet="JobTypes" />
+      <End Role="Job" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="EnrollmentProgramUserEnrollmentProgram" Association="CareerMitra.Store.EnrollmentProgramUserEnrollmentProgram">
+      <End Role="EnrollmentProgram" EntitySet="EnrollmentPrograms" />
+      <End Role="UserEnrollmentProgram" EntitySet="UserEnrollmentPrograms" />
+    </AssociationSet>
+    <AssociationSet Name="EnrollmentProgramTrainingMaterial" Association="CareerMitra.Store.EnrollmentProgramTrainingMaterial">
+      <End Role="EnrollmentProgram" EntitySet="EnrollmentPrograms" />
+      <End Role="TrainingMaterial" EntitySet="TrainingMaterials" />
+    </AssociationSet>
+    <AssociationSet Name="TrainingMaterialUserTrainingMaterial" Association="CareerMitra.Store.TrainingMaterialUserTrainingMaterial">
+      <End Role="TrainingMaterial" EntitySet="TrainingMaterials" />
+      <End Role="UserTrainingMaterial" EntitySet="UserTrainingMaterials" />
+    </AssociationSet>
+    <AssociationSet Name="NotificationUserNotification" Association="CareerMitra.Store.NotificationUserNotification">
+      <End Role="Notification" EntitySet="Notifications" />
+      <End Role="UserNotification" EntitySet="UserNotifications" />
+    </AssociationSet>
+    <AssociationSet Name="UserUserTrainingMaterial" Association="CareerMitra.Store.UserUserTrainingMaterial">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserTrainingMaterial" EntitySet="UserTrainingMaterials" />
+    </AssociationSet>
+    <AssociationSet Name="UserUserDevice" Association="CareerMitra.Store.UserUserDevice">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserDevice" EntitySet="UserDevices" />
+    </AssociationSet>
+    <AssociationSet Name="UserUserJob" Association="CareerMitra.Store.UserUserJob">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserJob" EntitySet="UserJobs" />
+    </AssociationSet>
+    <AssociationSet Name="JobUserJob" Association="CareerMitra.Store.JobUserJob">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="UserJob" EntitySet="UserJobs" />
+    </AssociationSet>
+    <AssociationSet Name="UserJob1" Association="CareerMitra.Store.UserJob1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Job" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="UserUserSkill" Association="CareerMitra.Store.UserUserSkill">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserSkill" EntitySet="UserSkills" />
+    </AssociationSet>
+    <AssociationSet Name="SkillUserSkill" Association="CareerMitra.Store.SkillUserSkill">
+      <End Role="Skill" EntitySet="Skills" />
+      <End Role="UserSkill" EntitySet="UserSkills" />
+    </AssociationSet>
+    <AssociationSet Name="UserUserEducation" Association="CareerMitra.Store.UserUserEducation">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserEducation" EntitySet="UserEducations" />
+    </AssociationSet>
+    <AssociationSet Name="CourseUserEducation" Association="CareerMitra.Store.CourseUserEducation">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="UserEducation" EntitySet="UserEducations" />
+    </AssociationSet>
+    <AssociationSet Name="StateCity" Association="CareerMitra.Store.StateCity">
+      <End Role="State" EntitySet="States" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="Pincode" Association="CareerMitra.Store.Pincode">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Role" EntitySet="Roles" />
+    </AssociationSet>
+    <AssociationSet Name="CityPincodeMaster" Association="CareerMitra.Store.CityPincodeMaster">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="PincodeMaster" EntitySet="PincodeMasters" />
+    </AssociationSet>
+    <AssociationSet Name="DepartmentJob" Association="CareerMitra.Store.DepartmentJob">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Job" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="DepartmentDepartmentCategory" Association="CareerMitra.Store.DepartmentDepartmentCategory">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="DepartmentCategory" EntitySet="DepartmentCategories" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryDepartmentCategory" Association="CareerMitra.Store.CategoryDepartmentCategory">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="DepartmentCategory" EntitySet="DepartmentCategories" />
+    </AssociationSet>
+    <AssociationSet Name="ChatChatMessage" Association="CareerMitra.Store.ChatChatMessage">
+      <End Role="Chat" EntitySet="Chats" />
+      <End Role="ChatMessage" EntitySet="ChatMessages" />
+    </AssociationSet>
+    <AssociationSet Name="UserChat" Association="CareerMitra.Store.UserChat">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Chat" EntitySet="Chats" />
+    </AssociationSet>
+    <AssociationSet Name="UserChat1" Association="CareerMitra.Store.UserChat1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Chat" EntitySet="Chats" />
+    </AssociationSet>
+    <AssociationSet Name="JobChat" Association="CareerMitra.Store.JobChat">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="Chat" EntitySet="Chats" />
+    </AssociationSet>
+    <AssociationSet Name="UserChatMessage" Association="CareerMitra.Store.UserChatMessage">
+      <End Role="User" EntitySet="Users" />
+      <End Role="ChatMessage" EntitySet="ChatMessages" />
+    </AssociationSet>
+    <AssociationSet Name="UserChatMessage1" Association="CareerMitra.Store.UserChatMessage1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="ChatMessage" EntitySet="ChatMessages" />
+    </AssociationSet>
+    <AssociationSet Name="PincodeMasterJobLocation" Association="CareerMitra.Store.PincodeMasterJobLocation">
+      <End Role="PincodeMaster" EntitySet="PincodeMasters" />
+      <End Role="JobLocation" EntitySet="JobLocations" />
+    </AssociationSet>
+    <AssociationSet Name="JobJobLocation" Association="CareerMitra.Store.JobJobLocation">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="JobLocation" EntitySet="JobLocations" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TemporaryPassword" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsChangePassword" Type="bit" Nullable="true" />
+    <Property Name="IsVerified" Type="bit" Nullable="false" />
+    <Property Name="IsProfileUpdate" Type="bit" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="IsBlocked" Type="bit" Nullable="true" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+    <Property Name="RoleId" Type="int" Nullable="true" />
+    <Property Name="OTP" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="OTPExpireAt" Type="datetime" Nullable="true" />
+    <Property Name="Mode" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="true" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Mobile" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="Mobile2" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="Gender" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MiddleName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FatherName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MotherName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SpouseName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="HusbandName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DOB" Type="datetime" Nullable="true" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PinCode" Type="int" Nullable="true" />
+    <Property Name="State" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Photo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CompanyName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Designation" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ContactPersonName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="NoOfEmployees" Type="int" Nullable="true" />
+    <Property Name="About" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CityId" Type="int" Nullable="true" />
+    <Property Name="Logo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CompanyType" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Lat" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Long" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="UserLogs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="true" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DeviceType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DeviceId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OS" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IP" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserAgent" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Domain" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="Lat" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Lng" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DeviceOtherInfo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Data" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Error" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Courses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="NameH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="NameH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+    <Property Name="StateId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="EducationDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="true" />
+    <Property Name="CourseId" Type="int" Nullable="true" />
+    <Property Name="YearFrom" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="YearTo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MarksObt" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TotalMarks" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="UserDocuments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentTypeId" Type="int" Nullable="true" />
+    <Property Name="Attachment" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+    <Property Name="UserId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Skills">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="NameH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="NameH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Jobs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TitleH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ShortDescription" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ShortDescriptionH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DescriptionH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SalaryMin" Type="decimal" Nullable="true" Precision="18" Scale="2" />
+    <Property Name="SalaryMax" Type="decimal" Nullable="true" Precision="18" Scale="2" />
+    <Property Name="IsMonthly" Type="bit" Nullable="false" />
+    <Property Name="ExperienceMin" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ExperienceMax" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsPublishd" Type="bit" Nullable="false" />
+    <Property Name="PostedDate" Type="datetime" Nullable="false" />
+    <Property Name="LastDate" Type="datetime" Nullable="true" />
+    <Property Name="IsVerified" Type="bit" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NoOfVacancies" Type="int" Nullable="true" />
+    <Property Name="CategoryId" Type="int" Nullable="true" />
+    <Property Name="JobRoleId" Type="int" Nullable="true" />
+    <Property Name="JobTypeId" Type="int" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+    <Property Name="UserId" Type="int" Nullable="true" />
+    <Property Name="DepartmentId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="JobSkills">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobId" Type="int" Nullable="true" />
+    <Property Name="SkillId" Type="int" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="JobQualifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobId" Type="int" Nullable="true" />
+    <Property Name="CourseId" Type="int" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="JobLocations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityId" Type="int" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+    <Property Name="PincodeMasterId" Type="int" Nullable="true" />
+    <Property Name="JobId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="JobRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="NameH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+    <Property Name="IsBlocked" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="JobTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="NameH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="UserExperiences">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="true" />
+    <Property Name="CompanyName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CompanyNameH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="YearFrom" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="YearTo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="JobRoleId" Type="int" Nullable="true" />
+    <Property Name="Designation" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DesignationH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DescriptionH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="IsCurrent" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Resumes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="true" />
+    <Property Name="Attachment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="EnrollmentPrograms">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TitleH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DescriptionH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="UserId" Type="int" Nullable="true" />
+    <Property Name="Image" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DateStart" Type="datetime" Nullable="true" />
+    <Property Name="DateEnd" Type="datetime" Nullable="true" />
+    <Property Name="LastDate" Type="datetime" Nullable="true" />
+    <Property Name="PublishDate" Type="datetime" Nullable="true" />
+    <Property Name="Duration" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="UserEnrollmentPrograms">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EnrollmentProgramId" Type="int" Nullable="true" />
+    <Property Name="UserId" Type="int" Nullable="true" />
+    <Property Name="IsApproved" Type="bit" Nullable="false" />
+    <Property Name="IsCompleted" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="TrainingMaterials">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EnrollmentProgramId" Type="int" Nullable="true" />
+    <Property Name="UserId" Type="int" Nullable="true" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TitleH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ShortDescription" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ShortDescriptionH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DescriptionH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Link" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Attachment" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PublishDate" Type="datetime" Nullable="false" />
+    <Property Name="IsPublished" Type="bit" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="UserTrainingMaterials">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrainingMaterialId" Type="int" Nullable="true" />
+    <Property Name="UserId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="UserDevices">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceId" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MobileNo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DeviceType" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FCMId" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+    <Property Name="UserId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Notifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TitleH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DescriptionH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Link" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Logo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsSchedule" Type="bit" Nullable="false" />
+    <Property Name="DateFrom" Type="datetime" Nullable="true" />
+    <Property Name="DateTo" Type="datetime" Nullable="true" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+    <Property Name="Image" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="UserNotifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NotificationId" Type="int" Nullable="true" />
+    <Property Name="UserDeviceId" Type="int" Nullable="true" />
+    <Property Name="UserId" Type="int" Nullable="true" />
+    <Property Name="Medium" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="UserJobs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+    <Property Name="JobId" Type="int" Nullable="true" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserSkills">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="true" />
+    <Property Name="SkillId" Type="int" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="NewsLetters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="StaticContents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TitleH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ShortDescription" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ShortDescriptionH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DescriptionH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsPublishd" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+    <Property Name="PageName" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="UserEducations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CollegeName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="YearOfPassing" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+    <Property Name="UserId" Type="int" Nullable="true" />
+    <Property Name="CourseId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="States">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="NameH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="PincodeMasters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="NameH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PinCode" Type="int" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+    <Property Name="CityId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="NameH" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="DepartmentCategories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentId" Type="int" Nullable="true" />
+    <Property Name="CategoryId" Type="int" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Chats">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Employer" Type="int" Nullable="true" />
+    <Property Name="JobSeeker" Type="int" Nullable="true" />
+    <Property Name="JobId" Type="int" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ChatMessages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChatId" Type="int" Nullable="true" />
+    <Property Name="Employer" Type="int" Nullable="true" />
+    <Property Name="JobSeeker" Type="int" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="IsUnRead" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+    <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Feedbacks">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Mobile" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Message" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Medium" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="EmailMasters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="To" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="From" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Subject" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Body" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsTemplate" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="SMSMasters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="To" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="From" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Subject" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Body" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsTemplate" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedAt" Type="datetime" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <Association Name="RoleUser">
+    <End Role="Role" Type="CareerMitra.Store.Roles" Multiplicity="0..1" />
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserUserDetail">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="0..1" />
+    <End Role="UserDetail" Type="CareerMitra.Store.UserDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetail">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserEducationDetail">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="0..1" />
+    <End Role="EducationDetail" Type="CareerMitra.Store.EducationDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EducationDetail">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserUserLog">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="0..1" />
+    <End Role="UserLog" Type="CareerMitra.Store.UserLogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserLog">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserUserDocument">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="0..1" />
+    <End Role="UserDocument" Type="CareerMitra.Store.UserDocuments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDocument">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserUserExperience">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="0..1" />
+    <End Role="UserExperience" Type="CareerMitra.Store.UserExperiences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserExperience">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserResume">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="0..1" />
+    <End Role="Resume" Type="CareerMitra.Store.Resumes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Resume">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserUserEnrollmentProgram">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="0..1" />
+    <End Role="UserEnrollmentProgram" Type="CareerMitra.Store.UserEnrollmentPrograms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserEnrollmentProgram">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserEnrollmentProgram1">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="0..1" />
+    <End Role="EnrollmentProgram" Type="CareerMitra.Store.EnrollmentPrograms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EnrollmentProgram">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserUserNotification">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="0..1" />
+    <End Role="UserNotification" Type="CareerMitra.Store.UserNotifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserNotification">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CourseEducationDetail">
+    <End Role="Course" Type="CareerMitra.Store.Courses" Multiplicity="0..1" />
+    <End Role="EducationDetail" Type="CareerMitra.Store.EducationDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EducationDetail">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CourseJobQualification">
+    <End Role="Course" Type="CareerMitra.Store.Courses" Multiplicity="0..1" />
+    <End Role="JobQualification" Type="CareerMitra.Store.JobQualifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="JobQualification">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CityUserDetail">
+    <End Role="City" Type="CareerMitra.Store.Cities" Multiplicity="0..1" />
+    <End Role="UserDetail" Type="CareerMitra.Store.UserDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetail">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CityJobLocation">
+    <End Role="City" Type="CareerMitra.Store.Cities" Multiplicity="0..1" />
+    <End Role="JobLocation" Type="CareerMitra.Store.JobLocations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="JobLocation">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SkillJobSkill">
+    <End Role="Skill" Type="CareerMitra.Store.Skills" Multiplicity="0..1" />
+    <End Role="JobSkill" Type="CareerMitra.Store.JobSkills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skill">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="JobSkill">
+        <PropertyRef Name="SkillId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CategoryJob">
+    <End Role="Category" Type="CareerMitra.Store.Categories" Multiplicity="0..1" />
+    <End Role="Job" Type="CareerMitra.Store.Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobJobSkill">
+    <End Role="Job" Type="CareerMitra.Store.Jobs" Multiplicity="0..1" />
+    <End Role="JobSkill" Type="CareerMitra.Store.JobSkills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="JobSkill">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobJobQualification">
+    <End Role="Job" Type="CareerMitra.Store.Jobs" Multiplicity="0..1" />
+    <End Role="JobQualification" Type="CareerMitra.Store.JobQualifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="JobQualification">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobRoleJob">
+    <End Role="JobRole" Type="CareerMitra.Store.JobRoles" Multiplicity="0..1" />
+    <End Role="Job" Type="CareerMitra.Store.Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobRole">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="JobRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobRoleUserExperience">
+    <End Role="JobRole" Type="CareerMitra.Store.JobRoles" Multiplicity="0..1" />
+    <End Role="UserExperience" Type="CareerMitra.Store.UserExperiences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobRole">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserExperience">
+        <PropertyRef Name="JobRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobTypeJob">
+    <End Role="JobType" Type="CareerMitra.Store.JobTypes" Multiplicity="0..1" />
+    <End Role="Job" Type="CareerMitra.Store.Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="JobTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EnrollmentProgramUserEnrollmentProgram">
+    <End Role="EnrollmentProgram" Type="CareerMitra.Store.EnrollmentPrograms" Multiplicity="0..1" />
+    <End Role="UserEnrollmentProgram" Type="CareerMitra.Store.UserEnrollmentPrograms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnrollmentProgram">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserEnrollmentProgram">
+        <PropertyRef Name="EnrollmentProgramId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EnrollmentProgramTrainingMaterial">
+    <End Role="EnrollmentProgram" Type="CareerMitra.Store.EnrollmentPrograms" Multiplicity="0..1" />
+    <End Role="TrainingMaterial" Type="CareerMitra.Store.TrainingMaterials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnrollmentProgram">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TrainingMaterial">
+        <PropertyRef Name="EnrollmentProgramId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TrainingMaterialUserTrainingMaterial">
+    <End Role="TrainingMaterial" Type="CareerMitra.Store.TrainingMaterials" Multiplicity="0..1" />
+    <End Role="UserTrainingMaterial" Type="CareerMitra.Store.UserTrainingMaterials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TrainingMaterial">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserTrainingMaterial">
+        <PropertyRef Name="TrainingMaterialId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NotificationUserNotification">
+    <End Role="Notification" Type="CareerMitra.Store.Notifications" Multiplicity="0..1" />
+    <End Role="UserNotification" Type="CareerMitra.Store.UserNotifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Notification">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserNotification">
+        <PropertyRef Name="NotificationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserUserTrainingMaterial">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="0..1" />
+    <End Role="UserTrainingMaterial" Type="CareerMitra.Store.UserTrainingMaterials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserTrainingMaterial">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserUserDevice">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="0..1" />
+    <End Role="UserDevice" Type="CareerMitra.Store.UserDevices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDevice">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserUserJob">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="0..1" />
+    <End Role="UserJob" Type="CareerMitra.Store.UserJobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserJob">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobUserJob">
+    <End Role="Job" Type="CareerMitra.Store.Jobs" Multiplicity="0..1" />
+    <End Role="UserJob" Type="CareerMitra.Store.UserJobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserJob">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserJob1">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="0..1" />
+    <End Role="Job" Type="CareerMitra.Store.Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserUserSkill">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="0..1" />
+    <End Role="UserSkill" Type="CareerMitra.Store.UserSkills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserSkill">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SkillUserSkill">
+    <End Role="Skill" Type="CareerMitra.Store.Skills" Multiplicity="0..1" />
+    <End Role="UserSkill" Type="CareerMitra.Store.UserSkills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skill">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserSkill">
+        <PropertyRef Name="SkillId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserUserEducation">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="0..1" />
+    <End Role="UserEducation" Type="CareerMitra.Store.UserEducations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserEducation">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CourseUserEducation">
+    <End Role="Course" Type="CareerMitra.Store.Courses" Multiplicity="0..1" />
+    <End Role="UserEducation" Type="CareerMitra.Store.UserEducations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserEducation">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StateCity">
+    <End Role="State" Type="CareerMitra.Store.States" Multiplicity="0..1" />
+    <End Role="City" Type="CareerMitra.Store.Cities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Pincode">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="1" />
+    <End Role="Role" Type="CareerMitra.Store.Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Role">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CityPincodeMaster">
+    <End Role="City" Type="CareerMitra.Store.Cities" Multiplicity="0..1" />
+    <End Role="PincodeMaster" Type="CareerMitra.Store.PincodeMasters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PincodeMaster">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DepartmentJob">
+    <End Role="Department" Type="CareerMitra.Store.Departments" Multiplicity="0..1" />
+    <End Role="Job" Type="CareerMitra.Store.Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DepartmentDepartmentCategory">
+    <End Role="Department" Type="CareerMitra.Store.Departments" Multiplicity="0..1" />
+    <End Role="DepartmentCategory" Type="CareerMitra.Store.DepartmentCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DepartmentCategory">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CategoryDepartmentCategory">
+    <End Role="Category" Type="CareerMitra.Store.Categories" Multiplicity="0..1" />
+    <End Role="DepartmentCategory" Type="CareerMitra.Store.DepartmentCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DepartmentCategory">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChatChatMessage">
+    <End Role="Chat" Type="CareerMitra.Store.Chats" Multiplicity="0..1" />
+    <End Role="ChatMessage" Type="CareerMitra.Store.ChatMessages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chat">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChatMessage">
+        <PropertyRef Name="ChatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserChat">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="0..1" />
+    <End Role="Chat" Type="CareerMitra.Store.Chats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Chat">
+        <PropertyRef Name="Employer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserChat1">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="0..1" />
+    <End Role="Chat" Type="CareerMitra.Store.Chats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Chat">
+        <PropertyRef Name="JobSeeker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobChat">
+    <End Role="Job" Type="CareerMitra.Store.Jobs" Multiplicity="0..1" />
+    <End Role="Chat" Type="CareerMitra.Store.Chats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Chat">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserChatMessage">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="0..1" />
+    <End Role="ChatMessage" Type="CareerMitra.Store.ChatMessages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChatMessage">
+        <PropertyRef Name="Employer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserChatMessage1">
+    <End Role="User" Type="CareerMitra.Store.Users" Multiplicity="0..1" />
+    <End Role="ChatMessage" Type="CareerMitra.Store.ChatMessages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChatMessage">
+        <PropertyRef Name="JobSeeker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PincodeMasterJobLocation">
+    <End Role="PincodeMaster" Type="CareerMitra.Store.PincodeMasters" Multiplicity="0..1" />
+    <End Role="JobLocation" Type="CareerMitra.Store.JobLocations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PincodeMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="JobLocation">
+        <PropertyRef Name="PincodeMasterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobJobLocation">
+    <End Role="Job" Type="CareerMitra.Store.Jobs" Multiplicity="0..1" />
+    <End Role="JobLocation" Type="CareerMitra.Store.JobLocations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="JobLocation">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="CareerMitra" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="CareerMitraContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="CareerMitra.User" />
+          <EntitySet Name="Roles" EntityType="CareerMitra.Role" />
+          <EntitySet Name="UserDetails" EntityType="CareerMitra.UserDetail" />
+          <EntitySet Name="UserLogs" EntityType="CareerMitra.UserLog" />
+          <EntitySet Name="Courses" EntityType="CareerMitra.Course" />
+          <EntitySet Name="Cities" EntityType="CareerMitra.City" />
+          <EntitySet Name="EducationDetails" EntityType="CareerMitra.EducationDetail" />
+          <EntitySet Name="UserDocuments" EntityType="CareerMitra.UserDocument" />
+          <EntitySet Name="Skills" EntityType="CareerMitra.Skill" />
+          <EntitySet Name="Categories" EntityType="CareerMitra.Category" />
+          <EntitySet Name="Jobs" EntityType="CareerMitra.Job" />
+          <EntitySet Name="JobSkills" EntityType="CareerMitra.JobSkill" />
+          <EntitySet Name="JobQualifications" EntityType="CareerMitra.JobQualification" />
+          <EntitySet Name="JobLocations" EntityType="CareerMitra.JobLocation" />
+          <EntitySet Name="JobRoles" EntityType="CareerMitra.JobRole" />
+          <EntitySet Name="JobTypes" EntityType="CareerMitra.JobType" />
+          <EntitySet Name="UserExperiences" EntityType="CareerMitra.UserExperience" />
+          <EntitySet Name="Resumes" EntityType="CareerMitra.Resume" />
+          <EntitySet Name="EnrollmentPrograms" EntityType="CareerMitra.EnrollmentProgram" />
+          <EntitySet Name="UserEnrollmentPrograms" EntityType="CareerMitra.UserEnrollmentProgram" />
+          <EntitySet Name="TrainingMaterials" EntityType="CareerMitra.TrainingMaterial" />
+          <EntitySet Name="UserTrainingMaterials" EntityType="CareerMitra.UserTrainingMaterial" />
+          <EntitySet Name="UserDevices" EntityType="CareerMitra.UserDevice" />
+          <EntitySet Name="Notifications" EntityType="CareerMitra.Notification" />
+          <EntitySet Name="UserNotifications" EntityType="CareerMitra.UserNotification" />
+          <AssociationSet Name="RoleUser" Association="CareerMitra.RoleUser">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="UserUserDetail" Association="CareerMitra.UserUserDetail">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserDetail" EntitySet="UserDetails" />
+          </AssociationSet>
+          <AssociationSet Name="UserEducationDetail" Association="CareerMitra.UserEducationDetail">
+            <End Role="User" EntitySet="Users" />
+            <End Role="EducationDetail" EntitySet="EducationDetails" />
+          </AssociationSet>
+          <AssociationSet Name="UserUserLog" Association="CareerMitra.UserUserLog">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserLog" EntitySet="UserLogs" />
+          </AssociationSet>
+          <AssociationSet Name="UserUserDocument" Association="CareerMitra.UserUserDocument">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserDocument" EntitySet="UserDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="UserUserExperience" Association="CareerMitra.UserUserExperience">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserExperience" EntitySet="UserExperiences" />
+          </AssociationSet>
+          <AssociationSet Name="UserResume" Association="CareerMitra.UserResume">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Resume" EntitySet="Resumes" />
+          </AssociationSet>
+          <AssociationSet Name="UserUserEnrollmentProgram" Association="CareerMitra.UserUserEnrollmentProgram">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserEnrollmentProgram" EntitySet="UserEnrollmentPrograms" />
+          </AssociationSet>
+          <AssociationSet Name="UserEnrollmentProgram1" Association="CareerMitra.UserEnrollmentProgram1">
+            <End Role="User" EntitySet="Users" />
+            <End Role="EnrollmentProgram" EntitySet="EnrollmentPrograms" />
+          </AssociationSet>
+          <AssociationSet Name="UserUserNotification" Association="CareerMitra.UserUserNotification">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserNotification" EntitySet="UserNotifications" />
+          </AssociationSet>
+          <AssociationSet Name="CourseEducationDetail" Association="CareerMitra.CourseEducationDetail">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="EducationDetail" EntitySet="EducationDetails" />
+          </AssociationSet>
+          <AssociationSet Name="CourseJobQualification" Association="CareerMitra.CourseJobQualification">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="JobQualification" EntitySet="JobQualifications" />
+          </AssociationSet>
+          <AssociationSet Name="CityUserDetail" Association="CareerMitra.CityUserDetail">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="UserDetail" EntitySet="UserDetails" />
+          </AssociationSet>
+          <AssociationSet Name="CityJobLocation" Association="CareerMitra.CityJobLocation">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="JobLocation" EntitySet="JobLocations" />
+          </AssociationSet>
+          <AssociationSet Name="SkillJobSkill" Association="CareerMitra.SkillJobSkill">
+            <End Role="Skill" EntitySet="Skills" />
+            <End Role="JobSkill" EntitySet="JobSkills" />
+          </AssociationSet>
+          <AssociationSet Name="CategoryJob" Association="CareerMitra.CategoryJob">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Job" EntitySet="Jobs" />
+          </AssociationSet>
+          <AssociationSet Name="JobJobSkill" Association="CareerMitra.JobJobSkill">
+            <End Role="Job" EntitySet="Jobs" />
+            <End Role="JobSkill" EntitySet="JobSkills" />
+          </AssociationSet>
+          <AssociationSet Name="JobJobQualification" Association="CareerMitra.JobJobQualification">
+            <End Role="Job" EntitySet="Jobs" />
+            <End Role="JobQualification" EntitySet="JobQualifications" />
+          </AssociationSet>
+          <AssociationSet Name="JobRoleJob" Association="CareerMitra.JobRoleJob">
+            <End Role="JobRole" EntitySet="JobRoles" />
+            <End Role="Job" EntitySet="Jobs" />
+          </AssociationSet>
+          <AssociationSet Name="JobRoleUserExperience" Association="CareerMitra.JobRoleUserExperience">
+            <End Role="JobRole" EntitySet="JobRoles" />
+            <End Role="UserExperience" EntitySet="UserExperiences" />
+          </AssociationSet>
+          <AssociationSet Name="JobTypeJob" Association="CareerMitra.JobTypeJob">
+            <End Role="JobType" EntitySet="JobTypes" />
+            <End Role="Job" EntitySet="Jobs" />
+          </AssociationSet>
+          <AssociationSet Name="EnrollmentProgramUserEnrollmentProgram" Association="CareerMitra.EnrollmentProgramUserEnrollmentProgram">
+            <End Role="EnrollmentProgram" EntitySet="EnrollmentPrograms" />
+            <End Role="UserEnrollmentProgram" EntitySet="UserEnrollmentPrograms" />
+          </AssociationSet>
+          <AssociationSet Name="EnrollmentProgramTrainingMaterial" Association="CareerMitra.EnrollmentProgramTrainingMaterial">
+            <End Role="EnrollmentProgram" EntitySet="EnrollmentPrograms" />
+            <End Role="TrainingMaterial" EntitySet="TrainingMaterials" />
+          </AssociationSet>
+          <AssociationSet Name="TrainingMaterialUserTrainingMaterial" Association="CareerMitra.TrainingMaterialUserTrainingMaterial">
+            <End Role="TrainingMaterial" EntitySet="TrainingMaterials" />
+            <End Role="UserTrainingMaterial" EntitySet="UserTrainingMaterials" />
+          </AssociationSet>
+          <AssociationSet Name="NotificationUserNotification" Association="CareerMitra.NotificationUserNotification">
+            <End Role="Notification" EntitySet="Notifications" />
+            <End Role="UserNotification" EntitySet="UserNotifications" />
+          </AssociationSet>
+          <AssociationSet Name="UserUserTrainingMaterial" Association="CareerMitra.UserUserTrainingMaterial">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserTrainingMaterial" EntitySet="UserTrainingMaterials" />
+          </AssociationSet>
+          <AssociationSet Name="UserUserDevice" Association="CareerMitra.UserUserDevice">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserDevice" EntitySet="UserDevices" />
+          </AssociationSet>
+          <EntitySet Name="UserJobs" EntityType="CareerMitra.UserJob" />
+          <AssociationSet Name="UserUserJob" Association="CareerMitra.UserUserJob">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserJob" EntitySet="UserJobs" />
+          </AssociationSet>
+          <AssociationSet Name="JobUserJob" Association="CareerMitra.JobUserJob">
+            <End Role="Job" EntitySet="Jobs" />
+            <End Role="UserJob" EntitySet="UserJobs" />
+          </AssociationSet>
+          <AssociationSet Name="UserJob1" Association="CareerMitra.UserJob1">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Job" EntitySet="Jobs" />
+          </AssociationSet>
+          <EntitySet Name="UserSkills" EntityType="CareerMitra.UserSkill" />
+          <AssociationSet Name="UserUserSkill" Association="CareerMitra.UserUserSkill">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserSkill" EntitySet="UserSkills" />
+          </AssociationSet>
+          <AssociationSet Name="SkillUserSkill" Association="CareerMitra.SkillUserSkill">
+            <End Role="Skill" EntitySet="Skills" />
+            <End Role="UserSkill" EntitySet="UserSkills" />
+          </AssociationSet>
+          <EntitySet Name="NewsLetters" EntityType="CareerMitra.NewsLetter" />
+          <EntitySet Name="StaticContents" EntityType="CareerMitra.StaticContent" />
+          <EntitySet Name="UserEducations" EntityType="CareerMitra.UserEducation" />
+          <AssociationSet Name="UserUserEducation" Association="CareerMitra.UserUserEducation">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserEducation" EntitySet="UserEducations" />
+          </AssociationSet>
+          <AssociationSet Name="CourseUserEducation" Association="CareerMitra.CourseUserEducation">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="UserEducation" EntitySet="UserEducations" />
+          </AssociationSet>
+          <EntitySet Name="States" EntityType="CareerMitra.State" />
+          <AssociationSet Name="StateCity" Association="CareerMitra.StateCity">
+            <End Role="State" EntitySet="States" />
+            <End Role="City" EntitySet="Cities" />
+          </AssociationSet>
+          <AssociationSet Name="Pincode" Association="CareerMitra.Pincode">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Role" EntitySet="Roles" />
+          </AssociationSet>
+          <EntitySet Name="PincodeMasters" EntityType="CareerMitra.PincodeMaster" />
+          <AssociationSet Name="CityPincodeMaster" Association="CareerMitra.CityPincodeMaster">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="PincodeMaster" EntitySet="PincodeMasters" />
+          </AssociationSet>
+          <EntitySet Name="Departments" EntityType="CareerMitra.Department" />
+          <AssociationSet Name="DepartmentJob" Association="CareerMitra.DepartmentJob">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Job" EntitySet="Jobs" />
+          </AssociationSet>
+          <EntitySet Name="DepartmentCategories" EntityType="CareerMitra.DepartmentCategory" />
+          <AssociationSet Name="DepartmentDepartmentCategory" Association="CareerMitra.DepartmentDepartmentCategory">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="DepartmentCategory" EntitySet="DepartmentCategories" />
+          </AssociationSet>
+          <AssociationSet Name="CategoryDepartmentCategory" Association="CareerMitra.CategoryDepartmentCategory">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="DepartmentCategory" EntitySet="DepartmentCategories" />
+          </AssociationSet>
+          <EntitySet Name="Chats" EntityType="CareerMitra.Chat" />
+          <EntitySet Name="ChatMessages" EntityType="CareerMitra.ChatMessage" />
+          <AssociationSet Name="ChatChatMessage" Association="CareerMitra.ChatChatMessage">
+            <End Role="Chat" EntitySet="Chats" />
+            <End Role="ChatMessage" EntitySet="ChatMessages" />
+          </AssociationSet>
+          <AssociationSet Name="UserChat" Association="CareerMitra.UserChat">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Chat" EntitySet="Chats" />
+          </AssociationSet>
+          <AssociationSet Name="UserChat1" Association="CareerMitra.UserChat1">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Chat" EntitySet="Chats" />
+          </AssociationSet>
+          <AssociationSet Name="JobChat" Association="CareerMitra.JobChat">
+            <End Role="Job" EntitySet="Jobs" />
+            <End Role="Chat" EntitySet="Chats" />
+          </AssociationSet>
+          <AssociationSet Name="UserChatMessage" Association="CareerMitra.UserChatMessage">
+            <End Role="User" EntitySet="Users" />
+            <End Role="ChatMessage" EntitySet="ChatMessages" />
+          </AssociationSet>
+          <AssociationSet Name="UserChatMessage1" Association="CareerMitra.UserChatMessage1">
+            <End Role="User" EntitySet="Users" />
+            <End Role="ChatMessage" EntitySet="ChatMessages" />
+          </AssociationSet>
+          <EntitySet Name="Feedbacks" EntityType="CareerMitra.Feedback" />
+          <AssociationSet Name="PincodeMasterJobLocation" Association="CareerMitra.PincodeMasterJobLocation">
+            <End Role="PincodeMaster" EntitySet="PincodeMasters" />
+            <End Role="JobLocation" EntitySet="JobLocations" />
+          </AssociationSet>
+          <AssociationSet Name="JobJobLocation" Association="CareerMitra.JobJobLocation">
+            <End Role="Job" EntitySet="Jobs" />
+            <End Role="JobLocation" EntitySet="JobLocations" />
+          </AssociationSet>
+          <EntitySet Name="EmailMasters" EntityType="CareerMitra.EmailMaster" />
+          <EntitySet Name="SMSMasters" EntityType="CareerMitra.SMSMaster" />
+        </EntityContainer>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" />
+          <Property Name="TemporaryPassword" Type="String" Nullable="false" />
+          <Property Name="IsChangePassword" Type="Boolean" Nullable="true" />
+          <Property Name="IsVerified" Type="Boolean" Nullable="false" />
+          <Property Name="IsProfileUpdate" Type="Boolean" Nullable="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsBlocked" Type="Boolean" Nullable="true" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <Property Name="RoleId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Role" Relationship="CareerMitra.RoleUser" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="UserDetails" Relationship="CareerMitra.UserUserDetail" FromRole="User" ToRole="UserDetail" />
+          <NavigationProperty Name="EducationDetails" Relationship="CareerMitra.UserEducationDetail" FromRole="User" ToRole="EducationDetail" />
+          <NavigationProperty Name="UserLogs" Relationship="CareerMitra.UserUserLog" FromRole="User" ToRole="UserLog" />
+          <NavigationProperty Name="UserDocuments" Relationship="CareerMitra.UserUserDocument" FromRole="User" ToRole="UserDocument" />
+          <NavigationProperty Name="UserExperiences" Relationship="CareerMitra.UserUserExperience" FromRole="User" ToRole="UserExperience" />
+          <NavigationProperty Name="Resumes" Relationship="CareerMitra.UserResume" FromRole="User" ToRole="Resume" />
+          <NavigationProperty Name="UserEnrollmentPrograms" Relationship="CareerMitra.UserUserEnrollmentProgram" FromRole="User" ToRole="UserEnrollmentProgram" />
+          <NavigationProperty Name="EnrollmentPrograms" Relationship="CareerMitra.UserEnrollmentProgram1" FromRole="User" ToRole="EnrollmentProgram" />
+          <NavigationProperty Name="UserNotifications" Relationship="CareerMitra.UserUserNotification" FromRole="User" ToRole="UserNotification" />
+          <NavigationProperty Name="UserTrainingMaterials" Relationship="CareerMitra.UserUserTrainingMaterial" FromRole="User" ToRole="UserTrainingMaterial" />
+          <NavigationProperty Name="UserDevices" Relationship="CareerMitra.UserUserDevice" FromRole="User" ToRole="UserDevice" />
+          <NavigationProperty Name="UserJobs" Relationship="CareerMitra.UserUserJob" FromRole="User" ToRole="UserJob" />
+          <NavigationProperty Name="Jobs" Relationship="CareerMitra.UserJob1" FromRole="User" ToRole="Job" />
+          <NavigationProperty Name="UserSkills" Relationship="CareerMitra.UserUserSkill" FromRole="User" ToRole="UserSkill" />
+          <Property Name="OTP" Type="String" Nullable="true" />
+          <Property Name="OTPExpireAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="UserEducations" Relationship="CareerMitra.UserUserEducation" FromRole="User" ToRole="UserEducation" />
+          <NavigationProperty Name="Roles" Relationship="CareerMitra.Pincode" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="Chats" Relationship="CareerMitra.UserChat" FromRole="User" ToRole="Chat" />
+          <NavigationProperty Name="Chats1" Relationship="CareerMitra.UserChat1" FromRole="User" ToRole="Chat" />
+          <NavigationProperty Name="ChatMessages" Relationship="CareerMitra.UserChatMessage" FromRole="User" ToRole="ChatMessage" />
+          <NavigationProperty Name="ChatMessages1" Relationship="CareerMitra.UserChatMessage1" FromRole="User" ToRole="ChatMessage" />
+          <Property Name="Mode" Type="String" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Users" Relationship="CareerMitra.RoleUser" FromRole="Role" ToRole="User" />
+          <NavigationProperty Name="User" Relationship="CareerMitra.Pincode" FromRole="Role" ToRole="User" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="true" />
+          <Property Name="Email" Type="String" Nullable="true" />
+          <Property Name="Mobile" Type="String" Nullable="true" MaxLength="20" />
+          <Property Name="Mobile2" Type="String" Nullable="true" MaxLength="20" />
+          <Property Name="Gender" Type="String" Nullable="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" />
+          <Property Name="MiddleName" Type="String" Nullable="true" />
+          <Property Name="LastName" Type="String" Nullable="true" />
+          <Property Name="FatherName" Type="String" Nullable="true" />
+          <Property Name="MotherName" Type="String" Nullable="true" />
+          <Property Name="SpouseName" Type="String" Nullable="true" />
+          <Property Name="HusbandName" Type="String" Nullable="true" />
+          <Property Name="DOB" Type="DateTime" Nullable="true" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Address" Type="String" Nullable="true" />
+          <Property Name="PinCode" Type="Int32" Nullable="true" />
+          <Property Name="State" Type="String" Nullable="true" />
+          <Property Name="Photo" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="CompanyName" Type="String" Nullable="true" />
+          <Property Name="Designation" Type="String" Nullable="true" />
+          <Property Name="ContactPersonName" Type="String" Nullable="true" />
+          <Property Name="NoOfEmployees" Type="Int32" Nullable="true" />
+          <Property Name="About" Type="String" Nullable="true" />
+          <Property Name="CityId" Type="Int32" Nullable="true" />
+          <Property Name="Logo" Type="String" Nullable="true" />
+          <NavigationProperty Name="User" Relationship="CareerMitra.UserUserDetail" FromRole="UserDetail" ToRole="User" />
+          <NavigationProperty Name="City" Relationship="CareerMitra.CityUserDetail" FromRole="UserDetail" ToRole="City" />
+          <Property Name="CompanyType" Type="String" Nullable="true" />
+          <Property Name="Lat" Type="String" Nullable="true" />
+          <Property Name="Long" Type="String" Nullable="true" />
+        </EntityType>
+        <EntityType Name="UserLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="true" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="Remark" Type="String" Nullable="false" />
+          <Property Name="DeviceType" Type="String" Nullable="false" />
+          <Property Name="DeviceId" Type="String" Nullable="false" />
+          <Property Name="OS" Type="String" Nullable="false" />
+          <Property Name="IP" Type="String" Nullable="false" />
+          <Property Name="UserAgent" Type="String" Nullable="false" />
+          <Property Name="Domain" Type="String" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="CareerMitra.UserUserLog" FromRole="UserLog" ToRole="User" />
+          <Property Name="Lat" Type="String" Nullable="true" />
+          <Property Name="Lng" Type="String" Nullable="true" />
+          <Property Name="Address" Type="String" Nullable="true" />
+          <Property Name="DeviceOtherInfo" Type="String" Nullable="true" />
+          <Property Name="Data" Type="String" Nullable="true" />
+          <Property Name="Error" Type="String" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="NameH" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="EducationDetails" Relationship="CareerMitra.CourseEducationDetail" FromRole="Course" ToRole="EducationDetail" />
+          <NavigationProperty Name="JobQualifications" Relationship="CareerMitra.CourseJobQualification" FromRole="Course" ToRole="JobQualification" />
+          <NavigationProperty Name="UserEducations" Relationship="CareerMitra.CourseUserEducation" FromRole="Course" ToRole="UserEducation" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="NameH" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="UserDetails" Relationship="CareerMitra.CityUserDetail" FromRole="City" ToRole="UserDetail" />
+          <NavigationProperty Name="JobLocations" Relationship="CareerMitra.CityJobLocation" FromRole="City" ToRole="JobLocation" />
+          <NavigationProperty Name="State" Relationship="CareerMitra.StateCity" FromRole="City" ToRole="State" />
+          <Property Name="StateId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="PincodeMasters" Relationship="CareerMitra.CityPincodeMaster" FromRole="City" ToRole="PincodeMaster" />
+        </EntityType>
+        <EntityType Name="EducationDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="true" />
+          <Property Name="CourseId" Type="Int32" Nullable="true" />
+          <Property Name="YearFrom" Type="String" Nullable="true" />
+          <Property Name="YearTo" Type="String" Nullable="true" />
+          <Property Name="MarksObt" Type="String" Nullable="true" />
+          <Property Name="TotalMarks" Type="String" Nullable="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="User" Relationship="CareerMitra.UserEducationDetail" FromRole="EducationDetail" ToRole="User" />
+          <NavigationProperty Name="Course" Relationship="CareerMitra.CourseEducationDetail" FromRole="EducationDetail" ToRole="Course" />
+        </EntityType>
+        <EntityType Name="UserDocument">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DocumentTypeId" Type="CareerMitra.DocumentType" Nullable="true" />
+          <Property Name="Attachment" Type="String" Nullable="true" />
+          <Property Name="Name" Type="String" Nullable="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <Property Name="UserId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="User" Relationship="CareerMitra.UserUserDocument" FromRole="UserDocument" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="NameH" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="JobSkills" Relationship="CareerMitra.SkillJobSkill" FromRole="Skill" ToRole="JobSkill" />
+          <NavigationProperty Name="UserSkills" Relationship="CareerMitra.SkillUserSkill" FromRole="Skill" ToRole="UserSkill" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="NameH" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Jobs" Relationship="CareerMitra.CategoryJob" FromRole="Category" ToRole="Job" />
+          <NavigationProperty Name="DepartmentCategories" Relationship="CareerMitra.CategoryDepartmentCategory" FromRole="Category" ToRole="DepartmentCategory" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="TitleH" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="ShortDescription" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="ShortDescriptionH" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="DescriptionH" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="SalaryMin" Type="Decimal" Nullable="true" Precision="18" Scale="2" />
+          <Property Name="SalaryMax" Type="Decimal" Nullable="true" Precision="18" Scale="2" />
+          <Property Name="IsMonthly" Type="Boolean" Nullable="false" />
+          <Property Name="ExperienceMin" Type="String" Nullable="false" />
+          <Property Name="ExperienceMax" Type="String" Nullable="false" />
+          <Property Name="IsPublishd" Type="Boolean" Nullable="false" />
+          <Property Name="PostedDate" Type="DateTime" Nullable="false" />
+          <Property Name="LastDate" Type="DateTime" Nullable="true" />
+          <Property Name="IsVerified" Type="Boolean" Nullable="false" />
+          <Property Name="Image" Type="String" Nullable="false" />
+          <Property Name="NoOfVacancies" Type="Int32" Nullable="true" />
+          <Property Name="CategoryId" Type="Int32" Nullable="true" />
+          <Property Name="JobRoleId" Type="Int32" Nullable="true" />
+          <Property Name="JobTypeId" Type="Int32" Nullable="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Category" Relationship="CareerMitra.CategoryJob" FromRole="Job" ToRole="Category" />
+          <NavigationProperty Name="JobSkills" Relationship="CareerMitra.JobJobSkill" FromRole="Job" ToRole="JobSkill" />
+          <NavigationProperty Name="JobQualifications" Relationship="CareerMitra.JobJobQualification" FromRole="Job" ToRole="JobQualification" />
+          <NavigationProperty Name="JobRole" Relationship="CareerMitra.JobRoleJob" FromRole="Job" ToRole="JobRole" />
+          <NavigationProperty Name="JobType" Relationship="CareerMitra.JobTypeJob" FromRole="Job" ToRole="JobType" />
+          <NavigationProperty Name="UserJobs" Relationship="CareerMitra.JobUserJob" FromRole="Job" ToRole="UserJob" />
+          <NavigationProperty Name="User" Relationship="CareerMitra.UserJob1" FromRole="Job" ToRole="User" />
+          <Property Name="UserId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Department" Relationship="CareerMitra.DepartmentJob" FromRole="Job" ToRole="Department" />
+          <Property Name="DepartmentId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Chats" Relationship="CareerMitra.JobChat" FromRole="Job" ToRole="Chat" />
+          <NavigationProperty Name="JobLocations" Relationship="CareerMitra.JobJobLocation" FromRole="Job" ToRole="JobLocation" />
+        </EntityType>
+        <EntityType Name="JobSkill">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobId" Type="Int32" Nullable="true" />
+          <Property Name="SkillId" Type="Int32" Nullable="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Skill" Relationship="CareerMitra.SkillJobSkill" FromRole="JobSkill" ToRole="Skill" />
+          <NavigationProperty Name="Job" Relationship="CareerMitra.JobJobSkill" FromRole="JobSkill" ToRole="Job" />
+        </EntityType>
+        <EntityType Name="JobQualification">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobId" Type="Int32" Nullable="true" />
+          <Property Name="CourseId" Type="Int32" Nullable="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Course" Relationship="CareerMitra.CourseJobQualification" FromRole="JobQualification" ToRole="Course" />
+          <NavigationProperty Name="Job" Relationship="CareerMitra.JobJobQualification" FromRole="JobQualification" ToRole="Job" />
+        </EntityType>
+        <EntityType Name="JobLocation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityId" Type="Int32" Nullable="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="City" Relationship="CareerMitra.CityJobLocation" FromRole="JobLocation" ToRole="City" />
+          <NavigationProperty Name="PincodeMaster" Relationship="CareerMitra.PincodeMasterJobLocation" FromRole="JobLocation" ToRole="PincodeMaster" />
+          <Property Name="PincodeMasterId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Job" Relationship="CareerMitra.JobJobLocation" FromRole="JobLocation" ToRole="Job" />
+          <Property Name="JobId" Type="Int32" Nullable="true" />
+        </EntityType>
+        <EntityType Name="JobRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="true" />
+          <Property Name="NameH" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Jobs" Relationship="CareerMitra.JobRoleJob" FromRole="JobRole" ToRole="Job" />
+          <NavigationProperty Name="UserExperiences" Relationship="CareerMitra.JobRoleUserExperience" FromRole="JobRole" ToRole="UserExperience" />
+          <Property Name="IsBlocked" Type="Boolean" Nullable="true" />
+        </EntityType>
+        <EntityType Name="JobType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="NameH" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Jobs" Relationship="CareerMitra.JobTypeJob" FromRole="JobType" ToRole="Job" />
+        </EntityType>
+        <EntityType Name="UserExperience">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="true" />
+          <Property Name="CompanyName" Type="String" Nullable="true" />
+          <Property Name="CompanyNameH" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="YearFrom" Type="String" Nullable="false" />
+          <Property Name="YearTo" Type="String" Nullable="false" />
+          <Property Name="JobRoleId" Type="Int32" Nullable="true" />
+          <Property Name="Designation" Type="String" Nullable="true" />
+          <Property Name="DesignationH" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="true" />
+          <Property Name="DescriptionH" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsCurrent" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="User" Relationship="CareerMitra.UserUserExperience" FromRole="UserExperience" ToRole="User" />
+          <NavigationProperty Name="JobRole" Relationship="CareerMitra.JobRoleUserExperience" FromRole="UserExperience" ToRole="JobRole" />
+        </EntityType>
+        <EntityType Name="Resume">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="true" />
+          <Property Name="Attachment" Type="String" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="User" Relationship="CareerMitra.UserResume" FromRole="Resume" ToRole="User" />
+        </EntityType>
+        <EntityType Name="EnrollmentProgram">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="true" />
+          <Property Name="TitleH" Type="String" Nullable="true" />
+          <Property Name="Description" Type="String" Nullable="true" />
+          <Property Name="DescriptionH" Type="String" Nullable="true" />
+          <Property Name="UserId" Type="Int32" Nullable="true" />
+          <Property Name="Image" Type="String" Nullable="true" />
+          <Property Name="DateStart" Type="DateTime" Nullable="true" />
+          <Property Name="DateEnd" Type="DateTime" Nullable="true" />
+          <Property Name="LastDate" Type="DateTime" Nullable="true" />
+          <Property Name="PublishDate" Type="DateTime" Nullable="true" />
+          <Property Name="Duration" Type="String" Nullable="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="User" Relationship="CareerMitra.UserEnrollmentProgram1" FromRole="EnrollmentProgram" ToRole="User" />
+          <NavigationProperty Name="UserEnrollmentPrograms" Relationship="CareerMitra.EnrollmentProgramUserEnrollmentProgram" FromRole="EnrollmentProgram" ToRole="UserEnrollmentProgram" />
+          <NavigationProperty Name="TrainingMaterials" Relationship="CareerMitra.EnrollmentProgramTrainingMaterial" FromRole="EnrollmentProgram" ToRole="TrainingMaterial" />
+        </EntityType>
+        <EntityType Name="UserEnrollmentProgram">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EnrollmentProgramId" Type="Int32" Nullable="true" />
+          <Property Name="UserId" Type="Int32" Nullable="true" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+          <Property Name="IsCompleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="User" Relationship="CareerMitra.UserUserEnrollmentProgram" FromRole="UserEnrollmentProgram" ToRole="User" />
+          <NavigationProperty Name="EnrollmentProgram" Relationship="CareerMitra.EnrollmentProgramUserEnrollmentProgram" FromRole="UserEnrollmentProgram" ToRole="EnrollmentProgram" />
+        </EntityType>
+        <EntityType Name="TrainingMaterial">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EnrollmentProgramId" Type="Int32" Nullable="true" />
+          <Property Name="UserId" Type="Int32" Nullable="true" />
+          <Property Name="Title" Type="String" Nullable="true" />
+          <Property Name="TitleH" Type="String" Nullable="true" />
+          <Property Name="ShortDescription" Type="String" Nullable="true" />
+          <Property Name="ShortDescriptionH" Type="String" Nullable="true" />
+          <Property Name="Description" Type="String" Nullable="true" />
+          <Property Name="DescriptionH" Type="String" Nullable="true" />
+          <Property Name="Link" Type="String" Nullable="true" />
+          <Property Name="Attachment" Type="String" Nullable="true" />
+          <Property Name="Type" Type="String" Nullable="true" />
+          <Property Name="PublishDate" Type="DateTime" Nullable="false" />
+          <Property Name="IsPublished" Type="Boolean" Nullable="false" />
+          <Property Name="Image" Type="String" Nullable="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="EnrollmentProgram" Relationship="CareerMitra.EnrollmentProgramTrainingMaterial" FromRole="TrainingMaterial" ToRole="EnrollmentProgram" />
+          <NavigationProperty Name="UserTrainingMaterials" Relationship="CareerMitra.TrainingMaterialUserTrainingMaterial" FromRole="TrainingMaterial" ToRole="UserTrainingMaterial" />
+        </EntityType>
+        <EntityType Name="UserTrainingMaterial">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TrainingMaterialId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="TrainingMaterial" Relationship="CareerMitra.TrainingMaterialUserTrainingMaterial" FromRole="UserTrainingMaterial" ToRole="TrainingMaterial" />
+          <NavigationProperty Name="User" Relationship="CareerMitra.UserUserTrainingMaterial" FromRole="UserTrainingMaterial" ToRole="User" />
+          <Property Name="UserId" Type="Int32" Nullable="true" />
+        </EntityType>
+        <EntityType Name="UserDevice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeviceId" Type="String" Nullable="true" />
+          <Property Name="MobileNo" Type="String" Nullable="true" />
+          <Property Name="DeviceType" Type="String" Nullable="true" />
+          <Property Name="FCMId" Type="String" Nullable="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="User" Relationship="CareerMitra.UserUserDevice" FromRole="UserDevice" ToRole="User" />
+          <Property Name="UserId" Type="Int32" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="true" />
+          <Property Name="TitleH" Type="String" Nullable="true" />
+          <Property Name="Description" Type="String" Nullable="true" />
+          <Property Name="DescriptionH" Type="String" Nullable="true" />
+          <Property Name="Link" Type="String" Nullable="true" />
+          <Property Name="Logo" Type="String" Nullable="true" />
+          <Property Name="IsSchedule" Type="Boolean" Nullable="false" />
+          <Property Name="DateFrom" Type="DateTime" Nullable="true" />
+          <Property Name="DateTo" Type="DateTime" Nullable="true" />
+          <Property Name="Status" Type="String" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="UserNotifications" Relationship="CareerMitra.NotificationUserNotification" FromRole="Notification" ToRole="UserNotification" />
+          <Property Name="Image" Type="String" Nullable="true" />
+        </EntityType>
+        <EntityType Name="UserNotification">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NotificationId" Type="Int32" Nullable="true" />
+          <Property Name="UserDeviceId" Type="Int32" Nullable="true" />
+          <Property Name="UserId" Type="Int32" Nullable="true" />
+          <Property Name="Medium" Type="String" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="User" Relationship="CareerMitra.UserUserNotification" FromRole="UserNotification" ToRole="User" />
+          <NavigationProperty Name="Notification" Relationship="CareerMitra.NotificationUserNotification" FromRole="UserNotification" ToRole="Notification" />
+        </EntityType>
+        <Association Name="RoleUser">
+          <End Type="CareerMitra.Role" Role="Role" Multiplicity="0..1" />
+          <End Type="CareerMitra.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserUserDetail">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="0..1" />
+          <End Type="CareerMitra.UserDetail" Role="UserDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserDetail">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserEducationDetail">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="0..1" />
+          <End Type="CareerMitra.EducationDetail" Role="EducationDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EducationDetail">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserUserLog">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="0..1" />
+          <End Type="CareerMitra.UserLog" Role="UserLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserLog">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserUserDocument">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="0..1" />
+          <End Type="CareerMitra.UserDocument" Role="UserDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserDocument">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserUserExperience">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="0..1" />
+          <End Type="CareerMitra.UserExperience" Role="UserExperience" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserExperience">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserResume">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="0..1" />
+          <End Type="CareerMitra.Resume" Role="Resume" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Resume">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserUserEnrollmentProgram">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="0..1" />
+          <End Type="CareerMitra.UserEnrollmentProgram" Role="UserEnrollmentProgram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserEnrollmentProgram">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserEnrollmentProgram1">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="0..1" />
+          <End Type="CareerMitra.EnrollmentProgram" Role="EnrollmentProgram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EnrollmentProgram">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserUserNotification">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="0..1" />
+          <End Type="CareerMitra.UserNotification" Role="UserNotification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserNotification">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CourseEducationDetail">
+          <End Type="CareerMitra.Course" Role="Course" Multiplicity="0..1" />
+          <End Type="CareerMitra.EducationDetail" Role="EducationDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EducationDetail">
+              <PropertyRef Name="CourseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CourseJobQualification">
+          <End Type="CareerMitra.Course" Role="Course" Multiplicity="0..1" />
+          <End Type="CareerMitra.JobQualification" Role="JobQualification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobQualification">
+              <PropertyRef Name="CourseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CityUserDetail">
+          <End Type="CareerMitra.City" Role="City" Multiplicity="0..1" />
+          <End Type="CareerMitra.UserDetail" Role="UserDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserDetail">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CityJobLocation">
+          <End Type="CareerMitra.City" Role="City" Multiplicity="0..1" />
+          <End Type="CareerMitra.JobLocation" Role="JobLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobLocation">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SkillJobSkill">
+          <End Type="CareerMitra.Skill" Role="Skill" Multiplicity="0..1" />
+          <End Type="CareerMitra.JobSkill" Role="JobSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skill">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobSkill">
+              <PropertyRef Name="SkillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CategoryJob">
+          <End Type="CareerMitra.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="CareerMitra.Job" Role="Job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Job">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="JobJobSkill">
+          <End Type="CareerMitra.Job" Role="Job" Multiplicity="0..1" />
+          <End Type="CareerMitra.JobSkill" Role="JobSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobSkill">
+              <PropertyRef Name="JobId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="JobJobQualification">
+          <End Type="CareerMitra.Job" Role="Job" Multiplicity="0..1" />
+          <End Type="CareerMitra.JobQualification" Role="JobQualification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobQualification">
+              <PropertyRef Name="JobId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="JobRoleJob">
+          <End Type="CareerMitra.JobRole" Role="JobRole" Multiplicity="0..1" />
+          <End Type="CareerMitra.Job" Role="Job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Job">
+              <PropertyRef Name="JobRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="JobRoleUserExperience">
+          <End Type="CareerMitra.JobRole" Role="JobRole" Multiplicity="0..1" />
+          <End Type="CareerMitra.UserExperience" Role="UserExperience" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserExperience">
+              <PropertyRef Name="JobRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="JobTypeJob">
+          <End Type="CareerMitra.JobType" Role="JobType" Multiplicity="0..1" />
+          <End Type="CareerMitra.Job" Role="Job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Job">
+              <PropertyRef Name="JobTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EnrollmentProgramUserEnrollmentProgram">
+          <End Type="CareerMitra.EnrollmentProgram" Role="EnrollmentProgram" Multiplicity="0..1" />
+          <End Type="CareerMitra.UserEnrollmentProgram" Role="UserEnrollmentProgram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EnrollmentProgram">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserEnrollmentProgram">
+              <PropertyRef Name="EnrollmentProgramId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EnrollmentProgramTrainingMaterial">
+          <End Type="CareerMitra.EnrollmentProgram" Role="EnrollmentProgram" Multiplicity="0..1" />
+          <End Type="CareerMitra.TrainingMaterial" Role="TrainingMaterial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EnrollmentProgram">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TrainingMaterial">
+              <PropertyRef Name="EnrollmentProgramId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TrainingMaterialUserTrainingMaterial">
+          <End Type="CareerMitra.TrainingMaterial" Role="TrainingMaterial" Multiplicity="0..1" />
+          <End Type="CareerMitra.UserTrainingMaterial" Role="UserTrainingMaterial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TrainingMaterial">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserTrainingMaterial">
+              <PropertyRef Name="TrainingMaterialId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NotificationUserNotification">
+          <End Type="CareerMitra.Notification" Role="Notification" Multiplicity="0..1" />
+          <End Type="CareerMitra.UserNotification" Role="UserNotification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Notification">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserNotification">
+              <PropertyRef Name="NotificationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserUserTrainingMaterial">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="0..1" />
+          <End Type="CareerMitra.UserTrainingMaterial" Role="UserTrainingMaterial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserTrainingMaterial">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserUserDevice">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="0..1" />
+          <End Type="CareerMitra.UserDevice" Role="UserDevice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserDevice">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UserJob">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="User" Relationship="CareerMitra.UserUserJob" FromRole="UserJob" ToRole="User" />
+          <Property Name="UserId" Type="Int32" Nullable="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Job" Relationship="CareerMitra.JobUserJob" FromRole="UserJob" ToRole="Job" />
+          <Property Name="JobId" Type="Int32" Nullable="true" />
+          <Property Name="Status" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="UserUserJob">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="0..1" />
+          <End Type="CareerMitra.UserJob" Role="UserJob" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserJob">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="JobUserJob">
+          <End Type="CareerMitra.Job" Role="Job" Multiplicity="0..1" />
+          <End Type="CareerMitra.UserJob" Role="UserJob" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserJob">
+              <PropertyRef Name="JobId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserJob1">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="0..1" />
+          <End Type="CareerMitra.Job" Role="Job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Job">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UserSkill">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="User" Relationship="CareerMitra.UserUserSkill" FromRole="UserSkill" ToRole="User" />
+          <Property Name="UserId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Skill" Relationship="CareerMitra.SkillUserSkill" FromRole="UserSkill" ToRole="Skill" />
+          <Property Name="SkillId" Type="Int32" Nullable="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+        </EntityType>
+        <Association Name="UserUserSkill">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="0..1" />
+          <End Type="CareerMitra.UserSkill" Role="UserSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserSkill">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SkillUserSkill">
+          <End Type="CareerMitra.Skill" Role="Skill" Multiplicity="0..1" />
+          <End Type="CareerMitra.UserSkill" Role="UserSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skill">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserSkill">
+              <PropertyRef Name="SkillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="DocumentType">
+          <Member Name="Resume" Value="1" />
+          <Member Name="Aadhar" Value="2" />
+          <Member Name="VoterId" Value="3" />
+          <Member Name="Certificate" Value="4" />
+          <Member Name="Marksheet" Value="5" />
+          <Member Name="Pan" Value="6" />
+          <Member Name="CompanyCertificate" Value="7" />
+          <Member Name="Other" Value="8" />
+        </EnumType>
+        <EntityType Name="NewsLetter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+        </EntityType>
+        <EntityType Name="StaticContent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="TitleH" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="ShortDescription" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="ShortDescriptionH" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="DescriptionH" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="IsPublishd" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <Property Name="PageName" Type="String" Nullable="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserEducation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CollegeName" Type="String" Nullable="true" />
+          <Property Name="YearOfPassing" Type="String" Nullable="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="User" Relationship="CareerMitra.UserUserEducation" FromRole="UserEducation" ToRole="User" />
+          <Property Name="UserId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Course" Relationship="CareerMitra.CourseUserEducation" FromRole="UserEducation" ToRole="Course" />
+          <Property Name="CourseId" Type="Int32" Nullable="true" />
+        </EntityType>
+        <Association Name="UserUserEducation">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="0..1" />
+          <End Type="CareerMitra.UserEducation" Role="UserEducation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserEducation">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CourseUserEducation">
+          <End Type="CareerMitra.Course" Role="Course" Multiplicity="0..1" />
+          <End Type="CareerMitra.UserEducation" Role="UserEducation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserEducation">
+              <PropertyRef Name="CourseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="NameH" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Cities" Relationship="CareerMitra.StateCity" FromRole="State" ToRole="City" />
+        </EntityType>
+        <Association Name="StateCity">
+          <End Type="CareerMitra.State" Role="State" Multiplicity="0..1" />
+          <End Type="CareerMitra.City" Role="City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Pincode">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="1" />
+          <End Type="CareerMitra.Role" Role="Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Role">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PincodeMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="true" />
+          <Property Name="NameH" Type="String" Nullable="true" />
+          <Property Name="PinCode" Type="Int32" Nullable="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="City" Relationship="CareerMitra.CityPincodeMaster" FromRole="PincodeMaster" ToRole="City" />
+          <Property Name="CityId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="JobLocations" Relationship="CareerMitra.PincodeMasterJobLocation" FromRole="PincodeMaster" ToRole="JobLocation" />
+        </EntityType>
+        <Association Name="CityPincodeMaster">
+          <End Type="CareerMitra.City" Role="City" Multiplicity="0..1" />
+          <End Type="CareerMitra.PincodeMaster" Role="PincodeMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PincodeMaster">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="NameH" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Jobs" Relationship="CareerMitra.DepartmentJob" FromRole="Department" ToRole="Job" />
+          <NavigationProperty Name="DepartmentCategories" Relationship="CareerMitra.DepartmentDepartmentCategory" FromRole="Department" ToRole="DepartmentCategory" />
+        </EntityType>
+        <Association Name="DepartmentJob">
+          <End Type="CareerMitra.Department" Role="Department" Multiplicity="0..1" />
+          <End Type="CareerMitra.Job" Role="Job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Job">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DepartmentCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Department" Relationship="CareerMitra.DepartmentDepartmentCategory" FromRole="DepartmentCategory" ToRole="Department" />
+          <Property Name="DepartmentId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Category" Relationship="CareerMitra.CategoryDepartmentCategory" FromRole="DepartmentCategory" ToRole="Category" />
+          <Property Name="CategoryId" Type="Int32" Nullable="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <Association Name="DepartmentDepartmentCategory">
+          <End Type="CareerMitra.Department" Role="Department" Multiplicity="0..1" />
+          <End Type="CareerMitra.DepartmentCategory" Role="DepartmentCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DepartmentCategory">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CategoryDepartmentCategory">
+          <End Type="CareerMitra.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="CareerMitra.DepartmentCategory" Role="DepartmentCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DepartmentCategory">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Chat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="ChatMessages" Relationship="CareerMitra.ChatChatMessage" FromRole="Chat" ToRole="ChatMessage" />
+          <NavigationProperty Name="User" Relationship="CareerMitra.UserChat" FromRole="Chat" ToRole="User" />
+          <Property Name="Employer" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="User1" Relationship="CareerMitra.UserChat1" FromRole="Chat" ToRole="User" />
+          <Property Name="JobSeeker" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Job" Relationship="CareerMitra.JobChat" FromRole="Chat" ToRole="Job" />
+          <Property Name="JobId" Type="Int32" Nullable="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ChatMessage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Chat" Relationship="CareerMitra.ChatChatMessage" FromRole="ChatMessage" ToRole="Chat" />
+          <Property Name="ChatId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="User" Relationship="CareerMitra.UserChatMessage" FromRole="ChatMessage" ToRole="User" />
+          <Property Name="Employer" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="User1" Relationship="CareerMitra.UserChatMessage1" FromRole="ChatMessage" ToRole="User" />
+          <Property Name="JobSeeker" Type="Int32" Nullable="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsUnRead" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+          <Property Name="Message" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="ChatChatMessage">
+          <End Type="CareerMitra.Chat" Role="Chat" Multiplicity="0..1" />
+          <End Type="CareerMitra.ChatMessage" Role="ChatMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chat">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChatMessage">
+              <PropertyRef Name="ChatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserChat">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="0..1" />
+          <End Type="CareerMitra.Chat" Role="Chat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Chat">
+              <PropertyRef Name="Employer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserChat1">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="0..1" />
+          <End Type="CareerMitra.Chat" Role="Chat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Chat">
+              <PropertyRef Name="JobSeeker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="JobChat">
+          <End Type="CareerMitra.Job" Role="Job" Multiplicity="0..1" />
+          <End Type="CareerMitra.Chat" Role="Chat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Chat">
+              <PropertyRef Name="JobId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserChatMessage">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="0..1" />
+          <End Type="CareerMitra.ChatMessage" Role="ChatMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChatMessage">
+              <PropertyRef Name="Employer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserChatMessage1">
+          <End Type="CareerMitra.User" Role="User" Multiplicity="0..1" />
+          <End Type="CareerMitra.ChatMessage" Role="ChatMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChatMessage">
+              <PropertyRef Name="JobSeeker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Feedback">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" Nullable="true" />
+          <Property Name="Name" Type="String" Nullable="true" />
+          <Property Name="Mobile" Type="String" Nullable="true" />
+          <Property Name="Message" Type="String" Nullable="true" />
+          <Property Name="Medium" Type="String" Nullable="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+        </EntityType>
+        <Association Name="PincodeMasterJobLocation">
+          <End Type="CareerMitra.PincodeMaster" Role="PincodeMaster" Multiplicity="0..1" />
+          <End Type="CareerMitra.JobLocation" Role="JobLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PincodeMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobLocation">
+              <PropertyRef Name="PincodeMasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="JobJobLocation">
+          <End Type="CareerMitra.Job" Role="Job" Multiplicity="0..1" />
+          <End Type="CareerMitra.JobLocation" Role="JobLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobLocation">
+              <PropertyRef Name="JobId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="EmailMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="To" Type="String" Nullable="true" />
+          <Property Name="From" Type="String" Nullable="true" />
+          <Property Name="Subject" Type="String" Nullable="true" />
+          <Property Name="Body" Type="String" Nullable="true" />
+          <Property Name="IsTemplate" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+        </EntityType>
+        <EntityType Name="SMSMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="To" Type="String" Nullable="true" />
+          <Property Name="From" Type="String" Nullable="true" />
+          <Property Name="Subject" Type="String" Nullable="true" />
+          <Property Name="Body" Type="String" Nullable="true" />
+          <Property Name="IsTemplate" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="DateTime" Nullable="true" />
+          <Property Name="DeletedAt" Type="DateTime" Nullable="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CareerMitraStoreContainer" CdmEntityContainer="CareerMitraContainer">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="TemporaryPassword" ColumnName="TemporaryPassword" />
+          <ScalarProperty Name="IsChangePassword" ColumnName="IsChangePassword" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="IsProfileUpdate" ColumnName="IsProfileUpdate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsBlocked" ColumnName="IsBlocked" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="OTP" ColumnName="OTP" />
+          <ScalarProperty Name="OTPExpireAt" ColumnName="OTPExpireAt" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.Role)">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.UserDetail)">
+        <MappingFragment StoreEntitySet="UserDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Mobile2" ColumnName="Mobile2" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+          <ScalarProperty Name="SpouseName" ColumnName="SpouseName" />
+          <ScalarProperty Name="HusbandName" ColumnName="HusbandName" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="ContactPersonName" ColumnName="ContactPersonName" />
+          <ScalarProperty Name="NoOfEmployees" ColumnName="NoOfEmployees" />
+          <ScalarProperty Name="About" ColumnName="About" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="CompanyType" ColumnName="CompanyType" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Long" ColumnName="Long" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLogs">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.UserLog)">
+        <MappingFragment StoreEntitySet="UserLogs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="DeviceType" ColumnName="DeviceType" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="OS" ColumnName="OS" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="UserAgent" ColumnName="UserAgent" />
+          <ScalarProperty Name="Domain" ColumnName="Domain" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Lng" ColumnName="Lng" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="DeviceOtherInfo" ColumnName="DeviceOtherInfo" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.Course)">
+        <MappingFragment StoreEntitySet="Courses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameH" ColumnName="NameH" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.City)">
+        <MappingFragment StoreEntitySet="Cities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameH" ColumnName="NameH" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EducationDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.EducationDetail)">
+        <MappingFragment StoreEntitySet="EducationDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="YearFrom" ColumnName="YearFrom" />
+          <ScalarProperty Name="YearTo" ColumnName="YearTo" />
+          <ScalarProperty Name="MarksObt" ColumnName="MarksObt" />
+          <ScalarProperty Name="TotalMarks" ColumnName="TotalMarks" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDocuments">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.UserDocument)">
+        <MappingFragment StoreEntitySet="UserDocuments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
+          <ScalarProperty Name="Attachment" ColumnName="Attachment" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skills">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.Skill)">
+        <MappingFragment StoreEntitySet="Skills">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameH" ColumnName="NameH" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.Category)">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameH" ColumnName="NameH" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jobs">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.Job)">
+        <MappingFragment StoreEntitySet="Jobs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="TitleH" ColumnName="TitleH" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="ShortDescriptionH" ColumnName="ShortDescriptionH" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DescriptionH" ColumnName="DescriptionH" />
+          <ScalarProperty Name="SalaryMin" ColumnName="SalaryMin" />
+          <ScalarProperty Name="SalaryMax" ColumnName="SalaryMax" />
+          <ScalarProperty Name="IsMonthly" ColumnName="IsMonthly" />
+          <ScalarProperty Name="ExperienceMin" ColumnName="ExperienceMin" />
+          <ScalarProperty Name="ExperienceMax" ColumnName="ExperienceMax" />
+          <ScalarProperty Name="IsPublishd" ColumnName="IsPublishd" />
+          <ScalarProperty Name="PostedDate" ColumnName="PostedDate" />
+          <ScalarProperty Name="LastDate" ColumnName="LastDate" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="NoOfVacancies" ColumnName="NoOfVacancies" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="JobRoleId" ColumnName="JobRoleId" />
+          <ScalarProperty Name="JobTypeId" ColumnName="JobTypeId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobSkills">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.JobSkill)">
+        <MappingFragment StoreEntitySet="JobSkills">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="SkillId" ColumnName="SkillId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobQualifications">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.JobQualification)">
+        <MappingFragment StoreEntitySet="JobQualifications">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobLocations">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.JobLocation)">
+        <MappingFragment StoreEntitySet="JobLocations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+          <ScalarProperty Name="PincodeMasterId" ColumnName="PincodeMasterId" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobRoles">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.JobRole)">
+        <MappingFragment StoreEntitySet="JobRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameH" ColumnName="NameH" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+          <ScalarProperty Name="IsBlocked" ColumnName="IsBlocked" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.JobType)">
+        <MappingFragment StoreEntitySet="JobTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameH" ColumnName="NameH" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserExperiences">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.UserExperience)">
+        <MappingFragment StoreEntitySet="UserExperiences">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyNameH" ColumnName="CompanyNameH" />
+          <ScalarProperty Name="YearFrom" ColumnName="YearFrom" />
+          <ScalarProperty Name="YearTo" ColumnName="YearTo" />
+          <ScalarProperty Name="JobRoleId" ColumnName="JobRoleId" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="DesignationH" ColumnName="DesignationH" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DescriptionH" ColumnName="DescriptionH" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsCurrent" ColumnName="IsCurrent" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resumes">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.Resume)">
+        <MappingFragment StoreEntitySet="Resumes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Attachment" ColumnName="Attachment" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnrollmentPrograms">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.EnrollmentProgram)">
+        <MappingFragment StoreEntitySet="EnrollmentPrograms">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="TitleH" ColumnName="TitleH" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DescriptionH" ColumnName="DescriptionH" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+          <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+          <ScalarProperty Name="LastDate" ColumnName="LastDate" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserEnrollmentPrograms">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.UserEnrollmentProgram)">
+        <MappingFragment StoreEntitySet="UserEnrollmentPrograms">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EnrollmentProgramId" ColumnName="EnrollmentProgramId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrainingMaterials">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.TrainingMaterial)">
+        <MappingFragment StoreEntitySet="TrainingMaterials">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EnrollmentProgramId" ColumnName="EnrollmentProgramId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="TitleH" ColumnName="TitleH" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="ShortDescriptionH" ColumnName="ShortDescriptionH" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DescriptionH" ColumnName="DescriptionH" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Attachment" ColumnName="Attachment" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="IsPublished" ColumnName="IsPublished" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTrainingMaterials">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.UserTrainingMaterial)">
+        <MappingFragment StoreEntitySet="UserTrainingMaterials">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TrainingMaterialId" ColumnName="TrainingMaterialId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDevices">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.UserDevice)">
+        <MappingFragment StoreEntitySet="UserDevices">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="DeviceType" ColumnName="DeviceType" />
+          <ScalarProperty Name="FCMId" ColumnName="FCMId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.Notification)">
+        <MappingFragment StoreEntitySet="Notifications">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="TitleH" ColumnName="TitleH" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DescriptionH" ColumnName="DescriptionH" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="IsSchedule" ColumnName="IsSchedule" />
+          <ScalarProperty Name="DateFrom" ColumnName="DateFrom" />
+          <ScalarProperty Name="DateTo" ColumnName="DateTo" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserNotifications">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.UserNotification)">
+        <MappingFragment StoreEntitySet="UserNotifications">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+          <ScalarProperty Name="UserDeviceId" ColumnName="UserDeviceId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Medium" ColumnName="Medium" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserJobs">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.UserJob)">
+        <MappingFragment StoreEntitySet="UserJobs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSkills">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.UserSkill)">
+        <MappingFragment StoreEntitySet="UserSkills">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SkillId" ColumnName="SkillId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewsLetters">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.NewsLetter)">
+        <MappingFragment StoreEntitySet="NewsLetters">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StaticContents">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.StaticContent)">
+        <MappingFragment StoreEntitySet="StaticContents">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="TitleH" ColumnName="TitleH" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="ShortDescriptionH" ColumnName="ShortDescriptionH" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DescriptionH" ColumnName="DescriptionH" />
+          <ScalarProperty Name="IsPublishd" ColumnName="IsPublishd" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserEducations">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.UserEducation)">
+        <MappingFragment StoreEntitySet="UserEducations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CollegeName" ColumnName="CollegeName" />
+          <ScalarProperty Name="YearOfPassing" ColumnName="YearOfPassing" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.State)">
+        <MappingFragment StoreEntitySet="States">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameH" ColumnName="NameH" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PincodeMasters">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.PincodeMaster)">
+        <MappingFragment StoreEntitySet="PincodeMasters">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameH" ColumnName="NameH" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.Department)">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameH" ColumnName="NameH" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DepartmentCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.DepartmentCategory)">
+        <MappingFragment StoreEntitySet="DepartmentCategories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chats">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.Chat)">
+        <MappingFragment StoreEntitySet="Chats">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Employer" ColumnName="Employer" />
+          <ScalarProperty Name="JobSeeker" ColumnName="JobSeeker" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChatMessages">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.ChatMessage)">
+        <MappingFragment StoreEntitySet="ChatMessages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ChatId" ColumnName="ChatId" />
+          <ScalarProperty Name="Employer" ColumnName="Employer" />
+          <ScalarProperty Name="JobSeeker" ColumnName="JobSeeker" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsUnRead" ColumnName="IsUnRead" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feedbacks">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.Feedback)">
+        <MappingFragment StoreEntitySet="Feedbacks">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Medium" ColumnName="Medium" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailMasters">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.EmailMaster)">
+        <MappingFragment StoreEntitySet="EmailMasters">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="To" ColumnName="To" />
+          <ScalarProperty Name="From" ColumnName="From" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="IsTemplate" ColumnName="IsTemplate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMSMasters">
+      <EntityTypeMapping TypeName="IsTypeOf(CareerMitra.SMSMaster)">
+        <MappingFragment StoreEntitySet="SMSMasters">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="To" ColumnName="To" />
+          <ScalarProperty Name="From" ColumnName="From" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="IsTemplate" ColumnName="IsTemplate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

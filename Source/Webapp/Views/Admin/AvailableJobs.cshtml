@@ -1,0 +1,106 @@
+﻿@model Data.DTOs.JobDTOWeb
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="loader"></div>
+<div id="app">
+    <div class="main-wrapper main-wrapper-1">
+        <!-- Main Content -->
+        <div class="main-content">
+            <section class="section">
+                <ul class="breadcrumb breadcrumb-style ">
+                    <li class="breadcrumb-item">
+                        <h4 class="page-title m-b-0">Reports</h4>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="/Admin/Index">
+                            <i data-feather="home"></i>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">Available Jobs</li>
+                </ul>
+                <div class="section-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Available Jobs</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped" id="table-1">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">
+                                                        S.No.
+                                                    </th>
+                                                    <th>Title</th>
+                                                    <th>Min Salary</th>
+                                                    <th>Max Salary</th>
+                                                    <th>Min Experience</th>
+                                                    <th>Max Experience</th>
+                                                    <th>Posted Date</th>
+                                                    <th>Last Date</th>
+                                                    <th>Short Description</th>
+                                                    <th>Detail</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (Model != null)
+                                                    {
+                                                      if (Model.lst != null)
+                                                      {
+                                                         int i = 1;
+                                                         foreach (var Item in Model.lst)
+                                                         {
+                                                <tr>
+                                                    <td>
+                                                        @i
+                                                    </td>
+                                                    <td>@Item.Title</td>
+                                                    <td class="align-middle">
+                                                       @Item.SalaryMin
+                                                    </td>
+                                                    <td>
+                                                        @Item.SalaryMax
+                                                    </td>
+                                                    <td>@Item.ExperienceMin Year</td>
+                                                    <td>
+                                                        @Item.ExperienceMax Year
+                                                    </td>
+                                                    <td>@Item.PostedDate.ToShortDateString()</td>
+                                                    <td>@Item.LastDate.Value.ToShortDateString()</td>
+                                                    <td>@Item.ShortDescription</td>
+                                                    <td><a href="/Admin/JobDetails?Id=@Item.Id" class="btn btn-primary">Detail</a></td>
+                                                    </tr>
+                                                              i++;
+                                                             }
+                                                          }
+                                                        }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+@section script
+{
+    <script>
+        $("#table-1").dataTable({
+            dom: "Bfrtip",
+            buttons: [ "csv", "excel", "pdf", "print"],
+            columnDefs: [{ sortable: false, targets: [2, 3] }],
+        });
+    </script>
+    }
+
+

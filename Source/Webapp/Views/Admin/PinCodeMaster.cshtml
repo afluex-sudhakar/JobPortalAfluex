@@ -1,0 +1,239 @@
+﻿@model Data.DTOs.PinCodeDTO
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("PinCodeMaster", "Admin", FormMethod.Post, new { @class = "needs-validation", @novalidate = "" }))
+{
+    if (TempData["msg"] != null)
+    {
+        <div>
+            @TempData["msg"]
+        </div>
+    }
+    @Html.HiddenFor(m => m.Id)
+    <div class="main-content">
+        <section class="section">
+            <ul class="breadcrumb breadcrumb-style ">
+                <li class="breadcrumb-item">
+                    <h4 class="page-title m-b-0">Master</h4>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/Admin/Index">
+                        <i data-feather="home"></i>
+                    </a>
+                </li>
+                <li class="breadcrumb-item">Location</li>
+            </ul>
+            <div class="section-body">
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Location Master</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>City</label>
+                                            @Html.DropDownListFor(m => m.CityId, new SelectList(ViewBag.City, "Id", "Name"), "--Select--", new { @class = "form-control", @required = "true" })
+                                            <div class="invalid-feedback">
+                                                Please Select City
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>Pin Code</label>
+                                            @Html.TextBoxFor(m => m.PinCode, new { @class = "form-control", @required = "true", @MaxLength="6", @onkeypress = "return isNumberKey(event);", })
+                                            <div class="invalid-feedback">
+                                                Please enter Pin Code.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Location Name</label>
+                                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @required = "true" })
+                                                <div class="invalid-feedback">
+                                                    Please Enter Name
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Location Name(In Hindi)</label>
+                                                @Html.TextBoxFor(m => m.NameH, new { @class = "form-control hindi", @required = "true" })
+                                                <div class="invalid-feedback">
+                                                    Please Enter Name in Hindi.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3" style="float:right">
+                                            @Html.AntiForgeryToken()
+                                            <button class="btn btn-primary mr-1" type="submit">Submit</button>
+                                            <button class="btn btn-dark" type="reset">Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Location List</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+
+                                    <table class="table table-striped" id="table-1">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    S.No.
+                                                </th>
+                                                <th>City</th>
+                                                <th>Location</th>
+                                                <th>Place</th>
+                                                <th>Place (in Hindi)</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (Model != null)
+                                            {
+                                                if (Model.lst != null)
+                                                {
+                                                    int i = 1;
+                                                    foreach (var item in Model.lst)
+                                                    {
+                                                        <tr>
+                                                            <td>
+                                                                @i
+                                                            </td>
+                                                            <td>@item.City.Name</td>
+                                                            <td>@item.PinCode</td>
+                                                            <td>@item.Name</td>
+                                                            <td>@item.NameH</td>
+                                                            <td><a href="/Admin/PinCodeMaster?Id=@item.Id" class="btn btn-primary">Edit</a></td>
+                                                            <td><a href="/Admin/DeletePinCode?Id=@item.Id" class="btn btn-danger" onclick="deleteRecord(event)">Delete</a></td>
+                                                        </tr>
+                                                        i++;
+                                                    }
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+}
+@section script {
+    @if (TempData["msg"] == "Saved")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                iziToast.success({
+                    title: "Success!",
+                    message: "Data Saved ",
+                    position: "topRight",
+                });
+            };
+
+        </script>
+    }
+    @if (TempData["msg"] == "Deleted")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover this!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                }).then((willDelete) => {
+                    if (willDelete) {
+                        swal("Poof! Your data has been deleted!", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("Your data has been safe !");
+                    }
+                });
+            };
+
+        </script>
+    }
+    @if (TempData["msg"] == "Updated")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                iziToast.success({
+                    title: "Success!",
+                    message: "Data Updated ",
+                    position: "topRight",
+                });
+            };
+
+        </script>
+    }
+    <script>
+        $("#table-1").dataTable({
+            dom: "Bfrtip",
+            buttons: ["csv", "excel", "pdf", "print"],
+            columnDefs: [{ sortable: false, targets: [2, 3] }],
+        });
+    </script>
+    <script type="text/javascript">
+        function deleteRecord(ev) {
+            ev.preventDefault();
+            var urlToRedirect = ev.currentTarget.getAttribute('href');
+            debugger
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this record !",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            }).then((willDelete) => {
+                if (willDelete) {
+                    location.href = urlToRedirect;
+                    swal({
+                        title: "Data deleted Successfully",
+                        icon: "success"
+                    });
+                } else {
+                    swal("Your record is safe!");
+                }
+            });
+        }
+        $("#table-1").dataTable({
+            dom: "Bfrtip",
+            buttons: ["csv", "excel", "pdf", "print"],
+            columnDefs: [{ sortable: false, targets: [2, 3] }],
+        });
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode != 46 && charCode > 31
+              && (charCode < 48 || charCode > 57))
+                return false;
+
+            return true;
+        }
+</script>
+}
+
+

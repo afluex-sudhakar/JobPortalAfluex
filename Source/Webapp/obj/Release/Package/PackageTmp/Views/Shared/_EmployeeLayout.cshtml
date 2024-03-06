@@ -1,0 +1,378 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Afluex Multiservices LLP</title>
+
+    @*<style>
+         .chat-send, .chat-send:hover, .chat-send:active {
+            float: right;
+            position: relative;
+            top: -50px;
+            right: 10px;
+            box-shadow: none !important;
+            background-color: none !important;
+            border: none !important;
+        }
+    </style>*@
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="~/assets/css/app.min.css">
+    <link rel="stylesheet" href="~/assets/bundles/izitoast/css/iziToast.min.css">
+    <link rel="stylesheet" href="~/assets/bundles/datatables/datatables.min.css">
+    <link rel="stylesheet" href="~/assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" href="~/assets/css/components.css">
+    @*<link rel="stylesheet" href="~/assets/bundles/jqvmap/dist/jqvmap.min.css">*@
+    <!-- Custom style CSS -->
+    <link rel="stylesheet" href="~/assets/css/custom.css">
+    <link rel='shortcut icon' type='image/x-icon' href='/assets/img/favicon.png' />
+    @RenderSection("css", required: false)
+</head>
+
+
+<body>
+    @RenderBody()
+    <div class="loader"></div>
+    <div id="app">
+        <div class="main-wrapper main-wrapper-1">
+            <div class="navbar-bg"></div>
+            <nav class="navbar navbar-expand-lg main-navbar sticky">
+                <div class="form-inline mr-auto">
+                    <ul class="navbar-nav mr-3">
+                        <li>
+                            <a href="#" data-toggle="sidebar" class="nav-link nav-link-lg
+									collapse-btn"><i data-feather="menu"></i></a>
+                        </li>
+                        <li>
+                            @*<form class="form-inline mr-auto">
+                                <div class="search-element">
+                                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="200">
+                                    <button class="btn" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </form>*@
+                        </li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="nav-link nav-link-lg fullscreen-btn">
+                            <i data-feather="maximize"></i>
+                        </a>
+                    </li>
+                  
+                    @{
+                        Html.RenderAction("EmpoyerChatList", "Employee", new { area = "" });
+                    }
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown"
+                           class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                            <img alt="image" src="/assets/img/favicon.png"
+                                 class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right pullDown">
+                            <div class="dropdown-title">Hello @Session["FirstName"]</div>
+                            <a href="/Employee/Profile" class="dropdown-item has-icon">
+                                <i class="far
+										fa-user"></i> Profile
+                            </a> @*<a href="timeline.html" class="dropdown-item has-icon">
+                                <i class="fas fa-bolt"></i>
+                                activities
+                            </a>*@ @*<a href="" class="dropdown-item has-icon">
+                                <i class="fas fa-cog"></i>
+                                settings
+                            </a>*@
+                            <div class="dropdown-divider"></div>
+                            <a href="/home/login" class="dropdown-item has-icon text-danger">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="main-sidebar sidebar-style-2">
+                <aside id="sidebar-wrapper">
+                    <div class="sidebar-brand" style="background-color: #ab183d";
+">
+                        <a href="/Employee/Dashboard">
+                            <img alt="image" src="/images/logo.png" class="header-logo" /> <span class="logo-name"></span>
+                        </a>
+                    </div>
+                    @*<div class="sidebar-user">
+                            <div class="sidebar-user-picture">
+                                <img alt="image" src="~/assets/img/user.png">
+                            </div>
+                            <div class="sidebar-user-details">
+                                <div class="user-name">Olivia Thomas</div>
+                                <div class="user-role">Administrator</div>
+                                <div class="sidebar-userpic-btn">
+                                    <a href="profile.html" data-toggle="tooltip" title="Profile">
+                                        <i data-feather="user"></i>
+                                    </a>
+                                    <a href="email_inbox.html" data-toggle="tooltip" title="Mail">
+                                        <i data-feather="mail"></i>
+                                    </a>
+                                    <a href="chat.html" data-toggle="tooltip" title="Chat">
+                                        <i data-feather="message-square"></i>
+                                    </a>
+                                    <a href="login.html" data-toggle="tooltip" title="Log Out">
+                                        <i data-feather="log-out"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>*@
+                    <ul class="sidebar-menu">
+                        <li class="menu-header">Main</li>
+                        <li class="dropdown active">
+                            <a href="/Employee/Dashboard" class="nav-link">
+                                <i data-feather="monitor"></i><span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="layout"></i><span>Job Post</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="/Employee/JobPost">Post a Job</a></li>
+                                <li><a class="nav-link" href="/Employee/JobPostList">Job Post List</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="layout"></i><span>Job Seeker</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="/Employee/AppliedCandidate">Applied Candidates</a></li>
+                                <li><a class="nav-link" href="/Employee/ShortListedCandidate">Short Listed Candidates</a></li>
+                            </ul>
+                        </li>
+                        @*<li class="dropdown">
+                            <a href="/Admin/EmployeeList" class="nav-link"><i data-feather="monitor"></i><span>Notifications</span></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/Admin/EmployeeList" class="menu-toggle nav-link has-dropdown"><i data-feather="grid"></i><span>CMS</span></a>
+                        </li>*@
+                        <li class="dropdown">
+                            <a href="/Employee/Messages" class="nav-link"><i data-feather="user-check"></i><span>Messages</span></a>
+
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="clipboard"></i><span>Reports</span></a>
+                            
+                        </li>
+                        <li class="dropdown">
+                            <a href="/Employee/ChangePassword" class="nav-link">
+                                <i data-feather="user-check"></i><span>Change Password</span>
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+            <!-- Main Content -->
+            <div class="main-content">
+                <section class="section">
+                    @*<ul class="breadcrumb breadcrumb-style ">
+                            <li class="breadcrumb-item">
+                                <h4 class="page-title m-b-0">Dashboard</h4>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="index.html">
+                                    <i data-feather="home"></i>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ul>*@
+                </section>
+                @*<div class="settingSidebar">
+                    <a href="javascript:void(0)" class="settingPanelToggle">
+                        <i class="fa fa-spin fa-cog"></i>
+                    </a>
+                    <div class="settingSidebar-body ps-container ps-theme-default">
+                        <div class="fade show active">
+                            <div class="setting-panel-header">
+                                Setting Panel
+                            </div>
+                            <div class="p-15 border-bottom">
+                                <h6 class="font-medium m-b-10">Select Layout</h6>
+                                <div class="selectgroup layout-color w-50">
+                                    <label class="selectgroup-item">
+                                        <input type="radio" name="value" value="1" class="selectgroup-input-radio select-layout" checked>
+                                        <span class="selectgroup-button">Light</span>
+                                    </label>
+                                    <label class="selectgroup-item">
+                                        <input type="radio" name="value" value="2" class="selectgroup-input-radio select-layout">
+                                        <span class="selectgroup-button">Dark</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="p-15 border-bottom">
+                                <h6 class="font-medium m-b-10">Sidebar Color</h6>
+                                <div class="selectgroup selectgroup-pills sidebar-color">
+                                    <label class="selectgroup-item">
+                                        <input type="radio" name="icon-input" value="1" class="selectgroup-input select-sidebar">
+                                        <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
+                                              data-original-title="Light Sidebar"><i class="fas fa-sun"></i></span>
+                                    </label>
+                                    <label class="selectgroup-item">
+                                        <input type="radio" name="icon-input" value="2" class="selectgroup-input select-sidebar" checked>
+                                        <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
+                                              data-original-title="Dark Sidebar"><i class="fas fa-moon"></i></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="p-15 border-bottom">
+                                <h6 class="font-medium m-b-10">Color Theme</h6>
+                                <div class="theme-setting-options">
+                                    <ul class="choose-theme list-unstyled mb-0">
+                                        <li title="white" class="active">
+                                            <div class="white"></div>
+                                        </li>
+                                        <li title="cyan">
+                                            <div class="cyan"></div>
+                                        </li>
+                                        <li title="black">
+                                            <div class="black"></div>
+                                        </li>
+                                        <li title="purple">
+                                            <div class="purple"></div>
+                                        </li>
+                                        <li title="orange">
+                                            <div class="orange"></div>
+                                        </li>
+                                        <li title="green">
+                                            <div class="green"></div>
+                                        </li>
+                                        <li title="red">
+                                            <div class="red"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="p-15 border-bottom">
+                                <div class="theme-setting-options">
+                                    <label class="m-b-0">
+                                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
+                                               id="mini_sidebar_setting">
+                                        <span class="custom-switch-indicator"></span>
+                                        <span class="control-label p-l-10">Mini Sidebar</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="p-15 border-bottom">
+                                <div class="theme-setting-options">
+                                    <label class="m-b-0">
+                                        <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
+                                               id="sticky_header_setting">
+                                        <span class="custom-switch-indicator"></span>
+                                        <span class="control-label p-l-10">Sticky Header</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mt-4 mb-4 p-3 align-center rt-sidebar-last-ele">
+                                <a href="#" class="btn btn-icon icon-left btn-primary btn-restore-theme">
+                                    <i class="fas fa-undo"></i> Restore Default
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+            </div>
+            <footer class="main-footer">
+                <div class="footer-left">
+                    Copyright &copy; 2020 Career Mitra <div class="bullet"></div> Design By <a href="www.afluex.com">Afluex Multiservices LLP</a>
+                </div>
+                <div class="footer-right">
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="~/assets/js/app.min.js"></script>
+    <!-- JS Libraies -->
+    <script src="~/assets/bundles/datatables/datatables.min.js"></script>
+    <script src="~/assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/assets/bundles/datatables/export-tables/dataTables.buttons.min.js"></script>
+    <script src="~/assets/bundles/datatables/export-tables/buttons.flash.min.js"></script>
+    <script src="~/assets/bundles/datatables/export-tables/jszip.min.js"></script>
+    <script src="~/assets/bundles/datatables/export-tables/pdfmake.min.js"></script>
+    <script src="~/assets/bundles/datatables/export-tables/vfs_fonts.js"></script>
+    <script src="~/assets/bundles/datatables/export-tables/buttons.print.min.js"></script>
+    <script src="~/assets/bundles/jquery-ui/jquery-ui.min.js"></script>
+    <script src="~/assets/js/iziToast.min.js"></script>
+    <script src="~/assets/bundles/sweetalert/sweetalert.min.js"></script>
+    <!-- Template JS File -->
+    <script src="~/assets/js/scripts.js"></script>
+    <!-- Custom JS File -->
+    <script src="~/assets/js/custom.js"></script>
+    <script src="~/assets/js/transliteration.js"></script>
+    <script type="text/javascript">
+            google.load("elements", "1", {
+                packages: "transliteration"
+            });
+
+            function onLoad() {
+
+                var options = {
+                    //sourceLanguage: 'en',
+                    //destinationLanguage: ['gu'],
+                    sourceLanguage:
+                    google.elements.transliteration.LanguageCode.ENGLISH,
+                    destinationLanguage:
+                    [google.elements.transliteration.LanguageCode.HINDI],
+                    shortcutKey: 'ctrl+g',
+                    transliterationEnabled: true
+                };
+                // Create an instance on TransliterationControl with the required
+                // options.
+                var control = new google.elements.transliteration.TransliterationControl(options);
+
+                // Enable transliteration in the textfields with the given ids.
+                var ids = document.getElementsByClassName('hindi');
+                //var ids = ["txtHindi"];
+                control.makeTransliteratable(ids);
+
+                // Show the transliteration control which can be used to toggle between
+                // English and Hindi and also choose other destination language.
+
+                //control.showControl('translControl');
+
+            }
+
+            google.setOnLoadCallback(onLoad);
+
+    </script>
+    <!-- General JS Scripts -->
+    @*<script src="~/assets/js/app.min.js"></script>
+    <!-- JS Libraies -->
+    <script src="~/assets/bundles/apexcharts/apexcharts.min.js"></script>
+    <script src="~/assets/bundles/jqvmap/dist/jquery.vmap.min.js"></script>
+    <script src="~/assets/bundles/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <!-- Page Specific JS File -->
+    <script src="~/assets/js/page/index.js"></script>
+    <!-- Template JS File -->
+    <script src="~/assets/js/scripts.js"></script>
+    <!-- Custom JS File -->
+    <script src="~/assets/js/custom.js"></script>*@
+
+
+    @RenderSection("script", required: false)
+
+    <script>
+        $.ajax({
+            url: "/employee/GetUnreadMessgeCount",
+            type: "GET",
+            contentType: 'application/json',
+            data: {},
+            //beforeSend: function () {
+            //    $(".loader").show();
+            //},
+            success: function (data) {
+                console.log(data)
+                $('.headerBadge1').text(data)
+            }
+        });
+    </script> 
+</body>
+
+</html>

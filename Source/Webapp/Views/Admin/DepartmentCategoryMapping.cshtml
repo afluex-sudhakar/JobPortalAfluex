@@ -1,0 +1,221 @@
+﻿@model Data.DTOs.DepartmentCategoryDTO
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("DepartmentCategoryMapping", "Admin", FormMethod.Post, new { @class = "needs-validation", @novalidate = "" }))
+{
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.UserAgent)
+    <div class="main-content">
+        <section class="section">
+            <ul class="breadcrumb breadcrumb-style ">
+                <li class="breadcrumb-item">
+                    <h4 class="page-title m-b-0">Master</h4>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/Admin/Index">
+                        <i data-feather="home"></i>
+                    </a>
+                </li>
+                <li class="breadcrumb-item">Department Category Mapping</li>
+            </ul>
+            <div class="section-body">
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Department Category Mapping</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <div class="col-sm-6">
+                                        <label for="Name">Department</label>
+                                        @Html.DropDownListFor(m => m.DepartmentId, new SelectList(ViewBag.Department, "Id", "Name"), "--Select--", new { @class = "form-control", @required = "true" })
+                                        <div class="invalid-feedback">
+                                            Please Select Department.
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label>Category</label>
+                                        @Html.DropDownListFor(m => m.Categories, new SelectList(ViewBag.Categories, "Id", "Name"), "--Select--", new { @class = "js-example-placeholder-multiple js-states form-control", @required = "true", multiple = "multiple" })
+                                        <div class="departmentcategories" style="display:none">
+                                            @if (Model.DepartmentCategories != null)
+                                            {
+                                                int i = 1;
+                                                foreach (var item in Model.DepartmentCategories)
+                                                {
+                                                    <button type="button" data-categoryid="@item.Id" class="btn btn-danger" id="btnSelected">@item.Name</button>
+
+                                                    i++;
+                                                }
+                                            }
+                                        </div>
+                                        <input type="hidden" name="category" value="" />
+                                        <div class="invalid-feedback">
+                                            Please Select Category.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-3" style="float:right">
+                                        @Html.AntiForgeryToken()
+                                        <button class="btn btn-primary mr-1" type="submit">Submit</button>
+                                        <button class="btn btn-dark" type="reset" onclick="reset();">Reset</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>List</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped" id="table-1">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    S.No.
+                                                </th>
+                                                <th>Department</th>
+                                                <th>Category</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (Model != null)
+                                            {
+                                                if (Model.lst != null)
+                                                {
+                                                    int i = 1;
+                                                    foreach (var item in Model.lst)
+                                                    {
+                                                        <tr>
+                                                            <td>
+                                                                @i
+                                                            </td>
+                                                            <td>@item.Department.Name</td>
+                                                            <td>@item.Category.Name</td>
+                                                            <td><a href="/Admin/DepartmentCategoryMapping?Id=@item.Id" class="btn btn-primary">Edit</a></td>
+                                                            <td><a href="/Admin/DeleteDepartmentCategoryMapping?Id=@item.Id" class="btn btn-danger" onclick="deleteRecord(event)">Delete</a></td>
+                                                        </tr>
+                                                        i++;
+                                                    }
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+}
+@section css{
+    <link href="~/assets/bundles/select2/dist/css/select2.min.css" rel="stylesheet" />
+}
+@section script {
+
+    <script src="~/assets/bundles/select2/dist/js/select2.min.js"></script>
+
+    @if (TempData["msg"] != null)
+    {
+        if (TempData["msg"] == "Saved")
+        {
+            <script type="text/javascript">
+                window.onload = function () {
+                    iziToast.success({
+                        title: "Success!",
+                        message: "Data Saved ",
+                        position: "topRight",
+                    });
+                };
+            </script>
+        }
+        else if (TempData["msg"] == "Updated")
+        {
+            <script type="text/javascript">
+                window.onload = function () {
+                    iziToast.success({
+                        title: "Success!",
+                        message: "Data Updated ",
+                        position: "topRight",
+                    });
+                };
+            </script>
+        }
+
+    }
+
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+            $(".js-example-placeholder-multiple").select2({
+                placeholder: "Select Categories",
+                tokenSeparators: [',', ' '],
+                tags: true,
+            });
+
+            window.addEventListener('load', function () {
+                debugger;
+                // Everything has loaded!
+                //set categories
+                var departmentcategories = new Array();
+                $.each($('.departmentcategories button[type=button]'), function (i, v) {
+                    departmentcategories[i] = $(this).attr('data-categoryid');
+                    $('#Categories').val(departmentcategories).trigger('change');
+                });
+            })
+
+            var userAgent = navigator.userAgent;
+            $('#UserAgent').val(userAgent);
+            function deleteRecord(ev) {
+                ev.preventDefault();
+                var urlToRedirect = ev.currentTarget.getAttribute('href');
+                debugger
+                swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover this imaginary file!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                }).then((willDelete) => {
+                    if (willDelete) {
+                        location.href = urlToRedirect;
+                        swal({
+                            title: "Data deleted Successfully",
+                            icon: "success"
+                        });
+                    } else {
+                        swal("Your imaginary file is safe!");
+                    }
+                });
+            }
+            $("#table-1").dataTable({
+                dom: "Bfrtip",
+                buttons: ["csv", "excel", "pdf", "print"],
+                columnDefs: [{ sortable: false, targets: [2, 3] }],
+            });
+
+            function reset() {
+                $("#DepartmentId").val('');
+                $("#btnSelected").val('');
+            }
+        })
+    </script>
+}
+
+

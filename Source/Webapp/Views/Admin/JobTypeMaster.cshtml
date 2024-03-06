@@ -1,0 +1,181 @@
+﻿@model Data.DTOs.JobTypeDTO
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("JobTypeMaster", "Admin", FormMethod.Post, new { @class = "needs-validation", @novalidate = "" }))
+{
+ if (TempData["Category"] != null)
+    {
+    <div>
+        @TempData["msg"]
+    </div>
+    }
+    @Html.HiddenFor(m => m.Id)
+    <div class="main-content">
+        <section class="section">
+            <ul class="breadcrumb breadcrumb-style ">
+                <li class="breadcrumb-item">
+                    <h4 class="page-title m-b-0">Master</h4>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/Admin/Index">
+                        <i data-feather="home"></i>
+                    </a>
+                </li>
+                <li class="breadcrumb-item">Job Type</li>
+            </ul>
+            <div class="section-body">
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12">
+                        <div class="card">
+                            <form class="needs-validation" novalidate="">
+                                <div class="card-header">
+                                    <h4>Job Type Master</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Job Type</label>
+                                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @required = "true" })
+                                                <div class="invalid-feedback">
+                                                    Please enter Job Type Name.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Job Type(In Hindi)</label>
+                                                @Html.TextBoxFor(m => m.NameH, new { @class = "form-control hindi", @required = "true" })
+                                                <div class="invalid-feedback">
+                                                    Please enter Job Type Name.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-3" style="float:right">
+                                                @Html.AntiForgeryToken()
+                                                <button class="btn btn-primary mr-1" type="submit">Submit</button>
+                                                <button class="btn btn-secondary" id="btnreset" type="reset">Reset</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Job Type List</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+
+                                    <table class="table table-striped" id="table-1">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    S.No.
+                                                </th>
+                                                <th>Job Type</th>
+                                                <th>Job Type(In Hindi)</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (Model != null)
+                                  {
+                                    if (Model.lst != null)
+                                    {
+                                        int i = 1;
+                                        foreach (var item in Model.lst)
+                                        {
+                                        <tr>
+                                            <td>
+                                                @i
+                                            </td>
+                                            <td>@item.Name</td>
+                                            <td>@item.NameH</td>
+                                            <td><a href="/Admin/JobTypeMaster?Id=@item.Id" class="btn btn-primary">Edit</a></td>
+                                            <td><a href="/Admin/DeleteJobType?Id=@item.Id" class="btn btn-danger">Delete</a></td>
+                                        </tr>
+                                        i++;
+                                           }
+                                        }
+                                      }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+}
+@section script {
+    <script src="~/scripts/jquery-1.10.2.js"></script>
+    <!-- Page Specific JS File -->
+    <script src="~/assets/js/page/sweetalert.min.js"></script>
+    @if (TempData["msg"] == "Saved")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                iziToast.success({
+                    title: "Success!",
+                    message: "Data Saved ",
+                    position: "topRight",
+                });
+            };
+
+        </script>
+    }
+    @if (TempData["msg"] == "Deleted")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover this!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                }).then((willDelete) => {
+                    if (willDelete) {
+                        swal("Poof! Your data has been deleted!", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("Your data has been safe !");
+                    }
+                });
+            };
+
+        </script>
+    }
+    @if (TempData["msg"] == "Updated")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                iziToast.success({
+                    title: "Success!",
+                    message: "Data Updated ",
+                    position: "topRight",
+                });
+            };
+
+        </script>
+    }
+<script>
+    $("#btnreset").click(function(){
+        location.href = "/Admin/JobTypeMaster";
+    })
+</script>
+}
+
+

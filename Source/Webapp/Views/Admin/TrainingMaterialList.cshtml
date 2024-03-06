@@ -1,0 +1,123 @@
+﻿@model Data.DTOs.TrainingMaterialDTO
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="loader"></div>
+<div id="app">
+    <div class="main-wrapper main-wrapper-1">
+        <!-- Main Content -->
+        <div class="main-content">
+            <section class="section">
+                <ul class="breadcrumb breadcrumb-style ">
+                    <li class="breadcrumb-item">
+                        <h4 class="page-title m-b-0">Admin</h4>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="/Admin/Index">
+                            <i data-feather="home"></i>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">Training Material List</li>
+                </ul>
+                <div class="section-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Training Material List</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped" id="table-1">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">
+                                                        S.No.
+                                                    </th>
+                                                    <th>Title</th>
+                                                    <th>Link</th>
+                                                    <th>Type</th>
+                                                    <th>Attachment</th>
+                                                    <th>Publish Date</th>
+                                                    <th>Description</th>
+                                                    <th>Edit</th>
+                                                    <th>Delete</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (Model != null)
+                                                    {
+                                                      if (Model.lst != null)
+                                                      {
+                                                         int i = 1;
+                                                         foreach (var Item in Model.lst)
+                                                         {
+                                                    <tr>
+                                                        <td>
+                                                            @i
+                                                        </td>
+                                                        <td>@Item.Title</td>
+                                                        <td class="align-middle">
+                                                            @Item.Link
+                                                        </td>
+                                                        <td>@Item.Type</td>
+                                                        <td>
+                                                            @Item.Attachment
+                                                        </td>
+                                                        <td>@Item.PublishDate.ToShortDateString()</td>
+                                                        <td>
+                                                            @Item.ShortDescription
+                                                        </td>
+                                                        <td><a href="/Admin/TrainingMaterial?Id=@Item.Id" class="btn btn-primary">Edit</a></td>
+                                                        <td><a href="/Admin/DeleteTrainingMaterial?Id=@Item.Id" class="btn btn-danger">Delete</a></td>
+                                                    </tr>
+                                                i++;
+                                                         }
+                                                      }
+                                                    }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+@section script {
+<script type="text/javascript">
+        function deleteRecord (ev) {
+            ev.preventDefault();
+            var urlToRedirect = ev.currentTarget.getAttribute('href');
+            debugger
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this imaginary file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            }).then((willDelete) => {
+                if (willDelete) {
+                    location.href=urlToRedirect;
+                    swal({ title: "Data deleted Successfully",
+                        icon: "success"});
+                } else {
+                    swal("Your imaginary file is safe!");
+                }
+            });
+        }
+        $("#table-1").dataTable({
+            dom: "Bfrtip",
+            buttons: ["csv", "excel", "pdf", "print"],
+            columnDefs: [{ sortable: false, targets: [2, 3] }],
+        });
+</script>
+    }
+
+

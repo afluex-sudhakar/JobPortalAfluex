@@ -1,0 +1,270 @@
+﻿@model Data.DTOs.JobDTOWeb
+
+@{
+    Layout = "~/Views/Shared/_WebsiteLayoutHI.cshtml";
+}
+
+<div class="loader"></div>
+
+<div class="inner-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-lg-9 col-sm-12">
+                <!------- job details start---->
+                <div class="job-details-section">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 col-sm-12">
+                            <div class="job-inner">
+                                <div class="job-title">
+                                    @Html.HiddenFor(m => m.Id)
+                                    @Html.HiddenFor(m => m.AppliedUserStatus)
+                                    <input type="hidden" value="@Session["Id"]" id="hdfSession" />
+                                    <span style="display:none" id="jobId">@Model.job.Id</span>
+                                    <h5>@Model.job.Title</h5>
+                                    <ul class="list-unstyled">
+                                        @if (Model.job.CompanyName != "" && Model.job.CompanyName!=null)
+                                        {
+                                            <li><i class="fa fa-building-o" aria-hidden="true"></i> @Model.job.CompanyName</li>
+                                        }
+                                        <li><i class="fa fa-list-ol" aria-hidden="true"></i> रिक्तियों की संख्या: @Model.job.NoOfVacancies</li>
+                                        <li><i class="fa fa-graduation-cap" aria-hidden="true"></i> @Model.job.ExperienceMin - @Model.job.ExperienceMax वर्ष</li>
+                                      @if (Model.job.City != "" && Model.job.City != null)
+                                      {
+                                          <li><i class="fa fa-map-marker" aria-hidden="true"></i> @Model.job.City</li>
+                                      }
+                                    </ul>
+
+                                </div>
+                                <div class="jobsp pull-right">
+                                    @*<button type="submit" class="btn btn-outline-danger jobsp-btn">Save</button>*@
+                                    <button id="btnapply" type="button" class="btn btn-primary jobp-btn">आवेदन करें</button>
+                                    @*<span id="msg" style="color:red">@TempData["msg"]</span>*@
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="dividerjobdetails"></div>
+                                <div class="posted-time mt-3">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> @Model.job.Time |</li>
+                                        @*<li class="list-inline-item">नौकरी के आवेदक: @Model.job.AppliedCandidates</li>*@
+                                        @*<li class="pull-right"><a href="/en/commingsoon" class="text-black"><strong>Send me jobs like this</strong></a></li>*@
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!------- job details end---->
+                <!------- job_highlights_content start---->
+                <div class="job_highlights_section">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 col-sm-12">
+                            <div class="job_highlight_inner">
+                                <div class="job_highlight_title">
+                                    <h5>नौकरी का विवरण</h5>
+                                    <p>@Model.job.ShortDescription</p>
+                                    <strong>आवश्यक कौशल और विशेषज्ञता :</strong>
+                                    <p></p>
+                                    @if (Model != null)
+                                    {
+                                        if (Model.job != null)
+                                        {
+                                            int i = 0;
+                                            foreach (var Item in Model.job.Skill)
+                                            {
+                                                <span class="jobdetails_publ">@Item</span>
+                                            }
+                                        }
+                                    }
+                                    <h6></h6>
+                                    <p><strong>भूमिका और जिम्मेदारियां</strong></p>
+                                    <p>@Model.job.JobRole</p>
+                                    <strong>विवरण :</strong>
+                                    <p></p>
+                                    <p>
+                                        @Model.job.Description
+                                    </p>
+
+                                    <div class="row">
+                                        <div class="col-md-3 col-lg-3 col-sm-12">
+                                            <div class="rolej">
+                                                <ul class="list-unstyled">
+                                                    <li>भूमिका</li>
+                                                    <li>उद्योग के प्रकार</li>
+                                                    <li>रोजगार के प्रकार</li>
+                                                    <li>वेतन/महिना (रु में)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 col-lg-9 col-sm-12">
+                                            <div class="rolej">
+                                                <ul class="list-unstyled">
+                                                    <li>@Model.job.JobRole</li>
+                                                    <li>@Model.job.Department</li>
+                                                    <li>@Model.job.JobType</li>
+                                                    @if (Model.job.SalaryMin != null && Model.job.SalaryMax != null)
+                                                    {
+                                                        <li>
+                                                            @Model.job.SalaryMin to @Model.job.SalaryMax
+                                                        </li>
+                                                    }
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p><strong>शिक्षा :</strong></p>
+                                    <div class="row">
+                                        <div class="col-md-3 col-lg-3 col-sm-12">
+                                            <div class="rolej">
+                                                <ul class="list-unstyled">
+                                                    <li>कोई योग्यता :</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 col-lg-9 col-sm-12">
+                                            <div class="rolej">
+                                                <ul class="list-unstyled">
+                                                    <li>@Model.job.Qualification</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*<p><strong>Key Skills</strong></p>
+                                        <p>Painting </p>*@
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+                <!------- job_highlights_content end---->
+                <!------- job_highlights_aboutcompany start---->
+                <div class="job_highlights_abtcony_section">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 col-sm-12">
+                            <div class="job_highlight-abtcony_inner">
+                                <div class="job_highlight-abtcony_title">
+                                    <h5>कम्पनी के बारे में</h5>
+                                   
+                                        @if (Model.job.About != null)
+                                        { 
+                                            <p>@Model.job.About</p>
+                                        }
+                                        else
+                                        {
+                                            <p><strong>के द्वारा प्रकाशित: </strong>@Model.job.PostedBy</p>
+                                        }
+
+                                    <p><strong>ई-मेल: </strong> @Model.job.Email</p>
+                                    <p><strong>फ़ोन नो.: </strong> @Model.job.Contact</p>
+                                    @if (!string.IsNullOrEmpty(@Model.job.Location) && !string.IsNullOrEmpty(@Model.job.City) && !string.IsNullOrEmpty(@Model.job.State) && @Model.job.PinCode>0)
+                                    {
+                                        <p><strong>पता : </strong> @Model.job.Location, @Model.job.City, @Model.job.State, @Model.job.PinCode</p>
+                                    } 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+                </div>
+            <div class="col-md-3 col-lg-3 col-sm-12">
+                <div class="sidebar-section">
+                    <div class="jobs_you_might">
+                        <h5 class="text-center font-weight-bold">ऐसी नौकरियां जिनमें आपकी रुचि हो सकती है</h5>
+                        @if (Model != null)
+                        {
+                            if (Model.JobResponse != null)
+                            {
+                                int i = 1;
+                                foreach (var item in Model.JobResponse.ListJob)
+                                {
+                                    <a href="/en/JobDetails?Id=@item.Id" class="jobtitle"><p class="mt-3"><strong>@item.Title</strong></p></a>
+                                    <ul class="list-unstyled">
+                                        @if (item.CompanyName != null && item.CompanyName!="")
+                                        {
+                                            <li><i class="fa fa-building" aria-hidden="true"></i> @item.CompanyName</li>
+                                        }
+                                        else
+                                        {
+
+                                        }
+@if (item.City != null && item.City != "")
+{
+                                        <li><i class="fa fa-map-marker" aria-hidden="true"></i> @item.City</li>
+}
+                                        <li class="pull-right">@item.Time</li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                    <div class="dividerjobdetails mt-3"></div>
+                                    i++;
+                                }
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5fdca9a3285bcd9b"></script>
+
+@section css {
+
+    <link href="~/assets/css/rangeslider.css" rel="stylesheet" />
+}
+
+@section script {
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="~/scripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            debugger;
+            var status = $("#AppliedUserStatus").val();
+            if (status == "False") {
+                $("#btnapply").attr("disabled", false);
+            }
+            else if (status == "True") {
+                $("#btnapply").attr("disabled", true);
+                $("#btnapply").text("पहले से ही आवेदित");
+            }
+            else {
+                $("#btnapply").attr("disabled", false);
+            }
+        });
+
+        $("#btnapply").click(function () {
+            debugger;
+            var UserId = $("#hdfSession").val();
+            if (UserId == "") {
+                window.location.href = "/en/Login";
+            }
+            else {
+                $.ajax({
+                    url: "/hi/ApplyJob",
+                    type: "POST",
+                    dataType: 'JSON',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: { UserId: UserId, JobId: $("#jobId").text() },
+                    success: function (data) {
+                        debugger;
+                        if (data == "1") {
+                            alert('सफलतापूर्वक आवेदन किया गया|');
+                            window.location.href = "/Home/AdvanceSearch";
+                        }
+                        else if (data == "-1") {
+                            alert('पहले से ही आवेदित|');
+                            window.location.href = "/Home/AdvanceSearch";
+                        }
+                        else {
+                            alert('आवेदन नहीं हुआ | कृपया पुनः प्रयास करें |');
+                        }
+                    }
+                })
+            }
+        })
+    </script>
+}

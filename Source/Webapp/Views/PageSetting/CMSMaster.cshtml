@@ -1,0 +1,290 @@
+﻿@model Data.DTOs.CMSDTO
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section style{
+<link rel="stylesheet" href="~/assets/css/components.css">
+<!-- Custom style CSS -->
+    <style>
+        .note-toolbar.card-header {
+    height: auto;
+    display: block;
+    min-height:auto;
+    background: #ececec;
+}
+    </style>
+    }
+<div class="loader" id="fade"></div>
+@using (Html.BeginForm("CMSMaster", "PageSetting", FormMethod.Post, new { @class = "needs-validation tr-form", @novalidate = "" }))
+{
+    <div class="main-content">
+        <section class="section">
+            <ul class="breadcrumb breadcrumb-style ">
+                <li class="breadcrumb-item">
+                    <h4 class="page-title m-b-0">Admin</h4>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/Admin/Index">
+                        <i data-feather="home"></i>
+                    </a>
+                </li>
+                <li class="breadcrumb-item">CMS Panel</li>
+            </ul>
+        </section>
+
+        <div class="section-body">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>CMS Details</h4>
+                                <span class="pull-right" id="Temp" style="color:#ff0000"></span>
+                       
+                        </div>
+                        <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>Page Name</label>
+                                                @if(Model.pageName=="" || Model.pageName==null)
+                                                {
+                                                 @Html.TextBoxFor(m => m.pageName, new { @class = "form-control", @required = "true" })
+                                                }
+                                                else
+                                                {
+                                                 @Html.TextBoxFor(m => m.pageName, new { @class = "form-control", @required = "true", @readonly = "true" })
+                                                }
+
+                                                <input type="hidden" id="HdnId" value="@Model.Id" />
+                                                <div class="invalid-feedback">
+                                                    Please enter Page Name.
+                                                </div>
+                                            </div>
+                                            </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-12">
+                                                <label>Description</label>
+                                                @Html.TextAreaFor(m => m.Description, new { @id = "Description", @class = "summernote", @required = "" })
+                                                <div class="invalid-feedback">
+                                                    Please Enter Description !
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="col-sm-12 col-md-12">
+                                                <label>Hindi Description</label>
+                                                @Html.TextAreaFor(m => m.HDescription, new { @id = "HDescription", @class = "summernote H", @required = "" })
+                                                <div class="invalid-feedback">
+                                                    Please Enter Hindi Description !
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                @if (Model.Id == 0)
+                                                {
+                                                    <button type="button" id="btnSave" class="btn btn-primary">Save</button>
+                                                }
+                                                else
+                                                {
+                                                    <button type="button" id="btnUpdate" class="btn btn-primary">Update</button>
+                                                }
+                                              
+                                                @*<button type="button" id="btnReset" class="btn btn-secondary">Reset</button>*@
+                                            </div>
+                                        </div>
+                                        </div>
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="col-12">
+                                                <div class="card-header">
+                                                    <h4>CMS List</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="table-responsive">
+
+                                                        <table class="table table-striped" id="table-1">
+                                                            <thead>
+
+                                                                <tr>
+                                                                    <th>
+                                                                        S.No.
+                                                                    </th>
+                                                                    <th>Page Name</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+
+                                                            </thead>
+                                                            <tbody>
+                                                                @if (Model != null)
+                                                                {
+                                                                    if (Model.lst != null)
+                                                                    {
+                                                                        int i = 1;
+                                                                        foreach (var Item in Model.lst)
+                                                                        {
+                                                                            <tr>
+                                                                                <td>@i</td>
+                                                                                <td>@Item.PageName</td>
+                                                                                <td>
+                                                                                    <a href="/PageSetting/CMSMaster?Id=@Item.Id" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
+                                                                                    <a href="/PageSetting/DeletePage?Id=@Item.Id" data-toggle="tooltip" title="" data-original-title="Delete"><i class="far fa-trash-alt"></i></a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            i++;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                       
+                                        </div>
+                                        </div>
+                                    </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section script{
+     
+@if (TempData["msg"] == "Deleted")
+    {
+    <script type="text/javascript">
+            window.onload = function () {
+                iziToast.success({
+                    title: "Success!",
+                    message: "Data Deleted ",
+                    position: "topRight",
+                });
+            };
+    </script>
+}
+
+<script>
+    $(document).ready(function () {
+        $('#Description').summernote({
+            height: 250
+        });
+      function deleteRecord (ev) {
+          ev.preventDefault();
+          var urlToRedirect = ev.currentTarget.getAttribute('href');
+          debugger
+          swal({
+              title: "Are you sure?",
+              text: "Once deleted, you will not be able to recover this Page Details!",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+          }).then((willDelete) => {
+              if (willDelete) {
+                  location.href=urlToRedirect;
+                  swal({ title: "Data deleted Successfully",
+                      icon: "success"});
+              } else {
+                  swal("Your Page Details is safe!");
+              }
+          });
+      }
+    var HindiDescription=    $('#HDescription').summernote({
+            height: 250
+        });
+    });
+   
+    $("#btnSave").click(function () {
+        debugger
+        if ($(".note-editable").html() != "<p><br></p>") {
+                $.ajax({
+                    url: "SaveCmsPanel",
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    data: "{'PageName':'" + $("#pageName").val() + "','Description':'" + $('#Description').val() + "','HDescription':'" + $('#HDescription').val() + "'}",
+                    beforeSend: function () {
+                     
+                        $('#fade').show();
+                    },
+                    complete: function () {
+                        $('#fade').hide();
+                    },
+                    success: function (Result) {
+                        if (Result.Result == "CMS Page Details Save Successfull !") {
+                            $("#pageName").val('');
+                            $(".note-editable").html('');
+                            iziToast.success({
+                                title: "Success!",
+                                message: "CMS Page Details Save Successfull ! ",
+                                position: "topRight",
+                            });
+                        }
+                    }
+                });
+            }
+        else {
+            $(".invalid-feedback").show();
+            //$('.invalid-feedback').text('pleae enter cms');
+            //$("invalid-feedback").hide();
+            }
+    });
+
+    $("#btnUpdate").click(function () {
+        debugger
+        if ($(".note-editable").html() != "<p><br></p>") {
+            $.ajax({
+                url: "UpdateCMSPanel",
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: "{'PageName':'" + $("#pageName").val() + "','Description':'" + $('#Description').val() + "','HDescription':'" + $('#HDescription').val() + "','Id':'" + $("#HdnId").val() + "'}",
+                beforeSend: function () {
+
+                    $('#fade').show();
+                },
+                complete: function () {
+                    $('#fade').hide();
+                },
+                success: function (Result) {
+                    if (Result.Result == "CMS Page Details Update Successfull !") {
+                        debugger
+                        $("#pageName").val('');
+                        $(".note-editable").html('');
+                        $("#HdnId").val('');
+                        $("#btnSave").show();
+                        $("#btnUpdate").hide();
+                        iziToast.success({
+                            title: "Success!",
+                            message: "CMS Page Details Update Successfull ! ",
+                            position: "topRight",
+                        });
+                    } 
+                }
+            });
+        }
+        else {
+            $(".invalid-feedback").show();
+            //$('.invalid-feedback').text('pleae enter cms');
+            //$("invalid-feedback").hide();
+        }
+        window.location = "CMSMaster";
+    });
+    $("#btnReset").click(function () {
+        $("#pageName").val('');
+        $(".note-editable").html('');
+        $("#btnSave").show();
+        $("#btnUpdate").hide();
+        $("#HdnId").val('');
+    });
+</script>
+ }
+
+<style>
+    .errortext {
+        border: 1px solid red !important;
+        background-color: #fff0f0 !important;
+    }
+</style>

@@ -1,0 +1,265 @@
+﻿@model Data.DTOs.UserDTO
+@{
+    Layout = null;
+}
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="~/assets/css/app.min.css" rel="stylesheet" />
+    <link href="~/assets/css/iziToast.min.css" rel="stylesheet" />
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+
+    <title>Afluex Multiservice llp</title>
+</head>
+
+<body style="background-image: url('../images/login_bg.jpg');background-repeat: no-repeat;background-size: auto;">
+    <div class="main_signup">
+        @using (Html.BeginForm("SignUp", "Hi", FormMethod.Post, new { @class = "needs-validation", @novalidate = "" }))
+        {
+            if (TempData["msg"] != null)
+            {
+                <div>
+                    @TempData["msg"]
+                </div>
+            }
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12">
+                        <div class="signup_inner">
+                            <h1 class="text-center">पंजीकरण</h1>
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputName4">पहला नाम</label>
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></div>
+                                            </div>
+                                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @placeholder = "पहला नाम दर्ज करें", @required="true" })
+                                            <div class="invalid-feedback">
+                                                कृपया पहला नाम दर्ज करें !
+                                            </div>
+                                            @Html.HiddenFor(m => m.UserAgent)
+
+                                            <input type="hidden" name="response" value="@TempData["Msg"]" id="Response" /> 
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputName4">उप नाम</label>
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></div>
+                                            </div>
+                                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @placeholder = "उपनाम दर्ज करें" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="inputEmail4">ईमेल आईडी</label>
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                                            </div>
+                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "प्रासंगिक नौकरियां प्राप्त करने के लिए अपनी सक्रिय ईमेल आईडी दर्ज करें" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="inputEmail4">मोबाइल नंबर *</label>
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                                            </div>
+                                            @Html.TextBoxFor(m => m.Mobile, new { @class = "form-control", @maxLength = "10", @placeholder = "मान्य मोबाइल नंबर दर्ज करें", @onkeypress = "return isNumberKey(event);", @required = "true" })
+                                            <div class="invalid-feedback">
+                                                मोबाइल नंबर
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">पासवर्ड बनाएं *</label>
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></div>
+                                            </div>
+                                            @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @placeholder = "न्यूनतम 8 वर्ण", @onBlur = "return checkPasswordStrength()", @type = "Password", @required = "true" })
+                                            <div class="invalid-feedback">
+                                                पासवर्ड !
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">पासवर्ड की पुष्टि कीजिये *</label>
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></div>
+                                            </div>
+                                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @required = "true" })
+                                            <div class="invalid-feedback">
+                                                कृपया पासवर्ड को फिर से दर्ज करें !
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-outline-primary btn-lg signup_btn" onclick="return validateConfPassword();">पंजीकरण करें</button>
+                                <button type="button" id="btnsignin" class="btn btn-outline-primary btn-lg signup_btn">साइन इन करें</button>
+                                <button id="btnhome" type="button" class="btn btn-outline-primary btn-lg signup_btn float-lg-right">होम पे जाएँ</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+
+
+    <script src="~/scripts/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+
+
+    <!-- JS Libraies -->
+    <script src="~/assets/js/app.min.js"></script>
+    <script src="~/assets/js/iziToast.min.js"></script>
+    <!-- Page Specific JS File -->
+    <!-- Template JS File -->
+    @*<script src="~/assets/js/page/toastr.js"></script>*@
+    <script src="~/assets/js/scripts.js"></script>
+    <!-- Custom JS File -->
+    <script src="~/assets/js/custom.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#divload").css({ 'display': 'none' });
+            var userAgent = navigator.userAgent;
+
+            $('#UserAgent').val(userAgent);
+
+
+            if ($("#Response").val() == "Already Registered") {
+                iziToast.warning({
+                    title: "Alert!",
+                    message: "पहले से पंजीकृत",
+                    position: "topRight",
+                });
+            }
+        });
+
+        $("#btnhome").click(function () {
+            location.href = "/Hi/Index";
+        });
+        $("#btnsignin").click(function () {
+            location.href = "/Hi/Login";
+        });
+
+        function calcPasswordLength(evt) {
+            debugger
+            var str = $('#Password').val();
+            var n = str.length;
+            if (n < 6) {
+                alert('पासवर्ड 6 या अधिक वर्ण का होना चाहिए')
+                $('#Password').val('')
+                return false;
+            }
+        }
+        function validateConfPassword() {
+
+
+            var password = $('#Password').val();
+            var ConfirmPassword = $('#ConfirmPassword').val();
+            if (password != ConfirmPassword) {
+                iziToast.warning({
+                    title: "Alert!",
+                    message: "पासवर्ड का मिलान नहीं हुआ",
+                    position: "topRight",
+                });
+                $('#Password').val('');
+                $('#ConfirmPassword').val('');
+                return false;
+            }
+        }
+
+        function isNumberKey(evt) {
+
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode != 46 && charCode > 31
+              && (charCode < 48 || charCode > 57))
+                return false;
+
+            return true;
+        }
+        //function Validateform() {
+        //    $(".errortext").removeClass("errortext");
+        //    if ($('#FirstName').val() == '') {
+        //        $("#FirstName").addClass('errortext');
+        //        $('#FirstName').focus();
+        //        return false;
+        //    }
+        //    if ($('#Password').val() == '') {
+        //        $("#Password").addClass('errortext');
+        //        $('#Password').focus();
+        //        return false;
+        //    }
+        //    if ($('#Mobile').val() == '') {
+        //        $("#Mobile").addClass('errortext');
+        //        $('#Mobile').focus();
+        //        return false;
+        //    }
+        //    if ($('#CityId').val() == 0) {
+        //        $("#CityId").addClass('errortext');
+        //        $('#CityId').focus();
+        //        return false;
+        //    }
+        //    return true;
+        //}
+
+        function checkPasswordStrength() {
+            var number = /([0-9])/;
+            var alphabetsC = /([A-Z])/;
+            var alphabetsL = /([a-z])/;
+            var special_characters = /([~,!,@@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
+            if ($('#Password').val().length < 8) {
+                alert('Password Weak (should be atleast 8 characters.)');
+                $('#Password').val('');
+                $('#ConfirmPassword').val('');
+                return false;
+            } else {
+                if ($('#Password').val().match(number) && $('#Password').val().match(alphabetsC) && $('#Password').val().match(alphabetsL) && $('#Password').val().match(special_characters)) {
+                    return true;
+                } else {
+                    alert('Password Weak (Should include one capital alphabet, one small alphabet, numbers and special characters.)');
+                    $('#Password').val('');
+                    $('#ConfirmPassword').val('');
+                    return false;
+                }
+            }
+        }
+
+        $(document).ready(function () {
+            $("input:text,form").attr("autocomplete", "off");
+        })
+    </script>
+</body>
+
+</html>

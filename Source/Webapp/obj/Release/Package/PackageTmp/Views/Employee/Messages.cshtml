@@ -1,0 +1,140 @@
+﻿@model Data.DTOs.MessageSendEmployerRequestDTO
+
+@{
+    ViewBag.Title = "Messages";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("Messages", "Employee", FormMethod.Post, new { @class = "needs-validation tr-form", @novalidate = "" }))
+{
+    if (TempData["Messages"] != null)
+    {
+        <div>
+            @TempData["Messages"]
+        </div>
+    }
+    <div class="loader"></div>
+    <div id="app">
+        <div class="main-wrapper main-wrapper-1">
+            <!-- Main Content -->
+            <div class="main-content">
+                <section class="section">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <h4 class="page-title m-b-0">Messages</h4>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="index.html">
+                                <i data-feather="home"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <div class="section-body">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>Messages</h4>
+                                    </div>
+                                    <div class="card-body">
+
+                                        <div class="table-responsive">
+                                            <table class="table table-striped" id="table-1">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center">
+                                                            S.No.
+                                                        </th>
+                                                        <th>Job Seeker</th>
+                                                        <th>Last Message</th>
+                                                        <th>Job Title</th>
+                                                        <th>Read/UnRead</th>
+                                                        <th style="text-align:center">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @if (Model != null)
+                                                    {
+                                                        if (Model.MessageList != null)
+                                                        {
+                                                            int i = 1;
+                                                            foreach (var Item in Model.MessageList)
+                                                            {
+
+                                                                <tr>
+                                                                    <td>
+                                                                        @i
+                                                                    </td>
+                                                                    <td>@Item.JobSeekerName</td>
+                                                                    <td>@Item.LastMessage</td>
+                                                                    <td>@Item.Job</td>
+                                                                    <td>
+                                                                        @if (Item.IsUnread)
+                                                                        {
+                                                                            @:UnRead
+                                                                            <span class="bg-purple span-count">@Item.UnReadCount</span>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            @:Read
+                                                                        }
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="/Employee/ReplyToJobSeeker?userid=@Item.JobSeekerId&jobid=@Item.JobId" class="btn btn-dark">Reply</a>
+                                                                    </td>
+
+                                                                </tr>
+                                                                i++;
+                                                            }
+                                                        }
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+}
+@section css {
+    <style>
+        .span-count {
+            border-radius: 50%;
+            border: 1px solid #fff;
+            padding: 1px 7px 1px 6px;
+        }
+    </style>
+}
+
+@section script {
+    <script type="text/javascript">
+        $("#table-1").dataTable({
+            dom: "Bfrtip",
+            buttons: ["csv", "excel", "pdf", "print"],
+            columnDefs: [{ sortable: false, targets: [2, 3] }],
+        });
+    </script>
+    @if (TempData["msg"] == "Short Listed")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                iziToast.success({
+                    title: "Success!",
+                    message: '@TempData["msg"]',
+                    position: "topRight",
+                });
+            };
+
+        </script>
+    }
+}
+

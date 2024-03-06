@@ -1,0 +1,183 @@
+﻿@model Data.DTOs.JobList
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+@using (Html.BeginForm("JobPostList", "Employee", FormMethod.Post, new { @class = "needs-validation", @novalidate = "" }))
+{
+
+    <div class="main-content">
+        <section class="section">
+            <ul class="breadcrumb breadcrumb-style ">
+                <li class="breadcrumb-item">
+                    <h4 class="page-title m-b-0">Employee</h4>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="index.html">
+                        <i data-feather="home"></i>
+                    </a>
+                </li>
+                <li class="breadcrumb-item">Job Post List</li>
+            </ul>
+            <div class="section-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Job Post List</h4>
+                                
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped" id="table-1">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">
+                                                    S.No.
+                                                </th>
+                                                <th>Title</th>
+                                                <th>Job Role</th>
+                                                <th>Skills</th>
+                                                <th>Salary</th>
+                                                <th>Experience</th>
+                                                <th>Posted Date</th>
+                                                <th>Last Date</th>
+                                                <th>Short Description</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+                                                <th>Publish</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (Model != null)
+                                            {
+                                                if (Model.jobList != null)
+                                                {
+                                                    int i = 1;
+                                                    foreach (var Item in Model.jobList)
+                                                    {
+                                                        var data = Item.jobSkill.ToList();
+                                                        <tr>
+                                                            <td>
+                                                                @i
+                                                            </td>
+                                                            <td>@Item.Title</td>
+                                                            <td>@Item.JobRole</td>
+                                                            <td>
+                                                                @if (data != null)
+                                                                {
+                                                                    for (int j = 0; j < data.Count(); j++)
+                                                                    {
+                                                                        <span class="jobdetails_publ">@data[j].Skill</span>
+                                                                    }
+                                                                }
+</td>
+
+                                                            <td>
+                                                                @Item.SalaryMin - @Item.SalaryMax
+                                                            </td>
+                                                            <td>@Item.ExperienceMin - @Item.ExperienceMax Year</td>
+                                                            <td>@Item.PostedDate.ToShortDateString()</td>
+                                                            <td>@Item.LastDate.Value.ToShortDateString()</td>
+                                                            <td>@Item.ShortDescription</td>
+                                                            <td><a href="/Employee/JobPost?Id=@Item.Id" class="btn btn-primary">Edit</a></td>
+                                                            <td><a href="/Employee/DeleteJobPost?Id=@Item.Id" class="btn btn-danger" onclick="deleteRecord(event);">Delete</a></td>
+                                                            <td>
+                                                            @if (Item.IsVerified == false)
+                                                            {
+                                                                <a href="/Employee/PublishJob?Id=@Item.Id" class="btn btn-dark">Publish</a>
+                                                            }
+                                                            else
+                                                            {
+                                                                <button class="btn btn-dark" disabled>Published</button>
+                                                            }
+                                                           </td>
+                                                        </tr>
+                                                        i++;
+                                                    }
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+}
+@section css{
+}
+@section script {
+    @if (TempData["msg"] == "Saved")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                iziToast.success({
+                    title: "Success!",
+                    message: "Data Saved ",
+                    position: "topRight",
+                });
+            };
+
+        </script>
+    }
+    @if (TempData["msg"] == "Updated")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                iziToast.success({
+                    title: "Success!",
+                    message: "Data Updated ",
+                    position: "topRight",
+                });
+            };
+
+        </script>
+    }
+    @if (TempData["msg"] == "Published")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                iziToast.success({
+                    title: "Success!",
+                    message: "Job Published ",
+                    position: "topRight",
+                });
+            };
+
+        </script>
+    }
+    <script type="text/javascript">
+        function deleteRecord(ev) {
+            ev.preventDefault();
+            var urlToRedirect = ev.currentTarget.getAttribute('href');
+            debugger
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this imaginary file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            }).then((willDelete) => {
+                if (willDelete) {
+                    location.href = urlToRedirect;
+                    swal({
+                        title: "Data deleted Successfully",
+                        icon: "success"
+                    });
+                } else {
+                    swal("Your imaginary file is safe!");
+                }
+            });
+        }
+        $("#table-1").dataTable({
+            dom: "Bfrtip",
+            buttons: ["csv", "excel", "pdf", "print"],
+            columnDefs: [{ sortable: false, targets: [2, 3] }],
+        });
+    </script>
+}

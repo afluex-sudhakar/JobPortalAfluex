@@ -1,0 +1,114 @@
+﻿@model Data.DTOs.DocumentTypeDTO
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("DocumentTypeMaster", "Admin", FormMethod.Post, new { @class = "needs-validation", @novalidate = "" }))
+{
+ if (TempData["msg"] != null)
+    {
+    <div>
+        @TempData["msg"]
+    </div>
+    }
+    @Html.HiddenFor(m=>m.Id)
+<div class="main-content">
+    <section class="section">
+        <ul class="breadcrumb breadcrumb-style ">
+            <li class="breadcrumb-item">
+                <h4 class="page-title m-b-0">Master</h4>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/Admin/Index">
+                    <i data-feather="home"></i>
+                </a>
+            </li>
+            <li class="breadcrumb-item">Document Type</li>
+        </ul>
+        <div class="section-body">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12">
+                    <div class="card">
+                            <div class="card-header">
+                                <h4>Document Type Master</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label class="col-md-1">Document Type</label>
+                                        <div class="col-md-6">
+                                            @Html.TextBoxFor(m=>m.Name,new{@class="form-control", @required="true"})
+                                            <div class="invalid-feedback">
+                                                Please enter Document Type Name.
+                                            </div>
+                                        </div>
+                                        @*<div class="col-md-6">
+                                            <label>Document Type(In Hindi)</label>
+                                            @Html.TextBoxFor(m => m, new { @class = "form-control", @required = "true" })
+                                            <div class="invalid-feedback">
+                                                Please enter Document Type Name in Hindi.
+                                            </div>
+                                        </div>*@
+                                        <div class="col-md-5" style="float:right">
+                                            @Html.AntiForgeryToken()
+                                            <button class="btn btn-primary mr-1" type="submit">Submit</button>
+                                            <button class="btn btn-secondary" type="reset">Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Document Type List</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+
+                                <table class="table table-striped" id="table-1">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                S.No.
+                                            </th>
+                                            <th>Document Type Name</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                  @if (Model != null)
+                                  {
+                                    if (Model.lst != null)
+                                    {
+                                        int i = 1;
+                                        foreach (var item in Model.lst)
+                                        {
+                                         <tr>
+                                             <td>
+                                                @i
+                                             </td>
+                                             <td>@item.Name</td>
+                                             <td><a href="/Admin/DocumentTypeMaster?Id=@item.Id" class="btn btn-primary">Edit</a></td>
+                                             <td><a href="/Admin/DeleteDocumentType?Id=@item.Id" class="btn btn-danger">Delete</a></td>
+                                         </tr>
+                                        i++;
+                                           }
+                                        }
+                                      }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+}

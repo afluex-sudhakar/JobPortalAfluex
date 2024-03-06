@@ -1,0 +1,117 @@
+﻿@model Data.DTOs.EmpDashboardDTO
+
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+
+@*<div class="main-content">
+        <section class="section">
+            <ul class="breadcrumb breadcrumb-style ">
+                <li class="breadcrumb-item">
+                    <h4 class="page-title m-b-0">Admin</h4>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/Admin/Index">
+                        <i data-feather="home"></i>
+                    </a>
+                </li>
+                <li class="breadcrumb-item">Dashboard</li>
+            </ul>
+            <div class="section-body">
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12">
+                        <div class="card">
+                            <form class="needs-validation" novalidate="">
+                                <div class="card-header">
+                                    <h4>Welcome Employer</h4>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>*@
+<div class="main-content">
+    <section class="section">
+        <ul class="breadcrumb breadcrumb-style ">
+            <li class="breadcrumb-item">
+                <h4 class="page-title m-b-0">Dashboard</h4>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="index.html">
+                    <i data-feather="home"></i>
+                </a>
+            </li>
+            <li class="breadcrumb-item active">Dashboard</li>
+        </ul>
+        <div class="row ">
+            <div class="col-xl-3 col-lg-6">
+                <div class="card l-bg-style1">
+                    <div class="card-statistic-3">
+                        <div class="card-icon card-icon-large"><i class="fa fa-award"></i></div>
+                        <div class="card-content">
+                            <h4 class="card-title">Job Posted</h4>
+                            @if (Model != null)
+                            {
+                                <span>@Model.TotalJobPosted</span>
+                            }
+                            else
+                            {
+                                <span>0</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+                <div class="card l-bg-style2">
+                    <div class="card-statistic-3">
+                        <div class="card-icon card-icon-large"><i class="fa fa-briefcase"></i></div>
+                        <div class="card-content">
+                            <h4 class="card-title">Applied Candidates</h4>
+                            @if (Model != null)
+                            {
+                                <span>@Model.TotalAppliedCandidates</span>
+                            }
+                            else
+                            {
+                                <span>0</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+                <div class="card l-bg-style3">
+                    <div class="card-statistic-3">
+                        <div class="card-icon card-icon-large"><i class="fa fa-globe"></i></div>
+                        <div class="card-content">
+                            <h4 class="card-title">Placed Candidates</h4>
+                            @if (Model != null)
+                            {
+                                <span>@Model.TotalShortListedCandidates</span>
+                            }
+                            else
+                            {
+                                <span>0</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+                <div class="card l-bg-style4">
+                    <div class="card-statistic-3">
+                        <div class="card-icon card-icon-large"><i class="fa fa-money-bill-alt"></i></div>
+                        <div class="card-content">
+                            <h4 class="card-title">Messages</h4>
+                            <span>0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

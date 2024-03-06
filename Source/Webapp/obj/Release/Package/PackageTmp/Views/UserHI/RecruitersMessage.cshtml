@@ -1,0 +1,76 @@
+﻿@model Data.DTOs.MessageSendUserRequestDTO
+
+@{
+    ViewBag.Title = "RecruitersMessage";
+    Layout = "~/Views/Shared/_WebsiteLayoutHI.cshtml";
+}
+
+@using (Html.BeginForm("RecruitersMessage", "uhi", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-lg-9 col-sm-12">
+
+                <div class="education profileborder edu mt-4">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 col-sm-12">
+                            <div class="resume_headline_title">
+                                <h5 class="font-weight-bold">
+                                    रिक्रूटर्स संदेश <span class="pull-right">
+
+                                    </span>
+                                </h5>
+                                <div id="educationid" style="margin-left:10px;">
+                                    <br />
+                                    <div>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">नौकरी का नाम</th>
+                                                    <th scope="col">नियोक्ता का नाम</th>
+                                                    <th scope="col">संदेश</th>
+                                                    <th style="text-align:center">कार्य</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (Model.MessageList != null)
+                                                {
+                                                    int i = 1;
+                                                    foreach (var item2 in Model.MessageList)
+                                                    {
+                                                        <tr>
+
+                                                            <td>@item2.Job</td>
+                                                            @if (item2.CompanyName != "")
+                                                            {
+                                                                <td>@item2.CompanyName</td>
+                                                            }
+                                                            else
+                                                            {
+
+                                                                <td>@item2.EmployerName</td>
+                                                            }
+
+                                                            <td>@item2.LastMessage</td>
+                                                            <td>
+                                                                <a href="/uen/ReplyToEmployer?id=@item2.Id" class="btn btn-dark">उत्तर दें</a>
+                                                            </td>
+
+                                                        </tr>
+                                                        i++;
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+        </div>
+    </div>
+}

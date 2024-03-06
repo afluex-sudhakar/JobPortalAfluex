@@ -1,0 +1,166 @@
+﻿@model Data.DTOs.UserLoginDTO
+@using CaptchaMvc.HtmlHelpers
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/colors.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="~/assets/css/app.min.css" rel="stylesheet" />
+    <link href="~/assets/css/iziToast.min.css" rel="stylesheet" />
+    <!-- Template CSS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <link rel='shortcut icon' type='image/x-icon' href='/assets/img/favicon.png' />
+    <title>Afluex Multiservice LLP</title>
+<style>
+input#UserName {
+    border: 1px solid #3F51B5;
+    height: calc(1.5em + 1rem + 2px);
+    padding: 0.5rem 1rem 0.5rem 3.5rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+}
+input#Password {
+    border: 1px solid #3F51B5;
+    height: calc(1.5em + 1rem + 2px);
+    padding: 0.5rem 1rem 0.5rem 3.5rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+}
+</style>
+</head>
+
+<body class="loginBg">
+    <div class="main_login">
+        @using (Html.BeginForm("Login","Home",FormMethod.Post))
+        {
+       <div class="container">
+         <div class="row">
+            <div class="col-md-12 col-lg-5 col-sm-12 offset-lg-7">
+                <div class="login_inner">
+                    
+                    <div class="logo text-center">
+                        <img src="~/images/logo-dark.png" class="img-fluid" alt="logo">
+                    </div>
+                    <h1 class="text-center mt-3">Login</h1>
+                    <form>
+                        <p style="color:red">@TempData["msg"]</p>
+                        <div class="form-group loginfor">
+                            <label for="exampleInputEmail1">Mobile</label>
+                            <i class="fa fa-mobile" aria-hidden="true"></i>
+                            @Html.TextBoxFor(m=>m.UserName, new{@class="form-control", @maxLength = "10" })
+                            @Html.HiddenFor(m => m.UserAgent)  
+                             @Html.HiddenFor(m => m.Response)
+                        </div>
+                        <div class="form-group pwdfor">
+                            <label for="exampleInputPassword1">Password</label>
+                            <i class="fa fa-key" aria-hidden="true"></i>
+                            @Html.PasswordFor(m=>m.Password, new{@class="form-control",@type="password" })
+                            <span class="showhide saffron-text"><i class="hide-show-password fa fa-eye-slash" data-eye="hide" id="showPass"></i></span>
+                            <small id="emailHelp" class="form-text text-muted pull-right"><a href="/Account/ForgotPassword" class="text-decoration-none saffron-text">Forgot Password?</a></small>
+                        </div>
+                        <div class="form-group">
+                            @Html.MathCaptcha()
+
+                        </div>
+                        <div class="mainloginbt">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-primary btn-lg btn-block loginbt bg-custom"  onclick="return Validateform();">Login</button>
+                            <small id="emailHelp" class="form-text text-muted pull-left"><a href="/en/registration" class="text-decoration-none saffron-text">New User? Register</a></small>
+                            <small id="emailHelp" class="form-text text-muted pull-right"><a href="/en/Index" class="text-decoration-none saffron-text">Back to Home</a></small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+       </div>
+        }
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/app.min.js"></script>
+    <script src="~/assets/js/iziToast.min.js"></script>
+    <!-- Page Specific JS File -->
+    <script>
+        $(document).ready(function () {
+            $("#divload").css({ 'display': 'none' });
+            var userAgent = navigator.userAgent;
+           
+            $('#UserAgent').val(userAgent);
+            if ($("#Response").val() != "") {
+                iziToast.warning({
+                    title: "Success!",
+                    message: "Passrord Change Successfully",
+                    position: "topRight",
+                });
+            }
+        });
+        function isNumberKey(evt) {
+
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode != 46 && charCode > 31
+              && (charCode < 48 || charCode > 57))
+                return false;
+
+            return true;
+        }
+        function Validateform() {
+            $(".errortext").removeClass("errortext");
+           
+            if ($('#UserName').val() == '') {
+                $("#UserName").addClass('errortext');
+                $('#UserName').focus();
+                return false;
+            }
+            if ($('#Password').val() == '') {
+                $("#Password").addClass('errortext');
+                $('#Password').focus();
+                return false;
+            }
+            return true;
+        }
+        $("#showPass").click(function () {
+            var eye = $(this).attr('data-eye');
+            if (eye == 'show') {
+                if ($(this).hasClass('fa-eye')) {
+                    $(this).removeClass('fa-eye')
+                }
+                $(this).addClass('fa-eye-slash');
+                $(this).attr('data-eye', 'hide');
+                $("#Password").attr("type", "password");
+            }
+            else {
+                if ($(this).hasClass('fa-eye-slash')) {
+                    $(this).removeClass('fa-eye-slash')
+                }
+                $(this).addClass('fa-eye');
+                $(this).attr('data-eye', 'show');
+                $("#Password").attr("type", "text");
+            } 
+        });
+        $(document).ready(function () {
+            $("input:text,form").attr("autocomplete", "off");
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,431 @@
+﻿@model Data.DTOs.EmailMasterDTO
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    ul#UserList {
+        overflow-y: scroll;
+        max-height: 274px;
+        width: auto;
+    }
+
+    .note-toolbar.card-header {
+        height: auto;
+        display: block;
+        min-height: auto;
+        background: #ececec;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    .text-center {
+        line-height: 1.6rem;
+        padding-top: 10px;
+    }
+    textarea#HiddenField {
+    display: none;
+}
+</style>
+<div class="loader" id="divload"></div>
+<div id="app">
+    <div class="main-wrapper main-wrapper-1">
+        <div class="main-content">
+            <section class="section">
+                <ul class="breadcrumb breadcrumb-style ">
+                    <li class="breadcrumb-item">
+                        <h4 class="page-title m-b-0">Compose</h4>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="index.html">
+                            <i data-feather="home"></i>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">Email</li>
+                    <li class="breadcrumb-item active">Compose</li>
+                </ul>
+                <div class="section-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                            <div class="card">
+                                <div class="body">
+                                    <div id="mail-nav">
+                                        <div class="inbox-center table-responsive">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="1">
+                                                            <div class="inbox-header">
+                                                                Select Recipient
+                                                            </div>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <ul class="" id="mail-folders">
+                                            @Html.DropDownListFor(m => m.UserId, new SelectList(ViewBag.User, "Value", "Text"), new { @class = "form-control", @onchange = "return onUserChange();" })
+                                        </ul>
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @required = "true", @placeholder = "Email", @onblur = "validateEmail(this);" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h5 class="b-b p-10 text-strong"></h5>
+                                        <ul class="mail-folders" id="UserList"></ul>
+                                        <ul class="mail-folders" id="UserBTn"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                            <div class="card">
+                                <div class="boxs mail_listing">
+                                    <div class="inbox-center table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="1">
+                                                        <div class="inbox-header">
+                                                            Compose New Message
+                                                        </div>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <form class="composeForm">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <div class="form-group" id="checked">
+                                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @required = "true", @placeholder = "To", @readonly = "true" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <div class="form-group">
+                                                            <div class="form-line">
+                                                                @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", @required = "true", @placeholder = "Subject" })
+
+                                                            </div>
+                                                            <div class="invalid-feedback subject">
+                                                                Please Write Something !
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <a href="#" class="content" data-toggle="modal" data-target="#exampleModal" title="" data-original-title="Edit">
+                                                            Choose Template
+                                                        </a>
+                                                        <a style="float:right" data-toggle="tooltip" title="" data-original-title="Edit">
+                                                            <input class="ckdtemplate" id="TemplateChecked" type="checkbox">
+                                                            Use This as Template
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                @Html.TextAreaFor(m => m.HiddenField, new { @display="none", @id = "HiddenField", @class = "note-editable card-block", @required = "" })
+                                               
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        @Html.TextAreaFor(m => m.EmailMessage, new { @id = "EmailMessage", @class = "summernote", @required = "" })
+                                                      
+                                                        <div class="invalid-feedback">
+                                                            Please Write Something !
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="m-l-25 m-b-20">
+                                                <button type="button" disabled id="btnSend" class="btn btn-primary">Send</button>
+                                                <button type="button" id="BtnDiscard" class="btn btn-danger btn-border-radius waves-effect">Discard</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="formModal"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="formModal">Choose Template</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            @if (Model != null)
+                            {
+                                if (Model.TemplateList != null)
+                                {
+                                    foreach (var Item in Model.TemplateList)
+                                    {
+                                        <li data-mailbody="@Item.Body" data-subject="@Item.Subject">
+                                            <input type="checkbox" name="checkbody" class="CheckBody" />
+                                            @Item.Subject
+                                        </li>
+                                    }
+                                }
+                            }
+                        </ul>
+                        <div class="modal-footer bg-whitesmoke br">
+                            <button type="button" id="SetTemplateBtn" data-dismiss="modal" class="btn btn-primary">Set Template</button>
+                            @*<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section script{
+    <script>
+        $(document).ready(function () {
+            $('#EmailMessage').summernote({
+                height: 250
+            });
+            $('#UserName').hide();
+            $('#SetTemplateBtn').on('click', function () {
+                $('.CheckBody').each(function (i, v) {
+                    if ($(v).is(':checked')) {
+                        var mailBody = $(this).parent().attr('data-mailbody');
+                        var mailSubject = $(this).parent().attr('data-subject');
+                        //set mail body and subject code goes here
+                        $('.CheckBody').prop('checked', false);
+                        $("#Subject").val(mailSubject);
+                        $('#HiddenField').html(mailBody);
+                        $(".note-editable").html(mailBody);
+                        $('#EmailMessage').val(mailBody)
+                    }
+
+                })
+            })
+
+            $('.CheckBody').on('click', function () {
+                $('.CheckBody').prop('checked', false);
+                $(this).prop('checked', true);
+            })
+        });
+        function validateEmail(emailField) {
+            var reg = /^([A-Za-z0-9_\-\.])+\@@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+            if (reg.test(emailField.value) == false) {
+                alert('Invalid Email Address');
+                return false;
+                $('#UserName').val('');
+            }
+
+            return true;
+
+        }
+        $('#BtnDiscard').on('click', function () {
+            $("#Email").val("");
+            $("#Subject").val("");
+            $(".note-editable").html('');
+            $("#UserId").val("0");
+            $("#UserList").html("");
+            $("#UserList").empty();
+            $("#UserBTn").html("");
+            $("#UserBTn").empty();
+            $('#UserName').hide();
+            $('#UserName').val("");
+            document.getElementById("TemplateChecked").checked == false;
+        })
+        function onUserChange() {
+            $("#Email").val("");
+            $('#btnSend').prop("disabled", true);
+            $("#divload").css({ 'display': '' });
+            $("#Other").css({ 'display': 'none' });
+            var UserId = $('#UserId').val();
+            if (UserId == 0) {
+                $("#divload").css({ 'display': 'none' });
+                $("#Other").css({ 'display': 'none' });
+                $("#UserList").html("");
+                $("#UserList").empty();
+                $("#UserBTn").html("");
+                $("#UserBTn").empty();
+            }
+            else if (UserId == 3) {
+                $("#divload").css({ 'display': 'none' });
+                $("#UserName").show();
+                $("#UserList").html("");
+                $("#UserList").empty();
+                $("#UserBTn").html("");
+                $("#UserBTn").empty();
+                $("#UserBTn").append(
+                $('<button type="button" id="btnSetRecipients" class="btn btn-primary btn-border-radius waves-effect">Set Reciepnt</button>'));
+                $('#btnSetRecipients').on('click', function () {
+                    $("#Email").val("");
+                    var recipientsText = $('#UserName').val() + ",";
+                    if (recipientsText != ",") {
+                        $('#btnSend').prop("disabled", false);
+                        $("#UserBTn").empty();
+                        $("#UserName").hide();
+                        $("#UserId").val('0');
+                        $("#Email").val(recipientsText);
+                    }
+
+                    else {
+                        alert('Please Insert Email Address !!')
+                    }
+
+                })
+            }
+            else {
+                $.ajax({
+                    url: '/Admin/GetUserList', type: 'post', dataType: 'json',
+                    data: { 'UserId': UserId },
+                    success: function (data) {
+                        //console.log(data)
+                        if (data.lstUsers != null) {
+                            $("#divload").css({ 'display': 'none' });
+                            $("#Other").css({ 'display': 'none' });
+                            $("#UserList").html("");
+                            $("#UserList").empty();
+                            $("#UserBTn").html("");
+                            $("#UserBTn").empty();
+                            $('#UserName').hide();
+                            $("#UserList").append(
+                                $('<li id="UserListLi"><input type="checkbox" id="selectall"/> <label id="AllUser">Select All</label></li>'));
+                            $("#UserBTn").append(
+                              $('<button type="button" id="btnSetRecipients" class="btn btn-primary btn-border-radius waves-effect">Set Reciepnt</button>'));
+                            $.each(data.lstUsers, function (index, UserCount) {
+                                $("#UserList").append(
+                                     ('<li class="recipient" id="UserListLi"><input type="checkbox" class="chkrecipient" value=' + UserCount.UserId + '/> <label class="UserName">' + UserCount.Name + '</label> (<label class="UserEmail" >' + UserCount.Email + '</label>) </li>'));
+
+                            });
+                            $('#selectall').on('click', function () {
+                                $("#Email").val("");
+                                $('.chkrecipient').prop('checked', $(this).is(":checked"))
+                            })
+
+                            $('.chkrecipient').on('click', function () {
+                                $("#Email").val("");
+                                var ischecked = true;
+                                $('.chkrecipient').each(function (i, v) {
+                                    if ($(v).is(":checked") == false) {
+                                        ischecked = false;
+                                    }
+                                })
+                                $('#selectall').prop('checked', ischecked)
+                            })
+
+                            $('#btnSetRecipients').on('click', function () {
+                                $("#Email").val("");
+                                var recipients = "";
+                                $('.chkrecipient').each(function (i, v) {
+                                    if ($(v).is(":checked")) {
+                                        recipients += $(v).parent().find('.UserEmail').text() + ","
+                                    }
+                                    //console.log(recipients)
+                                })
+                                if (recipients != "") {
+                                    $('#btnSend').prop("disabled", false);
+                                    $("#UserList").html("");
+                                    $("#UserList").empty();
+                                    $("#UserBTn").empty();
+                                    $("#UserId").val('0');
+                                    $("#Email").val(recipients);
+                                }
+
+                                else {
+                                    alert('Please Select Recipients !!')
+                                }
+
+                            })
+                        }
+                    }
+
+                });
+            }
+        }
+        $("#btnSend").click(function () {
+            debugger
+            var IsTemplate = "";
+            if ($('#HiddenField').val() == $('#EmailMessage').val())
+            {
+                IsTemplate=false
+            }
+            else {
+                if (document.getElementById("TemplateChecked").checked == true) {
+                    IsTemplate = true;
+                }
+                else if (document.getElementById("TemplateChecked").checked == false) {
+                    IsTemplate = false;
+                }
+            }
+            if ($('#Subject').val() != "") {
+                if ($('#EmailMessage').val() != "") {
+                    $.ajax({
+                        url: "SendEmail",
+                        type: "POST",
+                        contentType: "application/json;charset=utf-8",
+                        dataType: "json",
+                        data: "{'Email':'" + $("#Email").val() + "','Subject':'" + $('#Subject').val() + "','EmailMessage':'" + $('#EmailMessage').val() + "','IsTemplate':'" + IsTemplate + "'}",
+                        beforeSend: function () {
+
+                            $('#divload').show();
+                        },
+                        complete: function () {
+                            $('#divload').hide();
+                        },
+                        success: function (data) {
+                            //console.log(data)
+                            //if (data.Result == "Send Page Details Save Successfull !")
+                            {
+                                $("#UserList").html("");
+                                $("#UserList").empty();
+                                $("#UserBTn").html("");
+                                $("#UserBTn").empty();
+                                $('#UserName').hide();
+                                $('#btnSend').prop("disabled", true);
+                                document.getElementById("TemplateChecked").checked = false;
+                                $("#Email").val('');
+                                $("#UserId").val('0');
+                                $(".note-editable").html('');
+                                $("#Subject").val('');
+                                iziToast.success({
+                                    title: "Success!",
+                                    message: "Email Sent !",
+                                    position: "topRight",
+                                });
+                            }
+                        }
+                    });
+                }
+                else {
+                    $(".invalid-feedback").show();
+                    $('#EmailMessage').focus();
+                    //$('.invalid-feedback').text('pleae enter cms');
+                    //$("invalid-feedback").hide();
+                }
+            }
+            else {
+                $(".invalid-feedback subject").show();
+                $('#Subject').focus();
+                //$('.invalid-feedback').text('pleae enter cms');
+                //$("invalid-feedback").hide();
+            }
+        });
+    </script>
+}

@@ -1,0 +1,216 @@
+﻿@model Data.DTOs.MessageSendUserRequestDTO
+
+@using Utility;
+@{
+    ViewBag.Title = "ReplyToEmployer";
+    Layout = "~/Views/Shared/_WebsiteLayoutHI.cshtml";
+}
+
+
+@using (Html.BeginForm("ReplyToEmployer", "uhi", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-lg-9 col-sm-12">
+
+                <div class="education profileborder mt-4">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 col-sm-12">
+                            <div class="resume_headline_title">
+                                <h5 class="font-weight-bold">
+                                    नियोक्ता को जवाब दें <span class="pull-right">
+
+                                    </span>
+                                </h5>
+                                <div id="educationid" style="margin-left:10px;">
+                                    <br />
+                                    <div class="">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="advance_search_inner mb-2">
+                                                    <div class="advance_search_tilte">
+
+
+                                                        <h5 id="title">@Model.Title</h5>
+                                                        <h6>@*@item.CompanyName*@</h6>
+                                                        <ul class="list-unstyled">
+                                                            <li class="list-inline-item"> <i class="fa fa-suitcase pr-2" aria-hidden="true"></i>@Model.ExperienceMin - @Model.ExperienceMax Years</li>
+
+                                                            <li class="list-inline-item"> <i class="fa fa-map-marker pr-2" aria-hidden="true"></i>@Model.Location</li>
+                                                        </ul>
+                                                        <h6><i class="fa fa-file" aria-hidden="true"></i> @Model.ShortDescription</h6>
+                                                        <p style="margin-bottom: 0px;">कंपनी: @Model.UserName</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            @Html.HiddenFor(m => m.Id)
+                                            @Html.HiddenFor(m => m.ExperienceMax)
+                                            @Html.HiddenFor(m => m.ExperienceMin)
+                                            @Html.HiddenFor(m => m.City)
+                                            @Html.HiddenFor(m => m.ShortDescription)
+                                            @Html.HiddenFor(m => m.UserName)
+                                            @Html.HiddenFor(m => m.Title)
+                                            @Html.HiddenFor(m => m.UserId) 
+                                            @Html.HiddenFor(m => m.ChatId)
+                                        </div>
+                                    </div>
+                                    <div class="card-header message_header">
+                                        <h4>बातचीत </h4>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <ul class="chat_messages">
+                                            @if (Model.lstMessage != null)
+                                            {
+                                                foreach (var msg in Model.lstMessage)
+                                                {
+                                                    if (msg.SenderId == Convert.ToInt32(Session["Id"]))
+                                                    { 
+                                                        <li class="receiver">
+                                                            <div class="chat_message_container">
+                                                                <div class="chat_message_item">
+                                                                    @msg.Message <i class="fa fa-user"></i>
+                                                                </div>
+                                                                <br />
+                                                                <span class="chat_time">
+                                                                    @Common.TimeLeft(msg.UpdatedTime ?? DateTime.Now)
+                                                                </span>
+                                                            </div>
+                                                        </li>
+                                                    }
+                                                    else
+                                                    {
+                                                        <li class="sender">
+                                                            <div class="chat_message_container">
+                                                                <div class="chat_message_item">
+                                                                    <i class="fa fa-user"></i>  @msg.Message
+                                                                </div>
+                                                                <br />
+                                                                <span class="chat_time">
+                                                                    @Common.TimeLeft(msg.UpdatedTime ?? DateTime.Now)
+                                                                </span>
+                                                            </div>
+                                                        </li>
+
+                                                    }
+                                                }
+                                            }
+                                        </ul>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            @Html.TextAreaFor(m => m.Message, new { @class = "form-control message_box", @placeholder = "संदेश दर्ज करें" })
+                                            @Html.AntiForgeryToken()
+                                            <button class="chat-send" type="submit"><i class="fa fa-paper-plane"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+}
+
+@section css {
+    <style>
+        .message_header {
+            background: #c2cefd !important;
+            border-top: 1px solid #c0c0c0;
+            border-right: 1px solid #c0c0c0;
+            border-left: 1px solid #c0c0c0;
+        }
+
+        .message_box {
+            height: 3rem;
+            padding-right: 55px !important;
+        }
+
+        .chat-send, .chat-send:hover, .chat-send:active {
+            float: right;
+            position: relative;
+            top: -48px;
+            right: 10px;
+            box-shadow: none !important;
+            background-color: transparent !important;
+            border: none !important;
+        }
+
+            .chat-send i {
+                color: #4f5ece;
+                font-size: 25px;
+                outline: none;
+                box-shadow: 0px 2px 11px 0px #ffffffb8;
+            }
+
+                .chat-send i:hover {
+                    color: #393939;
+                }
+
+        .chat_time {
+            background: none;
+            padding: 0 15px;
+            margin: 0px 15px;
+        }
+
+        .chat_messages {
+            list-style: none;
+            list-style: none;
+            height: 400px;
+            border: 1px solid #c0c0c0;
+            padding-left: 0px;
+            overflow-y: scroll;
+        }
+
+            .chat_messages .sender {
+                text-align: left;
+            }
+
+                .chat_messages .sender .chat_message_container div {
+                    padding: 10px 20px;
+                    background: #f0f3ff;
+                    width: auto;
+                    border-radius: 1em;
+                    margin: 10px 10px 0px 10px;
+                    display: inline-block;
+                }
+
+            .chat_messages .receiver {
+                text-align: right;
+            }
+
+                .chat_messages .receiver .chat_message_container div {
+                    padding: 10px 20px;
+                    background: #00808033;
+                    border-radius: 1em;
+                    margin: 10px 10px 0px 10px;
+                    display: inline-block;
+                }
+
+            .chat_messages .sender .chat_message_container div i {
+                padding: 4px;
+                border-radius: 50%;
+                border: 1px solid #c0c0c0;
+                margin: 0px 8px 0px 0px;
+            }
+
+            .chat_messages .receiver .chat_message_container div i {
+                padding: 4px;
+                border-radius: 50%;
+                border: 1px solid #c0c0c0;
+                margin: 0px 0px 0px 8px;
+            }
+
+        .advance_search_inner {
+            padding: 20px;
+            border: 1px solid #c0c0c0;
+        }
+    </style>
+}
+

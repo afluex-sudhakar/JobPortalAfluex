@@ -1,0 +1,490 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Afluex Multiservices LLP</title>
+    <!-- General CSS Files -->
+    @*<link rel="stylesheet" href="~/assets/bundles/codemirror/theme/duotone-dark.css">
+        <link rel="stylesheet" href="~/assets/bundles/jquery-selectric/selectric.css">*@
+    <link rel="stylesheet" href="~/assets/css/app.min.css">
+    <link rel="stylesheet" href="~/assets/bundles/izitoast/css/iziToast.min.css">
+    <link rel="stylesheet" href="~/assets/bundles/datatables/datatables.min.css">
+    <link rel="stylesheet" href="~/assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+    <link href="~/assets/bundles/summernote/summernote-bs4.css" rel="stylesheet" />
+    <link href="~/assets/bundles/codemirror/lib/codemirror.css" rel="stylesheet" />
+    <link href="~/assets/css/components.css" rel="stylesheet" />
+    <link href="~/assets/bundles/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css"> 
+    
+    @*<link rel="stylesheet" href="~/assets/bundles/jqvmap/dist/jqvmap.min.css">*@
+    <!-- Custom style CSS -->
+    <link rel="stylesheet" href="~/assets/css/custom.css">
+    <link rel='shortcut icon' type='image/x-icon' href='/assets/img/favicon.png' />
+
+    @RenderSection("css", required: false)
+    @RenderSection("style", required: false)
+</head>
+
+<body>
+    @RenderBody()
+
+    <div class="loader"></div>
+    
+    <div id="app">
+        <div class="main-wrapper main-wrapper-1">
+            <div class="navbar-bg"></div>
+            <nav class="navbar navbar-expand-lg main-navbar sticky">
+                <div class="form-inline mr-auto">
+                    <ul class="navbar-nav mr-3">
+                        <li>
+                            <a href="#" data-toggle="sidebar" class="nav-link nav-link-lg
+									collapse-btn"><i data-feather="menu"></i></a>
+                        </li>
+                        <li>
+                            @*<form class="form-inline mr-auto">
+                                    <div class="search-element">
+                                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="200">
+                                        <button class="btn" type="submit">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </form>*@
+                        </li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="nav-link nav-link-lg fullscreen-btn">
+                            <i data-feather="maximize"></i>
+                        </a>
+                    </li>
+                    @*<li class="dropdown dropdown-list-toggle">
+                            <a href="#" data-toggle="dropdown"
+                               class="nav-link nav-link-lg message-toggle">
+                                <i data-feather="mail" class="mailAnim"></i>
+                                <span class="badge headerBadge1">
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
+                                <div class="dropdown-header">
+                                    Messages
+                                    <div class="float-right">
+                                        <a href="#">Mark All As Read</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown-list-content dropdown-list-message">
+                                    <a href="#" class="dropdown-item">
+                                        <span class="dropdown-item-avatar
+                                                text-white">
+                                            <img alt="image" src="~/assets/img/users/user-1.png" class="rounded-circle">
+                                        </span> <span class="dropdown-item-desc">
+                                            <span class="message-user">
+                                                John
+                                                Deo
+                                            </span>
+                                            <span class="time messege-text">Please check your mail !!</span>
+                                            <span class="time">2 Min Ago</span>
+                                        </span>
+                                    </a> <a href="#" class="dropdown-item">
+                                        <span class="dropdown-item-avatar text-white">
+                                            <img alt="image" src="~/assets/img/users/user-2.png" class="rounded-circle">
+                                        </span> <span class="dropdown-item-desc">
+                                            <span class="message-user">
+                                                Sarah
+                                                Smith
+                                            </span> <span class="time messege-text">
+                                                Request for leave
+                                                application
+                                            </span>
+                                            <span class="time">5 Min Ago</span>
+                                        </span>
+                                    </a> <a href="#" class="dropdown-item">
+                                        <span class="dropdown-item-avatar text-white">
+                                            <img alt="image" src="~/assets/img/users/user-5.png" class="rounded-circle">
+                                        </span> <span class="dropdown-item-desc">
+                                            <span class="message-user">
+                                                Jacob
+                                                Ryan
+                                            </span> <span class="time messege-text">
+                                                Your payment invoice is
+                                                generated.
+                                            </span> <span class="time">12 Min Ago</span>
+                                        </span>
+                                    </a> <a href="#" class="dropdown-item">
+                                        <span class="dropdown-item-avatar text-white">
+                                            <img alt="image" src="~/assets/img/users/user-4.png" class="rounded-circle">
+                                        </span> <span class="dropdown-item-desc">
+                                            <span class="message-user">
+                                                Lina
+                                                Smith
+                                            </span> <span class="time messege-text">
+                                                hii John, I have upload
+                                                doc
+                                                related to task.
+                                            </span> <span class="time">
+                                                30
+                                                Min Ago
+                                            </span>
+                                        </span>
+                                    </a> <a href="#" class="dropdown-item">
+                                        <span class="dropdown-item-avatar text-white">
+                                            <img alt="image" src="~/assets/img/users/user-3.png" class="rounded-circle">
+                                        </span> <span class="dropdown-item-desc">
+                                            <span class="message-user">
+                                                Jalpa
+                                                Joshi
+                                            </span> <span class="time messege-text">
+                                                Please do as specify.
+                                                Let me
+                                                know if you have any query.
+                                            </span> <span class="time">
+                                                1
+                                                Days Ago
+                                            </span>
+                                        </span>
+                                    </a> <a href="#" class="dropdown-item">
+                                        <span class="dropdown-item-avatar text-white">
+                                            <img alt="image" src="~/assets/img/users/user-2.png" class="rounded-circle">
+                                        </span> <span class="dropdown-item-desc">
+                                            <span class="message-user">
+                                                Sarah
+                                                Smith
+                                            </span> <span class="time messege-text">Client Requirements</span>
+                                            <span class="time">2 Days Ago</span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="dropdown-footer text-center">
+                                    <a href="#">View All <i class="fas fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="dropdown dropdown-list-toggle">
+                            <a href="#" data-toggle="dropdown"
+                               class="nav-link notification-toggle nav-link-lg">
+                                <i data-feather="bell"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
+                                <div class="dropdown-header">
+                                    Notifications
+                                    <div class="float-right">
+                                        <a href="#">Mark All As Read</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown-list-content dropdown-list-icons">
+                                    <a href="#" class="dropdown-item dropdown-item-unread">
+                                        <span class="dropdown-item-icon l-bg-orange text-white">
+                                            <i class="far fa-envelope"></i>
+                                        </span> <span class="dropdown-item-desc">
+                                            You got new mail, please check. <span class="time">
+                                                2 Min
+                                                Ago
+                                            </span>
+                                        </span>
+                                    </a> <a href="#" class="dropdown-item">
+                                        <span class="dropdown-item-icon l-bg-purple text-white">
+                                            <i class="fas fa-bell"></i>
+                                        </span> <span class="dropdown-item-desc">
+                                            Meeting with <b>John Deo</b> and <b>Admin </b> at
+                                            10:30 am <span class="time">
+                                                10 Hours
+                                                Ago
+                                            </span>
+                                        </span>
+                                    </a> <a href="#" class="dropdown-item">
+                                        <span class="dropdown-item-icon l-bg-green text-white">
+                                            <i class="far fa-check-circle"></i>
+                                        </span> <span class="dropdown-item-desc">
+                                            Sidebar Bug is fixed by Kevin <span class="time">
+                                                12
+                                                Hours
+                                                Ago
+                                            </span>
+                                        </span>
+                                    </a> <a href="#" class="dropdown-item">
+                                        <span class="dropdown-item-icon bg-danger text-white">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </span> <span class="dropdown-item-desc">
+                                            Low disk space error!!!. <span class="time">
+                                                17 Hours
+                                                Ago
+                                            </span>
+                                        </span>
+                                    </a> <a href="#" class="dropdown-item">
+                                        <span class="dropdown-item-icon bg-info text-white">
+                                            <i class="fas
+                                                    fa-bell"></i>
+                                        </span> <span class="dropdown-item-desc">
+                                            Welcome to Gati
+                                            template! <span class="time">Yesterday</span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="dropdown-footer text-center">
+                                    <a href="#">View All <i class="fas fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </li>*@
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown"
+                           class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                            <img alt="image" src="/assets/img/favicon.png"
+                                 class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right pullDown">
+                            <div class="dropdown-title">Hello Admin</div>
+                            <a href="/Admin/AdminProfile" class="dropdown-item has-icon">
+                                <i class="far
+										fa-user"></i> Profile
+                            </a> @*<a href="timeline.html" class="dropdown-item has-icon">
+                                    <i class="fas fa-bolt"></i>
+                                    Activities
+                                </a>*@ @*<a href="" class="dropdown-item has-icon">
+                                    <i class="fas fa-cog"></i>
+                                    Settings
+                                </a>*@
+                                <div class="dropdown-divider"></div>
+                                <a href="/Admin/Logout" class="dropdown-item has-icon text-danger">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="main-sidebar sidebar-style-2">
+                    <aside id="sidebar-wrapper" >
+                        <div class="sidebar-brand" style="background-color: #ab183d">
+                            <a href="/Admin/Index">
+                                <img alt="image" src="~/images/logo.png" class="header-logo" /> <span class="logo-name"></span>
+                            </a>
+                        </div>
+                        @*<div class="sidebar-user">
+                                <div class="sidebar-user-picture">
+                                    <img alt="image" src="~/assets/img/user.png">
+                                </div>
+                                <div class="sidebar-user-details">
+                                    <div class="user-name">Olivia Thomas</div>
+                                    <div class="user-role">Administrator</div>
+                                    <div class="sidebar-userpic-btn">
+                                        <a href="profile.html" data-toggle="tooltip" title="Profile">
+                                            <i data-feather="user"></i>
+                                        </a>
+                                        <a href="email_inbox.html" data-toggle="tooltip" title="Mail">
+                                            <i data-feather="mail"></i>
+                                        </a>
+                                        <a href="chat.html" data-toggle="tooltip" title="Chat">
+                                            <i data-feather="message-square"></i>
+                                        </a>
+                                        <a href="login.html" data-toggle="tooltip" title="Log Out">
+                                            <i data-feather="log-out"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>*@
+
+                        <ul class="sidebar-menu">
+                            <li class="menu-header">Main</li>
+                            <li>
+                                <a href="/Admin" class="nav-link">
+                                    <i data-feather="monitor"></i><span>Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="layout"></i><span>Master</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="nav-link" href="/Admin/JobRoleMaster">Designation</a></li>
+                                    <li><a class="nav-link" href="/Admin/CourseMaster">Education</a></li>
+                                    <li><a class="nav-link" href="/Admin/DepartmentMaster">Department</a></li>
+                                    <li><a class="nav-link" href="/Admin/CategoryMaster">Category</a></li>
+                                    <li><a class="nav-link" href="/Admin/DepartmentCategoryMapping">Map Department Category</a></li>
+                                    @*<li><a class="nav-link" href="/Admin/StateMaster">State</a></li>
+                                        <li><a class="nav-link" href="/Admin/CityMaster">City</a></li>*@
+                                    <li><a class="nav-link" href="/Admin/SkillMaster">Skill</a></li>
+                                    <li><a class="nav-link" href="/Admin/PinCodeMaster">Location</a></li>
+                                    @*<li><a class="nav-link" href="/Admin/DocumentTypeMaster">Document Type</a></li>*@
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="/Admin/EmployeeList" class="nav-link"><i data-feather="users"></i><span>Employers</span></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="/Admin/EnrollmentProgram" class="nav-link"><i data-feather="monitor"></i><span>Enrollment Program</span></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="/Admin/TrainingMaterial" class="nav-link"><i data-feather="monitor"></i><span>Training Material</span></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="grid"></i><span>CMS</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="nav-link" href="/PageSetting/CMSMaster">CMS Master</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="grid"></i><span>Notifications</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="nav-link" href="/Admin/ManageNotification">Manage Notifications</a></li>
+                                </ul>
+                                <ul class="dropdown-menu">
+                                    <li><a class="nav-link" href="/Admin/SmsPanel">Send Sms</a></li>
+                                </ul>
+                                <ul class="dropdown-menu">
+                                    <li><a class="nav-link" href="/Admin/EmailPanel">Send Email</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="/Admin/Audittrail" class="nav-link"><i data-feather="monitor"></i><span>Audit Trail</span></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="/Admin/EmployeeList" class="menu-toggle nav-link has-dropdown"><i data-feather="clipboard"></i><span>Reports</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="nav-link" href="/Admin/JobSeekerList">Job Seeker List</a></li>
+                                    <li><a class="nav-link" href="/Admin/AvailableJobs">Available Jobs</a></li>
+                                    <li><a class="nav-link" href="/Admin/PlacementDetails">Placement Details</a></li>
+                                    <li><a class="nav-link" href="/Admin/EmployerWisePlacement">Employer wise Placement</a></li>
+                                    <li><a class="nav-link" href="/Admin/LocationWisePlacement">Location wise Placement</a></li>
+                                    <li><a class="nav-link" href="/Admin/ContactUsList">Contact Us List</a></li>
+                                    <li><a class="nav-link" href="/Admin/EnrollmentProgramList">Enrollment Program List</a></li>
+                                    <li><a class="nav-link" href="/Admin/TrainingMaterialList">Training Material List</a></li>
+                                </ul>
+                            </li>
+                            @*<li class="dropdown">
+                                <a href="/Admin/ChangePassword" class="nav-link">
+                                    <i data-feather="user-check"></i><span>Change Password</span>
+                                </a>
+                            </li>*@
+                        </ul>
+                    </aside>
+                </div>
+                <!-- Main Content -->
+                <div class="main-content">
+                    <section class="section">
+                        @*<ul class="breadcrumb breadcrumb-style ">
+                                <li class="breadcrumb-item">
+                                    <h4 class="page-title m-b-0">Dashboard</h4>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="index.html">
+                                        <i data-feather="home"></i>
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item active">Dashboard</li>
+                            </ul>*@
+                    </section>
+
+                </div>
+                <footer class="main-footer">
+                    <div class="footer-left">
+                        Copyright &copy; 2023 Afluex Multiservices LLP
+                    </div>
+                    <div class="footer-right">
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <!-- General JS Scripts -->
+        <script src="~/assets/js/app.min.js"></script>
+        <!-- JS Libraies -->
+        <script src="~/assets/bundles/datatables/datatables.min.js"></script>
+        <script src="~/assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+        <script src="~/assets/bundles/datatables/export-tables/dataTables.buttons.min.js"></script>
+        <script src="~/assets/bundles/datatables/export-tables/buttons.flash.min.js"></script>
+        <script src="~/assets/bundles/datatables/export-tables/jszip.min.js"></script>
+        <script src="~/assets/bundles/datatables/export-tables/pdfmake.min.js"></script>
+        <script src="~/assets/bundles/datatables/export-tables/vfs_fonts.js"></script>
+        <script src="~/assets/bundles/datatables/export-tables/buttons.print.min.js"></script>
+        <script src="~/assets/bundles/jquery-ui/jquery-ui.min.js"></script>
+        <script src="~/assets/js/iziToast.min.js"></script>
+        <script src="~/assets/bundles/sweetalert/sweetalert.min.js"></script>
+        <script src="~/assets/bundles/summernote/summernote-bs4.js"></script>
+        <script src="~/assets/bundles/codemirror/lib/codemirror.js"></script>
+        <script src="~/assets/bundles/jquery-selectric/jquery.selectric.min.js"></script>
+        <script src="~/assets/bundles/ckeditor/ckeditor.js"></script>
+  
+
+        <!-- Template JS File -->
+        <script src="~/assets/js/scripts.js"></script>
+        <!-- Custom JS File -->
+        <script src="~/assets/js/custom.js"></script>
+
+        @*<script type="text/javascript" src="http://www.google.com/jsapi"></script>*@
+        <script src="~/assets/js/transliteration.js"></script>
+
+        <script type="text/javascript">
+            google.load("elements", "1", {
+                packages: "transliteration"
+            });
+
+            function onLoad() {
+
+                var options = {
+                    //sourceLanguage: 'en',
+                    //destinationLanguage: ['gu'],
+                    sourceLanguage:
+                    google.elements.transliteration.LanguageCode.ENGLISH,
+                    destinationLanguage:
+                    [google.elements.transliteration.LanguageCode.HINDI],
+                    shortcutKey: 'ctrl+g',
+                    transliterationEnabled: true
+                };
+                // Create an instance on TransliterationControl with the required
+                // options.
+                var control = new google.elements.transliteration.TransliterationControl(options);
+
+                // Enable transliteration in the textfields with the given ids.
+                var ids = document.getElementsByClassName('hindi');
+                //var ids = ["txtHindi"];
+                control.makeTransliteratable(ids);
+                 
+                //var ctrl = document.querySelector("#cke_HDescription > div > #cke_2_contents > iframe.cke_wysiwyg_frame > html > body.cke_editable")
+
+                //var ctrl = $('.cke_editable');
+                ////#cke_2_contents
+                //var textareas = [ctrl];
+                //control.makeTransliteratable(textareas);
+
+                //document.getElementById("english").addEventListener("keyup", translate);
+
+                //function translate() {
+                //    document.getElementById("hindi").value = document.getElementById("english").value;
+                //}
+
+                //var keyVal = 32; // Space key
+                //$(".english").on('keydown', function (event) {
+                //    if (event.keyCode === 32) {
+                //        var engText = $(".english").val() + " ";
+                //        var engTextArray = engText.split(" ");
+                //        $(".hindi").val($(".hindi").val() + engTextArray[engTextArray.length - 2]);
+
+                //        document.getElementById("hindi").focus();
+                //        $(".hindi").trigger({
+                //            type: 'keypress', keyCode: keyVal, which: keyVal, charCode: keyVal
+                //        });
+                //    }
+                //});
+
+                //$(".hindi").bind("keyup", function (event) {
+                //    setTimeout(function () {
+                //        $(".english").val($(".english").val() + " ");
+                //        document.getElementById("english").focus()
+                //    }, 0);
+                //});
+
+                // Show the transliteration control which can be used to toggle between
+                // English and Hindi and also choose other destination language.
+
+                //control.showControl('translControl');
+
+            }
+
+            google.setOnLoadCallback(onLoad);
+
+        </script>
+        @RenderSection("script", required: false)
+    </body>
+
+
+</html>

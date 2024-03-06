@@ -1,0 +1,59 @@
+﻿@model Data.DTOs.UserDTO
+
+@{
+    ViewBag.Title = "ReturnToLogin";
+    Layout = null;
+}
+
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Afluex Multiservice llp</title>
+
+</head>
+
+<body style="background-image: url('../images/login_bg.jpg');background-repeat: no-repeat;background-size: auto;">
+    <div class="main_login">
+        @using (Html.BeginForm("ReturnToLogin", "en",FormMethod.Post))
+        {
+       <div class="container">
+         <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="login_inner">
+                    <div class="logo text-center">
+                        <img src="~/images/tick.gif" class="img-fluid" alt="logo">
+                    </div>
+                    <div class="mainloginbt mt-5">
+                        <p style="" class="text-center"> @TempData["msg"]</p>
+                        <a href="/en/Login" class="btn btn-outline-primary btn-lg btn-block">Click here to Login</a>
+                      </div>
+                </div>
+            </div>
+        </div>
+       </div>
+        }
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+  
+</body>
+
+</html>
+

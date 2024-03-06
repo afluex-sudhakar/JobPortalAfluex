@@ -1,0 +1,22 @@
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Utility\bin\Release\Utility.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Utility\bin\Release\Utility.pdb
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Utility\bin\Release\Newtonsoft.Json.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Utility\bin\Release\PagedList.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Utility\bin\Release\PagedList.Mvc.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Utility\bin\Release\Newtonsoft.Json.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Utility\bin\Release\PagedList.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Utility\bin\Release\PagedList.Mvc.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Utility\obj\Release\Utility.csprojResolveAssemblyReference.cache
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Utility\obj\Release\Utility.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Utility\obj\Release\Utility.pdb
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Utility\bin\Release\Utility.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Utility\bin\Release\Utility.pdb
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Utility\bin\Release\Newtonsoft.Json.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Utility\bin\Release\PagedList.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Utility\bin\Release\PagedList.Mvc.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Utility\bin\Release\Newtonsoft.Json.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Utility\bin\Release\PagedList.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Utility\bin\Release\PagedList.Mvc.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Utility\obj\Release\Utility.csprojResolveAssemblyReference.cache
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Utility\obj\Release\Utility.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Utility\obj\Release\Utility.pdb

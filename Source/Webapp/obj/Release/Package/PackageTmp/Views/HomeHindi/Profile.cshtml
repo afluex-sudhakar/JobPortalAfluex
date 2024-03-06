@@ -1,0 +1,1483 @@
+﻿@model Webapp.Models.Employee
+@{
+    Layout = "~/Views/Shared/_WebsiteLayoutHI.cshtml";
+}
+
+@using (Html.BeginForm("profile", "hi", FormMethod.Post))
+{
+    <div class="loader"></div>
+    <div class="inner-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12">
+                    <div class="profile_inner_inner profileborder">
+                        <div class="row">
+                            <div class="col-md-2 col-lg-2 col-sm-12">
+                                <div class="profile_dp">
+                                    <img src="~/images/profile.jpg" class="img-fluid" alt="profile-dp">
+                                </div>
+                                <div class="dp_icon">
+                                    <i class="fa fa-camera" aria-hidden="true"></i>
+                                    <input aria-label="Upload photo" class="profile-topcard-background-image-edit__input" accept="image/*" type="file">
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-sm-12">
+                                <div class="profile_headingt">
+                                    <h2 class="font-weight-bold">
+                                        Steve Smith @Model.Name
+                                        <a id="userprofile" href="#" class="cv_firm" data-toggle="modal" data-target="#profile_dp">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </a>@if (TempData["msg"] != null)
+                                        {
+                                            <span class="pull-right" style="color:#ff0000">@TempData["msg"]</span>
+
+                                        }
+                                    </h2>
+
+
+                                    <h5>UI Developer at Afluex Multiservices LLP @Model.Designation</h5>
+                                    <h6><i class="fa fa-map-marker" aria-hidden="true"></i> Lucknow, INDIA</h6>
+                                    <h6><i class="fa fa-briefcase" aria-hidden="true"></i> 3 Year(s) 7 Month(s)</h6>
+                                    <h6><i class="fa fa-inr" aria-hidden="true"></i> INR 5 Lakh(s) 20 Thousand</h6>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-4 col-sm-12">
+                                <div class="profile_us">
+                                    <h6><i class="fa fa-phone" aria-hidden="true"></i> 999 9999 999</h6>
+                                    <h6><i class="fa fa-envelope" aria-hidden="true"></i> designer.afluex@gmail.com</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="offset-lg-2 col-md-10 col-lg-10 col-sm-12 mt-3">
+                                <span>Profile Strength (Good)</span>
+                                <div class="progress">
+                                    <div class="progress-bar bg-custom bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="profile_dp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Basic Details</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="profile_form">
+                                            <form>
+
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <label for="inputEmail4">Name</label>
+                                                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @id = "Name" })
+
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label for="TelephoneNo">Telephone Number</label>
+                                                        @Html.TextBoxFor(m => m.TelephoneNo, new { @class = "form-control", @id = "TelephoneNo" })
+
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label for="Email">Email</label>
+                                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @id = "Email" })
+
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label for="inputEmail4">Designation</label>
+                                                        @Html.TextBoxFor(m => m.Designation, new { @class = "form-control", @id = "Designation" })
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <label for="inputState">Total Experience *</label>
+
+                                                        @Html.DropDownListFor(m => m.ExperienceYears, new SelectList(ViewBag.ExperienceYears, "Value", "Text"), new { @class = "form-control", @required = "true", @id = "inputState" })
+                                                    </div>
+                                                    <div class="form-group col-md-6 mt-2">
+                                                        <label for="inputState"></label>
+                                                        @Html.DropDownListFor(m => m.ExperienceMonths, new SelectList(ViewBag.ExperienceMonths, "Value", "Text"), new { @class = "form-control", @required = "true", @id = "inputState" })
+                                                        @*<select id="inputState" class="form-control">
+                                                                <option selected>0 Months</option>
+                                                                <option>1 Months</option>
+                                                                <option>2 Months</option>
+                                                                <option>3 Months</option>
+                                                                <option>4 Months</option>
+                                                                <option>5 Months</option>
+                                                                <option>6 Months</option>
+                                                                <option>7 Months</option>
+                                                                <option>8 Months</option>
+                                                                <option>9 Months</option>
+                                                                <option>10 Months</option>
+                                                                <option>11 Months</option>
+                                                            </select>*@<select id="inputState" class="form-control">
+                                                            <option selected></option>
+                                                            <option></option>
+                                                            <option></option>
+                                                            <option></option>
+                                                            <option></option>
+                                                            <option></option>
+                                                            <option></option>
+                                                            <option></option>
+                                                            <option></option>
+                                                            <option></option>
+                                                            <option></option>
+                                                            <option></option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <label for="Address">Location</label>
+                                                        @Html.TextBoxFor(m => m.Address, new { @class = "form-control", @id = "Address" })
+
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label for="TelephoneNo">Salary</label>
+                                                        @Html.TextBoxFor(m => m.ExpectedSalary, new { @class = "form-control", @id = "ExpectedSalary" })
+
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <a href="/hi/UpdateBasic?id=@Model.LoginId" class="btn btn-primary pop_bg_custom">Save</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-lg-9 col-sm-12">
+                    <div class="attach_resume profileborder mt-4">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <div class="attach_resume_title mb-4">
+                                    <h5 class="font-weight-bold">Attach Resume 
+                                   @if (TempData["Resume"] != null)
+                                   {
+                                    <span class="pull-right" style="color:#ff0000">@TempData["Resume"]</span>
+
+                                        }</h5>
+                                    <p>Resume is the most important document recruiters look for. Recruiters generally do not look at profiles without resumes.</p>
+                                </div>
+                                <div class="profi text-center">
+                                    <span class="profileupldcv">
+                                        Upload Resume
+                                        <input type="file" id="file" accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"  onchange="Upload(this)" class="profileupldcv_custom">
+                                    </span>
+                                    <h6>Supported Formats: doc, docx, rtf, pdf, upto 2 MB</h6>
+                                </div>
+                                <h6 class="text-center mt-4">If you do not have a resume document, you may write your brief professional profile here.</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="resume_headline profileborder">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <div class="resume_headline_title">
+                                    <h5 class="font-weight-bold">
+                                        Resume Headline
+                                        <a href="#" class="cv_firm" data-toggle="modal" data-target="#resume_headline">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </a>
+                                    </h5>
+                                    <p>UI Developer working in Infosys since Jul 2018</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="resume_headline" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="resume_headline">Resume Headline</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body profile_form">
+                                    <h6>It is the first thing recruiters notice in your profile. Write concisely what makes you unique and right person for the job you are looking for.</h6>
+                                    <form>
+                                        <div class="form-group mt-5">
+                                            @Html.TextAreaFor(m => m.ResumeHeadline, new { @class = "form-control", @id = "ResumeHeadline", @rows = "3",@required="true" })
+                                            @*<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>*@
+                                            <label for="inputState" class="pull-right">187 Character(s) Left</label>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <a href="/hi/UpResumeHeadline?id=@Model.LoginId" class="btn btn-primary pop_bg_custom">Save</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="key_skills profileborder mt-4">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <div class="resume_headline_title">
+                                    <h5 class="font-weight-bold">
+                                        Key Skills
+                                        <a href="#" class="cv_firm" data-toggle="modal" data-target="#key_skills">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </a>
+                                        @if (TempData["Key_Skills"] != null)
+                                        {
+                                            <span class="pull-right" style="color:#ff0000">@TempData["Key_Skills"]</span>
+
+                                        }
+                                    </h5>
+                                    <button type="button" class="btn btn-outline-secondary">@Model.SkillName</button>
+                                    <button type="button" class="btn btn-outline-secondary">Photoshop</button>
+                                    <button type="button" class="btn btn-outline-secondary">CSS</button>
+                                    <button type="button" class="btn btn-outline-secondary">html5</button>
+                                    <button type="button" class="btn btn-outline-secondary">JavaScript</button>
+                                    <button type="button" class="btn btn-outline-secondary">jQuery</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="key_skills" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Key Skills</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body profile_form">
+
+
+                                    <h6>Tell recruiters what you know or what you are known for e.g. Direct Marketing, Oracle, Java etc. We will send you job recommendations based on these skills. Each skill is separated by a comma. Max limit is 250 character(s) including commas.</h6>
+                                    <form>
+                                        <div class="form-group mt-5">
+                                            @Html.TextAreaFor(m => m.SkillName, new { @class = "form-control", @id = "exampleFormControlTextarea1", @rows = "3" })
+                                            <label for="inputState" class="pull-right">187 Character(s) Left</label>
+                                        </div>
+                                    </form>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <a href="/hi/UpdateKeySkills?id=@Model.LoginId" class="btn btn-primary pop_bg_custom">Save</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="employment profileborder mt-4">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <div class="resume_headline_title">
+                                    <h5 class="font-weight-bold">
+                                        Employment
+                                        @if (TempData["employment"] != null)
+                                        {
+                                            <span class="pull-right" style="color:#ff0000">@TempData["employment"]</span>
+
+                                        }
+                                    </h5>
+                                    <h5>
+                                        UI Developer
+                                        <a href="#" class="cv_firm" data-toggle="modal" data-target="#profile_employment">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </a>
+                                    </h5>
+                                    <ul class="list-unstyled">
+                                        <li>Afluex Multiservices LLP</li>
+                                        <li>Oct 2019 to Present (1 year)</li>
+                                        <li>Available to join in 1 Months</li>
+                                    </ul>
+                                    <h6><strong>Add Job Profile</strong></h6>
+                                    <h6><strong>Top 5 Key Skills: </strong> Html,Bootstrap,CSS,jQuery,Javascript</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="profile_employment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="profile_employment">Employment</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body profile_form">
+                                    <form>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4">Your Designation</label>
+                                                @Html.TextBoxFor(m => m.Designation, new { @class = "form-control", @id = "Designation" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4">Your Organization</label>
+                                                @Html.TextBoxFor(m => m.Organization, new { @class = "form-control", @id = "Organization" })
+
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputState">Total Experience *</label>
+                                                <select id="inputState" class="form-control">
+                                                    <option selected>0 Years</option>
+                                                    <option>1 Years</option>
+                                                    <option>2 Years</option>
+                                                    <option>3 Years</option>
+                                                    <option>4 Years</option>
+                                                    <option>5 Years</option>
+                                                    <option>6 Years</option>
+                                                    <option>7 Years</option>
+                                                    <option>8 Years</option>
+                                                    <option>9 Years</option>
+                                                    <option>10 Years</option>
+                                                    <option>11 Years</option>
+                                                    <option>12 Years</option>
+                                                    <option>13 Years</option>
+                                                    <option>14 Years</option>
+                                                    <option>15 Years</option>
+                                                    <option>16 Years</option>
+                                                    <option>17 Years</option>
+                                                    <option>18 Years</option>
+                                                    <option>19 Years</option>
+                                                    <option>20 Years</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-6 mt-2">
+                                                <label for="inputState"></label>
+                                                <select id="inputState" class="form-control">
+                                                    <option selected>0 Months</option>
+                                                    <option>1 Months</option>
+                                                    <option>2 Months</option>
+                                                    <option>3 Months</option>
+                                                    <option>4 Months</option>
+                                                    <option>5 Months</option>
+                                                    <option>6 Months</option>
+                                                    <option>7 Months</option>
+                                                    <option>8 Months</option>
+                                                    <option>9 Months</option>
+                                                    <option>10 Months</option>
+                                                    <option>11 Months</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputAddress2">Describe Your Job Profile</label>
+                                            @Html.TextAreaFor(m => m.Description, new { @class = "form-control", @id = "Description", @rows = "3" })
+                                        </div>
+
+
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <a href="/hi/UpdateEmployment?id=@Model.LoginId" class="btn btn-primary pop_bg_custom">Save</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education profileborder mt-4">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <div class="resume_headline_title">
+                                    <h5 class="font-weight-bold">Education <span class="pull-right">ADD EDUCATION</span></h5>
+                                    <h5>
+                                        MCA - Computers @Model.CourseName
+                                        <a href="#" class="cv_firm" data-toggle="modal" data-target="#profile_education">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </a>
+                                    </h5>
+                                    <ul class="list-unstyled">
+                                        <li>@*Integral University, Lucknow*@ @Model.CollegeName</li>
+                                        <li>2017 (Full Time) @Model.PassingYear</li>
+                                    </ul>
+                                    <h6><strong><a href="#" data-toggle="modal" data-target="#phd_education">Add Doctorate/PhD</a></strong></h6>
+                                    <div class="modal fade" id="phd_education" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="profile_education">Doctorate/PhD Course</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body profile_form">
+                                                    <form>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputEmail4">Education</label>
+                                                                @Html.TextBoxFor(m => m.Education, new { @Value = "Doctorate/PhD", @class = "form-control", @id = "Education", @readonly = "true" })
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="Course">Course</label>
+                                                                @Html.DropDownListFor(m => m.CourseId, new SelectList(ViewBag.Course, "Value", "Text"), new { @class = "form-control", @required = "true", @id = "Course" })
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputState">Specialization</label>
+                                                                @Html.TextBoxFor(m => m.Specialization, new { @class = "form-control", @id = "Specialization" })
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputState">University/Institute</label>
+                                                                @Html.TextBoxFor(m => m.University, new { @class = "form-control", @id = "University" })
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-4">
+                                                                <label for="inputAddress2">Course Type</label>
+                                                                @Html.TextBoxFor(m => m.CourseType, new { @class = "form-control", @id = "CourseType" })
+                                                            </div>
+                                                            <div class="form-group col-md-4">
+                                                                <label for="inputCity">Passing Year</label>
+                                                                @Html.TextBoxFor(m => m.PassingYear, new { @class = "form-control", @id = "PassingYear" })
+                                                            </div>
+                                                            <div class="form-group col-md-4">
+                                                                <label for="inputCity">Percent</label>
+                                                                @Html.TextBoxFor(m => m.Percent, new { @class = "form-control", @id = "Percent" })
+                                                            </div>
+
+                                                        </div>
+
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                    <button type="button" class="btn btn-primary pop_bg_custom">Save</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6><strong><a href="#" data-toggle="modal" data-target="#Graduation_education">Add Graduation/Diploma </a></strong></h6>
+                                    <div class="modal fade" id="Graduation_education" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="profile_education">Graduation/Diploma Course</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body profile_form">
+                                                    <form>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputEmail4">Education</label>
+                                                                @Html.TextBoxFor(m => m.Education, new { @Value = "Graduation/Diploma", @class = "form-control", @id = "Education", @readonly = "true" })
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="Course">Course</label>
+                                                                @Html.DropDownListFor(m => m.CourseId, new SelectList(ViewBag.Course, "Value", "Text"), new { @class = "form-control", @required = "true", @id = "Course" })
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputState">Specialization</label>
+                                                                @Html.TextBoxFor(m => m.Specialization, new { @class = "form-control", @id = "Specialization" })
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputState">University/Institute</label>
+                                                                @Html.TextBoxFor(m => m.University, new { @class = "form-control", @id = "University" })
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-4">
+                                                                <label for="inputAddress2">Course Type</label>
+                                                                @Html.TextBoxFor(m => m.CourseType, new { @class = "form-control", @id = "CourseType" })
+                                                            </div>
+                                                            <div class="form-group col-md-4">
+                                                                <label for="inputCity">Passing Year</label>
+                                                                @Html.TextBoxFor(m => m.PassingYear, new { @class = "form-control", @id = "PassingYear" })
+                                                            </div>
+                                                            <div class="form-group col-md-4">
+                                                                <label for="inputCity">Percent</label>
+                                                                @Html.TextBoxFor(m => m.Percent, new { @class = "form-control", @id = "Percent" })
+                                                            </div>
+
+                                                        </div>
+
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                    <button type="button" class="btn btn-primary pop_bg_custom">Save</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6><strong><a href="#" data-toggle="modal" data-target="#Inter_education">Add 12th</a></strong></h6>
+                                    <div class="modal fade" id="Inter_education" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="profile_education">Graduation/Diploma Course</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body profile_form">
+                                                    <form>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputEmail4">Education</label>
+                                                                @Html.TextBoxFor(m => m.Education, new { @Value = "12th", @class = "form-control", @id = "Education", @readonly = "true" })
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="Course">Course</label>
+                                                                @Html.DropDownListFor(m => m.CourseId, new SelectList(ViewBag.Course, "Value", "Text"), new { @class = "form-control", @required = "true", @id = "Course" })
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputState">Specialization</label>
+                                                                @Html.TextBoxFor(m => m.Specialization, new { @class = "form-control", @id = "Specialization" })
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputState">University/Institute</label>
+                                                                @Html.TextBoxFor(m => m.University, new { @class = "form-control", @id = "University" })
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-4">
+                                                                <label for="inputAddress2">Course Type</label>
+                                                                @Html.TextBoxFor(m => m.CourseType, new { @class = "form-control", @id = "CourseType" })
+                                                            </div>
+                                                            <div class="form-group col-md-4">
+                                                                <label for="inputCity">Passing Year</label>
+                                                                @Html.TextBoxFor(m => m.PassingYear, new { @class = "form-control", @id = "PassingYear" })
+                                                            </div>
+                                                            <div class="form-group col-md-4">
+                                                                <label for="inputCity">Percent</label>
+                                                                @Html.TextBoxFor(m => m.Percent, new { @class = "form-control", @id = "Percent" })
+                                                            </div>
+
+                                                        </div>
+
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                    <button type="button" class="btn btn-primary pop_bg_custom">Save</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6><strong><a href="#" data-toggle="modal" data-target="#Secondary_Education">Add 10th</a></strong></h6>
+                                    <div class="modal fade" id="Secondary_Education" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="profile_education">Graduation/Diploma Course</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body profile_form">
+                                                    <form>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputEmail4">Education</label>
+                                                                @Html.TextBoxFor(m => m.Education, new { @Value = "10th", @class = "form-control", @id = "Education", @readonly = "true" })
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="Course">Course</label>
+                                                                @Html.DropDownListFor(m => m.CourseId, new SelectList(ViewBag.Course, "Value", "Text"), new { @class = "form-control", @required = "true", @id = "Course" })
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputState">Specialization</label>
+                                                                @Html.TextBoxFor(m => m.Specialization, new { @class = "form-control", @id = "Specialization" })
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputState">University/Institute</label>
+                                                                @Html.TextBoxFor(m => m.University, new { @class = "form-control", @id = "University" })
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-4">
+                                                                <label for="inputAddress2">Course Type</label>
+                                                                @Html.TextBoxFor(m => m.CourseType, new { @class = "form-control", @id = "CourseType" })
+                                                            </div>
+                                                            <div class="form-group col-md-4">
+                                                                <label for="inputCity">Passing Year</label>
+                                                                @Html.TextBoxFor(m => m.PassingYear, new { @class = "form-control", @id = "PassingYear" })
+                                                            </div>
+                                                            <div class="form-group col-md-4">
+                                                                <label for="inputCity">Percent</label>
+                                                                @Html.TextBoxFor(m => m.Percent, new { @class = "form-control", @id = "Percent" })
+                                                            </div>
+
+                                                        </div>
+
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                    <button type="button" class="btn btn-primary pop_bg_custom">Save</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="profile_education" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="profile_education">Education</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body profile_form">
+                                    <form>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4">Education</label>
+                                                @Html.TextBoxFor(m => m.Education, new { @class = "form-control", @id = "Education" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="Course">Course</label>
+                                                @Html.DropDownListFor(m => m.CourseId, new SelectList(ViewBag.Course, "Value", "Text"), new { @class = "form-control", @required = "true", @id = "Course" })
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputState">Specialization</label>
+                                                @Html.TextBoxFor(m => m.Specialization, new { @class = "form-control", @id = "Specialization" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputState">University/Institute</label>
+                                                @Html.TextBoxFor(m => m.University, new { @class = "form-control", @id = "University" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputAddress2">Course Type</label>
+                                                @Html.TextBoxFor(m => m.CourseType, new { @class = "form-control", @id = "CourseType" })
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputCity">Passing Year</label>
+                                                @Html.TextBoxFor(m => m.PassingYear, new { @class = "form-control", @id = "PassingYear" })
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputCity">Percent</label>
+                                                @Html.TextBoxFor(m => m.Percent, new { @class = "form-control", @id = "Percent" })
+                                            </div>
+
+                                        </div>
+
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary pop_bg_custom">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="it_skill profileborder mt-4">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <div class="resume_headline_title">
+                                    <h5 class="font-weight-bold">
+                                        IT Skills
+                                        <a href="#" class="cv_firm" data-toggle="modal" data-target="#profile_it_skills">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </a> <span class="pull-right" style="color:#ff0000">@TempData["ITSkills"]</span><span class="pull-right">ADD DETAILS</span>
+                                    </h5>
+                                    <h6>Specify details about programming languages (such as Java, Python, C/C++, Oracle, SQL etc), softwares (Microsoft Word, Excel, Tally etc) or any other software related knowledge.</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="profile_it_skills" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="profile_it_skills">IT Skills</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body profile_form">
+                                    <form>
+                                        <div class="mt-12 mb-12">
+                                            <h6>Specify details about programming languages (such as Java, Python, C/C++, Oracle, SQL etc), softwares (Microsoft Word, Excel, Tally etc) or any other software related knowledge.</h6>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <label for="inputEmail4">It Skills</label>
+                                                @Html.TextBoxFor(m => m.ITSkillName, new { @class = "form-control", @id = "Organization" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputState">Version</label>
+                                                @Html.TextBoxFor(m => m.ITSkillVersion, new { @class = "form-control", @id = "ITSkillVersion" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputState">Last Used</label>
+                                                @Html.TextBoxFor(m => m.LastDate, new { @class = "form-control", @id = "LastDate" })
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputState">Total Experience *</label>
+                                                @*@Html.DropDownListFor(m => m.State, new SelectList(ViewBag.State, "Value", "Text"), new { @class = "form-control", @required = "true" })*@
+                                                @Html.DropDownListFor(m => m.ExperienceYears, new SelectList(ViewBag.ExperienceYears, "Value", "Text"), new { @class = "form-control", @required = "true", @id = "inputState" })
+                                            </div>
+                                            <div class="form-group col-md-6 mt-2">
+                                                <label for="inputState"></label>
+                                                @Html.DropDownListFor(m => m.ExperienceMonths, new SelectList(ViewBag.ExperienceMonths, "Value", "Text"), new { @class = "form-control", @required = "true", @id = "inputState" })
+                                                @*<select id="inputState" class="form-control">
+                                                        <option selected>0 Months</option>
+                                                        <option>1 Months</option>
+                                                        <option>2 Months</option>
+                                                        <option>3 Months</option>
+                                                        <option>4 Months</option>
+                                                        <option>5 Months</option>
+                                                        <option>6 Months</option>
+                                                        <option>7 Months</option>
+                                                        <option>8 Months</option>
+                                                        <option>9 Months</option>
+                                                        <option>10 Months</option>
+                                                        <option>11 Months</option>
+                                                    </select>*@@*<select id="inputState" class="form-control">
+                                                        <option selected></option>
+                                                        <option></option>
+                                                        <option></option>
+                                                        <option></option>
+                                                        <option></option>
+                                                        <option></option>
+                                                        <option></option>
+                                                        <option></option>
+                                                        <option></option>
+                                                        <option></option>
+                                                        <option></option>
+                                                        <option></option>
+                                                    </select>*@
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <a href="/hi/UpdateItSkill?id=@Model.LoginId" class="btn btn-primary pop_bg_custom">Save</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="projectsp profileborder mt-4">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12 col-sm-12">
+                                    <div class="resume_headline_title">
+                                        <h5 class="font-weight-bold">
+                                            Projects
+                                            <a href="#" class="cv_firm" data-toggle="modal" data-target="#profile_projects">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </a>
+                                            @if (TempData["profile_projects"] != null)
+                                            {<span style="color:red">@TempData["profile_projects"]</span>
+
+                                            } <span class="pull-right">ADD PROJECT</span>
+
+                                        </h5>
+                                        <h6>Add details about projects you have done in college, internship or at work.</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="profile_projects" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="profile_projects">Add Projects</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body profile_form">
+                                        <form>
+
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <label for="inputEmail4">Project Title</label>
+                                                    @Html.TextBoxFor(m => m.ProjectTitle, new { @class = "form-control", @id = "ProjectTitle" })
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <label for="inputState">Tag this project with your Employment/Education</label>
+                                                    @Html.TextBoxFor(m => m.Education, new { @class = "form-control", @id = "Education" })
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6 mt-2">
+                                                    <label for="inputState">Project Status</label>
+                                                    @Html.TextBoxFor(m => m.ProjectsStatus, new { @class = "form-control", @id = "ProjectsStatus" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputState">Started Working From</label>
+                                                    <select id="ProjectDuration" class="form-control">
+                                                        <option selected>0 Years</option>
+                                                        <option>1 Years</option>
+                                                        <option>2 Years</option>
+                                                        <option>3 Years</option>
+                                                        <option>4 Years</option>
+                                                        <option>5 Years</option>
+                                                        <option>6 Years</option>
+                                                        <option>7 Years</option>
+                                                        <option>8 Years</option>
+                                                        <option>9 Years</option>
+                                                        <option>10 Years</option>
+                                                        <option>11 Years</option>
+                                                        <option>12 Years</option>
+                                                        <option>13 Years</option>
+                                                        <option>14 Years</option>
+                                                        <option>15 Years</option>
+                                                        <option>16 Years</option>
+                                                        <option>17 Years</option>
+                                                        <option>18 Years</option>
+                                                        <option>19 Years</option>
+                                                        <option>20 Years</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-md-6 mt-2">
+                                                    <label for="inputState"></label>
+                                                    <select id="inputState" class="form-control">
+                                                        <option selected>0 Months</option>
+                                                        <option>1 Months</option>
+                                                        <option>2 Months</option>
+                                                        <option>3 Months</option>
+                                                        <option>4 Months</option>
+                                                        <option>5 Months</option>
+                                                        <option>6 Months</option>
+                                                        <option>7 Months</option>
+                                                        <option>8 Months</option>
+                                                        <option>9 Months</option>
+                                                        <option>10 Months</option>
+                                                        <option>11 Months</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputState">Worked Till *</label>
+                                                    <select id="inputState" class="form-control">
+                                                        <option selected>0 Years</option>
+                                                        <option>1 Years</option>
+                                                        <option>2 Years</option>
+                                                        <option>3 Years</option>
+                                                        <option>4 Years</option>
+                                                        <option>5 Years</option>
+                                                        <option>6 Years</option>
+                                                        <option>7 Years</option>
+                                                        <option>8 Years</option>
+                                                        <option>9 Years</option>
+                                                        <option>10 Years</option>
+                                                        <option>11 Years</option>
+                                                        <option>12 Years</option>
+                                                        <option>13 Years</option>
+                                                        <option>14 Years</option>
+                                                        <option>15 Years</option>
+                                                        <option>16 Years</option>
+                                                        <option>17 Years</option>
+                                                        <option>18 Years</option>
+                                                        <option>19 Years</option>
+                                                        <option>20 Years</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-md-6 mt-2">
+                                                    <label for="inputState"></label>
+                                                    <select id="inputState" class="form-control">
+                                                        <option selected>0 Months</option>
+                                                        <option>1 Months</option>
+                                                        <option>2 Months</option>
+                                                        <option>3 Months</option>
+                                                        <option>4 Months</option>
+                                                        <option>5 Months</option>
+                                                        <option>6 Months</option>
+                                                        <option>7 Months</option>
+                                                        <option>8 Months</option>
+                                                        <option>9 Months</option>
+                                                        <option>10 Months</option>
+                                                        <option>11 Months</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputAddress2">Details of Project</label>
+                                                @Html.TextAreaFor(m => m.ProjectDetails, new { @class = "form-control", @id = "ProjectDetails", @rows = "4" })
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <a href="/hi/UpdateProjectDetails?id=@Model.LoginId" class="btn btn-primary pop_bg_custom">Save</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile_summary profileborder mt-4">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12 col-sm-12">
+                                    <div class="resume_headline_title">
+                                        <h5 class="font-weight-bold">
+                                            Profile Summary
+                                            <a href="#" class="cv_firm" data-toggle="modal" data-target="#profile_summary">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </a>
+                                            @if (TempData["Profile_Summary"] != null)
+                                            {
+                                                <span class="pull-right" style="color:red">@TempData["Profile_Summary"]</span>
+                                            }
+                                        </h5>
+                                        <h6>To work in the interest of company in a challenging and healthy atmosphere where, I can apply my technical, communication skills and qualities for the better future of the company as well as myself.</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="profile_summary" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="profile_summary">Profile Summary</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body profile_form">
+                                        <form>
+                                            <div class="mt-12 mb-12">
+                                                <p>Your Profile Summary should mention the highlights of your career and education, what your professional interests are, and what kind of a career you are looking for. Write a meaningful summary of more than 50 characters.</p>
+
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+
+                                                    @Html.TextAreaFor(m => m.ProfileSummary, new { @class = "form-control", @id = "ProfileSummary", @rows = "4" })
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <a href="/hi/UpdateProfileSummary?id=@Model.LoginId" class="btn btn-primary pop_bg_custom">Save</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="career_profile profileborder mt-4">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12 col-sm-12">
+                                    <div class="resume_headline_title">
+                                        <h5 class="font-weight-bold">
+                                            Accomplishments
+                                            <a href="#" class="cv_firm" data-toggle="modal" data-target="#profile_accomplishments">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </a>
+                                        </h5>
+                                        <br>
+                                        <h6>Online Profile <span class="pull-right"><a href="#" data-toggle="modal" data-target="#profile_accomplishments"><strong>ADD</strong></a></span></h6>
+                                        <h6>Add link to Online profiles (e.g. Linkedin, Facebook etc.).</h6>
+                                        <div class="divider"></div>
+                                        <div class="mt-4">
+                                            <h6>Work Sample <span class="pull-right"><a href="#" data-toggle="modal" data-target="#worksample_accomplishments"><strong>ADD</strong></a></span></h6>
+                                            <h6>Add link to your Projects (e.g. Github links etc.).</h6>
+                                            <div class="divider"></div>
+                                        </div>
+                                        <div class="mt-4">
+                                            <h6>White Paper / Research Publication / Journal Entry <span class="pull-right"><a href="#" data-toggle="modal" data-target="#publications_accomplishments"><strong>ADD</strong></a></span></h6>
+                                            <h6>Add links to your Online publications.</h6>
+                                            <div class="divider"></div>
+                                        </div>
+                                        <div class="mt-4">
+                                            <h6>Presentation <span class="pull-right"><a href="#" data-toggle="modal" data-target="#presentation_accomplishments"><strong>ADD</strong></a></span></h6>
+                                            <h6>Add links to your Online presentations (e.g. Slideshare presentation links etc.).</h6>
+                                            <div class="divider"></div>
+                                        </div>
+                                        <div class="mt-4">
+                                            <h6>Patent <span class="pull-right"><a href="#" data-toggle="modal" data-target="#patent_accomplishments"><strong>ADD</strong></a></span></h6>
+                                            <h6>Add details of Patents you have filed.</h6>
+                                            <div class="divider"></div>
+                                        </div>
+                                        <div class="mt-4">
+                                            <h6>Certification <span class="pull-right"><a href="#" data-toggle="modal" data-target="#certification_accomplishments"><strong>ADD</strong></a></span></h6>
+                                            <h6>Add details of Certifications you have achieved/completed</h6>
+                                            <div class="divider"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+
+                        <div class="profile_summary profileborder mt-4">
+                            <h5 class="font-weight-bold">
+                                Career Profile
+                                <a href="#" class="cv_firm" data-toggle="modal" data-target="#career_profile">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                            </h5>
+                            @if (TempData["career_profile"] != null)
+                            {
+                                @TempData["career_profile"]
+                            }
+                            <br>
+                            <div class="row">
+                                <div class="col-md-5 col-lg-5 col-sm-12">
+                                    <ul class="list-unstyled">
+                                        <li>Industry</li>
+                                        <li><strong>IT-Software/Software Services @Model.IndustryType</strong></li>
+                                        <li class="mt-3">Role</li>
+                                        <li><strong>Graphic/Web Designer @Model.JobRole</strong></li>
+                                        <li class="mt-3">Desired Employment Type</li>
+                                        <li><strong>Full Time @Model.EmploymentType</strong></li>
+                                        <li class="mt-3">Expected Salary</li>
+                                        <li><strong>Add Expected Salary @Model.ExpectedSalary</strong></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-7 col-lg-7 col-sm-12">
+                                    <ul class="list-unstyled">
+                                        <li>Functional Area</li>
+                                        <li><strong>IT Software - Application Programming / Maintenance @Model.FunctionalArea</strong></li>
+                                        <li class="mt-3">Desired Job Type</li>
+                                        <li><strong>Contractual, Permanent @Model.JobType</strong></li>
+                                        <li class="mt-3">Desired Shift</li>
+                                        <li><strong>Day @Model.DesiredShift</strong></li>
+                                        <li class="mt-3">Desired Shift</li>
+                                        <li><strong>Day @Model.DesiredShift</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="career_profile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="career_profile">Career Profile</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body profile_form">
+                                        <form>
+                                            <div class="mt-12 mb-12">
+                                                <p>This information will help the recruiters and Naukri know about your current job profile and also your desired job criteria. This will also help us personalize your job recommendations.</p>
+
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputEmail4">Industry *</label>
+                                                     @Html.DropDownListFor(m => m.IndustryType, new SelectList(ViewBag.IndustryType, "Value", "Text"), new { @class = "form-control", @required = "true", @id = "inputState" })
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputEmail4">Functional Area / Department *</label>
+                                                    @Html.DropDownListFor(m => m.FunctionalArea, new SelectList(ViewBag.FunctionalArea, "Value", "Text"), new { @class = "form-control", @required = "true", @id = "inputState" })
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="DesiredJob">Desired Job Type</label><br />
+                                                    <div class="form-check form-check-inline col-md-4">
+                                                        @Html.RadioButtonFor(m => m.JobType, "Permanent", new { @checked = true, @id = "Permanent" })
+                                                        <label class="form-check-label" for="Yes">&nbsp;&nbsp;Permanent</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline col-md-4">
+                                                        @Html.RadioButtonFor(m => m.JobType, "Contractual", new { @id = "Contractual" })
+                                                        <label class="form-check-label" for="No">&nbsp;&nbsp;Contractual</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="DesiredJob">Desired Employment Type</label><br />
+                                                    <div class="form-check form-check-inline col-md-4">
+                                                        @Html.RadioButtonFor(m => m.EmploymentType, "FullTime", new { @checked = true, @id = "FullTime" })
+                                                        <label class="form-check-label" for="Yes">&nbsp;&nbsp;Full Time</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline col-md-4">
+                                                        @Html.RadioButtonFor(m => m.EmploymentType, "PartTime", new { @id = "PartTime" })
+                                                        <label class="form-check-label" for="No">&nbsp;&nbsp;Part Time</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputEmail4">Preferred Shift</label> <br />
+                                                    <div class="form-check form-check-inline col-md-2">
+                                                        @Html.RadioButtonFor(m => m.DesiredShift, "Day", new { @id = "Day" })
+                                                        <label class="form-check-label" for="Yes">&nbsp;&nbsp;Day</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline col-md-2">
+                                                        @Html.RadioButtonFor(m => m.DesiredShift, "Night", new { @checked = true, @id = "Night" })
+                                                        <label class="form-check-label" for="No">&nbsp;&nbsp;Night</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline col-md-2">
+                                                        @Html.RadioButtonFor(m => m.DesiredShift, "Flexible", new { @checked = true, @id = "Flexible" })
+                                                        <label class="form-check-label" for="No">&nbsp;&nbsp;Flexible</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="DesiredJob">Expected Salary</label><br />
+                                                    <div class="form-check form-check-inline col-md-6">
+                                                        @Html.RadioButtonFor(m => m.ExpectedSalary, "IndianRupees", new { @checked = true, @id = "IndianRupees" })
+                                                        <label class="form-check-label" for="Yes">&nbsp;&nbsp;Indian Rupees</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline col-md-4">
+                                                        @Html.RadioButtonFor(m => m.ExpectedSalary, "USDollers", new { @id = "USDollers" })
+                                                        <label class="form-check-label" for="No">&nbsp;&nbsp;US Dollers</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <label for="DesiredJob">Location</label>
+                                                    @Html.TextAreaFor(m => m.Address, new { @class = "form-control", @id = "Address", @rows = "3" })
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <a href="/hi/UpdateCareerDetails?id=@Model.LoginId" class="btn btn-primary pop_bg_custom">Save</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="personal_details profileborder mt-4">
+                            <h5 class="font-weight-bold">
+                                Personal Details
+                                <a href="#" class="cv_firm" data-toggle="modal" data-target="#profile_personal_details">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                            </h5>
+                            @if (TempData["profile_personal_details"] != null)
+                            {
+                                @TempData["profile_personal_details"]
+                            }
+                            <br>
+                            <div class="row">
+                                <div class="col-md-5 col-lg-5 col-sm-12">
+                                    <ul class="list-unstyled">
+                                        <li>Date of Birth</li>
+                                        <li><strong>D / M / Y @Model.DOB</strong></li>
+                                        <li class="mt-3">Gender</li>
+                                        <li><strong>Male / Female @Model.Gender</strong></li>
+                                        <li class="mt-3">Marital Status</li>
+                                        <li><strong>Single / Unmarried @Model.MaritalStatus</strong></li>
+                                        <li class="mt-3">Category</li>
+                                        <li><strong>N / A @Model.Category</strong></li>
+                                        <li class="mt-3">Work permit of other country</li>
+                                        <li><strong>India @Model.Country</strong></li>
+                                        <li class="mt-3">Differently Abled</li>
+                                        <li><strong>India</strong></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-7 col-lg-7 col-sm-12">
+                                    <ul class="list-unstyled">
+                                        <li>Permanent Address</li>
+                                        <li><strong>Lorem Ipsum is simply dummy text of the printing and</strong></li>
+                                        <li class="mt-3">Area Pin Code</li>
+                                        <li><strong>226001</strong></li>
+                                        <li class="mt-3">Hometown</li>
+                                        <li><strong>Lucknow</strong></li>
+                                        <li class="mt-3">Work permit for USA</li>
+                                        <li><strong>Add Work permit for USA</strong></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-12 col-lg-12 col-sm-12">
+                                    <ul class="list-unstyled proficiency1">
+                                        <li class="list-inline-item">Languages</li>
+                                        <li class="list-inline-item">Proficiency</li>
+                                        <li class="list-inline-item">Read</li>
+                                        <li class="list-inline-item">Write</li>
+                                        <li class="list-inline-item">Speak</li>
+                                    </ul>
+                                    <div class="divider"></div>
+                                    <ul class="list-unstyled proficiency2 mt-3">
+                                        <li class="list-inline-item">English</li>
+                                        <li class="list-inline-item">-</li>
+                                        <li class="list-inline-item"><i class="fa fa-check" aria-hidden="true"></i></li>
+                                        <li class="list-inline-item"><i class="fa fa-check" aria-hidden="true"></i></li>
+                                        <li class="list-inline-item"><i class="fa fa-check" aria-hidden="true"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="profile_personal_details" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="profile_personal_details">Personal Details</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body profile_form">
+                                        <form>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputEmail4">Date of Birth</label>
+                                                    @Html.TextBoxFor(m => m.DOB, new { @class = "form-control", @id = "DOB" })
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputEmail4">Are you Differently Abled?</label> <br />
+                                                    <div class="form-check form-check-inline col-md-4">
+                                                        @Html.RadioButtonFor(m => m.Differently, "Yes", new { @id = "Yes" })
+                                                        <label class="form-check-label" for="Yes">&nbsp;&nbsp;Yes</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline col-md-4">
+                                                        @Html.RadioButtonFor(m => m.Differently, "No", new { @checked = true, @id = "No" })
+                                                        <label class="form-check-label" for="No">&nbsp;&nbsp;No</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-12" id="TypeDiv" style="display:none">
+                                                    <label for="DesiredJob">Type</label>
+                                                    @Html.TextBoxFor(m => m.DifferentlyType, new { @class = "form-control", @id = "DifferentlyType" })
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputEmail4">Gender</label> <br />
+                                                    <div class="form-check form-check-inline col-md-4">
+                                                        @Html.RadioButtonFor(m => m.Gender, "Male", new { @checked = true })
+                                                        <label class="form-check-label" for="inlineCheckbox1">&nbsp;&nbsp;Male</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline col-md-4">
+                                                        @Html.RadioButtonFor(m => m.Gender, new { @class = "form-check-input", @id = "Female", @value = "Female", @checked = "checked" })
+                                                        <label class="form-check-label" for="inlineCheckbox2">&nbsp;&nbsp;Female</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputState">Pin Code</label>
+                                                    @Html.TextBoxFor(m => m.PinCode, new { @class = "form-control", @id = "PinCode" })
+                                                </div>
+
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputState">Marital Status</label>
+                                                    @Html.TextBoxFor(m => m.MaritalStatus, new { @class = "form-control", @id = "MaritalStatus" })
+                                                </div>
+
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputState">Category</label>
+                                                    <select id="inputState" class="form-control">
+                                                        <option selected>Select Category</option>
+                                                        <option>General</option>
+                                                        <option>ST</option>
+                                                        <option>ST</option>
+                                                        <option>OBC</option>
+                                                        <option>OBC Non-Creamy</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <label for="DesiredJob">Permanent Address</label>
+                                                    @Html.TextAreaFor(m => m.PermanentAddress, new { @class = "form-control", @id = "PermanentAddress" })
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <label for="DesiredJob">Home Town</label>
+                                                    @Html.TextAreaFor(m => m.HomeTown, new { @class = "form-control", @id = "HomeTown" })
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <a href="/hi/UpdatePersonalDetails?id=@Model.LoginId" class="btn btn-primary pop_bg_custom">Save</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-12">
+                        <div class="sidebar-section mt-4">
+                            <div class="side_barquick_links profileborder ">
+                                <h5 class="text-center font-weight-bold">Jobs For You</h5>
+                                @if (Model != null)
+                                {
+                                    if (Model.lstjobs != null)
+                                    {
+                                        int i = 1;
+                                        foreach (var item in Model.lstjobs)
+                                        {
+                                            <div class="divider mb-3"></div>
+                                            <div class="jobs_for_you_chk custom-checkbox">
+                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Lucknow">
+                                                <label for="vehicle1"> PHP Web Developer @Model.JobRole</label>
+                                                <ul class="list-unstyled">
+                                                    <li><i class="fa fa-briefcase" aria-hidden="true"></i> 3-5 Yrs @Model.Experience</li>
+                                                    <li><i class="fa fa-inr" aria-hidden="true"></i> Not disclosed @Model.JobType</li>
+                                                    <li><i class="fa fa-map-marker" aria-hidden="true"></i> Lucknow @Model.City</li>
+                                                    <li><i class="fa fa-file-text" aria-hidden="true"></i> Should have knowledge of payment gateway configuration, API configuration, and social plugin integration et... @Model.ShortDescription</li>
+                                                </ul>
+                                            </div>
+                                            i++;
+                                        }
+                                    }
+                                }
+                                <div class="divider mb-3"></div>
+                                <div class="jobs_for_you_chk custom-checkbox">
+                                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Lucknow">
+                                    <label for="vehicle1"> PHP Web Developer</label>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i> 3-5 Yrs</li>
+                                        <li><i class="fa fa-inr" aria-hidden="true"></i> Not disclosed</li>
+                                        <li><i class="fa fa-map-marker" aria-hidden="true"></i> Lucknow</li>
+                                        <li><i class="fa fa-file-text" aria-hidden="true"></i> Should have knowledge of payment gateway configuration, API configuration, and social plugin integration et...</li>
+                                    </ul>
+                                </div>
+                                <div class="divider mb-3"></div>
+                                <div class="jobs_for_you_chk custom-checkbox">
+                                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Lucknow">
+                                    <label for="vehicle1"> PHP Web Developer</label>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i> 3-5 Yrs</li>
+                                        <li><i class="fa fa-inr" aria-hidden="true"></i> Not disclosed</li>
+                                        <li><i class="fa fa-map-marker" aria-hidden="true"></i> Lucknow</li>
+                                        <li><i class="fa fa-file-text" aria-hidden="true"></i> Should have knowledge of payment gateway configuration, API configuration, and social plugin integration et...</li>
+                                    </ul>
+                                </div>
+                                <div class="divider mb-3"></div>
+                                <div class="jobs_for_you_chk custom-checkbox">
+                                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Lucknow">
+                                    <label for="vehicle1"> PHP Web Developer</label>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i> 3-5 Yrs</li>
+                                        <li><i class="fa fa-inr" aria-hidden="true"></i> Not disclosed</li>
+                                        <li><i class="fa fa-map-marker" aria-hidden="true"></i> Lucknow</li>
+                                        <li><i class="fa fa-file-text" aria-hidden="true"></i> Should have knowledge of payment gateway configuration, API configuration, and social plugin integration et...</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="top_employers profileborder mt-4">
+                                <h5 class="text-center font-weight-bold">Top Employers</h5>
+                                <div class="divider"></div>
+                                <ul class="list-unstyled mt-3">
+                                    @if (Model != null)
+                                    {
+                                        if (Model.lstemployers != null)
+                                        {
+                                            int i = 1;
+                                            foreach (var item in Model.lstemployers)
+                                            {
+                                                <li class="list-inline-item"><a href="#">Sophos Technologies Pvt Ltd.@item.EmployerName</a></li>
+                                                i++;
+                                            }
+                                        }
+                                    }
+                                    <li class="list-inline-item"><a href="#">CapitalCloud India (A Bottomline Technologies Company)</a></li>
+                                    <li class="list-inline-item"><a href="#">Druva Data Solutions Private Limited</a></li>
+                                    <li class="list-inline-item"><a href="#">CDK Global (India) Pvt Ltd</a></li>
+                                    <li class="list-inline-item"><a href="#">Eli Research India Pvt. Ltd</a></li>
+                                    <li class="list-inline-item"><a href="#">HERE Technologies</a></li>
+                                    <li class="list-inline-item"><a href="#">INFOR (INDIA) PVT. LTD.</a></li>
+                                    <li class="list-inline-item"><a href="#">Saama Technologies (India) Pvt. Ltd.</a></li>
+                                    <li class="list-inline-item"><a href="#">TIBCO Software</a></li>
+                                    <li class="list-inline-item"><a href="#">Zebra Technologies</a></li>
+                                    <li class="list-inline-item"><a href="#">AKAMAI TECHNOLOGIES INDIA PRIVATE LIMITED</a></li>
+                                    <li class="list-inline-item"><a href="#">AKAMAI TECHNOLOGIES INDIA PRIVATE LIMITED</a></li>
+                                    <li class="list-inline-item"><a href="#">Brillio Technologies</a></li>
+                                    <li class="list-inline-item"><a href="#">Columbus Global Services</a></li>
+                                    <li class="list-inline-item"><a href="#">Impetus Infotech (India) Pvt. Ltd.</a></li>
+                                    <li class="list-inline-item"><a href="#">Invenio Business Solutions</a></li>
+                                    <li class="list-inline-item"><a href="#">Lionbridge Technologies Private Limited</a></li>
+                                    <li class="list-inline-item"><a href="#">Luxoft India LLP</a></li>
+                                    <li class="list-inline-item"><a href="#">Innominds Software Pvt. Ltd.</a></li>
+                                    <li class="list-inline-item"><a href="#">HTC Global Services Ltd.</a></li>
+                                    <li class="list-inline-item"><a href="#">Hinduja Tech Limited</a></li>
+                                    <li class="list-inline-item"><a href="#">Cibersites India Private Limited</a></li>
+                                    <li class="list-inline-item"><a href="#">SAP Labs India Pvt. Ltd.</a></li>
+                                    <li class="list-inline-item"><a href="#">Fivetran India Pvt. Ltd.</a></li>
+                                    <li class="list-inline-item"><a href="#">Indecomm Technology Services</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+}
+<script>
+  (function () {
+        debugger
+        $("input[name='Differently']").click(function () {
+            if ($("#Yes").is(":checked")) {
+                $("#TypeDiv").show();
+            } else {
+                $("#TypeDiv").hide();
+            }
+        });
+  });
+
+  function Upload(input) {
+      if ($('#file').val() == '') {
+          $('#file').focus();
+          return false;
+      }
+      var formdata = new FormData(); //FormData object
+      var fileInput = document.getElementById('file');
+      //Iterating through each files selected in fileInput
+      for (i = 0; i < fileInput.files.length; i++) {
+          //Appending each file to FormData object
+          formdata.append(fileInput.files[i].name, fileInput.files[i]);
+      }
+      debugger
+      //Creating an XMLHttpRequest and sending
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '/hi/Upload');
+      xhr.send(formdata);
+      xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+              alert(xhr.responseText);
+          }
+      }
+      return false;
+  }
+ 
+</script>
+<style>
+    .errortext {
+        border: 1px solid red;
+       background-color:#202020;
+    }
+</style>
+

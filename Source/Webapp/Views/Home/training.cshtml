@@ -1,0 +1,74 @@
+﻿@model Data.DTOs.TrainingMaterialResponseDTO
+
+@{
+    ViewBag.Title = "training";
+    Layout = "~/Views/Shared/_WebsiteLayout.cshtml";
+}
+<style>
+    .imgdiv {
+        position: relative;
+    }
+
+    .desc {
+        position: absolute;
+        bottom: 3px;
+        right: 15px;
+        background-color: #fbfbfb;
+        color: white;
+        padding-left: 36px;
+        padding-right: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        /* border-radius: 50%; */
+        /*border-top-left-radius: 56px;*/
+        clip-path: polygon(19% 0, 100% 1%, 100% 100%, 0% 100%);
+        box-shadow: -2px -2px 6px 0px #0000009c;
+    }
+
+        .desc a {
+            text-decoration: none;
+        }
+</style>
+<div class="loader"></div>
+<section class="breadcrumb_section bg-img-c" style="background-image: url('../images/breadcrumb-bg1.jpg');">
+    <div class="container">
+        <div class="breadcrumb-text">
+            <h1 class="page-title">Training Material</h1>
+            <ul class="pull-right">
+                <li><a href="#">Home</a></li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
+                <li>Training Material</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<div class="training_page_section">
+    <div class="container">
+        <div class="row mt-4">
+            @if (Model != null)
+            {
+                if (Model.lstTMaterial != null)
+                {
+                    foreach (var item in Model.lstTMaterial)
+                    {
+                        if (item.Type == "PDF")
+                        {
+                            <div class="col-md-3 col-lg-3 col-sm-12 imgdiv">
+                                <img class="img-fluid" src="@item.Image" alt="">
+                                <div class="desc"><a href="@item.Attachment" target="_blank" class="text-black"><i class="fa fa-download" aria-hidden="true"></i> @item.Title</a></div>
+                            </div>
+                        }
+                        if (item.Type == "Video")
+                        {
+                            <div class="col-md-3 col-lg-3 col-sm-12 imgdiv">
+                                    <iframe width="100" height="165" src="@item.Attachment" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="desc">@item.Title</div>
+                            </div>
+                        }
+                    }
+                }
+            }
+        </div>
+    </div>
+</div>
+

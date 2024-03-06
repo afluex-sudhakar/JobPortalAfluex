@@ -1,0 +1,43 @@
+﻿@model Data.DTOs.MessageSendEmployerRequestDTO
+<li class="dropdown dropdown-list-toggle">
+    <a href="#" data-toggle="dropdown"
+       class="nav-link nav-link-lg message-toggle">
+        <i data-feather="mail" class="mailAnim"></i>
+        <span class="badge headerBadge1">
+        </span>
+    </a>
+    <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
+        <div class="dropdown-header">
+            Messages
+            <div class="float-right">
+                <a href="#">Mark All As Read</a>
+            </div>
+        </div>
+        <div class="dropdown-list-content dropdown-list-message">
+            @if (Model.MessageList != null)
+            {
+                foreach (var item in Model.MessageList)
+                {
+                    <a href="/Employee/ReplyToJobSeeker?userid=@item.JobSeekerId&jobid=@item.JobId" class="dropdown-item">
+                        <span class="dropdown-item-icon bg-info text-white">
+                            <i class="far
+												fa-user"></i>
+                        </span>
+                        <span class="dropdown-item-desc">
+                            <span class="message-user">
+                                @item.JobSeekerName
+                            </span>
+                            <span class="time messege-text">@item.LastMessage</span>
+                            <span class="time">@item.UpdatedTime</span>
+                        </span>
+                    </a>
+                }
+            }
+
+
+        </div>
+        <div class="dropdown-footer text-center">
+            <a href="/Employee/Messages">View All <i class="fas fa-chevron-right"></i></a>
+        </div>
+    </div>
+</li>

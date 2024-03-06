@@ -1,0 +1,407 @@
+﻿@model Data.DTOs.SmsMasterDTO
+@{
+    ViewBag.Title = "SmsPanel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    ul#UserList {
+        overflow-y: scroll;
+        max-height: 274px;
+        width: auto;
+    }
+
+    .note-toolbar.card-header {
+        height: auto;
+        display: block;
+        min-height: auto;
+        background: #ececec;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    .text-center {
+        line-height: 1.6rem;
+        padding-top: 10px;
+    }
+</style>
+<div class="loader" id="divload"></div>
+<div id="app">
+    <div class="main-wrapper main-wrapper-1">
+        <div class="main-content">
+            <section class="section">
+                <ul class="breadcrumb breadcrumb-style ">
+                    <li class="breadcrumb-item">
+                        <h4 class="page-title m-b-0">Compose</h4>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="index.html">
+                            <i data-feather="home"></i>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">SMS</li>
+                    <li class="breadcrumb-item active">Compose</li>
+                </ul>
+                <div class="section-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                            <div class="card">
+                                <div class="body">
+                                    <div id="mail-nav">
+                                        <div class="inbox-center table-responsive">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="1">
+                                                            <div class="inbox-header">
+                                                                Select Recipient
+                                                            </div>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <ul class="" id="mail-folders">
+                                            @Html.DropDownListFor(m => m.UserId, new SelectList(ViewBag.User, "Value", "Text"), new { @class = "form-control", @onchange = "return onUserChange();" })
+                                        </ul>
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    @Html.TextBoxFor(m => m.RecipientMobile, new { @class = "form-control", @required = "true", @placeholder = "Recipient Mobile", @onkeypress = "return isNumberKey(event);", @maxlength = "10" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h5 class="b-b p-10 text-strong"></h5>
+                                        <ul class="mail-folders" id="UserList"></ul>
+                                        <ul class="mail-folders" id="UserBTn"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                            <div class="card">
+                                <div class="boxs mail_listing">
+                                    <div class="inbox-center table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="1">
+                                                        <div class="inbox-header">
+                                                            Compose New Message
+                                                        </div>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <form class="composeForm">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <div class="form-group" id="checked">
+                                                            @Html.TextBoxFor(m => m.Mobile, new { @class = "form-control", @required = "true", @placeholder = "To", @readonly = "true" })
+                                                            <div class="invalid-feedback" id="spanmobile">
+                                                                Please enter mobile !
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <a href="#" class="content" data-toggle="modal" data-target="#exampleModal" title="" data-original-title="Edit">
+                                                            Choose Template
+                                                        </a>
+                                                        <a style="float:right" data-toggle="tooltip" title="" data-original-title="Edit">
+                                                            <input class="ckdtemplate" id="TemplateChecked" type="checkbox">
+                                                            Use This as Template
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        @Html.TextAreaFor(m => m.SMS, new { @id = "SMS", @class = "form-control", @required = "", @placeholder = "Message", })
+                                                       @Html.HiddenFor(m => m.Id)
+                                                        <div class="invalid-feedback" id="spansms">
+                                                            Please enter sms !
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="m-l-25 m-b-20">
+                                                <button type="button" disabled id="btnSend" class="btn btn-primary">Send</button>
+                                                <button type="button" id="BtnDiscard" class="btn btn-danger btn-border-radius waves-effect">Discard</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="formModal"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="formModal">Choose Template</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            @if (Model != null)
+                            {
+                                if (Model.OldSmsList != null)
+                                {
+                                    foreach (var Item in Model.OldSmsList)
+                                    {
+                                        <li data-smsbody="@Item.Body">
+                                            <input type="checkbox" name="checkbody" class="CheckBody" />
+                                            @Item.Body
+                                        </li>
+                                    }
+                                }
+                            }
+                        </ul>
+                        <div class="modal-footer bg-whitesmoke br">
+                            <button type="button" id="SetTemplateBtn" data-dismiss="modal" class="btn btn-primary">Set Template</button>
+                            @*<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section script{
+    <script>
+        $(document).ready(function () {
+            $('#RecipientMobile').hide();
+            $('#SetTemplateBtn').on('click', function () {
+                $('.CheckBody').each(function (i, v) {
+                    if ($(v).is(':checked')) {
+                        var SmsBody = $(this).parent().attr('data-smsbody');
+                        $("#SMS").val(SmsBody);
+                        $("#Id").val(SmsBody);
+                        $('.CheckBody').prop('checked', false);
+                    }
+                })
+            })
+            $('.CheckBody').on('click', function () {
+                $('.CheckBody').prop('checked', false);
+                $(this).prop('checked', true);
+            })
+
+            $('#BtnDiscard').on('click', function () {
+                $("#Mobile").val("");
+                $("#SMS").val("");
+                $("#UserId").val("0");
+                $("#UserList").html("");
+                $("#UserList").empty();
+                $("#UserBTn").html("");
+                $("#UserBTn").empty();
+                $('#RecipientMobile').hide();
+                $('#RecipientMobile').val("");
+            })
+            $("#btnSend").click(function () {
+                debugger
+                var IsTemplate = "";
+                if ($('#SMS').val() == $("#Id").val()) {
+                    IsTemplate = false;
+                }
+                else {
+                    if (document.getElementById("TemplateChecked").checked == true) {
+                        IsTemplate = true;
+                    }
+                    else if (document.getElementById("TemplateChecked").checked == false) {
+                        IsTemplate = false;
+                    }
+                }
+                if ($('#Mobile').val() != "") {
+                    if ($('#SMS').val() != "") {
+                        $.ajax({
+                            url: "SendSMS",
+                            type: "POST",
+                            contentType: "application/json;charset=utf-8",
+                            dataType: "json",
+                            data: "{'Mobile':'" + $("#Mobile").val() + "','SMS':'" + $('#SMS').val() + "','IsTemplate':'" + IsTemplate + "'}",
+                            beforeSend: function () {
+                                $('#divload').show();
+                            },
+                            complete: function () {
+                                $('#divload').hide();
+                            },
+                            success: function (data) {
+                                //console.log(data)
+                                //if (data.Result == "Send Page Details Save Successfull !")
+                                {
+                                    $("#UserList").html("");
+                                    $("#SMS").val("");
+                                    $("#UserList").empty();
+                                    $("#UserBTn").html("");
+                                    $("#UserBTn").empty();
+                                    document.getElementById("TemplateChecked").checked = false
+                                    $('#RecipientMobile').hide();
+                                    $('#btnSend').prop("disabled", true);
+                                    $("#Mobile").val('');
+                                    $("#UserId").val('0');
+                                    $(".note-editable").html('');
+                                    iziToast.success({
+                                        title: "Success!",
+                                        message: "SMS Sent !",
+                                        position: "topRight",
+                                    });
+                                }
+                            }
+                        });
+                    }
+                    else {
+                        $("#spansms").show();
+                        setTimeout(function () { $("#spansms").hide(); }, 1000);
+                        $('#Mobile').focus();
+                    }
+                }
+                else {
+                    $("#spanmobile").show();
+                    setTimeout(function () { $("#spanmobile").hide(); }, 1000);
+                    $('#SMS').focus();
+                }
+            });
+        });
+
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode != 46 && charCode > 31
+              && (charCode < 48 || charCode > 57))
+                return false;
+
+            return true;
+        }
+
+        function onUserChange() {
+            $("#Mobile").val("");
+            $('#btnSend').prop("disabled", true);
+            $("#divload").css({ 'display': '' });
+            $("#Other").css({ 'display': 'none' });
+            var UserId = $('#UserId').val();
+            if (UserId == 0) {
+                $("#divload").css({ 'display': 'none' });
+                $("#Other").css({ 'display': 'none' });
+                $("#UserList").html("");
+                $("#UserList").empty();
+                $("#UserBTn").html("");
+                $("#UserBTn").empty();
+            }
+            else if (UserId == 3) {
+                $("#divload").css({ 'display': 'none' });
+                $("#RecipientMobile").show();
+                $("#UserList").html("");
+                $("#UserList").empty();
+                $("#UserBTn").html("");
+                $("#UserBTn").empty();
+                $("#UserBTn").append(
+                $('<button type="button" id="btnSetRecipients" class="btn btn-primary btn-border-radius waves-effect">Set Reciepnt</button>'));
+                $('#btnSetRecipients').on('click', function () {
+                    $("#Mobile").val("");
+                    var recipientsText = $('#RecipientMobile').val() + ",";
+                    if (recipientsText != ",") {
+                        $('#btnSend').prop("disabled", false);
+                        $("#UserBTn").empty();
+                        $("#UserId").val('0');
+                        $("#RecipientMobile").hide();
+                        $("#Mobile").val(recipientsText);
+                    }
+
+                    else {
+                        alert('Please Insert Recipient Mobile Number !!')
+                        $('#RecipientMobile').focus();
+                    }
+
+                })
+            }
+            else {
+                $.ajax({
+                    url: '/Admin/GetUserList', type: 'post', dataType: 'json',
+                    data: { 'UserId': UserId },
+                    success: function (data) {
+                        //console.log(data)
+                        if (data.lstUsers != null) {
+                            $("#divload").css({ 'display': 'none' });
+                            $("#Other").css({ 'display': 'none' });
+                            $("#UserList").html("");
+                            $("#UserList").empty();
+                            $("#UserBTn").html("");
+                            $("#UserBTn").empty();
+                            $('#RecipientMobile').hide();
+                            $("#UserList").append(
+                                $('<li id="UserListLi"><input type="checkbox" id="selectall"/> <label id="AllUser">Select All</label></li>'));
+                            $("#UserBTn").append(
+                              $('<button type="button" id="btnSetRecipients" class="btn btn-primary btn-border-radius waves-effect">Set Reciepnt</button>'));
+                            $.each(data.lstUsers, function (index, UserCount) {
+                                $("#UserList").append(
+                                     ('<li class="recipient" id="UserListLi"><input type="checkbox" class="chkrecipient" value=' + UserCount.UserId + '/> <label class="UserName">' + UserCount.Name + '</label> (<strong><label class="UserMobile" >' + UserCount.Mobile + '</label></strong>) </li>'));
+
+                            });
+                            $('#selectall').on('click', function () {
+                                $("#Mobile").val("");
+                                $('#btnSend').prop("disabled", true);
+                                $('.chkrecipient').prop('checked', $(this).is(":checked"))
+                            })
+
+                            $('.chkrecipient').on('click', function () {
+                                $("#Mobile").val("");
+                                $('#btnSend').prop("disabled", true);
+                                var ischecked = true;
+                                $('.chkrecipient').each(function (i, v) {
+                                    if ($(v).is(":checked") == false) {
+                                        ischecked = false;
+                                    }
+                                })
+                                $('#selectall').prop('checked', ischecked)
+                            })
+
+                            $('#btnSetRecipients').on('click', function () {
+                                $("#Mobile").val("");
+                                var recipients = "";
+                                var recipientsText = $('#RecipientMobile').val();
+                                $('.chkrecipient').each(function (i, v) {
+                                    if ($(v).is(":checked")) {
+                                        recipients += $(v).parent().find('.UserMobile').text() + ","
+                                    }
+                                    //console.log(recipients)
+                                })
+                                if (recipients != "") {
+                                    $('#btnSend').prop("disabled", false);
+                                    $("#UserList").html("");
+                                    $("#UserList").empty();
+                                    $("#UserBTn").empty();
+                                    $("#UserId").val('0');
+                                    $("#Mobile").val(recipients);
+                                }
+
+                                else {
+                                    alert('Please Select Recipients !!')
+                                }
+
+                            })
+                        }
+                    }
+
+                });
+            }
+        }
+    </script>
+}

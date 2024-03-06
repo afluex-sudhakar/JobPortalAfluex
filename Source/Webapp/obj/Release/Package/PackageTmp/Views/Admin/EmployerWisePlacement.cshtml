@@ -1,0 +1,121 @@
+﻿@model Data.DTOs.EmployerPlacementDTO
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="loader"></div>
+<div id="app">
+    <div class="main-wrapper main-wrapper-1">
+        <!-- Main Content -->
+@using (Html.BeginForm("EmployerWisePlacement", "Admin", FormMethod.Post, new { @class = "needs-validation", @novalidate = "" }))
+{
+        <div class="main-content">
+            <section class="section">
+                <ul class="breadcrumb breadcrumb-style ">
+                    <li class="breadcrumb-item">
+                        <h4 class="page-title m-b-0">Reports</h4>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="/Admin/Index">
+                            <i data-feather="home"></i>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">Employer Wise Placement</li>
+                </ul>
+                <div class="section-body">
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-12">
+                            <div class="card">
+                                <form class="needs-validation" novalidate="">
+                                    <div class="card-header">
+                                        <h4>Employer Wise Placement</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-md-2 col-form-label">Employee</label>
+                                                <div class="col-md-6">
+                                                    @Html.DropDownListFor(m => m.EmployerId, new SelectList(ViewBag.Employee, "EmployerId", "Name"), "-Select-", new { @class = "form-control", @required = "true" })
+                                                    <div class="invalid-feedback">
+                                                        Please Select Job Role !
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    @Html.AntiForgeryToken()
+                                                    <button class="btn btn-primary mr-1" type="submit">Search</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Placement List</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped" id="table-1">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        S.No.
+                                                    </th>
+                                                    <th>Employer Name</th>
+                                                    <th>Total Posted Jobs</th>
+                                                    <th>Applied Candidates</th>
+                                                    <th>Placed Candidates</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (Model != null)
+                                                {
+                                                    if (Model.lst != null )
+                                                    {
+                                                        int i = 1;
+                                                        foreach (var Item in Model.lst)
+                                                        {
+                                                                <tr>
+                                                                    <td>
+                                                                        @i
+                                                                    </td>
+                                                                    <td>@Item.Name</td>
+                                                                    <td>
+                                                                        @Item.TotalJobPosted
+                                                                    </td>
+                                                                    <td>@Item.AppliedCandidates</td>
+                                                                    <td>@Item.PlacedCandidates</td>
+                                                                </tr>
+                                                            i++;
+                                                        }
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+}
+    </div>
+</div>
+@section script
+{
+    <script>
+        $("#table-1").dataTable({
+            dom: "Bfrtip",
+            buttons: ["csv", "excel", "pdf", "print"],
+            columnDefs: [{ sortable: false, targets: [2, 3] }],
+        });
+    </script>
+}

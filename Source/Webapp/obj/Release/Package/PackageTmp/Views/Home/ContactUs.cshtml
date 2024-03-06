@@ -1,0 +1,85 @@
+﻿@model Data.DTOs.CMSDTO
+@{
+    Layout = "~/Views/Shared/_WebsiteLayout.cshtml";
+}
+<div class="loader"></div>
+<section class="breadcrumb_section bg-img-c" style="background-image: url('../images/breadcrumb-bg.jpg');">
+    <div class="container">
+        <div class="breadcrumb-text">
+            <h1 class="page-title">@Model.pageName</h1>
+            <ul class="pull-right">
+                <li><a href="#">Home</a></li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
+                <li>@Model.pageName</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="contact_page_section">
+    @using (Html.BeginForm("ContactUs", "en", FormMethod.Post))
+    {
+        <div class="container">
+            <div class="row">
+                @Html.Raw(Model.Description)
+                <div class="col-lg-7 col-md-7 col-sm-12">
+                    <p style="color:red">@TempData["msg"]</p>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group contct_form col-md-6">
+                                <label for="inputEmail4"></label>
+                                @Html.TextBoxFor(m=>m.UserName, new { @class= "form-control form-control-lg", @id= "inputEmail4", @placeholder= "Name *" })
+                                @*<input type="text" class="form-control form-control-lg" id="inputEmail4" placeholder="Name *">*@
+                            </div>
+                            <div class="form-group contct_form col-md-6">
+                                <label for="inputPassword4"></label>
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control form-control-lg", @id = "inputPassword4", @placeholder = "E-mail *" })
+                                @*<input type="text" class="form-control form-control-lg" id="inputPassword4" placeholder="E-mail *">*@
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group contct_form col-md-6">
+                                <label for="inputEmail4"></label>
+                                @Html.TextBoxFor(m => m.MobileNo, new { @class = "form-control form-control-lg", @id = "inputEmail4", @placeholder = "Phone No *" })
+                                @*<input type="text" class="form-control form-control-lg" id="inputEmail4" placeholder="Phone No *">*@
+                            </div>
+                            <div class="form-group contct_form col-md-6">
+                                <label for="inputPassword4"></label>
+                                @Html.TextBoxFor(m => m.Subject, new { @class = "form-control form-control-lg", @id = "inputPassword4", @placeholder = "Subject" })
+                                @*<input type="text" class="form-control form-control-lg" id="inputPassword4" placeholder="Subject">*@
+                            </div>
+                        </div>
+                        <div class="form-group contct_form">
+                            <label for="exampleFormControlTextarea1"></label>
+                            @Html.TextAreaFor(m => m.Message, new { @class = "form-control", @id = "exampleFormControlTextarea1", @placeholder = "Message", @rows="3" })
+                            @*<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message"></textarea>*@
+                        </div>
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-primary con-btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+    
+    <div class="map mt-5">
+        @*<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3494.774974256526!2d78.76267761495237!3d28.845558781158598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390afbe680e6aaab%3A0x14b334b32a84c37e!2sMoradabad%20Smart%20City!5e0!3m2!1sen!2sin!4v1603957862894!5m2!1sen!2sin"
+                width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>*@
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7118.566591345526!2d80.996925!3d26.862739!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be3ad67cf86c1%3A0xe090e6813b2b28b9!2sAfluex%20Multiservices%20LLP%20-%20Software%20Development%20Company%20%26%20advertising-agency!5e0!3m2!1sen!2sin!4v1698319697428!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+
+@section script
+{
+  @*@if (TempData["msg"] == "true")
+    {
+    <script type="text/javascript">
+        window.onload = function () {
+            debugger;
+                alert("Thank you to contact us.")
+            };
+
+    </script>
+  }*@
+}

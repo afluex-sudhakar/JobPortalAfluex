@@ -1,0 +1,53 @@
+﻿@model Data.DTOs.AppliedJobResponseDTOWeb
+
+@{
+    ViewBag.Title = "listofappliedjob";
+    Layout = "~/Views/Shared/_WebsiteLayoutHI.cshtml";
+}
+<div class="loader"></div>
+<div class="sitemap_page_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <h1>आवेदन किए गए नौकरियों की सूची</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="inner-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="advance_search_section">
+                    <div id="jobsearch">
+                        @if (Model != null)
+                        {
+                            if (Model.ListJob != null)
+                            {
+                                int i = 1;
+                                foreach (var item in Model.ListJob)
+                                {
+                                    <div class="advance_search_inner mt-4">
+                                        <div class="advance_search_tilte">
+                                            <h5 id="title">@item.Title</h5>
+                                            <h6>@item.Company</h6>
+                                            <ul class="list-unstyled">
+                                                <li class="list-inline-item"> <i class="fa fa-clock-o" aria-hidden="true"></i> @item.JobType</li>
+                                                <li class="list-inline-item"> <i class="fa fa-suitcase" aria-hidden="true"></i> @item.JobRole</li>
+                                            </ul>
+                                            <h6><i class="fa fa-file-text pr-2" aria-hidden="true"></i> @item.ShortDescription</h6>
+                                            <p class="saffron-text" id="time"><i class="fa fa-clock-o" aria-hidden="true"></i> @item.Date.ToShortDateString() को प्रकाशित<span class="pull-right"><a href="/hi/JobDetails?Id=@item.JobId" class="saffron-text">Job Details</a></span></p>
+                                        </div>
+                                    </div>
+                                    i++;
+                                }
+                            }
+                        }
+                    </div>
+                    <btn id="loadmore" class="le_button text-decoration-none text-white pull-right mt-4" style="display:none">और लोड करें</btn>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

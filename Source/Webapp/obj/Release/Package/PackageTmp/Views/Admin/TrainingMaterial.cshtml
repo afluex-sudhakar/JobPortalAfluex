@@ -1,0 +1,192 @@
+﻿@model Data.DTOs.TrainingMaterialDTO
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("TrainingMaterial", "Admin", FormMethod.Post, new { @class = "needs-validation tr-form", @novalidate = "" , @enctype = "multipart/form-data" }))
+{
+    <div class="loader"></div>
+    <div id="app">
+        <div class="main-wrapper main-wrapper-1">
+            <!-- Main Content -->
+            <div class="main-content">
+                <section class="section">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <h4 class="page-title m-b-0">Admin</h4>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="/Admin/Index">
+                                <i data-feather="home"></i>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">Training Material</li>
+                    </ul>
+                    <div class="section-body">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>Training Material</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Title</label>
+                                                    @Html.HiddenFor(m=>m.Id)
+                                                    @Html.TextBoxFor(m => m.Title, new { @class = "form-control", @required="true"})
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Title !
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Title (In Hindi)</label>
+                                                    @Html.TextBoxFor(m => m.TitleH, new { @class = "form-control hindi", @required="true" })
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Title in Hindi!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Link</label>
+                                                    @Html.TextBoxFor(m => m.Link, new { @class = "form-control", @required = "true" })
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Link !
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Type</label>
+                                                    @Html.DropDownListFor(m => m.Type, new SelectList(new List<SelectListItem>
+                                                {
+                                                   new SelectListItem{ Text="Video", Value = "Video" },
+                                                    new SelectListItem{ Text="PDF", Value = "PDF" },
+                                                }, "Value", "Text"), "-Select-", new { @class = "form-control", @required="true" })
+                                                    <div class="invalid-feedback">
+                                                        Please Select Type !
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Short Description</label>
+                                                    @Html.TextAreaFor(m => m.ShortDescription, new { @class = "form-control", @required = "true" })
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Short Description !
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Short Description (In Hindi)</label>
+                                                    @Html.TextAreaFor(m => m.ShortDescriptionH, new { @class = "form-control hindi", @required = "true" })
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Short Description in Hindi !
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Description</label>
+                                                    @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Description !
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Description (In Hindi)</label>
+                                                    @Html.TextAreaFor(m => m.DescriptionH, new { @class = "form-control hindi" })
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Short Description !
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Publish Date</label>
+                                                    @Html.HiddenFor(m => m.PublishDate, new { @id="hdfDate"})
+                                                    @Html.TextBoxFor(m => m.PublishDate, DateTime.Now.ToString(), new { @class = "form-control", @type = "date", @required = "true" })
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Publish Date !
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Upload Image</label>
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" name="postedImage" id="postedImage" />
+                                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Attachment</label>
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" name="postedFile" id="postedFile" />
+                                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    @Html.AntiForgeryToken()
+                                                    <button class="btn btn-primary mrse-1" style="margin-top: 29px" type="submit">Submit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+}
+@section script {
+    @if (TempData["msg"] == "Saved")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                iziToast.success({
+                    title: "Success!",
+                    message: "Data Saved ",
+                    position: "topRight",
+                });
+            };
+
+        </script>
+    }
+    @if (TempData["msg"] == "Updated")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                iziToast.success({
+                    title: "Success!",
+                    message: "Data Updated ",
+                    position: "topRight",
+                });
+            };
+
+        </script>
+    }
+    @*<script type="text/javascript">
+        $(document).ready(function () {
+            debugger;
+            ViewBag.Date = $("#hdfDate").val();
+        });
+    </script>*@
+}

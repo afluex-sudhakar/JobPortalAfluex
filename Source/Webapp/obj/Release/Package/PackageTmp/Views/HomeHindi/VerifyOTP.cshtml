@@ -1,0 +1,102 @@
+﻿@model Data.DTOs.ValidateOTPDTO
+
+@{
+    ViewBag.Title = "VerifyOTP"; Layout = null;
+}
+
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="~/assets/css/app.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <link rel="stylesheet" href="~/assets/css/app.min.css">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" href="~/assets/css/components.css">
+    <!-- Custom style CSS -->
+    <link rel="stylesheet" href="~/assets/css/custom.css">
+    <link rel='shortcut icon' type='image/x-icon' href='~/images/logo.png' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Afluex Multiservice llp</title>
+</head>
+
+<body style="background-image: url('../images/login_bg.jpg');background-repeat: no-repeat;background-size: auto;">
+
+    @using (Html.BeginForm("VerifingOTPSave", "Hi", FormMethod.Post, new { @class = "needs-validation", @novalidate = "" }))
+    {
+        <div class="loader"></div>
+        <div class="main_signup">
+
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h4>ओटीपी सत्यापित करें</h4>
+                            </div>
+                            <div class="card-body">
+                                <p class="text-muted">हमने आपके मोबाइल पर एक OTP भेजा है</p>
+                                <p style="color:red"> @TempData["msg"]</p>
+                                <form method="POST">
+                                    <div class="form-group">
+                                        <label for="email">OTP</label>
+                                        @Html.TextBoxFor(m => m.OTP, new { @class = "form-control", @required = "", @placeholder = "OTP दर्ज करें" }) 
+                                        @Html.HiddenFor(m=> m.MobileNo)
+                                        @Html.HiddenFor(m => m.UserAgent)
+                                    </div>
+                                    <div class="form-group">
+                                        <a style="float:right" href="/Hi/ResendOTP?MobileNo=@Model.MobileNo" target="_blank">ओटीपी पुनः भेजें</a>
+
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit"  onclick="return Validateform();" class="btn btn-primary btn-lg btn-block" name="btnVerify" tabindex="4">
+                                            ओटीपी सत्यापित करें
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- General JS Scripts -->
+            <script src="~/assets/js/app.min.js"></script>
+            <!-- JS Libraies -->
+            <!-- Page Specific JS File -->
+            <!-- Template JS File -->
+            <script src="~/assets/js/scripts.js"></script>
+            <!-- Custom JS File -->
+            <script src="~/assets/js/custom.js"></script>
+            }
+
+    <script>
+        $(document).ready(function () {
+            $("#divload").css({ 'display': 'none' });
+            var userAgent = navigator.userAgent;
+
+            $('#UserAgent').val(userAgent);
+        });
+        function Validateform() {
+            $(".errortext").removeClass("errortext");
+            if ($('#OTP').val() == '') {
+                $("#OTP").addClass('errortext');
+                $('#OTP').focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+

@@ -1,0 +1,179 @@
+﻿@model Data.DTOs.NotificationDTO
+@{
+    ViewBag.Title = "ManageNotification";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("ManageNotification", "Admin", FormMethod.Post, new { @class = "tr-form needs-validation", @novalidate = "", @enctype = "multipart/form-data" }))
+{
+    <div class="loader"></div>
+    <div id="app">
+        <div class="main-wrapper main-wrapper-1">
+            <!-- Main Content -->
+            <div class="main-content">
+                <section class="section">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <h4 class="page-title m-b-0">Admin</h4>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="/Admin/Index">
+                                <i data-feather="home"></i>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">Manage Notification</li>
+                    </ul>
+                    <div class="section-body">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>Manage Notification</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>To</label>
+                                                    @Html.DropDownListFor(m => m.NotifiedDevice, new SelectList(new List<SelectListItem>
+                                                {
+                                                   new SelectListItem{ Text="All", Value = "All" },
+                                                    new SelectListItem{ Text="Single", Value = "Single" },
+                                                }, "Value", "Text"), "-Select-", new { @class = "form-control" })
+                                                    <div class="invalid-feedback">
+                                                        Please Select To !
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6" style="display:none" id="divmobile">
+                                                    <label>Mobile No</label>
+                                                    @Html.TextBoxFor(m => m.MobileNo, new { @class = "form-control", @placeholder = "Enter Mobile No...",  })
+                                                    <div class="invalid-feedback">
+                                                        Please Select Device !
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Link</label>
+                                                    @Html.TextBoxFor(m => m.Link, new { @class = "form-control", @required = "true" })
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Link !
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <label>Date</label>
+                                                    @Html.TextBoxFor(m => m.DateFrom, new { @class = "form-control", @required = "true", @type = "date" })
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Date !
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Title</label>
+                                                    @Html.TextBoxFor(m => m.Title, new { @class = "form-control", @required = "true" })
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Title !
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Title (In Hindi)</label>
+                                                    @Html.TextBoxFor(m => m.TitleH, new { @class = "form-control hindi", @required = "true" })
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Title in Hindi !
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Description</label>
+                                                    @Html.TextAreaFor(m => m.Description, new { @class = "form-control", @required = "true" })
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Description !
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Description (In Hindi)</label>
+                                                    @Html.TextAreaFor(m => m.DescriptionH, new { @class = "form-control hindi", @required = "true" })
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Description in Hindi !
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <label>Upload Image</label>
+                                                    <input type="file" class="form-control" name="postedImage" id="postedImage" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    @Html.AntiForgeryToken()
+                                                    <button class="btn btn-primary mrse-1" style="margin-top: 29px" type="submit">Submit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+}
+@section script {
+<script type="text/javascript">
+    $("#NotifiedDevice").change(function () {
+        if ($("#NotifiedDevice").val() == "Single") {
+            $('#divmobile').show();
+        }
+        else {
+            $('#divmobile').hide();
+        }
+    })
+</script>
+    @if (TempData["msg"] == "Saved")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                iziToast.success({
+                    title: "Success!",
+                    message: "Record Saved ",
+                    position: "topRight",
+                });
+            };
+
+        </script>
+    }
+    @if (TempData["msg"] == "Updated")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                iziToast.success({
+                    title: "Success!",
+                    message: "Record Updated ",
+                    position: "topRight",
+                });
+            };
+
+        </script>
+    }
+}

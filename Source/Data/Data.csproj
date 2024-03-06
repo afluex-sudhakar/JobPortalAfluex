@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BA33AE2A-295C-42EB-8C32-212907D6EFBD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Data</RootNamespace>
+    <AssemblyName>Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\Webapp\dll\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CareerMitra.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CareerMitra.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CareerMitra.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CareerMitra.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CareerMitra.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Chat.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChatMessage.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Course.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentCategory.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentType.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTOs\AdminDashboardDTO.cs" />
+    <Compile Include="DTOs\AudittrailDTO.cs" />
+    <Compile Include="DTOs\CMSDTO.cs" />
+    <Compile Include="DTOs\SmsMasterDTO.cs" />
+    <Compile Include="DTOs\EmailMaster.cs" />
+    <Compile Include="DTOs\FeedbackDTO.cs" />
+    <Compile Include="DTOs\DepartmentCategoryDTO.cs" />
+    <Compile Include="DTOs\DepartmentDTO.cs" />
+    <Compile Include="DTOs\CheckMobileNoDTO.cs" />
+    <Compile Include="DTOs\CommonDTO.cs" />
+    <Compile Include="DTOs\MessageDTO.cs" />
+    <Compile Include="DTOs\RequestDTO.cs" />
+    <Compile Include="DTOs\EmployerPlacementDTO.cs" />
+    <Compile Include="DTOs\StateDTO.cs" />
+    <Compile Include="DTOs\NewLetterDTO.cs" />
+    <Compile Include="DTOs\UserJobsDTO.cs" />
+    <Compile Include="DTOs\UserDTO.cs" />
+    <Compile Include="DTOs\EmployerDTO.cs" />
+    <Compile Include="DTOs\EnrollmentProgramDTO.cs" />
+    <Compile Include="DTOs\NotificationDTO.cs" />
+    <Compile Include="DTOs\CategoryDTO .cs" />
+    <Compile Include="DTOs\CityDTO.cs" />
+    <Compile Include="DTOs\CourseDTO.cs" />
+    <Compile Include="DTOs\DocumentTypeDTO.cs" />
+    <Compile Include="DTOs\JobDTO.cs" />
+    <Compile Include="DTOs\JobRoleDTO.cs" />
+    <Compile Include="DTOs\JobType.cs" />
+    <Compile Include="DTOs\SkillDTO.cs" />
+    <Compile Include="DTOs\EmpJobPostDTO.cs" />
+    <Compile Include="DTOs\TrainingMaterialDTO.cs" />
+    <Compile Include="EducationDetail.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailMaster.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnrollmentProgram.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Repositories\IAdminDashboardRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IAudittrailRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ISmsMasterRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IEmailMasterRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IFeedbackRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICMSRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IDepartmentCategoryRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IDepartmentRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IChatRepository.cs" />
+    <Compile Include="Interfaces\Repositories\INewsLetterRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IPincodeRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IStateRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IUserJobRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IUserRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IEnrollmentProgramRepository.cs" />
+    <Compile Include="Interfaces\Repositories\INotificationRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICategoryRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICityRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICourseRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IJobRepository .cs" />
+    <Compile Include="Interfaces\Repositories\IJobRoleRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IJobTypeRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IEmpJobPostRespository.cs" />
+    <Compile Include="Interfaces\Repositories\IRepositoryBase.cs" />
+    <Compile Include="Interfaces\Repositories\ISkillRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ITrainingMaterialRepository.cs" />
+    <Compile Include="Interfaces\Services\IServiceBase.cs" />
+    <Compile Include="Job.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobLocation.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobQualification.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobRole.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobSkill.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobType.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CommonRepository.cs" />
+    <Compile Include="Models\FilteredSet.cs" />
+    <Compile Include="Models\Loging.cs" />
+    <Compile Include="Models\SortDescriptor.cs" />
+    <Compile Include="Models\SortExpression.cs" />
+    <Compile Include="NewsLetter.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Notification.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PincodeMaster.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AdminDashboardRespository.cs" />
+    <Compile Include="Repositories\AudittrailRepository.cs" />
+    <Compile Include="Repositories\SmsMasterRepository .cs" />
+    <Compile Include="Repositories\EmailMasterRepository.cs" />
+    <Compile Include="Repositories\FeedbackRepository.cs" />
+    <Compile Include="Repositories\CMSRepository.cs" />
+    <Compile Include="Repositories\DepartmentCategoryRepository.cs" />
+    <Compile Include="Repositories\DepartmentRepository.cs" />
+    <Compile Include="Repositories\ChatRepository.cs" />
+    <Compile Include="Repositories\PincodeRepository.cs" />
+    <Compile Include="Repositories\StateRepository.cs" />
+    <Compile Include="Repositories\UserJobRepository.cs" />
+    <Compile Include="Repositories\NewsLetterRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\EnrollmentprogramRepository.cs" />
+    <Compile Include="Repositories\NotificationRepository.cs" />
+    <Compile Include="Repositories\CategoryRepository.cs" />
+    <Compile Include="Repositories\CityRepository .cs" />
+    <Compile Include="Repositories\EmpJobPostRespository.cs" />
+    <Compile Include="Repositories\CourseRepository.cs" />
+    <Compile Include="Repositories\JobRepository.cs" />
+    <Compile Include="Repositories\JobRoleRepository.cs" />
+    <Compile Include="Repositories\JobTypeRepository.cs" />
+    <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\SkillRepository.cs" />
+    <Compile Include="Repositories\TrainingMaterialRepository.cs" />
+    <Compile Include="Resume.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Services\ServiceBase.cs" />
+    <Compile Include="Skill.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMSMaster.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="State.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StaticContent.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingMaterial.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDetail.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDevice.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDocument.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserEducation.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserEnrollmentProgram.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserExperience.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserJob.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserLog.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserNotification.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserSkill.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserTrainingMaterial.cs">
+      <DependentUpon>CareerMitra.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="CareerMitra.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CareerMitra.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CareerMitra.edmx.diagram">
+      <DependentUpon>CareerMitra.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CareerMitra.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CareerMitra.Context.cs</LastGenOutput>
+      <DependentUpon>CareerMitra.edmx</DependentUpon>
+    </Content>
+    <Content Include="CareerMitra.edmx.sql" />
+    <Content Include="CareerMitra.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CareerMitra.cs</LastGenOutput>
+      <DependentUpon>CareerMitra.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\PagedList.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{6B2E79A0-CFA2-424C-9C95-244C3F2E709D}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

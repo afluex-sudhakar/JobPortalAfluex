@@ -1,0 +1,1170 @@
+﻿@model Data.DTOs.UpdateUserDTO
+@{
+    ViewBag.Title = "UserProfile";
+    Layout = "~/Views/Shared/_WebsiteLayoutHI.cshtml";
+}
+@using (Html.BeginForm("UserProfile", "uhi", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(m => m.UserDetailId)
+
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.UserAgent)
+    @Html.HiddenFor(m => m.Gender)
+
+    <div class="loader"></div>
+    <div class="inner-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12">
+                    <div class="profile_inner_inner profileborder">
+                        <div class="row">
+                            <div class="col-md-2 col-lg-2 col-sm-12">
+                                <div class="profile_dp">
+
+                                    @if (@Model.Photo == "../FileUpload/ProfilePhoto/")
+                                    {
+                                        <img src="~/images/user.png" class="rounded-circle img-fluid" alt="profile-dp">
+
+                                    }
+                                    else
+                                    {
+                                        <img src="@Model.Photo" class="img-fluid" alt="profile-dp">
+                                    }
+
+                                </div>
+                                <div class="dp_icon">
+                                    <i class="fa fa-camera" aria-hidden="true"></i>
+                                    <input id="fuProfile" aria-label="Upload photo" class="profile-topcard-background-image-edit__input" accept="image/*" type="file">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-sm-12">
+                                <div class="profile_headingt">
+                                    <h2 class="font-weight-bold">
+                                        @Model.FirstName @Model.LastName
+                                        @*@Html.HiddenFor(m => m.FirstName)*@
+                                        @Html.HiddenFor(m => m.Password)
+                                        <a id="userprofile" href="#" class="cv_firm" data-toggle="modal" data-target="#profile_dp">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </a>
+                                    </h2>
+                                    @if (@Session["Designation"] != null)
+                                    {
+                                        <h5>@Session["Designation"] at @Session["CompanyName"] </h5>
+                                    }
+                                    @*else
+                                        {
+                                            <h5><a href="#">Designation</a> at <a href="#">Company Name</a></h5>
+                                        }*@
+
+                                    @if (Model.City != null && Model.City != "")
+                                    {
+                                        <h6><i class="fa fa-map-marker" aria-hidden="true"></i> @Model.City, भारत</h6>
+                                    }
+                                    else
+                                    {
+                                        <h6><i class="fa fa-map-marker" aria-hidden="true"></i> @Session["City"] भारत</h6>
+                                    }
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-4 col-sm-12">
+                                <div class="profile_us">
+                                    <h6><i class="fa fa-phone" aria-hidden="true"></i> @Model.Mobile</h6>
+                                    @if (Model.Email != null)
+                                    {
+                                        <h6><i class="fa fa-envelope" aria-hidden="true"></i>  @Model.Email</h6>
+                                    }
+                                    else
+                                    {
+                                        <h6><i class="fa fa-envelope" aria-hidden="true"></i> <a>Email</a></h6>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="offset-lg-2 col-md-10 col-lg-10 col-sm-12">
+                                <span>प्रोफाइल क्षमता (<label id="lblProfileStrength"></label>)</span>
+                                <div class="progress">
+                                    <div class="progress-bar bg-custom bg-warning" id="progressbar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <input id="hdfProfile" type="hidden" value="@Model.ProfilePercent" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="profile_dp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">मूल विवरण</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="profile_form">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputEmail4">कंपनी</label>
+                                                    @Html.TextBoxFor(m => m.CompanyName, new { @class = "form-control" })
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputEmail4">पद</label>
+                                                    @Html.TextBoxFor(m => m.Designation, new { @class = "form-control" })
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputEmail4">पहला नाम</label>
+                                                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @id = "Name" })
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputEmail4">अंतिम नाम</label>
+                                                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @id = "Name" })
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="TelephoneNo">मोबाइल न.</label>
+                                                    @Html.TextBoxFor(m => m.Mobile, new { @class = "form-control", @id = "Mobile Number", @readonly = "true" })
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="Email">ईमेल</label>
+                                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @id = "Email", @type = "Email" })
+                                                </div>
+                                                @*<div class="form-group col-md-6">
+                                                        <label for="inputEmail4">Designation</label>
+                                                        @Html.TextBoxFor(m => m, new { @class = "form-control", @id = "Designation" })
+
+                                                    </div>*@
+                                                <div class="form-group col-md-6">
+                                                    <label for="Address">स्थान</label>
+                                                    @Html.DropDownListFor(m => m.CityId, new SelectList(ViewBag.City, "Id", "Name"), "--Select--", new { @class = "form-control" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">रद्द करें</button>
+                                        <input type="submit" class="btn btn-primary pop_bg_custom" name="btnBasicDetails" value="सेव करें" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-lg-9 col-sm-12">
+                    <div class="profile_summary profileborder mt-4">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <div class="resume_headline_title">
+                                    <h5 class="font-weight-bold">
+                                        प्रोफ़ाइल सारांश
+                                        <a href="#" class="cv_firm" data-toggle="modal" data-target="#profile_summary">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </a>
+                                        @if (TempData["About"] != null)
+                                        {
+                                            <span class="pull-right" style="color:red">@TempData["About"]</span>
+                                        }
+                                    </h5>
+                                    <h6>@Session["About"]</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="profile_summary" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="profile_summary">प्रोफ़ाइल सारांश</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body profile_form">
+                                    <div class="mt-12 mb-12">
+                                        <p>आपके प्रोफाइल सारांश में आपके करियर और शिक्षा, आपके पेशेवर हित क्या हैं और आप किस तरह के करियर की तलाश कर रहे हैं, इस पर प्रकाश डाला गया है। 50 से अधिक वर्णों का एक सार्थक सारांश लिखें।</p>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            @Html.TextAreaFor(m => m.About, new { @class = "form-control", @id = "ProfileSummary", @rows = "4" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">रद्द करें</button>
+                                    <input type="submit" class="btn btn-primary pop_bg_custom" name="btnResumeHeadlines" value="सेव करें" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="attach_resume profileborder mt-4">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <div class="attach_resume_title mb-4">
+                                    <h5 class="font-weight-bold">
+                                        रिज्यूमे लगायें
+                                    </h5>
+                                    <p>रिक्रूटर के लिए रिज्यूम सबसे महत्वपूर्ण दस्तावेज है। रिक्रूटर आमतौर पर बिना रिज्यूमे के प्रोफाइल को नहीं देखते हैं।</p>
+                                </div>
+                                <div class="profi text-center">
+                                    <span class="profileupldcv">
+                                        रिज्यूमे अपलोड करें
+
+                                        <input type="file" id="fuResume" accept=".pdf" class="profileupldcv_custom">
+                                    </span>
+                                    <h6>समर्थित प्रारूप: पीडीएफ(साइज़ 2 Mb से कम होना चाहिए।)</h6>
+                                    @if (Model.Resume != "../FileUpload/Resume/" && Model.Resume != "")
+                                    {
+                                        <iframe src="@Model.Resume" frameborder="0" class="resumeiframe"></iframe>
+                                        <br /><br />
+                                        <div class="viewresume">
+                                            <a href="@Model.Resume" target="_blank">रिज्यूमे देखने के लिए यहां क्लिक करें</a>
+                                        </div>
+                                    }
+                                </div>
+                                <h6 class="text-center mt-4">आप यहां अपना संक्षिप्त व्यावसायिक प्रोफ़ाइल लिख सकते हैं।</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="key_skills profileborder mt-4">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <div class="resume_headline_title selected-skills">
+                                    <h5 class="font-weight-bold">
+                                        प्रमुख कौशल
+                                        <a href="#" class="cv_firm" id="key_skills_open">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </a>
+                                        @if (TempData["Key_Skills"] != null)
+                                        {
+                                            <span class="pull-right" style="color:#ff0000">@TempData["Key_Skills"]</span>
+
+                                        }
+                                    </h5>
+                                    @if (Model.LstSkills != null)
+                                    {
+                                        int i = 1;
+                                        foreach (var item in Model.LstSkills)
+                                        {
+                                            <button type="button" data-skillid="@item.SkillId" class="btn btn-outline-secondary">@item.Skill.NameH</button>
+
+                                            i++;
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="key_skills" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">प्रमुख कौशल</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body profile_form">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            <label for="">नाम</label>
+                                            @Html.DropDownListFor(m => m.SkillId, new SelectList(ViewBag.Skill, "Id", "NameH"), new { @class = "js-example-placeholder-multiple js-states form-control", multiple = "multiple", @onchange = "return skillChange();" })
+                                            <input type="hidden" name="skills" value="" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">रद्द करें</button>
+                                    <input type="submit" class="btn btn-primary pop_bg_custom" name="btnSkill" value="सेव करें" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education profileborder mt-4">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <div class="resume_headline_title">
+                                    <h5 class="font-weight-bold">
+                                        शिक्षा <span class="pull-right">
+                                            शिक्षा जोड़ें <a href="#" class="cv_firm">
+                                                <i class="fa fa-pencil" onclick="return addEducation()" aria-hidden="true"></i>
+                                            </a>
+                                        </span>
+                                    </h5>
+                                    <div id="educationid" style="margin-left:10px;">
+                                        <br />
+                                        <div>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">क्र.सं.</th>
+                                                        <th scope="col">योग्यता</th>
+                                                        <th scope="col">कॉलेज का नाम</th>
+                                                        <th scope="col">उत्तीर्ण वर्ष</th>
+                                                        <th scope="col">कार्य</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @if (Model.ListEducation != null)
+                                                    {
+                                                        int i = 1;
+                                                        foreach (var item2 in Model.ListEducation)
+                                                        {
+                                                            <tr>
+                                                                <th scope="row">@i</th>
+                                                                <td>@item2.Course.NameH</td>
+                                                                <td>@item2.CollegeName</td>
+                                                                <td>@item2.YearOfPassing</td>
+                                                                <td><i class="fa fa-pencil" aria-hidden="true" data-college="@item2.CollegeName" onclick='return EditEducationDetails(this,@item2.CourseId,@item2.YearOfPassing,@item2.Id)'></i></td>
+                                                            </tr>
+                                                            i++;
+                                                        }
+                                                    }
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+
+                                        @*@foreach (var item in Model.CourseList)
+                                            {
+                                                if (!Model.ListEducation.Select(x => x.CourseId).Contains(item.Id))
+                                                {
+                                                    <div>
+                                                        <a href="#" class="cv_firm" id="education_open" style="font-size: 15px" data-eduid="@item.Id" onclick="return CourseEdit(@item.Id)">   Add @item.Name </a>
+
+                                                    </div>
+                                                }
+                                            }*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*<h6><strong><a href="#" data-toggle="modal" data-target="#phd_education">Add Doctorate/PhD</a></strong></h6>*@
+
+                    <div class="modal fade" id="education" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content procourse">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="profile_education">पाठ्यक्रम</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body profile_form ">
+                                    <div class="proser">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <label for="Course">शिक्षा</label>
+                                                @Html.DropDownListFor(m => m.CourseId, new SelectList(ViewBag.Course, "Id", "NameH"), "--Select--", new { @class = "form-control", @readonly = "true" })
+
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <label for="inputState">विश्वविद्यालय / संस्थान</label>
+                                                @Html.TextBoxFor(m => m.University, new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <label for="inputCity">उत्तीर्ण वर्ष</label>
+                                                <select name="PassingYear" class="form-control" id="PassingYear">
+                                                    <option value="0">वर्ष चुने</option>
+                                                    @{
+                                                        for (int i = 0; i < 40; i++)
+                                                        {
+                                                            var Year = DateTime.Now.AddYears(-i).Year;
+                                                            <option value="@Year">@Year</option>
+                                                        }
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">रद्द करें</button>
+                                    @*<button type="button" class="btn btn-primary pop_bg_custom" onclick="return SaveEduction();">Save</button>*@
+                                    <input type="submit" id="educationSavebtn" class="btn btn-primary pop_bg_custom" name="btnSaveEducation" value="सेव करें" />
+                                    <input type="submit" id="educationUpdatebtn" class="btn btn-primary pop_bg_custom" name="btnSaveEducation" value="अपडेट करें" />
+                                    @*<input type="submit" id="educationDeletebtn" class="btn btn-danger pop_bg_custom" name="btnDeleteEducation" value="Delete" style="display:none" />*@
+
+                                    <input type="submit" id="btnDeleteEducation" class="btn btn-danger" name="btnDeleteEducation" value="डिलीट करें" style="display:none" />
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience profileborder mt-4">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <div class="resume_headline_title">
+                                    <h5 class="font-weight-bold">
+                                        अनुभव <span class="pull-right">
+                                            अनुभव जोड़ें <a href="#" class="cv_firm">
+                                                <i class="fa fa-pencil" onclick="return addExperience();" aria-hidden="true"></i>
+                                            </a>
+                                        </span>
+
+                                    </h5>
+                                    <div id="experienceid" style="margin-left:10px;">
+                                        <br />
+                                        <div>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">क्र.सं.</th>
+                                                        <th scope="col">कार्य की भूमिका</th>
+                                                        <th scope="col">पद</th>
+                                                        <th scope="col">कंपनी का नाम</th>
+                                                        <th scope="col">वर्ष से</th>
+                                                        <th scope="col">वर्ष तक</th>
+                                                        <th scope="col">एडिट</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @if (Model.ListExperience != null)
+                                                    {
+                                                        int i = 1;
+                                                        foreach (var item2 in Model.ListExperience)
+                                                        {
+                                                            <tr>
+                                                                <th scope="row">@i</th>
+                                                                <td>@item2.JobRole.NameH</td>
+                                                                <td>@item2.Designation</td>
+                                                                <td>@item2.CompanyName</td>
+                                                                <td>@item2.YearFrom</td>
+                                                                <td>@item2.YearTo</td>
+                                                                <td><i class="fa fa-pencil" aria-hidden="true" data-company="@item2.CompanyName" data-designation="@item2.Designation" onclick="return EditExperienceDetails(this,@item2.JobRoleId,@item2.YearFrom,@item2.YearTo,@item2.Id)"></i></td>
+                                                            </tr>
+                                                            i++;
+                                                        }
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*<h6><strong><a href="#" data-toggle="modal" data-target="#phd_education">Add Doctorate/PhD</a></strong></h6>*@
+
+                    <div class="modal fade" id="experience" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content procourse">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="profile_education">अनुभव</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body profile_form ">
+                                    <div class="proser">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <label for="JobRole">कार्य की भूमिका</label>
+                                                @Html.DropDownListFor(m => m.JobRoleId, new SelectList(ViewBag.JobRole, "Id", "NameH"), "--Select--", new { @class = "form-control", @readonly = "true" })
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <label for="inputState">पद</label>
+                                                @Html.TextBoxFor(m => m.ExDesignation, new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <label for="inputState">कंपनी का नाम</label>
+                                                @Html.TextBoxFor(m => m.ExCompany, new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <label for="inputState">वर्ष से</label>
+                                                @Html.TextBoxFor(m => m.YearFrom, new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <label for="inputState">वर्ष तक</label>
+                                                @Html.TextBoxFor(m => m.YearTo, new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*<div class="form-group col-md-2" style="margin-top:25px;">
+                                            <button type="button" id="addNew" class="btn btn-primary">Add</button>
+                                        </div>*@
+                                    @*<table class="table table-striped" id="dataTable" border="0" cellpadding="0" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Course Name</th>
+                                                    <th>University</th>
+                                                    <th>Passing Year</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                        </table>*@
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">रद्द करें</button>
+                                    @*<button type="button" class="btn btn-primary pop_bg_custom" onclick="return SaveEduction();">Save</button>*@
+                                    <input type="submit" id="experienceSavebtn" class="btn btn-primary pop_bg_custom" name="btnSaveExperience" value="सेव करें" />
+                                    <input type="submit" id="experienceUpdatebtn" class="btn btn-primary pop_bg_custom" name="btnSaveExperience" value="अपडेट करें" />
+                                    @*<input type="submit" id="educationDeletebtn" class="btn btn-danger pop_bg_custom" name="btnDeleteEducation" value="Delete" style="display:none" />*@
+
+                                    <input type="submit" id="btnDeleteExperience" class="btn btn-danger" name="btnDeleteExperience" value="डिलीट करें" style="display:none" />
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="personal_details profileborder mt-4">
+                        <h5 class="font-weight-bold">
+                            व्यक्तिगत विवरण
+                            <a href="#" class="cv_firm" data-toggle="modal" data-target="#profile_personal_details">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </a>
+                            @if (Model.Aadhar != null && Model.Aadhar != "")
+                            {
+                                <a href="@Model.Aadhar" target="_blank" class="viewresume" style="float:right">आधार देखें </a>
+                            }
+
+                            @if (Model.PAN != null && Model.PAN != "")
+                            {
+                                <a href="@Model.PAN" target="_blank" class="viewresume pull-right pr-4"> पैन देखें</a>
+                            }
+                        </h5>
+                        @if (TempData["profile_personal_details"] != null)
+                        {
+                            @TempData["profile_personal_details"]
+                        }
+                        <br>
+                        <div class="row">
+                            <div class="col-md-5 col-lg-5 col-sm-12">
+                                <ul class="list-unstyled">
+                                    <li>जन्म तिथि</li>
+                                    <li><strong>@Session["DOB"]</strong></li>
+                                    <li class="mt-3">लिंग</li>
+                                    <li><strong>@Session["Gender"]</strong></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-7 col-lg-7 col-sm-12">
+                                <ul class="list-unstyled">
+                                    <li>स्थाई पता</li>
+                                    <li><strong>@Session["Address"]</strong></li>
+                                    <li class="mt-3">पिन कोड</li>
+                                    <li><strong>@Session["PinCode"]</strong></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-5 col-lg-5 col-sm-12">
+                                <ul class="list-unstyled">
+                                    <li>आधार न.</li>
+                                    <li><strong>@Session["AadharNo"]</strong></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-7 col-lg-7 col-sm-12">
+                                <ul class="list-unstyled">
+                                    <li>पैन न.</li>
+                                    <li><strong>@Session["PANNo"]</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="profile_personal_details" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="profile_personal_details">व्यक्तिगत विवरण</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body profile_form">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">जन्म तिथि <span class="manfields">*</span></label>
+                                            @Html.TextBoxFor(m => m.DOB, "{0:dd-MM-yyyy}", new { @class = "form-control", @id = "dateofbirth" })
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">लिंग <span style="color: red">*</span> </label> <br />
+                                            @if (Model.Gender == "Male")
+                                            {
+                                                <div class="col-md-12 form-group">
+                                                    &nbsp;&nbsp;
+                                                    <input type="radio" checked value="Male" @ViewBag.MaleChecked id="male" onclick="return GenderCheck()" name="Gender" />
+                                                    पुरुष &nbsp;&nbsp;
+                                                    <input type="radio" value="Female" id="female" name="Gender" onclick="return GenderCheck()" @ViewBag.FemaleChecked />
+                                                    महिला
+                                                </div>
+                                            }
+                                            else if (Model.Gender == "Female")
+                                            {
+                                                <div class="col-md-12 form-group">
+                                                    &nbsp;&nbsp;
+                                                    <input type="radio" checked value="Male" @ViewBag.MaleChecked id="male" onclick="return GenderCheck()" name="Gender" />
+                                                    पुरुष &nbsp;&nbsp;
+                                                    <input type="radio" checked value="Female" id="female" name="Gender" onclick="return GenderCheck()" @ViewBag.FemaleChecked />
+                                                    महिला
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="col-md-12 form-group">
+                                                    &nbsp;&nbsp;
+                                                    <input type="radio" value="Male" @ViewBag.MaleChecked id="male" onclick="return GenderCheck()" name="Gender" />
+                                                    पुरुष &nbsp;&nbsp;
+                                                    <input type="radio" value="Female" id="female" name="Gender" onclick="return GenderCheck()" @ViewBag.FemaleChecked />
+                                                    महिला
+                                                </div>
+                                            }
+                                        </div>
+
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputState">माता का नाम</label>
+                                            @Html.TextBoxFor(m => m.MotherName, new { @class = "form-control" })
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputState">पिता का नाम/पति का नाम</label>
+                                            @Html.TextBoxFor(m => m.FatherName, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+
+
+                                    @*<div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputState">जीवनसाथी का नाम</label>
+                                            @Html.TextBoxFor(m => m.SpouseName, new { @class = "form-control" })
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputState">पति का नाम</label>
+                                            @Html.TextBoxFor(m => m.HusbandName, new { @class = "form-control" })
+                                        </div>
+                                    </div>*@
+
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputState">पैन नं.</label>
+                                            @Html.TextBoxFor(m => m.PANNo, new { @class = "form-control", })
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="DesiredJob">आधार नं.</label>
+                                            @Html.TextBoxFor(m => m.AadharNo, new { @class = "form-control", @MaxLength = "12" })
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputState">पैन अपलोड करें</label>
+                                            <input type="file" name="postedPan" id="postedPan" class="form-control" />
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="DesiredJob">आधार अपलोड करें</label>
+                                            <input type="file" name="postedAadhar" id="postedAadhar" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputState">पिन कोड<span class="manfields">*</span></label>
+                                            @Html.TextBoxFor(m => m.PinCode, new { @class = "form-control", @MaxLength = "6", @required = "true" })
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="DesiredJob">स्थाई पता</label>
+                                            @Html.TextAreaFor(m => m.Address, new { @class = "form-control", @id = "Address" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">रद्द करें</button>
+                                    <input type="submit" class="btn btn-primary pop_bg_custom" name="btnPersonalDetails" value="सेव करें" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3 col-sm-12">
+                    <div class="sidebar-section mt-4">
+                        <div class="jobs_you_might">
+                            <h5 class="text-center font-weight-bold">ऐसी नौकरियां जिनमें आपकी रुचि हो सकती है</h5>
+                            @if (Model != null)
+                            {
+                                if (Model.JobResponse != null)
+                                {
+                                    int i = 1;
+                                    foreach (var item in Model.JobResponse.ListJob)
+                                    {
+                                        <a href="/Home/JobDetails?Id=@item.Id" class="jobtitle"><p class="mt-3"><strong>@item.Title</strong></p></a>
+                                        <ul class="list-unstyled">
+                                            @if (item.CompanyName != null && item.CompanyName != "")
+                                            {
+                                                <li><i class="fa fa-building" aria-hidden="true"></i> @item.CompanyName</li>
+                                            }
+                                            @if (item.City != null && item.City != "")
+                                            {
+                                                <li><i class="fa fa-map-marker" aria-hidden="true"></i> @item.City</li>
+                                            }
+                                            <li class="pull-right">@item.Time</li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                        <div class="dividerjobdetails mt-3"></div>
+                                        i++;
+                                    }
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>                                   }
+
+@section css {
+    <link href="~/assets/bundles/select2/dist/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+    <style>
+        .manfields {
+            color: red;
+        }
+
+        span.select2.select2-container.select2-container--default {
+            width: 100% !important;
+            /*min-height:200px !important;*/
+        }
+
+        .trash-btn {
+            cursor: pointer;
+            font-size: medium;
+        }
+
+        .procourse {
+            width: 80%;
+        }
+
+        .proser {
+            margin: 0 auto;
+            width: 70%;
+        }
+
+        .viewresume a {
+            color: #3f51b5;
+            text-decoration: none;
+        }
+
+        .resumeiframe {
+            border: 2px solid #3f51b5;
+            width: 600px;
+            height: 300px;
+        }
+    </style>
+}
+@section script {
+    <script src="~/assets/bundles/select2/dist/js/select2.min.js"></script>
+    <script src="~/assets/js/iziToast.min.js"></script>
+    <!-- BS JavaScript -->
+    <script type="text/javascript" src="~/js/bootstrap.js"></script>
+    <script src="~/assets/bundles/sweetalert/sweetalert.min.js"></script>
+    <!-- Have fun using Bootstrap JS -->
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script>
+        function SaveEduction() {
+            var education = [];
+            var isFirst = true;
+            $('#dataTable tr').each(function () {
+                if (isFirst) {
+                    isFirst = false;
+                }
+                else {
+                    var d = {};
+                    d.CourseId = $(this).find('td').attr('data-courseid');
+                    d.University = $(this).find('td:nth-child(2)').text();
+                    d.PassingYear = $(this).find('td:nth-child(3)').text();
+                    education.push(d);
+                }
+            })
+            console.log(education)
+            console.log(JSON.stringify(education))
+            var userAgent = navigator.userAgent;
+            var http = new XMLHttpRequest();
+            var value = JSON.stringify(education);
+            var url = "/uhi/SaveEduction?education=" + value + "&userAgent=" + userAgent;
+            http.open("GET", url);
+            http.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+            http.onreadystatechange = function (data) {
+                if (http.readyState == XMLHttpRequest.DONE) {
+                    iziToast.success({
+                        title: "Success!",
+                        message: "Profile updated successfully.",
+                        position: "topRight",
+                    });
+                    $('#education').modal('toggle');
+                    window.location.href = '@Url.Action("UserProfile", "User")';
+                }
+            }
+            http.send();
+        }
+        //1. Add new row
+        $("#addNew").click(function (e) {
+            var i = 0;
+            var tbodyRowCount = $('#dataTable').find('tr').length;
+            if (tbodyRowCount == "0") {
+                i = 1;
+            }
+            else {
+                i = tbodyRowCount;
+            }
+
+            $("#dataTable").append('<tr><td data-courseid="' + $("#CourseId option:selected").val() + '">' + $("#CourseId option:selected").text() +
+                        '</td><td>' + $("#University").val() +
+                         '</td><td>' + $("#PassingYear option:selected").text() +
+                         '</td><td><i class="fa fa-trash text-danger trash-btn"  onclick="deleteMe(this)"/></td></tr>');
+        });
+
+        function CourseEdit(i) {
+            var Course = $('#CourseId').val(i)
+            $('#CourseId').prop('readonly', true);
+            var University = $('#University').val('');
+            var PassingYear = $('#PassingYear').val(0);
+            $('#education').modal('toggle');
+            $('#educationSavebtn').show();
+            $('#educationUpdatebtn').hide();
+            $('#btnDeleteEducation').hide();
+        }
+
+        function EditEducationDetails(ctrl, CourseId, YearOfPassing) {
+            $('#CourseId').val(CourseId);
+            $('#CourseId').prop('readonly', true);
+            $('#PassingYear').val(YearOfPassing);
+            $('#University').val($(ctrl).attr('data-college'));
+            $('#education').modal('toggle');
+            $('#educationSavebtn').hide();
+            $('#educationUpdatebtn').show();
+            $('#btnDeleteEducation').show();
+
+        }
+        function EditExperienceDetails(ctrl, JobRoleId, YearFrom, YearTo, Id) {
+            $('#JobRoleId').val(JobRoleId);
+            $('#YearFrom').val(YearFrom);
+            $('#YearTo').val(YearTo);
+            $('#ExDesignation').val($(ctrl).attr('data-designation'));
+            $('#ExCompany').val($(ctrl).attr('data-company'));
+            $('#experience').modal('toggle');
+            $('#experienceSavebtn').hide();
+            $('#experienceUpdatebtn').show();
+            $('#btnDeleteExperience').show();
+
+        }
+        function deleteMe(ctrl) {
+            $(ctrl).parent().parent().remove();
+        }
+
+        $(document).ready(function () {
+            $(".js-example-placeholder-multiple").select2({
+                placeholder: "Select Skills",
+                tokenSeparators: [',', ' '],
+                tags: true,
+            });
+
+            var width = $("#hdfProfile").val();
+            if (width > 0 && width < 25) {
+                $("#lblProfileStrength").text("बेकार");
+            }
+            else if (width > 25 && width <= 50) {
+                $("#lblProfileStrength").val("औसत");
+            }
+            else if (width > 50 && width <= 75) {
+                $("#lblProfileStrength").text("अच्छा");
+            }
+            else if (width > 75) {
+                $("#lblProfileStrength").text("बहुत अच्छा");
+            }
+            else {
+                $("#lblProfileStrength").text("");
+            }
+            width = width + '%';
+            $("#progressbar").css('width', width);
+
+            $("#divload").css({ 'display': 'none' });
+            var userAgent = navigator.userAgent;
+
+            $('#UserAgent').val(userAgent);
+            if ($("#Response").val() != "") {
+                iziToast.success({
+                    title: "सफल!",
+                    message: "प्रोफाइल को सफलतापूर्वक अपडेट किया गया।",
+                    position: "topRight",
+                });
+            }
+
+            //$("#progressbar").progressbar({
+            //    value: 37
+            //});
+
+        });
+
+        window.addEventListener('load', function () {
+            // Everything has loaded!
+            $('#key_skills_open').on('click', function () {
+                //set skills
+                var selectedSkills = new Array();
+                $.each($('.selected-skills button[type=button]'), function (i, v) {
+                    selectedSkills[i] = $(this).attr('data-skillid');
+                    $('#SkillId').val(selectedSkills).trigger('change');
+                });
+
+                jQuery.noConflict();
+                $('#key_skills').modal('toggle');
+            })
+            $('#education_open').on('click', function () {
+                jQuery.noConflict();
+                $('#education').modal('toggle');
+            })
+
+        })
+
+        function addEducation() {
+            $('#CourseId').val('');
+            $('#CourseId').prop("disabled", false);
+            $('#University').val('');
+            $('#PassingYear').val(0);
+            $('#btnSaveEducation').show();
+            $('#educationUpdatebtn').hide();
+            $('#education').modal('toggle');
+        }
+        function addExperience() {
+            $('#btnSaveExperience').show();
+            $('#experienceUpdatebtn').hide();
+            $('#experience').modal('toggle');
+        }
+        function skillChange() {
+            const regex = /value=\"([0-9])\"/gm;
+            var selectedSkills = new Array();
+            $.each($('#SkillId').find(':selected'), function (i, v) {
+                let m;
+                while ((m = regex.exec($('#SkillId').find(':selected')[i].outerHTML)) !== null) {
+                    // This is necessary to avoid infinite loops with zero-width matches
+                    if (m.index === regex.lastIndex) {
+                        regex.lastIndex++;
+                    }
+
+                    // The result can be accessed through the `m`-variable.
+                    m.forEach((match, groupIndex) => {
+                        selectedSkills[i] = match;
+                    });
+                }
+
+            })
+
+            $('input[name="skills"]').val(selectedSkills);
+        }
+
+        (function () {
+            $("input[name='Differently']").click(function () {
+                if ($("#Yes").is(":checked")) {
+                    $("#TypeDiv").show();
+                } else {
+                    $("#TypeDiv").hide();
+                }
+            });
+        });
+
+        function GenderCheck() {
+
+            if ($('#male').prop('checked')) {
+                $('#Gender').val('Male');
+            }
+            else {
+                $('#Gender').val('Female');
+            }
+        }
+
+        function SaveBasicDetails() {
+            var Email = $('#Email').val();
+            var City = $('#City').val();
+            var Id = $('#Id').val();
+            $.ajax({
+                url: '/uhi/SaveUserBasicDetails',
+                type: 'GET',
+                dataType: 'JSON',
+                //data: { 'TemporaryPassword': tempPass, 'MobileNo': MobileNo, 'userAgent': userAgent },
+                success: function (data) {
+                    if (data.Response == "1") {
+                        iziToast.warning({
+                            title: "Success!",
+                            message: data.Result,
+                            position: "topRight",
+                        });
+                    }
+                }
+            })
+        }
+
+        function populateCourse() {
+            $('#CourseId').prop("disabled", false);
+            var text = $('#CourseId').val();
+            $('#CourseId').prop("disabled", true)
+            var course = $('#CourseId').val(text);
+        }
+
+
+        $("#fuResume").change(function () {
+            var resume = $("#fuResume").get(0);
+            var resumefiles = resume.files;
+            var res = new FormData();
+            var size = 0;
+            for (var i = 0; i < resumefiles.length; i++) {
+                res.append(resumefiles[i].name, resumefiles[i]);
+                size = resumefiles[i].size / 1024;
+            }
+            var file = $("#fuResume").val();
+            var userId = $("#Id").val();
+            var len = file.length;
+            var ext = file.slice(len - 4, len);
+            if (ext.toLowerCase() == ".pdf") {
+                if (size >= 2048) {
+                    swal('Warning', 'PDF size should be less than 2 MB !', 'warning').then((value) => {
+                        window.location = '/uhi/UserProfile';
+                    })
+                }
+                else {
+                    $.ajax({
+                        url: '@Url.Action("UploadResume", "User")',
+                        type: "POST",
+                        contentType: false,
+                        processData: false,
+                        data: res,
+                        success: function (result) {
+                            if (result == true) {
+                                swal('सफल', 'रिज्यूमे सफलतापूर्वक अपलोड हो गयी है | !', 'success').then((value) => {
+                                    window.location = '/uhi/UserProfile';
+                                })
+                            }
+                            else {
+                                swal('उफ़', 'अपलोड नहीं किया गया !', 'error').then((value) => {
+                                    window.location = '/uhi/UserProfile';
+                                })
+                            }
+                        },
+                        error: function (err) {
+                            swal('Error', err.statusText, 'error').then((value) => {
+                                window.location = '/uhi/UserProfile';
+                            })
+                        }
+                    });
+                }
+            }
+            else {
+                swal('Warning', 'केवल पीडीएफ फाइल की अनुमति है !', 'warning').then((value) => {
+                    window.location = '/uhi/UserProfile';
+                })
+            }
+        });
+        $("#fuProfile").change(function () {
+            var image = $("#fuProfile").get(0);
+            var files = image.files;
+            var img = new FormData();
+            for (var i = 0; i < files.length; i++) {
+                img.append(files[i].name, files[i]);
+            }
+            var file = $("#fuProfile").val();
+            var userId = $("#Id").val();
+            var len = file.length;
+            var ext = file.slice(len - 4, len);
+            if (ext.toLowerCase() == ".png" || ext.toLowerCase() == ".jpg" || ext.toLowerCase() == ".jpeg") {
+                $.ajax({
+                    url: '@Url.Action("UploadProfilePhoto","User")',
+                    type: "POST",
+                    contentType: false, // Not to set any content header
+                    processData: false, // Not to process data
+                    data: img,
+                    success: function (result) {
+                        if (result == true) {
+                            swal('सफल', 'फोटो सफलतापूर्वक अपलोड हो गयी है | !', 'success').then((value) => {
+                                window.location = '/uhi/UserProfile';
+                            })
+                        }
+                        else {
+                            swal('उफ़', 'फोटो अपलोड नहीं हुयी है | !', 'error').then((value) => {
+                                window.location = '/uhi/UserProfile';
+                            })
+                        }
+                    },
+                    error: function (err) {
+                        alert(err);
+                        swal('Error', err.statusText, 'error').then((value) => {
+                            window.location = '/uhi/UserProfile';
+                        })
+                    }
+                });
+            }
+            else {
+                alert("केवल PNG, JPG या JPEG की अनुमति है।");
+            }
+        });
+        //$("#postedPan").change(function () {
+        //    debugger;
+        //    var file = $("#postedPan").val();
+        //    var len = file.length;
+        //    var ext = file.slice(len - 4, len);
+        //    if (ext != ".jpg" || ext!= ".png" || ext != ".jpeg") {
+        //        swal('Warning', 'Only Image file allowed !', 'warning').then((value) => {
+        //            var file = $("#postedPan").val('');
+        //        })
+        //    }
+        //    else {
+
+        //    }
+        //});
+        //$("#postedAadhar").change(function () {
+        //    debugger;
+        //    var file = $("#postedAadhar").val();
+        //    var len = file.length;
+        //    var ext = file.slice(len - 4, len);
+        //    if (ext != ".jpg" || ext != ".png" || ext != ".jpeg") {
+        //        swal('Warning', 'Only Image file allowed !', 'warning').then((value) => {
+        //            var file = $("#postedAadhar").val('')
+        //        })
+        //    }
+        //    else {
+
+        //    }
+        //});
+    </script>
+    <script>
+        var msg = '@TempData["msg"]';
+        if (msg == "Profile Updated") {
+            swal('सफल', 'प्रोफ़ाइल अपडेट हुआ', 'success').then((value) => {
+                window.location = '/uhi/UserProfile';
+            })
+        }
+    </script>
+<script>
+        $('#dateofbirth').datepicker({
+            dateFormat: 'dd-mm-yy',
+            changeYear: true,
+            changeMonth: true
+        });
+</script>
+}
+<style>
+    .errortext {
+        border: 1px solid red;
+        background-color: #202020;
+    }
+</style>

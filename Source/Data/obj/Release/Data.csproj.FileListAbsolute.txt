@@ -1,0 +1,42 @@
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\bin\Release\Data.dll.config
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\bin\Release\Data.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\bin\Release\Data.pdb
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\bin\Release\EntityFramework.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\bin\Release\EntityFramework.SqlServer.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\bin\Release\PagedList.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\bin\Release\PagedList.Mvc.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\bin\Release\System.Web.Mvc.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\bin\Release\Utility.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\bin\Release\Newtonsoft.Json.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\bin\Release\Utility.pdb
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\bin\Release\EntityFramework.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\bin\Release\EntityFramework.SqlServer.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\bin\Release\PagedList.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\bin\Release\PagedList.Mvc.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\bin\Release\Newtonsoft.Json.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\obj\Release\Data.csprojResolveAssemblyReference.cache
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\obj\Release\Data.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Data\obj\Release\Data.pdb
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\bin\Release\Data.dll.config
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\bin\Release\Data.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\bin\Release\Data.pdb
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\bin\Release\EntityFramework.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\bin\Release\EntityFramework.SqlServer.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\bin\Release\PagedList.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\bin\Release\PagedList.Mvc.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\bin\Release\System.Web.Mvc.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\bin\Release\Utility.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\bin\Release\Newtonsoft.Json.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\bin\Release\Utility.pdb
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\bin\Release\EntityFramework.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\bin\Release\EntityFramework.SqlServer.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\bin\Release\PagedList.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\bin\Release\PagedList.Mvc.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\bin\Release\Newtonsoft.Json.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\obj\Release\Data.csprojResolveAssemblyReference.cache
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\obj\Release\Data.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Data\obj\Release\Data.pdb

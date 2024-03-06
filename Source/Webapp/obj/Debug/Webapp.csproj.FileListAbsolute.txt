@@ -1,0 +1,828 @@
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\ApplicationInsights.config
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\csc.exe
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\System.Collections.Immutable.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\System.Reflection.Metadata.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\vbc.exe
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\VBCSCompiler.exe
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\VBCSCompiler.exe.config
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Webapp.dll.config
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Webapp.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Webapp.pdb
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\AntiXssLibrary.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Data.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\EntityFramework.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\EntityFramework.SqlServer.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\HtmlSanitizationLibrary.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Agent.Intercept.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.DependencyCollector.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Web.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.WindowsServer.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.ApplicationInsights.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.Configuration.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Web.Infrastructure.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Newtonsoft.Json.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.WebHost.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Mvc.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.WebApi.DependencyResolver.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\PagedList.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\PagedList.Mvc.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Net.Http.Formatting.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Helpers.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Http.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Http.WebHost.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Mvc.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Razor.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Deployment.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Razor.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\UnityDependencyResolver.Lib.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Utility.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\WebActivator.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Data.pdb
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Utility.pdb
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\AntiXssLibrary.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.pdb
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\EntityFramework.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\EntityFramework.SqlServer.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\HtmlSanitizationLibrary.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.DependencyCollector.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Web.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.WindowsServer.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.ApplicationInsights.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.pdb
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.Configuration.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.WebHost.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Mvc.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\PagedList.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\PagedList.Mvc.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Razor.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Deployment.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Razor.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Helpers.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Newtonsoft.Json.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Net.Http.Formatting.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Http.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Http.WebHost.xml
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.csprojResolveAssemblyReference.cache
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.dll
+D:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.pdb
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\ApplicationInsights.config
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\csc.exe
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\System.Collections.Immutable.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\System.Reflection.Metadata.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\vbc.exe
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\VBCSCompiler.exe
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\VBCSCompiler.exe.config
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Webapp.dll.config
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Webapp.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Webapp.pdb
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\AntiXssLibrary.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Data.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\EntityFramework.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\EntityFramework.SqlServer.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\HtmlSanitizationLibrary.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Agent.Intercept.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.DependencyCollector.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Web.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.WindowsServer.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.ApplicationInsights.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.Configuration.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Web.Infrastructure.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Newtonsoft.Json.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.WebHost.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Mvc.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.WebApi.DependencyResolver.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\PagedList.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\PagedList.Mvc.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Net.Http.Formatting.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Runtime.CompilerServices.Unsafe.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Helpers.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Http.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Http.WebHost.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Mvc.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Razor.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Deployment.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Razor.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\UnityDependencyResolver.Lib.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Utility.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\WebActivator.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Data.pdb
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Utility.pdb
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\AntiXssLibrary.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.pdb
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\EntityFramework.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\EntityFramework.SqlServer.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\HtmlSanitizationLibrary.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.DependencyCollector.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Web.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.WindowsServer.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.ApplicationInsights.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.pdb
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.Configuration.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.WebHost.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Mvc.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\PagedList.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\PagedList.Mvc.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Runtime.CompilerServices.Unsafe.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Razor.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Deployment.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Razor.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Helpers.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Newtonsoft.Json.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Net.Http.Formatting.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Http.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Http.WebHost.xml
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.csprojResolveAssemblyReference.cache
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.dll
+E:\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.pdb
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\ApplicationInsights.config
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\csc.exe
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\System.Collections.Immutable.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\System.Reflection.Metadata.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\vbc.exe
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\VBCSCompiler.exe
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\roslyn\VBCSCompiler.exe.config
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Webapp.dll.config
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Webapp.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Webapp.pdb
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\AntiXssLibrary.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Data.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\EntityFramework.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\EntityFramework.SqlServer.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\HtmlSanitizationLibrary.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Agent.Intercept.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.DependencyCollector.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Web.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.WindowsServer.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.ApplicationInsights.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.Configuration.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Web.Infrastructure.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Newtonsoft.Json.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.WebHost.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Mvc.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.WebApi.DependencyResolver.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\PagedList.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\PagedList.Mvc.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Net.Http.Formatting.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Runtime.CompilerServices.Unsafe.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Helpers.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Http.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Http.WebHost.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Mvc.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Razor.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Deployment.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Razor.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\UnityDependencyResolver.Lib.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Utility.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\WebActivator.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Data.pdb
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Utility.pdb
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\AntiXssLibrary.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.pdb
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\EntityFramework.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\EntityFramework.SqlServer.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\HtmlSanitizationLibrary.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.DependencyCollector.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Web.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.WindowsServer.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.ApplicationInsights.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.pdb
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.Configuration.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.WebHost.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Mvc.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\PagedList.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\PagedList.Mvc.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Runtime.CompilerServices.Unsafe.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Razor.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Deployment.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Razor.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Helpers.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\Newtonsoft.Json.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Net.Http.Formatting.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Http.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\bin\System.Web.Http.WebHost.xml
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.csprojResolveAssemblyReference.cache
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.dll
+F:\Data OLD\SachinMishraProject\repository\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.pdb
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\ApplicationInsights.config
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\csc.exe
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\System.Collections.Immutable.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\System.Reflection.Metadata.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\vbc.exe
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\VBCSCompiler.exe
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\VBCSCompiler.exe.config
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Webapp.dll.config
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Webapp.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Webapp.pdb
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\AntiXssLibrary.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Data.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\EntityFramework.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\EntityFramework.SqlServer.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\HtmlSanitizationLibrary.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Agent.Intercept.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.DependencyCollector.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Web.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.WindowsServer.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.ApplicationInsights.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.Configuration.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Web.Infrastructure.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Newtonsoft.Json.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.WebHost.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Mvc.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.WebApi.DependencyResolver.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\PagedList.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\PagedList.Mvc.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\System.Net.Http.Formatting.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\System.Runtime.CompilerServices.Unsafe.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Helpers.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Http.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Http.WebHost.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Mvc.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Razor.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Deployment.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Razor.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\UnityDependencyResolver.Lib.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Utility.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\WebActivator.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Data.pdb
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Utility.pdb
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\AntiXssLibrary.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.pdb
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\EntityFramework.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\EntityFramework.SqlServer.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\HtmlSanitizationLibrary.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.DependencyCollector.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Web.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.WindowsServer.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.ApplicationInsights.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.pdb
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.Configuration.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.WebHost.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Mvc.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\PagedList.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\PagedList.Mvc.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\System.Runtime.CompilerServices.Unsafe.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Razor.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Deployment.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Razor.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Helpers.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\Newtonsoft.Json.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\System.Net.Http.Formatting.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Http.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Http.WebHost.xml
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.csprojResolveAssemblyReference.cache
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.dll
+F:\Sarfraz Ahmad\repository\careermitra\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.pdb
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\ApplicationInsights.config
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\csc.exe
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\System.Collections.Immutable.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\System.Reflection.Metadata.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\vbc.exe
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\VBCSCompiler.exe
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\VBCSCompiler.exe.config
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Webapp.dll.config
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Webapp.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Webapp.pdb
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\AntiXssLibrary.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Data.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\EntityFramework.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\EntityFramework.SqlServer.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\HtmlSanitizationLibrary.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.DependencyCollector.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Web.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.WindowsServer.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.ApplicationInsights.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.Configuration.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Web.Infrastructure.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Newtonsoft.Json.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.WebHost.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Mvc.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.WebApi.DependencyResolver.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\PagedList.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\PagedList.Mvc.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Net.Http.Formatting.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Helpers.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Http.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Http.WebHost.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Mvc.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Razor.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Deployment.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Razor.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\UnityDependencyResolver.Lib.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Utility.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\WebActivator.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Data.pdb
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Utility.pdb
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\AntiXssLibrary.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.pdb
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\EntityFramework.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\EntityFramework.SqlServer.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\HtmlSanitizationLibrary.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.DependencyCollector.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Web.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.WindowsServer.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.ApplicationInsights.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.pdb
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.Configuration.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.WebHost.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Mvc.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\PagedList.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\PagedList.Mvc.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Razor.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Deployment.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Razor.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Helpers.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\Newtonsoft.Json.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Net.Http.Formatting.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Http.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Http.WebHost.xml
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.csprojResolveAssemblyReference.cache
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.dll
+D:\Devendra\careermitra\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.pdb
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\ApplicationInsights.config
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\csc.exe
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\System.Collections.Immutable.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\System.Reflection.Metadata.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\vbc.exe
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\VBCSCompiler.exe
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\VBCSCompiler.exe.config
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Webapp.dll.config
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Webapp.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Webapp.pdb
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\AntiXssLibrary.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Data.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\EntityFramework.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\EntityFramework.SqlServer.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\HtmlSanitizationLibrary.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Agent.Intercept.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.DependencyCollector.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Web.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.WindowsServer.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.ApplicationInsights.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.Configuration.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Web.Infrastructure.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Newtonsoft.Json.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.WebHost.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Mvc.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.WebApi.DependencyResolver.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\PagedList.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\PagedList.Mvc.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\System.Net.Http.Formatting.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\System.Runtime.CompilerServices.Unsafe.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Helpers.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Http.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Http.WebHost.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Mvc.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Razor.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Deployment.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Razor.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\UnityDependencyResolver.Lib.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Utility.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\WebActivator.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Data.pdb
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Utility.pdb
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\AntiXssLibrary.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.pdb
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\EntityFramework.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\EntityFramework.SqlServer.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\HtmlSanitizationLibrary.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.DependencyCollector.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Web.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.WindowsServer.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.ApplicationInsights.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.pdb
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.Configuration.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.WebHost.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Mvc.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\PagedList.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\PagedList.Mvc.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\System.Runtime.CompilerServices.Unsafe.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Razor.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Deployment.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Razor.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Helpers.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\Newtonsoft.Json.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\System.Net.Http.Formatting.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Http.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Http.WebHost.xml
+E:\careermitra\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.csprojResolveAssemblyReference.cache
+E:\careermitra\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.dll
+E:\careermitra\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.pdb
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\ApplicationInsights.config
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\csc.exe
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\System.Collections.Immutable.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\System.Reflection.Metadata.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\vbc.exe
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\VBCSCompiler.exe
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\roslyn\VBCSCompiler.exe.config
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Webapp.dll.config
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Webapp.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Webapp.pdb
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\AntiXssLibrary.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Data.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\EntityFramework.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\EntityFramework.SqlServer.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\HtmlSanitizationLibrary.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Agent.Intercept.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.DependencyCollector.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Web.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.WindowsServer.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.ApplicationInsights.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.Configuration.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Web.Infrastructure.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Newtonsoft.Json.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.WebHost.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Mvc.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.WebApi.DependencyResolver.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\PagedList.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\PagedList.Mvc.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Net.Http.Formatting.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Runtime.CompilerServices.Unsafe.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Helpers.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Http.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Http.WebHost.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Mvc.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Razor.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Deployment.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Razor.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\UnityDependencyResolver.Lib.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Utility.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\WebActivator.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Data.pdb
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Utility.pdb
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\AntiXssLibrary.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.pdb
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\CaptchaMvc.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\EntityFramework.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\EntityFramework.SqlServer.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\HtmlSanitizationLibrary.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.DependencyCollector.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.Web.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.AI.WindowsServer.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.ApplicationInsights.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.pdb
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.ServiceLocation.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Microsoft.Practices.Unity.Configuration.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Common.WebHost.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Ninject.Web.Mvc.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\PagedList.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\PagedList.Mvc.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Runtime.CompilerServices.Unsafe.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Razor.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Deployment.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Webpages.Razor.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Helpers.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\Newtonsoft.Json.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Net.Http.Formatting.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Http.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\bin\System.Web.Http.WebHost.xml
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.csprojResolveAssemblyReference.cache
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.dll
+E:\careermitra\careermitra\careermitra\careermitra\source\Webapp\obj\Debug\Webapp.pdb
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\ApplicationInsights.config
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\csc.exe
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\System.Collections.Immutable.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\System.Reflection.Metadata.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\vbc.exe
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\VBCSCompiler.exe
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\VBCSCompiler.exe.config
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Webapp.dll.config
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Webapp.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Webapp.pdb
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\AntiXssLibrary.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\CaptchaMvc.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Data.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\EntityFramework.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\EntityFramework.SqlServer.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\HtmlSanitizationLibrary.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.Agent.Intercept.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.DependencyCollector.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.Web.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.WindowsServer.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.ApplicationInsights.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.Practices.ServiceLocation.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.Practices.Unity.Configuration.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.Practices.Unity.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.Web.Infrastructure.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Newtonsoft.Json.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Ninject.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Ninject.Web.Common.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Ninject.Web.Common.WebHost.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Ninject.Web.Mvc.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Ninject.WebApi.DependencyResolver.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\PagedList.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\PagedList.Mvc.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Net.Http.Formatting.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Runtime.CompilerServices.Unsafe.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Helpers.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Http.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Http.WebHost.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Mvc.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Razor.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Webpages.Deployment.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Webpages.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Webpages.Razor.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\UnityDependencyResolver.Lib.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Utility.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\WebActivator.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Data.pdb
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Utility.pdb
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\AntiXssLibrary.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\CaptchaMvc.pdb
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\CaptchaMvc.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\EntityFramework.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\EntityFramework.SqlServer.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\HtmlSanitizationLibrary.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.DependencyCollector.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.Web.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.WindowsServer.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.ApplicationInsights.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.Practices.ServiceLocation.pdb
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.Practices.ServiceLocation.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.Practices.Unity.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.Practices.Unity.Configuration.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Ninject.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Ninject.Web.Common.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Ninject.Web.Common.WebHost.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Ninject.Web.Mvc.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\PagedList.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\PagedList.Mvc.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Runtime.CompilerServices.Unsafe.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Razor.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Webpages.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Webpages.Deployment.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Webpages.Razor.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Helpers.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Newtonsoft.Json.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Net.Http.Formatting.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Http.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Http.WebHost.xml
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\obj\Debug\Webapp.csprojResolveAssemblyReference.cache
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\obj\Debug\Webapp.dll
+E:\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\obj\Debug\Webapp.pdb
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\ApplicationInsights.config
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\csc.exe
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\System.Collections.Immutable.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\System.Reflection.Metadata.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\vbc.exe
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\VBCSCompiler.exe
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\roslyn\VBCSCompiler.exe.config
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Webapp.dll.config
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Webapp.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Webapp.pdb
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\AntiXssLibrary.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\CaptchaMvc.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Data.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\EntityFramework.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\EntityFramework.SqlServer.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\HtmlSanitizationLibrary.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.Agent.Intercept.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.DependencyCollector.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.Web.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.WindowsServer.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.ApplicationInsights.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.Practices.ServiceLocation.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.Practices.Unity.Configuration.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.Practices.Unity.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.Web.Infrastructure.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Newtonsoft.Json.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Ninject.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Ninject.Web.Common.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Ninject.Web.Common.WebHost.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Ninject.Web.Mvc.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Ninject.WebApi.DependencyResolver.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\PagedList.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\PagedList.Mvc.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Net.Http.Formatting.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Runtime.CompilerServices.Unsafe.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Helpers.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Http.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Http.WebHost.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Mvc.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Razor.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Webpages.Deployment.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Webpages.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Webpages.Razor.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\UnityDependencyResolver.Lib.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Utility.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\WebActivator.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Data.pdb
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Utility.pdb
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\AntiXssLibrary.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\CaptchaMvc.pdb
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\CaptchaMvc.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\EntityFramework.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\EntityFramework.SqlServer.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\HtmlSanitizationLibrary.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.DependencyCollector.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.Web.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.AI.WindowsServer.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.ApplicationInsights.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.Practices.ServiceLocation.pdb
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.Practices.ServiceLocation.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.Practices.Unity.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Microsoft.Practices.Unity.Configuration.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Ninject.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Ninject.Web.Common.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Ninject.Web.Common.WebHost.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Ninject.Web.Mvc.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\PagedList.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\PagedList.Mvc.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Runtime.CompilerServices.Unsafe.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Razor.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Webpages.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Webpages.Deployment.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Webpages.Razor.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Helpers.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\Newtonsoft.Json.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Net.Http.Formatting.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Http.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\bin\System.Web.Http.WebHost.xml
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\obj\Debug\Webapp.csprojResolveAssemblyReference.cache
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\obj\Debug\Webapp.dll
+F:\Sarfraz Ahmad\repository\JobPortal\JobPortal\JobPortal\JobPortal\source\Webapp\obj\Debug\Webapp.pdb

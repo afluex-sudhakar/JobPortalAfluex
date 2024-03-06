@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "sitemap";
+    Layout = "~/Views/Shared/_WebsiteLayout.cshtml";
+}
+
+<div class="sitemap_page_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12">
+                <h1>Site Map</h1>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-4 col-lg-4 col-sm-12">
+                <div class="sitemap_inner_page">
+                    <h4>Information</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="/en/Index">Home</a></li>
+                        <li><a href="/en/AboutUs">About Us</a></li>
+                        <li><a href="/en/AdvanceSearch">Advance Search</a></li>
+                        <li><a href="/en/training">Training</a></li>
+                        <li><a href="/en/commingsoon">Enrollment Program</a></li>
+                        <li><a href="/en/registration">Register Now</a></li>
+                        <li><a href="/en/Login">Login</a></li>
+                        <li><a href="/en/Login">Login</a></li>
+                        <li><a href="/en/ContactUs">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-12">
+                <div class="sitemap_inner_page">
+                    <h4>Job Seeker</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="/hi/registration">Register Now</a></li>
+                        @if (Session["Id"] != null)
+                        {
+                            <li><a href="/en/Login">Login</a></li>
+                            <li><a href="/uen/Profile">Profile</a></li>
+                            <li><a href="/uen/ChangePassword">Change Password</a></li>
+                            <li><a href="/en/AdvanceSearch">Jobs For You</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="/en/Login">Login</a></li>
+                            <li><a href="/en/Login">Profile</a></li>
+                            <li><a href="/en/Login">Change Password</a></li>
+                            <li><a href="/en/AdvanceSearch">Jobs For You</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-12">
+                <div class="sitemap_inner_page">
+                    <h4>Browse for jobs</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="/en/AdvanceSearch">Jobs</a></li>
+                        <li><a href="/en/training">Training</a></li>
+                        <li><a href="/en/commingsoon">Enrollment Program</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

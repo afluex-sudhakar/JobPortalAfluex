@@ -1,0 +1,359 @@
+/***************************************** Start main-header /***************************************************/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .search-btn {
+        padding: 15px 27px;
+        border: none;
+        font-size: 15px;
+        box-shadow: none !important;
+    }
+
+    .dp_icon i {
+        right: 0px;
+    }
+}
+
+@media(min-width: 992px) {
+    .nav-link {
+        display: block;
+        padding: .5rem 1rem;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .search-btn {
+        padding: 15px 27px !important;
+        border: none;
+        font-size: 15px;
+        box-shadow: none !important;
+    }
+
+    .profile_uploadcv {
+        padding: 10px 0px;
+        margin: 11px 40px !important;
+        border-radius: 5px;
+        color: #fff;
+        font-weight: 400;
+    }
+
+        .profile_uploadcv input[type="file"] {
+            position: absolute;
+            cursor: pointer;
+            clear: both;
+            z-index: 2;
+            left: 0;
+            right: 0;
+            top: 158px !important;
+            height: 42px;
+            margin: 0 auto;
+            width: 170px;
+            overflow: hidden;
+            opacity: 0;
+            display: block;
+        }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .signup_inner {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 40px 50px;
+        position: absolute;
+        left: 5%;
+        right: 5%;
+        margin: 144px 0px;
+        box-shadow: 5px 0px 18px 0px #f17117;
+    }
+
+    .search-form input[type="text"] {
+        border: 0px solid #000;
+        outline: none;
+        padding: 26px 0px;
+        box-sizing: border-box;
+        box-shadow: none;
+    }
+
+    .search-btn {
+        padding: 15px 6px;
+        border: none;
+        font-size: 15px;
+        box-shadow: none !important;
+    }
+
+    .skills-inner ul li.active {
+        padding: 10px 15px;
+    }
+
+    .search-form span i {
+        font-size: 15px;
+        color: #403f3f;
+    }
+
+    .search-form {
+        padding: 0px 0px;
+    }
+
+    .register-btn {
+        padding: 10px 10px;
+    }
+
+    .profile_uploadcv {
+        padding: 10px 0px;
+        margin: 0px 10px;
+    }
+
+        .profile_uploadcv input[type="file"] {
+            top: 203px;
+        }
+
+    .search1 .col-md-5.col-lg-5 {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+    .col-md-4.col-lg-4.col-sm-12.location {
+        padding-right: 0px;
+    }
+
+    .dp_icon i {
+        background-color: #f17117;
+        padding: 12px 12px;
+        border-radius: 20px;
+        color: #fff;
+        position: absolute;
+        top: 60px;
+        right: 0px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 568px) {
+    .registration_page_section {
+        position: relative;
+        padding: 95px 0px 60px;
+        background-color: #fff;
+        margin: 0 auto;
+        width: 100%;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+
+    .regis_spre {
+        display: none;
+    }
+
+    .sarch_box .search-field {
+        width: 100%;
+        padding: 15px 0px 15px 35px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .sarch_box .location_search_field {
+        width: 100%;
+        padding: 15px 0px 15px 35px;
+        border-radius: 5px;
+    }
+
+    .search_holder {
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .signup_inner {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 40px 15px;
+        position: absolute;
+        left: 5%;
+        right: 5%;
+        margin: 80px 0px;
+        box-shadow: 5px 0px 18px 0px #f17117;
+    }
+
+    .signup_btn {
+        border-color: #f17117;
+        color: #f17117;
+        padding: 8px 11px;
+        font-size: 15px;
+    }
+
+    .company_list_details ul {
+        columns: 2;
+    }
+
+    .navbar {
+        padding: 0px 10px;
+    }
+
+    .download-link-btn {
+        padding: 10px 20px;
+        border: none;
+        margin: 15px 0px;
+        font-size: 15px;
+        box-shadow: none !important;
+    }
+
+    .list-of-companies span {
+        padding-left: 0px;
+        display: block;
+        padding-bottom: 10px;
+    }
+
+    .skills-inner ul li.active {
+        background-color: #f17117;
+        color: #fff;
+        padding: 8px 14px;
+    }
+
+    .list-of-companies img {
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        left: 0;
+    }
+
+    .list-of-companies {
+        padding-top: 10px;
+        padding-bottom: 60px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .subscribe-to-our-newsletter-content input[type="text"] {
+        width: 90%;
+    }
+
+    .Subscribe-btn {
+        margin-top: 15px;
+    }
+
+    .profile_uploadcv {
+        margin: 10px 59px !important;
+    }
+
+    .breadcrumb_section .breadcrumb-text ul li a {
+        font-size: 15px;
+    }
+
+    .breadcrumb_section .breadcrumb-text ul li {
+        font-size: 15px;
+    }
+
+    .about_page_section {
+        padding: 50px 0px 60px;
+    }
+
+    .about_details {
+        margin-top: 30px;
+    }
+
+    .breadcrumb_section .breadcrumb-text .page-title {
+        color: #fff;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .ptb-100 {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .contact_page_section {
+        position: relative;
+        padding: 50px 0px 60px;
+    }
+
+    .privacy_policy_section {
+        position: relative;
+        padding: 50px 0px 60px;
+    }
+
+    .dp_icon i {
+        background-color: #f17117;
+        padding: 12px 12px;
+        border-radius: 20px;
+        color: #fff;
+        position: absolute;
+        top: 60px;
+        right: 117px;
+    }
+
+    span.profileupldcv input[type="file"] {
+        position: absolute;
+        cursor: pointer;
+        clear: both;
+        z-index: 2;
+        left: 0;
+        right: 0;
+        top: 154px;
+        height: 41px;
+        margin: 0 auto;
+        width: 145px;
+        overflow: hidden;
+        opacity: 0;
+        display: block;
+    }
+
+    .login_inner {
+        position: absolute;
+        left: 5%;
+        right: 5%;
+        top: 70px;
+        /*border: 5px solid #3f51b5;*/
+        border-radius: 5px;
+        padding: 20px 15px;
+        background-color: #fff;
+          box-shadow: 0 0 54px;
+    }
+
+    h1.comins {
+        font-size: 70px;
+        color: #3f51b5;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 667px) {
+    .signup_btn {
+        border-color: #f17117;
+        color: #f17117;
+        padding: 8px 18px;
+        font-size: 15px;
+    }
+
+    .profile_uploadcv {
+        margin: 10px 86px !important;
+    }
+
+    .dp_icon i {
+        background-color: #f17117;
+        padding: 12px 12px;
+        border-radius: 20px;
+        color: #fff;
+        position: absolute;
+        top: 60px;
+        right: 170px;
+    }
+}
+
+@media (min-width: 414px) and (max-width: 736px) {
+    .signup_btn {
+        border-color: #f17117;
+        color: #f17117;
+        padding: 8px 24px;
+        font-size: 15px;
+    }
+
+    .dp_icon i {
+        background-color: #f17117;
+        padding: 12px 12px;
+        border-radius: 20px;
+        color: #fff;
+        position: absolute;
+        top: 60px;
+        right: 210px;
+    }
+}
+/***************************************** End main-header /***************************************************/

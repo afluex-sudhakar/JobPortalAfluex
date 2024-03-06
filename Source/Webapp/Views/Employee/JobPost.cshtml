@@ -1,0 +1,468 @@
+﻿@model Data.DTOs.EmpJobPostDTO
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+@using (Html.BeginForm("JobPost", "Employee", FormMethod.Post, new { @class = "needs-validation", @novalidate = "", @enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(m => m.UserAgent)
+    <div class="main-content">
+        <section class="section">
+            <ul class="breadcrumb breadcrumb-style ">
+                <li class="breadcrumb-item">
+                    <h4 class="page-title m-b-0">Employer</h4>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="index.html">
+                        <i data-feather="home"></i>
+                    </a>
+                </li>
+                <li class="breadcrumb-item">Job Post</li>
+            </ul>
+            <div class="section-body">
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Job Post</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Title <span style="color:red">*</span></label>
+                                            @Html.HiddenFor(m => m.Id)
+                                            @Html.TextBoxFor(m => m.Title, new { @class = "form-control", @required = "" })
+                                            <div class="invalid-feedback">
+                                                Please Enter Title !
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>Title <span style="color:red">*</span> (In Hindi)</label>
+                                            @Html.TextBoxFor(m => m.HindiTitle, new { @class = "form-control hindi", @required = "true" })
+                                            <div class="invalid-feedback">
+                                                Please Enter Title in Hindi !
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label>No. of Vacancies</label>
+                                            @Html.TextBoxFor(m => m.NoOfVacanices, new { @class = "form-control" })
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Job Type <span style="color:red">*</span></label>
+                                            @Html.DropDownListFor(m => m.JobTypeId, new SelectList(ViewBag.JobType, "Id", "Name"), new { @class = "form-control", @required = "true" })
+                                            <div class="invalid-feedback">
+                                                Please Select Job Type !
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Designation <span style="color:red">*</span></label>
+                                            @Html.DropDownListFor(m => m.JobRoleId, new SelectList(ViewBag.Role, "Id", "Name"), "--Select--", new { @class = "form-control", @required = "true" })
+                                            <div class="invalid-feedback">
+                                                Please Select Job Role !
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label>Department <span style="color:red">*</span></label>
+                                            @Html.DropDownListFor(m => m.DepartmentId, new SelectList(ViewBag.Department, "Id", "Name"), "--Select--", new { @class = "form-control", @required = "true" })
+                                            <div class="invalid-feedback">
+                                                Please Select Department !
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Category <span style="color:red">*</span></label>
+                                            @Html.DropDownListFor(m => m.CategoryId, new SelectList(Enumerable.Empty<SelectListItem>(), "Id", "Name"), new { @class = "form-control", @required = "true", @id="ddlCategory" })
+                                            <div class="invalid-feedback">
+                                                Please Select Category !
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Skills <span style="color:red">*</span></label>
+
+                                            @Html.DropDownListFor(m => m.skills, new SelectList(ViewBag.Skill, "Id", "Name"), new { @class = "js-example-placeholder-multiple js-states form-control", multiple = "multiple" })
+                                            <div class="selectedskills" style="display:none">
+                                                @if (Model.jobSkill != null)
+                                                {
+                                                    int i = 1;
+                                                    foreach (var item in Model.jobSkill)
+                                                    {
+                                                        <button type="button" data-skillid="@item.SkillId" class="btn btn-danger" id="btnSelected">@item.Skill</button>
+
+                                                        i++;
+                                                    }
+                                                }
+                                            </div>
+                                            <input type="hidden" name="Skill" value="" />
+                                            @*@Html.DropDownListFor(m => m.SkillId, new SelectList(ViewBag.Skill, "Id", "Name"), "--Select--", new { @class = "form-control", @required = "true" })*@
+                                            <div class="invalid-feedback">
+                                                Please Select Skills !
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label>Qualification <span style="color:red">*</span></label>
+                                            @Html.DropDownListFor(m => m.Courses, new SelectList(ViewBag.Course, "Id", "Name"), "--Select--", new { @class = "js-example-placeholder-multiple1 js-states form-control", multiple = "multiple", @required = "true" })
+                                            <div class="selectedcourse" style="display:none">
+                                                @if (Model.JobCourses != null)
+                                                {
+                                                    int i = 1;
+                                                    foreach (var item in Model.JobCourses)
+                                                    {
+                                                        <button type="button" data-courseid="@item.CourseId" class="btn btn-danger" id="btnSelected">@item.Course</button>
+
+                                                        i++;
+                                                    }
+                                                }
+                                            </div>
+                                            <input type="hidden" name="Skill" value="" />
+                                            <div class="invalid-feedback">
+                                                Please Select Qualification !
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>City <span style="color:red">*</span></label>
+                                            @Html.DropDownListFor(m => m.CityId, new SelectList(ViewBag.City, "Id", "Name"), new { @class = "form-control", @required = "true" })
+                                            <div class="invalid-feedback">
+                                                Please Select City !
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Location <span style="color:red">*</span></label>
+                                            @Html.DropDownListFor(m => m.LocationId, new SelectList(ViewBag.Location, "Id", "Name"),"--Select--", new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label>Min Salary (Monthly)</label>
+                                            @Html.TextBoxFor(m => m.SalaryMin, new { @class = "form-control" })
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Max Salary(Monthly)</label>
+                                            @Html.TextBoxFor(m => m.SalaryMax, new { @class = "form-control" })
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Min Experience (In year) <span style="color:red">*</span></label>
+                                            @Html.DropDownListFor(m=>m.ExperienceMin, new SelectList(new List<SelectListItem>
+                                                {
+                                                   new SelectListItem{ Text="0", Value = "0" },
+                                                   new SelectListItem{ Text="1", Value = "1" },
+                                                   new SelectListItem{ Text="2", Value = "2" },
+                                                   new SelectListItem{ Text="3", Value = "3" },
+                                                   new SelectListItem{ Text="4", Value = "4" },
+                                                   new SelectListItem{ Text="5", Value = "5" },
+                                                   new SelectListItem{ Text="6", Value = "6" },
+                                                   new SelectListItem{ Text="7", Value = "7" },
+                                                   new SelectListItem{ Text="8", Value = "8" },
+                                                   new SelectListItem{ Text="9", Value = "9" },
+                                                   new SelectListItem{ Text="10", Value = "10" },
+                                                   new SelectListItem{ Text="11", Value = "11" },
+                                                   new SelectListItem{ Text="12", Value = "12" },
+                                                   new SelectListItem{ Text="13", Value = "13" },
+                                                   new SelectListItem{ Text="14", Value = "14" },
+                                                   new SelectListItem{ Text="15", Value = "15" }
+                                                },"Value","Text"),"-Select-", new{@class="form-control"})
+                                            <div class="invalid-feedback">
+                                                Please Select Minimum Experience !
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label>Max Experience (In year) <span style="color:red">*</span></label>
+                                            @Html.DropDownListFor(m => m.ExperienceMax, new SelectList(new List<SelectListItem>
+                                                {
+                                                new SelectListItem{ Text="1", Value = "1" },
+                                                new SelectListItem{ Text="2", Value = "2" },
+                                                new SelectListItem{ Text="3", Value = "3" },
+                                                new SelectListItem{ Text="4", Value = "4" },
+                                                new SelectListItem{ Text="5", Value = "5" },
+                                                new SelectListItem{ Text="6", Value = "6" },
+                                                new SelectListItem{ Text="7", Value = "7" },
+                                                new SelectListItem{ Text="8", Value = "8" },
+                                                new SelectListItem{ Text="9", Value = "9" },
+                                                new SelectListItem{ Text="10", Value = "10" },
+                                                new SelectListItem{ Text="11", Value = "11" },
+                                                new SelectListItem{ Text="12", Value = "12" },
+                                                new SelectListItem{ Text="13", Value = "13" },
+                                                new SelectListItem{ Text="14", Value = "14" },
+                                                new SelectListItem{ Text="15", Value = "15" },
+                                                new SelectListItem{ Text="16", Value = "16" },
+                                                new SelectListItem{ Text="17", Value = "17" },
+                                                new SelectListItem{ Text="18", Value = "18" },
+                                                new SelectListItem{ Text="19", Value = "19" },
+                                                new SelectListItem{ Text="20", Value = "20" },
+                                                }, "Value", "Text"), "-Select-", new { @class = "form-control" })
+                                                <div class="invalid-feedback">
+                                                    Please Select Maximum Experience !
+                                                </div>
+</div>
+                                        <div class="col-md-4">
+                                            <label>Posted Date <span style="color:red">*</span></label>
+                                           @Html.TextBoxFor(m =>m.PostedDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+                                            <div class="invalid-feedback">
+                                                Please Enter Posted Date !
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Last Date <span style="color:red">*</span></label>
+                                            @Html.TextBoxFor(m => m.LastDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Short Description <span style="color:red">*</span></label>
+                                            @Html.TextAreaFor(m => m.ShortDescription, new { @class = "form-control", @required="true" })
+                                            <div class="invalid-feedback">
+                                                Please Enter Short Description !
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>Short Description <span style="color:red">*</span>(In Hindi)</label>
+                                            @Html.TextAreaFor(m => m.HindiShortDescription, new { @class = "form-control hindi", @required = "true" })
+                                            <div class="invalid-feedback">
+                                                Please Enter Short Description in Hindi !
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label>Description <span style="color:red">*</span></label>
+                                            @Html.TextAreaFor(m => m.Description, new { @class = "form-control", @required = "true" })
+                                            <div class="invalid-feedback">
+                                                Please Enter Description !
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label>Description <span style="color:red">*</span>(In Hindi)</label>
+                                            @Html.TextAreaFor(m => m.HindiDescription, new { @class = "form-control hindi", @required = "true" })
+                                            <div class="invalid-feedback">
+                                                Please Enter Description in Hindi !
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label>Upload Job Banner/ Compnay Logo</label>
+                                            <input type="file" class="form-control" id="postedImage" name="postedImage">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="checkbox" name="IsVerified" id="check"/> <label> IsPublished</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            @Html.AntiForgeryToken()
+                                            <button class="btn btn-primary mr-1" type="submit">Submit</button>
+                                            <button class="btn btn-secondary" type="reset">Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </div>
+}
+@section css {
+    <link href="~/assets/bundles/select2/dist/css/select2.min.css" rel="stylesheet" />
+}
+@section script {
+    <script src="~/assets/bundles/select2/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            debugger;
+            var date = new Date();
+            $("#PostedDate").val(date.getDate());
+            $(".js-example-placeholder-multiple").select2({
+                placeholder: "Select Skills",
+                tokenSeparators: [',', ' '],
+                tags: true,
+            });
+            $(".js-example-placeholder-multiple1").select2({
+                placeholder: "Select Qualifications",
+                tokenSeparators: [',', ' '],
+                tags: true,
+            });
+            $("#divload").css({ 'display': 'none' });
+            var userAgent = navigator.userAgent;
+            $('#UserAgent').val(userAgent);
+
+
+            $("#SkillId").change(function () {
+                debugger;
+                const regex = /value=\"([0-9])\"/gm;
+                var selectedSkills = new Array();
+                $.each($('#SkillId').find(':selected'), function (i, v) {
+                    let m;
+                    while ((m = regex.exec($('#SkillId').find(':selected')[i].outerHTML)) !== null) {
+                        // This is necessary to avoid infinite loops with zero-width matches
+                        if (m.index === regex.lastIndex) {
+                            regex.lastIndex++;
+                        }
+
+                        // The result can be accessed through the `m`-variable.
+                        m.forEach((match, groupIndex) => {
+                            selectedSkills[i] = match;
+                        });
+                    }
+                })
+                $('input[name="Skill"]').val(selectedSkills);
+            })
+
+            window.addEventListener('load', function () {
+                debugger;
+                // Everything has loaded!
+                //set skills
+                var selectedSkills = new Array();
+                $.each($('.selectedskills button[type=button]'), function (i, v) {
+                    selectedSkills[i] = $(this).attr('data-skillid');
+                    $('#skills').val(selectedSkills).trigger('change');
+                });
+            })
+
+            window.addEventListener('load', function () {
+                debugger;
+                // Everything has loaded!
+                //set Courses
+                var selectedCourses = new Array();
+                $.each($('.selectedcourse button[type=button]'), function (i, v) {
+                    selectedCourses[i] = $(this).attr('data-courseid');
+                    $('#Courses').val(selectedCourses).trigger('change');
+                });
+            })
+
+            $("#LastDate").change(function() { 
+                debugger;
+                var date1 = $("#LastDate").val();
+                var LastDate = new Date(date1);
+                var date2 = $("#PostedDate").val();
+                var PostedDate = new Date(date2);
+                if (PostedDate.setHours(0, 0, 0, 0) >=
+                   LastDate.setHours(0, 0, 0, 0)) {
+                    alert("Last Date should be greater than Posted Date.");
+                    $("#LastDate").val('');
+                }
+                else {
+                    
+                }
+            })
+            $("#DepartmentId").change(function () {
+                $('#ddlCategory').empty().add('<option value="Select">-Select-</option>');
+                $.ajax({
+                    url: "/Employee/GetDepartmentwiseCategory",
+                    type: "GET",
+                    dataType: 'JSON',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: { DepartmentId: $("#DepartmentId").val() },
+                    success: function (data) {
+                        console.log(data) 
+                        var options = '';
+                        options += '<option value="Select">-Select-</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            options += '<option value="' + data[i].Id + '">' + data[i].Name + '</option>';
+                        }
+                        $('#ddlCategory').empty().append(options);
+                    },
+                    error: {
+
+                    }
+                });
+            })
+
+            $("#check").on('change', function (e) {
+                debugger;
+                if( this.checked)
+                {
+                    $("#check").val(true);
+                }
+                else
+                {
+                    $("#check").val(false);
+
+                }
+            })
+           
+        });
+    </script>
+    @if (TempData["msg"] != null)
+    {
+        if (TempData["msg"] == "Saved")
+        {
+            <script type="text/javascript">
+                window.onload = function () {
+                    iziToast.success({
+                        title: "Success!",
+                        message: "Record Saved ",
+                        position: "topRight",
+                    });
+                };
+            </script>
+        }
+        else if (TempData["msg"] == "Updated")
+        {
+            <script type="text/javascript">
+                window.onload = function () {
+                    iziToast.success({
+                        title: "Success!",
+                        message: "Record Updated ",
+                        position: "topRight",
+                    });
+                };
+            </script>
+        }
+        else
+        {
+            <script type="text/javascript">
+                window.onload = function () {
+                    iziToast.error({
+                        title: "Error !",
+                        message: "@TempData["msg"]",
+                        position: "topRight",
+                    });
+                };
+
+            </script>
+        }
+    }
+
+}
+

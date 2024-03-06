@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "~/Views/Shared/_WebsiteLayout.cshtml";
+}
+
+<section class="breadcrumb_section bg-img-c" style="background-image: url('../images/term-nd-condition.jpg');">
+    <div class="container">
+        <div class="breadcrumb-text">
+            <h1 class="page-title">Term and Condition</h1>
+            <ul class="pull-right">
+                <li><a href="#">Home</a></li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
+                <li>Term and condition</li>
+            </ul>
+        </div>
+    </div>
+</section>
+@Html.Raw(Model.Description)
+
+

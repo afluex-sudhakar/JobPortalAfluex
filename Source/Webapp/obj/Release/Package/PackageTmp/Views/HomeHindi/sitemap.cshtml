@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "sitemap";
+    Layout = "~/Views/Shared/_WebsiteLayoutHI.cshtml";
+}
+
+<div class="sitemap_page_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12">
+                <h1>साइट का नक्शा</h1>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-4 col-lg-4 col-sm-12">
+                <div class="sitemap_inner_page">
+                    <h4>जानकारी</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="/hi/Index">होम</a></li>
+                        <li><a href="/hi/AboutUs">हमारे बारे में</a></li>     
+                        <li><a href="/hi/AdvanceSearch">नौकरियां</a></li>
+                        <li><a href="/hi/training">प्रशिक्षण</a></li>
+                        <li><a href="/hi/commingsoon">नामांकन कार्यक्रम</a></li>
+                        <li><a href="/hi/registration">पंजीकरण करें</a></li>
+                        <li><a href="/hi/Login">नौकरी दर्ज करें</a></li>
+                        <li><a href="/hi/Login">लॉगइन करें</a></li>
+                        <li><a href="/hi/ContactUs">संपर्क करें</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-12">
+                <div class="sitemap_inner_page">
+                    <h4>रोज़गार इच्छुक</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="/hi/registration">पंजीकरण करें</a></li>
+                        @if (Session["Id"] != null)
+                        {
+                            <li><a href="/hi/Login">लॉगइन करें</a></li>
+                            <li><a href="/uhi/Profile">प्रोफाइल</a></li>
+                            <li><a href="/uhi/ChangePassword">पासवर्ड बदलें</a></li>
+                            <li><a href="/hi/Login">लॉग आउट</a></li>
+                            <li><a href="/hi/AdvanceSearch">आपके लिए नौकरियां</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="/hi/Login">लॉगइन करें</a></li>
+                            <li><a href="/hi/Login">प्रोफाइल</a></li>
+                            <li><a href="/hi/Login">पासवर्ड बदलें</a></li>
+                            <li><a href="/hi/AdvanceSearch">आपके लिए नौकरियां</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-12">
+                <div class="sitemap_inner_page">
+                    <h4>नौकरियां ब्राउज़ करें</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="/hi/AdvanceSearch">नौकरियां</a></li>
+                        <li><a href="/hi/training">प्रशिक्षण</a></li>
+                        <li><a href="/hi/commingsoon">नामांकन कार्यक्रम</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

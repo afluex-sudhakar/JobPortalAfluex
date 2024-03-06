@@ -1,0 +1,73 @@
+﻿@model Data.DTOs.AudittrailDTO
+
+@using (Html.BeginForm("AuditTrail", "Admin", FormMethod.Post, new { @id = "form1", enctype = "multipart/form-data", @class = "needs-validation", @novalidate = "" }))
+{
+    <div class="main-content">
+        <section class="section">
+            <ul class="breadcrumb breadcrumb-style ">
+                <li class="breadcrumb-item">
+                    <a href="/Admin/Index">
+                        <i data-feather="home"></i>
+                    </a>
+                </li>
+                <li class="breadcrumb-item">Audit Trail</li>
+            </ul>
+            <div class="section-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Audit Trail</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-md" id="table_1">
+                                        <thead>
+                                            <tr>
+                                                <th> S.No. </th>
+                                                <th>Remarks</th>
+                                                <th>Date</th>
+                                           
+                                            </tr>
+
+                                        </thead>
+                                        <tbody>
+                                            @Html.HiddenFor(m => m.PageSize, new { @id = "pageSize" })
+                                            @if (Model != null)
+                                            {
+                                                if (Model.lst != null)
+                                                {
+                                                    int i = 1;
+                                                    foreach (var Item in Model.lst)
+                                                    {
+                                                        
+                                                        <tr>
+                                                            <td> @i </td>
+                                                            <td>@Item.Remark</td>
+                                                            <td>@Item.CreatedAt.ToShortDateString()</td>
+                                                        </tr>
+                                                        i++;
+                                                    }
+                                               
+                                                }
+                                            }
+                                              
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+}
+@section css{
+
+}
+@section script {
+    
+}
+  

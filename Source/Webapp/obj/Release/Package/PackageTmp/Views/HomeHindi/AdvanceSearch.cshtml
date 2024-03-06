@@ -1,0 +1,567 @@
+﻿@model Data.DTOs.JobDTOWeb
+@using Utility;
+@{
+    Layout = "~/Views/Shared/_WebsiteLayoutHI.cshtml";
+}
+
+@using (Html.BeginForm("AdvanceSearchAction", "hi", FormMethod.Post, new { @id = "frm", @enctype = "multipart/form-data" }))
+{
+    <div class="loader"></div>
+    <div class="inner-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-lg-9 col-sm-12">
+                    <div class="search-section">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                                <div class="sarch_box">
+                                    <span class="search_icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                    @Html.TextBoxFor(m => m.SearchTerm, new { @class = "search-field", @placeholder = "कीवर्ड द्वारा जॉब खोजें", @id = "txtskill" })
+                                    <span class="location_icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                                    @Html.TextBoxFor(m => m.City, new { @class = "location_search_field", @placeholder = "स्थान", @id = "autocomplete" })
+                                    <div class="search_holder pull-right">
+                                        <input type="button" class="le_button text-decoration-none text-white" value="नौकरी खोजें" id="btnsearch" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="advance_search_section">
+                        <div class="row">
+                            <div class="col-md-8 col-lg-8 col-sm-12">
+                                <input type="hidden" id="ttl" value="@Model.JobResponse.TotalRecords" />
+                                @if (Model != null)
+                                {
+                                    if (Model.JobResponse != null && Model.JobResponse.TotalRecords > 0)
+                                    {
+                                        @*if (Constants.PAGE_SIZE > Model.JobResponse.TotalRecords)
+                                        {
+                                            <p><span id="page">@Model.JobResponse.TotalRecords -</span> <span id="ttl">@Model.JobResponse.TotalRecords</span> परिणाम दिखा रहा है</p>
+                                        }
+                                        else
+                                        {
+                                            <p><span id="page">@Constants.PAGE_SIZE -</span> <span id="ttl">@Model.JobResponse.TotalRecords</span> परिणाम दिखा रहा है</p>
+                                        }*@
+                                    }
+                                    else
+                                    {
+                                        <p>खोज का कोई परिणाम नहीं मिला!</p>
+                                    } 
+                                }
+                            </div>
+                        </div>
+
+                        <div class="main_relevance pull-right">
+
+                        </div>
+                        <div id="jobsearch">
+                            @Html.HiddenFor(m => m.PageSize, new { @id = "pageSize" })
+                            @if (Model != null)
+                            {
+                                if (Model.JobResponse.ListJob != null)
+                                {
+                                    int i = 1;
+                                    foreach (var item in Model.JobResponse.ListJob)
+                                    {
+                                        <div class="advance_search_inner mb-2">
+                                            <div class="advance_search_tilte">
+                                                <h5 id="title">@item.Title</h5>
+                                                <h6>@*@item.CompanyName*@</h6>
+                                                <ul class="list-unstyled">
+                                                    <li class="list-inline-item"> <i class="fa fa-suitcase pr-2" aria-hidden="true"></i>@item.ExperienceMin - @item.ExperienceMax वर्ष</li>
+                                                    <li class="list-inline-item"> <i class="fa fa-clock-o pr-2" aria-hidden="true"></i> @item.JobType</li>
+                                                    <li class="list-inline-item"> <i class="fa fa-map-marker pr-2" aria-hidden="true"></i> @item.City</li>
+                                                </ul>
+                                                <h6><i class="fa fa-file-text pr-2" aria-hidden="true"></i> @item.ShortDescription</h6>
+                                                <p class="saffron-text" id="time"><i class="fa fa-clock-o pr-2" aria-hidden="true"></i> @item.Time | <span>@item.CompanyName के द्वारा प्रकाशित</span><span class="pull-right"><a href="/hi/JobDetails?Id=@item.Id" class="saffron-text">नौकरी का विवरण देखें</a></span></p>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" value="@Model.EmployerId" />
+                                        <input type="hidden" value="@Model.DepartmentId" />
+                                        <input type="hidden" value="@Model.CityId" />
+                                        i++;
+                                    }
+                                }
+                            }
+                        </div>
+                        <btn id="loadmore" class="le_button text-decoration-none text-white pull-right mt-4" style="display:none">और लोड करें</btn>
+                    </div>
+                    <div id="divsearch" style="display:none">
+                        @*<div id="loading">
+                                <img id="loading-image" src="~/assets/img/loading.gif" alt="Loading..." />
+                            </div>*@
+                        @if (Model != null)
+                        {
+                            if (Model.DepartmentId != null)
+                            {
+                                foreach (var item in Model.DepartmentId)
+                                {
+                                    <input id="@item" type="hidden" value="@item" name="DepartmentId">
+                                }
+                            }
+                            if (Model.CityId != 0)
+                            {
+                                <input id="@Model.CityId" type="hidden" value="@Model.CityId" name="CityId">
+                            }
+                            if (Model.EmployerId != 0)
+                            {
+                                <input id="@Model.EmployerId" type="hidden" value="@Model.EmployerId" name="EmployerId">
+                            }
+                            @*<input id="@Model.DepartmentId" type="hidden" value="@Model.DepartmentId" name="DepartmentId">*@
+                        if (Model.SkillId != 0)
+                        {
+                            <input id="@Model.SkillId" type="hidden" value="@Model.SkillId" name="SkillId">
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3 col-sm-12">
+                    <div class="sidebar-section">
+                        <div class="all_filters">
+                            <h5 class="text-center font-weight-bold">फिल्टर</h5>
+                            @*<div class="all_filters_section1">
+                                <div id="filterlocaion1">
+                                    <p class="freshness font-weight-bold">स्थान <span class="pull-right"><i class="fa fa-angle-down" aria-hidden="true"></i></span></p>
+                                </div>
+
+                                <div class="flocaion1">
+                                    @if (Model != null)
+                                    {
+                                        if (Model.lstCity != null)
+                                        {
+                                            foreach (var item in Model.lstCity)
+                                            {
+                                                <div class="location custom-checkbox">
+                                                    <input id="@item.NameH" type="checkbox" value="@item.Id" name="CityId">
+                                                    <label>@item.NameH</label>
+                                                </div>
+                                            }
+                                        }
+                                    }
+
+                                </div>
+                            </div>*@
+                            <div class="all_filters_section2 mt-4">
+                                <div id="fsalary">
+                                    <p class="freshness font-weight-bold">वेतन <span class="pull-right"><i class="fa fa-angle-down" aria-hidden="true"></i></span></p>
+                                </div>
+                                <div class="fsalary1">
+                                    <div class="">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div id="slider-range"></div>
+                                            </div>
+                                        </div>
+                                        <div class="slider-labels">
+                                            <div class="col-xs-6 caption">
+                                                <strong>न्यूनतम:</strong>₹ <span id="slider-range-value1"></span>
+                                                @Html.HiddenFor(m => m.SalaryMin, new { @id = "SalaryMin" })
+                                            </div>
+                                            <div class="col-xs-6 caption">
+                                                <strong>अधिकतम:</strong>₹ <span id="slider-range-value2"></span>
+                                                @Html.HiddenFor(m => m.SalaryMax, new { @id = "SalaryMax" })
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <input type="hidden" name="min-value" value="">
+                                                <input type="hidden" name="max-value" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="all_filters_section4 mt-4">
+                                <div id="departments">
+                                    <p class="freshness font-weight-bold">उद्योग के प्रकार<span class="pull-right"><i class="fa fa-angle-down" aria-hidden="true"></i></span></p>
+                                </div>
+
+                                <div class="departments">
+
+                                    @if (Model != null)
+                                    {
+                                        if (Model.lstDepartment != null)
+                                        {
+                                            foreach (var item in Model.lstDepartment)
+                                            {
+                                                <div class="location custom-checkbox">
+                                                    <input id="@item.NameH" type="checkbox" value="@item.Id" name="DepartmentId">
+                                                    <p>@item.NameH</p>
+                                                </div>
+                                            }
+                                        }
+                                    }
+
+                                </div>
+                            </div>
+                            <div class="all_filters_section4 mt-4">
+                                <div id="categories">
+                                    <p class="freshness font-weight-bold">श्रेणियाँ<span class="pull-right"><i class="fa fa-angle-down" aria-hidden="true"></i></span></p>
+                                </div>
+
+                                <div class="categories">
+
+                                    @*@if (Model != null)
+                                        {
+                                            if (Model.lstCategory != null)
+                                            {
+                                                foreach (var item in Model.lstCategory)
+                                                {
+                                                    <div class="location custom-checkbox">
+                                                        <input id="@item.Name" type="checkbox" value="@item.Id" name="CategoryId">
+                                                        <label>@item.Name</label>
+                                                    </div>
+                                                }
+                                            }
+                                        }*@
+
+                                </div>
+                            </div>
+                            <div class="all_filters_section4 mt-4">
+                                <div id="courses">
+                                    <p class="freshness font-weight-bold">योग्यता<span class="pull-right"><i class="fa fa-angle-down" aria-hidden="true"></i></span></p>
+                                </div>
+
+                                <div class="courses">
+                                    <div class="location custom-checkbox">
+                                        @if (Model != null)
+                                        {
+                                            if (Model.lstCourse != null)
+                                            {
+                                                foreach (var item in Model.lstCourse)
+                                                {
+                                                    <div class="location custom-checkbox">
+                                                        <input id="@item.NameH" type="checkbox" value="@item.Id" name="CourseId">
+                                                        <p>@item.NameH</p>
+                                                    </div>
+                                                }
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="all_filters_section5 mt-4">
+                                <div id="indu">
+                                    <p class="freshness font-weight-bold">कौशल<span class="pull-right"><i class="fa fa-angle-down" aria-hidden="true"></i></span></p>
+                                </div>
+                                <div class="industries">
+                                    @if (Model != null)
+                                    {
+                                        if (Model.lstSkill != null)
+                                        {
+                                            foreach (var item in Model.lstSkill)
+                                            {
+                                                <div class="location custom-checkbox">
+                                                    <input id="@item.Name" type="checkbox" value="@item.Id" name="SkillId">
+                                                    <p>@item.Name</p>
+                                                </div>
+                                            }
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section css {
+    <link href="~/assets/css/rangeslider.css" rel="stylesheet" />
+}
+
+@section script {
+    <script src="~/assets/js/rangeslider.js"></script>
+    <script src="~/scripts/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            debugger;
+            var count = 1;
+            var pageSize = parseFloat($("#pageSize").val());
+            var totalJobs = parseFloat($("#ttl").val());
+            var l = totalJobs / pageSize;
+            if (l > count) {
+                $("#loadmore").show();
+            }
+            else {
+                $("#loadmore").hide();
+            }
+            $("#filterlocaion1").click(function () {
+                $(".flocaion1").toggle();
+            });
+
+            $("#fsalary").click(function () {
+                $(".fsalary1").toggle();
+            });
+
+            $("#posted_title").click(function () {
+                $(".posted1").toggle();
+            });
+
+            $("#courses").click(function () {
+                $(".courses").toggle();
+            });
+
+            $("#departments").click(function () {
+                $(".departments").toggle();
+            });
+            $("#categories").click(function () {
+                $(".categories").toggle();
+            });
+            $("#indu").click(function () {
+                $(".industries").toggle();
+            });
+
+            $(".default_option").click(function () {
+                $(this).parent().toggleClass("active");
+            })
+
+            $(".select_ul li").click(function () {
+                var currentele = $(this).html();
+                $(".default_option li").html(currentele);
+                $(this).parents(".select_wrap").removeClass("active");
+            })
+
+            $("#freshness").click(function () {
+                debugger;
+                $("#sfreshness").toggle();
+            });
+
+            function myFunction() {
+                var x = document.getElementById("relevance");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+
+            $("#btnsearch").click(function () {
+                debugger;
+                var valdata = $("#frm").serialize();
+                $.ajax({
+                    url: "/hi/AdvanceSearchAction",
+                    type: "POST",
+                    dataType: 'HTML',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: $("#frm").serialize() + "&SalaryMin=" + $("#SalaryMin").text() + "&SalaryMax=" + $("#SalaryMax").text(),
+
+                    success: function (data) {
+                        $('#loading').hide();
+                        debugger
+                        if (data.length > 0) {
+                            var t = JSON.parse(data);
+                            $('#jobsearch').html("");
+                            for (var i = 0; i < t.ListJob.length; i++) {
+                                var html = '<div class="advance_search_inner mt-4"><div class="advance_search_tilte"><h5>' + t.ListJob[i].Title + '</h5><h6></h6><ul class="list-unstyled"><li class="list-inline-item"><i class="fa fa-graduation-cap" aria-hidden="true"></i> ' + t.ListJob[i].ExperienceMin + ' - ' + t.ListJob[i].ExperienceMax + ' वर्ष</li><li class="list-inline-item"><i class="fa fa-inr" aria-hidden="true"></i> ' + t.ListJob[i].JobType + '</li><li class="list-inline-item"><i class="fa fa-map-marker" aria-hidden="true"></i> ' + t.ListJob[i].City + '</li></ul><h6> ' + t.ListJob[i].ShortDescription + '</h6><p class="saffron-text"><i class="fa fa-clock-o" aria-hidden="true"></i> ' + t.ListJob[i].Time + ' | ' + ' <span> ' + t.ListJob[i].CompanyName + 'के द्वारा प्रकाशित</span><span class="pull-right"><a href="/hi/JobDetails?Id=' + t.ListJob[i].Id + '" class="saffron-text">नौकरी का विवरण देखें</a></span></p></div></div>';
+                                $('#jobsearch').append(html);
+                            }
+                            $("#ttl").val(t.TotalRecords);
+                            var totalJobs = $("#ttl").val();
+                            var l = parseFloat(totalJobs) / parseFloat(pageSize);
+                            if (count >= l) {
+                                $("#loadmore").hide();
+                            }
+                            else {
+                                $("#loadmore").show();
+                            }
+                        }
+                    },
+                    error: {
+
+                    }
+                });
+            });
+
+
+
+            $('input[name="DepartmentId"]').on('change', function (e) {
+                debugger;
+                var checkboxes = document.getElementsByName('DepartmentId');
+                var vals = [];
+                for (var i = 0, n = checkboxes.length; i < n; i++) {
+                    if (checkboxes[i].checked) {
+                        vals.push(checkboxes[i].value);
+                    }
+                }
+
+                $.ajax({
+                    url: "/hi/getcategorybydepartment",
+                    type: "post",
+                    datatype: 'json',
+                    contenttype: 'application/x-www-form-urlencoded; charset=utf-8',
+                    data: { id: vals },
+                    beforesend: function () {
+                    },
+                    success: function (data) {
+                        debugger;
+                        if (data.length > 0) {
+                            var t = data;
+                            $('.categories').html("");
+                            for (var i = 0; i < t.length; i++) {
+                                var html = '<div class="location custom-checkbox"></div><input id="' + t[i].Id + '" type="checkbox" value="' + t[i].Id + '" name="CategoryId"> <label>' + t[i].Name + '</label>';
+                                $('.categories').append(html);
+                            }
+                        }
+                    },
+                    complete: function (data) {
+
+                    },
+                    error: {
+
+                    }
+                });
+            });
+
+            $('input[type="checkbox"]').on('change', function (e) {
+                debugger;
+                var valdata = $("#frm").serialize();
+                $.ajax({
+                    url: "/hi/AdvanceSearchAction",
+                    type: "POST",
+                    dataType: 'HTML',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: valdata,
+                    beforeSend: function () {
+                        // Show image container
+                        $("#loading").show();
+                    },
+                    success: function (data) {
+                        $('#loading').hide();
+                        debugger
+                        if (data.length > 0) {
+                            $('#jobsearch').html("");
+                            var t = JSON.parse(data);
+                            for (var i = 0; i < t.ListJob.length; i++) {
+                                var html = '<div class="advance_search_inner mt-4"><div class="advance_search_tilte"><h5>' + t.ListJob[i].Title + '</h5><h6></h6><ul class="list-unstyled"><li class="list-inline-item"><i class="fa fa-graduation-cap" aria-hidden="true"></i> ' + t.ListJob[i].ExperienceMin + ' - ' + t.ListJob[i].ExperienceMax + ' वर्ष</li><li class="list-inline-item"><i class="fa fa-inr" aria-hidden="true"></i> ' + t.ListJob[i].JobType + '</li><li class="list-inline-item"><i class="fa fa-map-marker" aria-hidden="true"></i> ' + t.ListJob[i].City + '</li></ul><h6> ' + t.ListJob[i].ShortDescription + '</h6><p class="saffron-text"><i class="fa fa-clock-o" aria-hidden="true"></i> ' + t.ListJob[i].Time + ' | ' + ' <span>' + t.ListJob[i].CompanyName + ' के द्वारा प्रकाशित</span><span class="pull-right"><a href="/hi/JobDetails?Id=' + t.ListJob[i].Id + '" class="saffron-text">नौकरी का विवरण देखें</a></span></p></div></div>';
+                                $('#jobsearch').append(html);
+                            }
+                            $("#ttl").val(t.TotalRecords);
+                            var totalJobs = $("#ttl").val();
+                            var l = parseFloat(totalJobs) / parseFloat(pageSize);
+                            if (count >= l) {
+                                $("#loadmore").hide();
+                            }
+                            else {
+                                $("#loadmore").show();
+                            }
+                        }
+                        else {
+                            $("#loadmore").hide();
+                        }
+                    },
+                    complete: function (data) {
+                        // Hide image container
+                        $("#loading").hide();
+                    },
+                    error: {
+
+                    }
+                });
+            });
+
+            $("#slider-range").mouseout(function () {
+                var valdata = $("#frm").serialize();
+                var min = $("#slider-range-value1").text();
+                var max = $("#slider-range-value2").text();
+                debugger;
+                $.ajax({
+                    url: "/hi/AdvanceSearchAction",
+                    type: "POST",
+                    dataType: 'HTML',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: valdata + "&SalaryMx=" + max + "&SalaryMn=" + min,
+                    success: function (data) {
+                        $('#loading').hide();
+                        debugger
+                        if (data.length > 0) {
+                            $('#jobsearch').html("");
+                            var t = JSON.parse(data);
+                            for (var i = 0; i < t.ListJob.length; i++) {
+                                var html = '<div class="advance_search_inner mt-4"><div class="advance_search_tilte"><h5>' + t.ListJob[i].Title + '</h5><h6></h6><ul class="list-unstyled"><li class="list-inline-item"><i class="fa fa-graduation-cap" aria-hidden="true"></i> ' + t.ListJob[i].ExperienceMin + ' - ' + t.ListJob[i].ExperienceMax + ' वर्ष</li><li class="list-inline-item"><i class="fa fa-inr" aria-hidden="true"></i> ' + t.ListJob[i].JobType + '</li><li class="list-inline-item"><i class="fa fa-map-marker" aria-hidden="true"></i> ' + t.ListJob[i].City + '</li></ul><h6> ' + t.ListJob[i].ShortDescription + '</h6><p class="saffron-text"><i class="fa fa-clock-o" aria-hidden="true"></i> ' + t.ListJob[i].Time + ' | ' + ' <span>' + t.ListJob[i].CompanyName + ' के द्वारा प्रकाशित</span><span class="pull-right"><a href="/hi/JobDetails?Id=' + t.ListJob[i].Id + '" class="saffron-text">नौकरी का विवरण देखें</a></span></p></div></div>';
+                                $('#jobsearch').append(html);
+                            }
+                            $("#ttl").val(t.TotalRecords);
+                            var totalJobs = $("#ttl").val();
+                            var l = parseFloat(totalJobs) / parseFloat(pageSize);
+                            if (count >= l) {
+                                $("#loadmore").hide();
+                            }
+                            else {
+                                $("#loadmore").show();
+                            }
+                        }
+                        else {
+                            $("#loadmore").hide();
+                        }
+                    },
+                    error: {
+
+                    }
+                });
+            })
+            $("#ddlsort").change(function () {
+                debugger
+                $.ajax({
+                    url: "/hi/AdvanceSearchAction",
+                    type: "POST",
+                    dataType: 'HTML',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: $("#frm").serialize() + "&SortBy=" + $("#ddlsort").val(),
+                    success: function (data) {
+
+                    },
+                    error: {
+
+                    }
+                });
+            });
+            $("#loadmore").click(function () {
+                debugger
+                $.ajax({
+                    url: "/hi/AdvanceSearchAction",
+                    type: "POST",
+                    dataType: 'HTML',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: $("#frm").serialize() + "&Page=" + count,
+                    success: function (data) {
+                        debugger;
+                        if (data.length > 0) {
+                            var t = JSON.parse(data);
+                            for (var i = 0; i < t.ListJob.length; i++) {
+                                var html = '<div class="advance_search_inner mt-4"><div class="advance_search_tilte"><h5>' + t.ListJob[i].Title + '</h5><h6></h6><ul class="list-unstyled"><li class="list-inline-item"><i class="fa fa-graduation-cap" aria-hidden="true"></i> ' + t.ListJob[i].ExperienceMin + ' - ' + t.ListJob[i].ExperienceMax + ' वर्ष</li><li class="list-inline-item"><i class="fa fa-inr" aria-hidden="true"></i> ' + t.ListJob[i].JobType + '</li><li class="list-inline-item"><i class="fa fa-map-marker" aria-hidden="true"></i> ' + t.ListJob[i].City + '</li></ul><h6> ' + t.ListJob[i].ShortDescription + '</h6><p class="saffron-text"><i class="fa fa-clock-o" aria-hidden="true"></i> ' + t.ListJob[i].Time + ' | ' + ' <span>' + t.ListJob[i].CompanyName + ' के द्वारा प्रकाशित</span><span class="pull-right"><a href="/hi/JobDetails?Id=' + t.ListJob[i].Id + '" class="saffron-text">नौकरी का विवरण देखें</a></span></p></div></div>';
+                                $('#jobsearch').append(html);
+                            }
+
+                            count++;
+                            $("#ttl").val(t.TotalRecords);
+                            var totalJobs = $("#ttl").val();
+                            var l = parseFloat(totalJobs) / parseFloat(pageSize);
+                            if (count >= l) {
+                                $("#loadmore").hide();
+                                count = 1;
+                            }
+                            else {
+                                $("#loadmore").show();
+                            }
+                        }
+                        else {
+                            $("#loadmore").hide();
+                        }
+                    },
+                    error: {
+
+                    }
+                });
+            })
+        });
+
+    </script>
+    <script src="~/js/autocomplete.js"></script>
+    @*<script type="text/javascript">
+            $('.list1 .loadMore').loadMoreResults();
+        </script>*@
+}
+

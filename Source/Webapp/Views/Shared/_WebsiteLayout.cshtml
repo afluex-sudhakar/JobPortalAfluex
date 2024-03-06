@@ -1,0 +1,290 @@
+﻿@{
+    var routeValues = this.ViewContext.RouteData.Values;
+    var controller = routeValues["controller"] as string;
+    var action = routeValues["action"] as string;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Afluex Multiservice LLP</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link href="~/css/colors.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='shortcut icon' type='image/x-icon' href='/assets/img/favicon.png' />
+
+    <style>
+        .userpro {
+            max-width: 50px;
+        }
+
+        .profilesec {
+            margin-bottom: 0px;
+        }
+
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('../../assets/img/loading.gif') 50% 50% no-repeat #f9f9f9;
+            opacity: 1;
+        }
+    </style>
+    @RenderSection("css", required: false)
+</head>
+<body>
+    <div class="top_header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-sm-12">
+                    <div class="top_haeder_contact">
+                        <ul class="list-unstyled">
+                            <li class="list-inline-item"><i class="fa fa-phone" aria-hidden="true"></i> +91 731-0000-413/ 412 </li>
+                            <li class="list-inline-item"><i class="fa fa-envelope" aria-hidden="true"></i> supportnow@afluex.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12">
+                    <div class="top_haeder_social pull-right">
+                        <ul class="list-unstyled">
+                            <li class="list-inline-item"><a href="#!" target="_blank"><i class="fa fa-facebook-f text-white"></i></a> </li>
+                            <li class="list-inline-item"><a href="#!" target="_blank"><i class="fa fa-twitter text-white" aria-hidden="true"></i> </a></li>
+                            <li class="list-inline-item"><a href="#!" target="_blank"><i class="fa fa-instagram text-white" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="language_btn pull-right pr-4">
+                        @{
+                            string[] actions = { "ResetPassword", "ValidateTempPassword", "SaveResetPassword", "ChangePassword", "ValidateOldPassword", "SaveChangePassword", "UserProfile", "SaveUserBasicDetails", "SavePersonalDetails", "SaveResumeHeadlines", "SaveSkill", "SaveEducationDetails", "DeleteEducationDetails", "SaveExperience", "UploadProfilePhoto", "UploadResume", "RecruitersMessage", "ReplyToEmployer" };
+                            if (actions.Contains(action))
+                            {
+                                <a href="@Url.Action(action, "uhi", routeValues)" class="top_hindi mr-1">हि</a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action(action, "hi", routeValues)" class="top_hindi mr-1">हि</a>
+                            }
+                        }
+                        @*<a href="@Url.Action(action,"en",routeValues)" class="top_english">EN</a>*@
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="hdfSession" value="@Session["Id"]" />
+    <div class="main-header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-custom">
+            <div class="container">
+                <a class="navbar-brand logo" href="/en/Index"><img src="~/images/logo.png" class="img-fluid" alt="nav-logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        @if (Session["Id"] != null)
+                        {
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/en/Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/en/AboutUs">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/en/AdvanceSearch">Jobs</a>
+                            </li>
+                            <li class="dropdown text-white">
+                                <a class="nav-link" href="/en/training">Training</a>
+                            </li>
+                            <li class="dropdown text-white">
+                                <a class="nav-link" href="/en/EnrollmentProgram">Enrollment Program</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/en/Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/en/AboutUs">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/en/AdvanceSearch">Jobs</a>
+                            </li>
+                            <li class="dropdown text-white">
+                                <a class="nav-link" href="/en/training">Training</a>
+                            </li>
+                            <li class="dropdown text-white">
+                                <a class="nav-link" href="/en/EnrollmentProgram">Enrollment Program</a>
+                            </li>
+                            <li class="dropdown text-white">
+                                <a class="nav-link" href="/en/registration">Register Now</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/en/Login">Post Job</a>
+                            </li>
+                        }
+
+
+                    </ul>
+                    <ul class="list-unstyled profilesec">
+                        @if (Session["Id"] != null)
+                        {
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown"
+                                   class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                                    <i class="fa fa-user" aria-hidden="true"></i> <span class="d-sm-none d-lg-inline-block"></span>
+                                </a>
+                                <div class="dropdown-menu bg-custom dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a href="#" class="dropdown-item has-icon dropdown-title">
+                                        @if (Session["FirstName"] != null)
+                                        {
+                                            @Session["FirstName"].ToString()
+                                        }
+
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/uen/UserProfile">Profile</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/en/listofAppliedJob">Applied Jobs</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/uen/RecruitersMessage">Recruiters Messages</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/uen/ChangePassword">Change Password</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a href="/en/login" class="dropdown-item has-icon dropdown-title">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                        Logout
+                                    </a>
+                                </div>
+
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item list-inline-item"><a class="nav-link" href="#">|</a></li>
+                            <li class="nav-item list-inline-item">
+                                <a class="nav-link" href="/en/Login">Login</a>
+                            </li>
+                        }
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="profile_section">
+
+    </div>
+    <div>
+        @*<div id="loading">
+                <img id="loading-image" src="~/assets/img/loading.gif" alt="Loading..." />
+            </div>*@
+        @RenderBody()
+    </div>
+    <div class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-sm-12">
+                    <div class="footer-heading">
+                        <h5>About Afluex</h5>
+                        <p>“Job portal” is a web-based application, which helps to find brass workers, Artisan, Kaamgaar to find a job with searching criteria like preferred skill and location and work profile.</p>
+                        <p>It also helpful to “post job” and “search Kaamgaar” based on job- seeker profile. Industries or Employer can download resume of job seeker.Search Kaamgaar candidate based on their job profile.</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2 col-sm-12">
+                    <div class="footer-heading">
+                        <h5>Quick Link</h5>
+                        <ul class="list-unstyled">
+                            @if (Session["Id"] != null)
+                            {
+                                <li><a href="/en/training" class="text-black">Training </a></li>
+                                <li><a href="#" class="text-black" id="Jobs">Jobs for you</a></li>
+                                <li><a href="/en/ContactUs" class="text-black">Contact Us</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="/en/Login" class="text-black" id="PostJob">Post Job for Free</a></li>
+                                <li><a href="/en/training" class="text-black">Training </a></li>
+                                <li><a href="#" class="text-black" id="Jobs">Jobs for you</a></li>
+                                <li><a href="/en/ContactUs" class="text-black">Contact Us</a></li>
+                            }
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-lg-4 col-sm-12">
+                    <div class="footer-heading">
+                        <h5>Connect with us</h5>
+                        <div class="social-icon">
+                            <ul class="list-unstyled">
+                                <li class="list-inline-item"><a href="#!" target="_blank"><i class="fa fa-facebook-f"></i></a> </li>
+                                <li class="list-inline-item"><a href="#!" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> </a></li>
+                                <li class="list-inline-item"><a href="#!" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                <li class="list-inline-item"><a href="#!" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="list-inline-item"><a href="#!" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i> </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-buttom text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-sm-12">
+                        <p><strong>© 2023 All Rights Reserved by Afluex Multiservices LLP</strong></p>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-12">
+                        <div class="footer-menu">
+                            <ul class="list-unstyled pull-right">
+                                <li class="list-inline-item"><a href="/en/TermsandCondition">Terms of Use</a> </li>
+                                <li class="list-inline-item"><a href="/en/PrivacyPolicy">Privacy Policy </a></li>
+                                <li class="list-inline-item"><a href="/en/sitemap">Site Map  </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/scripts/jquery-1.10.2.js"></script>
+    <script>
+        $(window).on("load", function () {
+            $(".loader").fadeOut("slow");
+        });
+        $("#Jobs").click(function () {
+            var UserId = $("#hdfSession").val();
+            if (UserId == "") {
+                location.href = "/en/Login";
+            }
+            else {
+                location.href = "/en/AdvanceSearch";
+            }
+        });
+        $("#Jobs").click(function () {
+            var UserId = $("#hdfSession").val();
+            if (UserId == "") {
+                location.href = "/en/Login";
+            }
+            else {
+                location.href = "/en/AdvanceSearch";
+            }
+        });
+    </script>
+    @RenderSection("script", required: false)
+</body>
+</html>
